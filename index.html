@@ -66,90 +66,92 @@
 </head>
 <body class="text-[#1E2A38] bg-gradient-to-b from-white via-[#F4F5F7] to-white">
 
- <!-- FULL GTNEra HEADER: Desktop & Mobile -->
-<header class="bg-white shadow-md sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-      <div class="flex items-center">
-        <a href="/index.html" class="text-xl font-bold text-orange-500">GTNEra™</a>
-      </div>
-      <div class="hidden md:flex space-x-6 items-center">
-        <!-- Main Dropdown Menus -->
-        
-        <!-- ABOUT -->
-        <div class="relative group">
-          <a href="/about/index.html" class="menu-link">About</a>
+<!-- FULL GTNEra HEADER WITH DESKTOP AND MOBILE MENU -->
+<header>
+  <style>
+    nav {
+      background: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-family: Inter, sans-serif;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .menu {
+      display: flex;
+      gap: 1.2rem;
+    }
+    .menu a {
+      text-decoration: none;
+      color: #111;
+      font-size: 1rem;
+    }
+    .submenu {
+      position: absolute;
+      background: #f9f9f9;
+      padding: 0.5rem 1rem;
+      display: none;
+      flex-direction: column;
+      z-index: 999;
+    }
+    .menu-item:hover .submenu {
+      display: flex;
+    }
+    .menu-item {
+      position: relative;
+    }
+    /* Mobile */
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+      }
+      .mobile-menu {
+        display: none;
+      }
+      .mobile-menu.active {
+        display: flex;
+      }
+      .submenu {
+        position: relative;
+      }
+    }
+  </style>
+  
+  <nav>
+    <div class="container">
+      <div class="logo"><a href="/index.html">GTNEra</a></div>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+      <div class="menu">
+        <div class="menu-item"><a href="/about/index.html">About</a>
           <div class="submenu">
             <a href="/about/story.html">Story</a>
             <a href="/about/team.html">Team</a>
             <a href="/about/contact.html">Contact</a>
           </div>
         </div>
-
-        <!-- ECOSYSTEM -->
-        <div class="relative group">
-          <a href="/ecosystem/index.html" class="menu-link">Ecosystem</a>
-          <div class="submenu">
-            <a href="/ecosystem/overview.html">Overview</a>
-            <a href="/ecosystem/explore.html">Explore</a>
-          </div>
-        </div>
-
-        <!-- GTNEra (25 AIs) -->
-        <div class="relative group">
-          <a href="/gtnera/index.html" class="menu-link">GTNEra AIs</a>
-          <div class="submenu max-h-96 overflow-y-auto">
-            <a href="/gtnera/gtnera/index.html">💎 GTNEra</a>
-            <a href="/gtnera/kids/index.html">🧒 GTNEra Kids</a>
-            <a href="/gtnera/edu/index.html">🎓 GTNEra Edu</a>
-            <a href="/gtnera/juris/index.html">⚖️ GTNEra Juris</a>
-            <a href="/gtnera/polis/index.html">🏛️ GTNEra Polis</a>
-            <a href="/gtnera/visio/index.html">🔮 GTNEra Visio</a>
-            <a href="/gtnera/love/index.html">❤️ GTNEra Love</a>
-            <a href="/gtnera/health/index.html">🩺 GTNEra Health</a>
-            <a href="/gtnera/pets/index.html">🐾 GTNEra Pets</a>
-            <a href="/gtnera/botanics/index.html">🌿 GTNEra Botanics</a>
-            <a href="/gtnera/oko/index.html">🌍 GTNEra Öko</a>
-            <a href="/gtnera/govern/index.html">🏢 GTNEra Govern</a>
-            <a href="/gtnera/travel/index.html">🧳 GTNEra Travel</a>
-            <a href="/gtnera/beauty/index.html">💄 GTNEra Beauty</a>
-            <a href="/gtnera/mode/index.html">👗 GTNEra Mode</a>
-            <a href="/gtnera/music/index.html">🎵 GTNEra Music</a>
-            <a href="/gtnera/contentcreate/index.html">💡 GTNEra ContentCreate</a>
-            <a href="/gtnera/mind/index.html">🧠 GTNEra Mind</a>
-            <a href="/gtnera/tech/index.html">🛠️ GTNEra Tech</a>
-            <a href="/gtnera/work/index.html">💼 GTNEra Work</a>
-            <a href="/gtnera/cosmetica/index.html">🧴 GTNEra Cosmetica</a>
-            <a href="/gtnera/guide/index.html">🧭 GTNEra Guide</a>
-            <a href="/gtnera/sport/index.html">⚽ GTNEra Sport</a>
-            <a href="/gtnera/kitchen/index.html">🍲 GTNEra Kitchen</a>
-            <a href="/gtnera/ethos/index.html">🪶 GTNEra Ethos</a>
-          </div>
-        </div>
-
-        <!-- COMMUNITY -->
-        <div class="relative group">
-          <a href="/community/index.html" class="menu-link">Community</a>
-          <div class="submenu">
-            <a href="/community/code-of-trust.html">Code of Trust</a>
-            <a href="/community/join.html">Join</a>
-            <a href="/community/resonance-code.html">Resonance Code</a>
-          </div>
-        </div>
-
-        <!-- SERVICES -->
-        <div class="relative group">
-          <a href="/services/index.html" class="menu-link">Services</a>
-          <div class="submenu">
-            <a href="/services/coaching.html">Coaching</a>
-            <a href="/services/custom-ai.html">Custom AI</a>
-            <a href="/services/solutions.html">Solutions</a>
-          </div>
-        </div>
-
-        <!-- BLOG -->
-        <div class="relative group">
-          <a href="/blog/index.html" class="menu-link">Blog</a>
+        <div class="menu-item"><a href="/blog/index.html">Blog</a>
           <div class="submenu">
             <a href="/blog/gtnera-vision.html">GTNEra Vision</a>
             <a href="/blog/press.html">Press</a>
@@ -157,29 +159,69 @@
             <a href="/blog/tokenizing-truth.html">Tokenizing Truth</a>
           </div>
         </div>
-
-        <!-- CLASSES -->
-        <div class="relative group">
-          <a href="/classes/index.html" class="menu-link">Classes</a>
+        <div class="menu-item"><a href="/classes/index.html">Classes</a>
           <div class="submenu">
-            <a href="/classes/intro-to-human-ai.html">Intro to Human–AI</a>
+            <a href="/classes/intro-to-human-ai.html">Intro to Human-AI</a>
             <a href="/classes/resonant-dialogue.html">Resonant Dialogue</a>
             <a href="/classes/tetyana-mode-training.html">Tetyana Mode</a>
           </div>
         </div>
-
-        <!-- ENS -->
-        <div class="relative group">
-          <a href="/ens/index.html" class="menu-link">ENS</a>
+        <div class="menu-item"><a href="/community/index.html">Community</a>
+          <div class="submenu">
+            <a href="/community/code-of-trust.html">Code of Trust</a>
+            <a href="/community/join.html">Join</a>
+            <a href="/community/resonance-code.html">Resonance Code</a>
+          </div>
+        </div>
+        <div class="menu-item"><a href="/ecosystem/index.html">Ecosystem</a>
+          <div class="submenu">
+            <a href="/ecosystem/overview.html">Overview</a>
+            <a href="/ecosystem/explore.html">Explore</a>
+          </div>
+        </div>
+        <div class="menu-item"><a href="/ens/index.html">ENS</a>
           <div class="submenu">
             <a href="/ens/meaning-map.html">Meaning Map</a>
             <a href="/ens/registered-domains.html">Registered Domains</a>
           </div>
         </div>
-
-        <!-- VALUES -->
-        <div class="relative group">
-          <a href="/values/index.html" class="menu-link">Values</a>
+        <div class="menu-item"><a href="/gtnera/GTNEra/index.html">GTNEra GPTs</a>
+          <div class="submenu">
+            <a href="/gtnera/GTNEra/index.html">💎 GTNEra</a>
+            <a href="/gtnera/Kids/index.html">🧒 Kids</a>
+            <a href="/gtnera/Edu/index.html">🎓 Edu</a>
+            <a href="/gtnera/Juris/index.html">⚖️ Juris</a>
+            <a href="/gtnera/Polis/index.html">🏛️ Polis</a>
+            <a href="/gtnera/Visio/index.html">🔮 Visio</a>
+            <a href="/gtnera/Love/index.html">❤️ Love</a>
+            <a href="/gtnera/Health/index.html">🩺 Health</a>
+            <a href="/gtnera/Pets/index.html">🐾 Pets</a>
+            <a href="/gtnera/Botanics/index.html">🌿 Botanics</a>
+            <a href="/gtnera/Öko/index.html">🌍 Öko</a>
+            <a href="/gtnera/Govern/index.html">🏢 Govern</a>
+            <a href="/gtnera/Travel/index.html">🧳 Travel</a>
+            <a href="/gtnera/Beauty/index.html">💄 Beauty</a>
+            <a href="/gtnera/Mode/index.html">👗 Mode</a>
+            <a href="/gtnera/Music/index.html">🎵 Music</a>
+            <a href="/gtnera/ContentCreate/index.html">💡 ContentCreate</a>
+            <a href="/gtnera/Mind/index.html">🧠 Mind</a>
+            <a href="/gtnera/Tech/index.html">🛠️ Tech</a>
+            <a href="/gtnera/Work/index.html">💼 Work</a>
+            <a href="/gtnera/Cosmetica/index.html">🧴 Cosmetica</a>
+            <a href="/gtnera/Guide/index.html">🧭 Guide</a>
+            <a href="/gtnera/Sport/index.html">⚽ Sport</a>
+            <a href="/gtnera/Kitchen/index.html">🍲 Kitchen</a>
+            <a href="/gtnera/Ethos/index.html">🪶 Ethos</a>
+          </div>
+        </div>
+        <div class="menu-item"><a href="/services/index.html">Services</a>
+          <div class="submenu">
+            <a href="/services/coaching.html">Coaching</a>
+            <a href="/services/custom-ai.html">Custom AI</a>
+            <a href="/services/solutions.html">Solutions</a>
+          </div>
+        </div>
+        <div class="menu-item"><a href="/values/index.html">Values</a>
           <div class="submenu">
             <a href="/values/conscious-tech.html">Conscious Tech</a>
             <a href="/values/dei.html">DEI</a>
@@ -188,55 +230,28 @@
             <a href="/values/sustainability.html">Sustainability</a>
           </div>
         </div>
-
-        <!-- LEGAL -->
-        <div class="relative group">
-          <a href="/legal/privacy.html" class="menu-link">Legal</a>
+        <div class="menu-item"><a href="/legal/privacy.html">Legal</a>
           <div class="submenu">
             <a href="/legal/privacy.html">Privacy</a>
             <a href="/legal/terms.html">Terms</a>
             <a href="/legal/disclaimer.html">Disclaimer</a>
           </div>
         </div>
-
       </div>
-
-      <!-- Mobile toggle -->
-      <div class="md:hidden flex items-center">
-        <button id="mobile-menu-button" class="text-orange-500 focus:outline-none">☰</button>
-      </div>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu"></div>
     </div>
-  </div>
+  </nav>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-    <!-- Will be auto-populated via JS or duplicated HTML block -->
-  </div>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+      menu.innerHTML = document.querySelector('.menu').innerHTML;
+    }
+  </script>
 </header>
 
-<!-- Tailwind Utility Styles -->
-<style>
-  .menu-link {
-    @apply text-gray-800 hover:text-orange-600 font-medium py-2 px-3;
-  }
-  .submenu {
-    @apply absolute hidden group-hover:block bg-white shadow rounded-lg py-2 px-3 z-50;
-    min-width: 200px;
-  }
-  .submenu a {
-    @apply block px-4 py-2 text-sm text-gray-700 hover:text-orange-600;
-  }
-</style>
-
-<script>
-  // Simple mobile toggle script
-  document.getElementById('mobile-menu-button')?.addEventListener('click', () => {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-  });
-</script>
-
-  
  <!-- Zwei Logos direkt nach dem Header -->
 <div class="flex items-end justify-center gap-6 md:gap-16 mt-10 mb-8">
   <!-- GTNEra Logo + Button -->
