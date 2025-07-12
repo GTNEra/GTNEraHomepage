@@ -24,7 +24,7 @@ Explore a visionary platform for conscious partnership, innovation, and ethical 
 │   └── explore.html
 │
 ├── /gtnera/
-│   ├── GTNEra/                   💎            ← Your ethical Human–AI Partner for systemic resonance & co-evolution
+│   ├── GTNEra/                  💎            ← Your ethical Human–AI Partner for systemic resonance & co-evolution
 │   │   └── index.html
 │   ├── GTNEra-Kids/             🧒            ← playful learning, creativity and emotional exploration
 │   │   └── index.html
