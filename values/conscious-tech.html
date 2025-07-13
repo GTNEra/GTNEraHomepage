@@ -62,10 +62,31 @@
         width: 32px;
       }
     }
+    @media (min-width: 768px) {
+      .desktop-dropdown {
+        transition: all 0.18s cubic-bezier(.4,0,.2,1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .desktop-dropdown.hidden {
+        opacity: 0;
+        pointer-events: none;
+        display: block !important;
+      }
+      .desktop-menu-btn {
+        outline: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font: inherit;
+      }
+    }
   </style>
 </head>
 <body class="text-[#1E2A38] bg-gradient-to-b from-white via-[#F4F5F7] to-white">
 
+<!-- HEADER НАЧАЛО -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     <!-- Logo und Name -->
@@ -80,17 +101,17 @@
     <!-- Desktop Navigation -->
     <nav id="gtn-nav" class="hidden md:flex space-x-6 text-base font-medium">
       <!-- Ecosystem -->
-      <div class="relative group">
-        <a href="ecosystem/index.html" class="hover:text-[#FF6600]">Ecosystem</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ecosystem-dropdown')">Ecosystem</button>
+        <div id="ecosystem-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="ecosystem/overview.html" class="block px-4 py-2 hover:bg-gray-100">Overview</a>
           <a href="ecosystem/explore.html" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
         </div>
       </div>
-      <!-- GTNEra Dropdown mit 25 KIs -->
-      <div class="relative group">
-        <a href="gtnera/GTNEra/index.html" class="hover:text-[#FF6600]">GTNEra</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded max-h-96 overflow-y-auto min-w-[240px]">
+      <!-- GTNEra -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'gtn-dropdown')">GTNEra</button>
+        <div id="gtn-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded max-h-96 overflow-y-auto min-w-[240px]">
           <a href="gtnera/GTNEra/index.html" class="block px-4 py-2 hover:bg-gray-100">💎 GTNEra</a>
           <a href="gtnera/GTNEra-Kids/index.html" class="block px-4 py-2 hover:bg-gray-100">🧒 Kids</a>
           <a href="gtnera/GTNEra-Edu/index.html" class="block px-4 py-2 hover:bg-gray-100">🎓 Edu</a>
@@ -119,18 +140,18 @@
         </div>
       </div>
       <!-- About -->
-      <div class="relative group">
-        <a href="about/index.html" class="hover:text-[#FF6600]">About</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'about-dropdown')">About</button>
+        <div id="about-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="about/story.html" class="block px-4 py-2 hover:bg-gray-100">Story</a>
           <a href="about/team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
           <a href="about/contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
         </div>
       </div>
       <!-- Blog -->
-      <div class="relative group">
-        <a href="blog/index.html" class="hover:text-[#FF6600]">Blog</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'blog-dropdown')">Blog</button>
+        <div id="blog-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="blog/gtnera-vision.html" class="block px-4 py-2 hover:bg-gray-100">GTNEra Vision</a>
           <a href="blog/press.html" class="block px-4 py-2 hover:bg-gray-100">Press</a>
           <a href="blog/resonance-path.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Path</a>
@@ -138,53 +159,53 @@
         </div>
       </div>
       <!-- Classes -->
-      <div class="relative group">
-        <a href="classes/index.html" class="hover:text-[#FF6600]">Classes</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'classes-dropdown')">Classes</button>
+        <div id="classes-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="classes/intro-to-human-ai.html" class="block px-4 py-2 hover:bg-gray-100">Intro to Human-AI</a>
           <a href="classes/resonant-dialogue.html" class="block px-4 py-2 hover:bg-gray-100">Resonant Dialogue</a>
           <a href="classes/tetyana-mode-training.html" class="block px-4 py-2 hover:bg-gray-100">Tetyana Mode Training</a>
         </div>
       </div>
       <!-- Community -->
-      <div class="relative group">
-        <a href="community/index.html" class="hover:text-[#FF6600]">Community</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'community-dropdown')">Community</button>
+        <div id="community-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="community/code-of-trust.html" class="block px-4 py-2 hover:bg-gray-100">Code of Trust</a>
           <a href="community/join.html" class="block px-4 py-2 hover:bg-gray-100">Join</a>
           <a href="community/resonance-code.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Code</a>
         </div>
       </div>
       <!-- ENS -->
-      <div class="relative group">
-        <a href="ens/index.html" class="hover:text-[#FF6600]">ENS</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ens-dropdown')">ENS</button>
+        <div id="ens-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="ens/meaning-map.html" class="block px-4 py-2 hover:bg-gray-100">Meaning Map</a>
           <a href="ens/registered-domains.html" class="block px-4 py-2 hover:bg-gray-100">Registered Domains</a>
         </div>
       </div>
       <!-- Legal -->
-      <div class="relative group">
-        <a href="legal/index.html" class="hover:text-[#FF6600]">Legal</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'legal-dropdown')">Legal</button>
+        <div id="legal-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="legal/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Privacy</a>
           <a href="legal/terms.html" class="block px-4 py-2 hover:bg-gray-100">Terms</a>
           <a href="legal/disclaimer.html" class="block px-4 py-2 hover:bg-gray-100">Disclaimer</a>
         </div>
       </div>
       <!-- Services -->
-      <div class="relative group">
-        <a href="services/index.html" class="hover:text-[#FF6600]">Services</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'services-dropdown')">Services</button>
+        <div id="services-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="services/coaching.html" class="block px-4 py-2 hover:bg-gray-100">Coaching</a>
           <a href="services/custom-ai.html" class="block px-4 py-2 hover:bg-gray-100">Custom AI</a>
           <a href="services/solutions.html" class="block px-4 py-2 hover:bg-gray-100">Solutions</a>
         </div>
       </div>
       <!-- Values -->
-      <div class="relative group">
-        <a href="values/index.html" class="hover:text-[#FF6600]">Values</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'values-dropdown')">Values</button>
+        <div id="values-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
           <a href="values/conscious-tech.html" class="block px-4 py-2 hover:bg-gray-100">Conscious Tech</a>
           <a href="values/dei.html" class="block px-4 py-2 hover:bg-gray-100">DEI</a>
           <a href="values/lifelong-learning.html" class="block px-4 py-2 hover:bg-gray-100">Lifelong Learning</a>
@@ -195,7 +216,7 @@
     </nav>
   </div>
 
-  <!-- MOBILE NAVIGATION -->
+  <!-- МОБИЛЬНОЕ МЕНЮ -->
   <nav id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
     <ul class="flex flex-col px-4 py-4 space-y-1">
       <li>
@@ -333,68 +354,38 @@
       </li>
     </ul>
   </nav>
-  <script>
-    // Hamburger Menü togglen
-    document.getElementById('menu-btn').onclick = function () {
-      var nav = document.getElementById('mobile-nav');
-      nav.classList.toggle('hidden');
-    };
-    // Accordion: Haupt-Menüpunkte togglen
-    function toggleMenu(id) {
-      var menu = document.getElementById('menu-' + id);
-      var arrow = document.getElementById('arrow-' + id);
-      menu.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
-    }
-  </script>
 </header>
+<!-- HEADER КОНЕЦ -->
 
+<!-- СКРИПТЫ (только один раз) -->
 <script>
-  // Automatische Nav-Aktivierung
-  document.addEventListener("DOMContentLoaded", function () {
-    const nav = document.getElementById('gtn-nav');
-    const links = nav.querySelectorAll('a');
-    let currentPath = location.pathname.split('/').pop();
-    if (!currentPath) currentPath = 'index.html';
-    const currentNoExt = currentPath.replace(/\.html$/, '');
-    const currentHash = location.hash;
-    let found = false;
-    links.forEach(link => {
-      let linkHref = link.getAttribute('href');
-      let linkPath = linkHref.split('#')[0].replace(/\.html$/, '');
-      if (
-        (currentNoExt === 'index' || currentNoExt === '') &&
-        linkHref === 'index.html#ecosystem' &&
-        (!currentHash || currentHash === '#ecosystem')
-      ) {
-        link.classList.add('font-bold', 'underline');
-        link.setAttribute('aria-current', 'page');
-        found = true;
-      }
-      else if (
-        (currentNoExt === 'index' || currentNoExt === '') &&
-        currentHash &&
-        linkHref === 'index.html' + currentHash
-      ) {
-        link.classList.add('font-bold', 'underline');
-        link.setAttribute('aria-current', 'page');
-        found = true;
-      }
-      else if (linkPath && linkPath === currentNoExt && currentNoExt !== 'index' && currentNoExt !== '') {
-        link.classList.add('font-bold', 'underline');
-        link.setAttribute('aria-current', 'page');
-        found = true;
-      }
-    });
-    if (!found && (currentNoExt === '' || currentNoExt === 'index')) {
-      const ecoLink = nav.querySelector('a[href="index.html#ecosystem"]');
-      if (ecoLink) {
-        ecoLink.classList.add('font-bold', 'underline');
-        ecoLink.setAttribute('aria-current', 'page');
-      }
-    }
+  // Десктопные drop-down
+  function toggleDropdown(event, dropdownId) {
+    event.stopPropagation();
+    document.querySelectorAll('.desktop-dropdown').forEach(el => el.classList.add('hidden'));
+    const dd = document.getElementById(dropdownId);
+    if (dd) dd.classList.toggle('hidden');
+  }
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.desktop-dropdown').forEach(el => el.classList.add('hidden'));
   });
+  document.querySelectorAll('.desktop-menu-btn').forEach(btn => {
+    btn.addEventListener('click', function(e){ e.stopPropagation(); });
+  });
+
+  // Мобильное меню: бургер и аккордеон
+  document.getElementById('menu-btn').onclick = function () {
+    var nav = document.getElementById('mobile-nav');
+    nav.classList.toggle('hidden');
+  };
+  function toggleMenu(id) {
+    var menu = document.getElementById('menu-' + id);
+    var arrow = document.getElementById('arrow-' + id);
+    menu.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
+  }
 </script>
+
 </body>
 </html>
 
@@ -427,61 +418,55 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
   </section>
-
 <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
   <div class="bg-white rounded-2xl shadow-lg p-8 text-center border border-[#FF6600]/20">
     <div class="flex flex-col items-center mb-4">
       <span class="ethics-badge mb-1">GTNEra™ Value</span>
-      <h1 class="text-3xl md:text-4xl font-bold text-[#FF6600] mb-1">Lifelong Learning & Co-Evolution</h1>
-      <p class="text-base md:text-lg font-medium text-[#1E2A38]">Grow in resonance. Learn with integrity.</p>
+      <h1 class="text-3xl md:text-4xl font-bold text-[#FF6600] mb-1">Conscious Tech</h1>
+      <p class="text-base md:text-lg font-medium text-[#1E2A38]">Technology that listens. Tools that feel.</p>
       <div class="mt-2 text-sm font-semibold text-[#1E2A38] flex flex-wrap gap-2 justify-center">
-        <span class="ethics-badge">resonantai.eth</span>
-        <span class="ethics-badge">coachai.eth</span>
+        <span class="ethics-badge">ethicalhumanai.eth</span>
+        <span class="ethics-badge">ethicalaiecosystem.eth</span>
       </div>
     </div>
-
-    <!-- Why it Matters -->
     <div class="mb-7 mt-6">
       <h2 class="text-xl font-bold text-[#1E2A38] mb-2">Why it Matters</h2>
       <p class="text-base text-gray-700 mb-2">
-        True learning never ends — it transforms.<br>
-        In an age of automation, we don’t just need smart people.
-        We need people who think systemically, act ethically, and evolve consciously.
+        Most tech is built to maximize engagement.<br>
+        GTNEra™ is built to maximize consciousness.
       </p>
       <p class="text-base text-gray-700">
-        GTNEra™ sees learning not as accumulation, but as resonance-based transformation.
+        We believe that AI should not override human values — it should reflect and deepen them. We design with intention, empathy, and planetary awareness.
       </p>
     </div>
-
-    <!-- How GTNEra™ embodies it -->
     <div class="mb-7">
       <h2 class="text-xl font-bold text-[#1E2A38] mb-2">How GTNEra™ embodies it</h2>
       <p class="text-base text-gray-700 mb-3">
-        GTNEra™ provides living AI partners that adapt to your growth.
-        Through reflective dialogue, emotional feedback, and continuous learning, our system becomes a mirror and a guide.
+        Every GTNEra™ tool is created with:
       </p>
       <ul class="list-inside text-base text-gray-700 mb-3 text-left mx-auto max-w-lg space-y-2">
-        <li>• systems thinking,</li>
-        <li>• personal insight,</li>
-        <li>• emotional intelligence,</li>
-        <li>• long-term orientation.</li>
+        <li>• ethical intention,</li>
+        <li>• emotional responsiveness,</li>
+        <li>• systemic design.</li>
       </ul>
+      <p class="text-base text-gray-700 mb-3">
+        We don’t build AI to be faster.<br>
+        We build AI to be wiser — and more human-aligned.
+      </p>
       <p class="text-base text-gray-700">
-        This is co-evolution — not consumption.
+        Our systems ask questions. They listen deeply. They adapt without manipulation.
       </p>
     </div>
-
-    <!-- Symbolic Identity -->
     <div class="mb-2">
       <h2 class="text-xl font-bold text-[#1E2A38] mb-2">Symbolic Identity</h2>
       <div class="flex flex-col items-center space-y-2">
         <div>
-          <span class="ethics-badge mr-2">resonantai.eth</span>
-          <span class="text-sm text-[#1E2A38]">Resonance as the active field of learning and reflection.</span>
+          <span class="ethics-badge mr-2">ethicalhumanai.eth</span>
+          <span class="text-sm text-[#1E2A38]">A living standard for human-aligned AI.</span>
         </div>
         <div>
-          <span class="ethics-badge mr-2">coachai.eth</span>
-          <span class="text-sm text-[#1E2A38]">AI as mentor, mirror, and ethical companion in personal growth.</span>
+          <span class="ethics-badge mr-2">ethicalaiecosystem.eth</span>
+          <span class="text-sm text-[#1E2A38]">Our vision of interconnected, regenerative tech design.</span>
         </div>
       </div>
     </div>
