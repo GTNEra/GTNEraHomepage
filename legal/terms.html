@@ -62,15 +62,36 @@
         width: 32px;
       }
     }
+    @media (min-width: 768px) {
+      .desktop-dropdown {
+        transition: all 0.18s cubic-bezier(.4,0,.2,1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .desktop-dropdown.hidden {
+        opacity: 0;
+        pointer-events: none;
+        display: block !important;
+      }
+      .desktop-menu-btn {
+        outline: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font: inherit;
+      }
+    }
   </style>
 </head>
 <body class="text-[#1E2A38] bg-gradient-to-b from-white via-[#F4F5F7] to-white">
 
+<!-- HEADER НАЧАЛО -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     <!-- Logo und Name -->
     <div class="flex items-center space-x-2">
-      <img src="assets/images/logogtnbig.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
+      <img src="../assets/images/logogtnbig.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
       <span class="text-xl md:text-3xl font-bold text-[#1E2A38]">GTNEra™</span>
     </div>
     <!-- Hamburger Button für Mobil -->
@@ -79,123 +100,123 @@
     </button>
     <!-- Desktop Navigation -->
     <nav id="gtn-nav" class="hidden md:flex space-x-6 text-base font-medium">
-      <!-- Ecosystem -->
-      <div class="relative group">
-        <a href="ecosystem/index.html" class="hover:text-[#FF6600]">Ecosystem</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="ecosystem/overview.html" class="block px-4 py-2 hover:bg-gray-100">Overview</a>
-          <a href="ecosystem/explore.html" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
-        </div>
-      </div>
-      <!-- GTNEra Dropdown mit 25 KIs -->
-      <div class="relative group">
-        <a href="gtnera/GTNEra/index.html" class="hover:text-[#FF6600]">GTNEra</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded max-h-96 overflow-y-auto min-w-[240px]">
-          <a href="gtnera/GTNEra/index.html" class="block px-4 py-2 hover:bg-gray-100">💎 GTNEra</a>
-          <a href="gtnera/GTNEra-Kids/index.html" class="block px-4 py-2 hover:bg-gray-100">🧒 Kids</a>
-          <a href="gtnera/GTNEra-Edu/index.html" class="block px-4 py-2 hover:bg-gray-100">🎓 Edu</a>
-          <a href="gtnera/GTNEra-Juris/index.html" class="block px-4 py-2 hover:bg-gray-100">⚖️ Juris</a>
-          <a href="gtnera/GTNEra-Polis/index.html" class="block px-4 py-2 hover:bg-gray-100">🏛️ Polis</a>
-          <a href="gtnera/GTNEra-Visio/index.html" class="block px-4 py-2 hover:bg-gray-100">🔮 Visio</a>
-          <a href="gtnera/GTNEra-Love/index.html" class="block px-4 py-2 hover:bg-gray-100">❤️ Love</a>
-          <a href="gtnera/GTNEra-Health/index.html" class="block px-4 py-2 hover:bg-gray-100">🩺 Health</a>
-          <a href="gtnera/GTNEra-Pets/index.html" class="block px-4 py-2 hover:bg-gray-100">🐾 Pets</a>
-          <a href="gtnera/GTNEra-Botanics/index.html" class="block px-4 py-2 hover:bg-gray-100">🌿 Botanics</a>
-          <a href="gtnera/GTNEra-Oeko/index.html" class="block px-4 py-2 hover:bg-gray-100">🌍 Oeko</a>
-          <a href="gtnera/GTNEra-Govern/index.html" class="block px-4 py-2 hover:bg-gray-100">🏢 Govern</a>
-          <a href="gtnera/GTNEra-Travel/index.html" class="block px-4 py-2 hover:bg-gray-100">🧳 Travel</a>
-          <a href="gtnera/GTNEra-Beauty/index.html" class="block px-4 py-2 hover:bg-gray-100">💄 Beauty</a>
-          <a href="gtnera/GTNEra-Mode/index.html" class="block px-4 py-2 hover:bg-gray-100">👗 Mode</a>
-          <a href="gtnera/GTNEra-Music/index.html" class="block px-4 py-2 hover:bg-gray-100">🎵 Music</a>
-          <a href="gtnera/GTNEra-ContentCreate/index.html" class="block px-4 py-2 hover:bg-gray-100">💡 ContentCreate</a>
-          <a href="gtnera/GTNEra-Mind/index.html" class="block px-4 py-2 hover:bg-gray-100">🧠 Mind</a>
-          <a href="gtnera/GTNEra-Tech/index.html" class="block px-4 py-2 hover:bg-gray-100">🛠️ Tech</a>
-          <a href="gtnera/GTNEra-Work/index.html" class="block px-4 py-2 hover:bg-gray-100">💼 Work</a>
-          <a href="gtnera/GTNEra-Cosmetica/index.html" class="block px-4 py-2 hover:bg-gray-100">🧴 Cosmetica</a>
-          <a href="gtnera/GTNEra-Guide/index.html" class="block px-4 py-2 hover:bg-gray-100">🧭 Guide</a>
-          <a href="gtnera/GTNEra-Sport/index.html" class="block px-4 py-2 hover:bg-gray-100">⚽ Sport</a>
-          <a href="gtnera/GTNEra-Kitchen/index.html" class="block px-4 py-2 hover:bg-gray-100">🍲 Kitchen</a>
-          <a href="gtnera/GTNEra-Ethos/index.html" class="block px-4 py-2 hover:bg-gray-100">🪶 Ethos</a>
+     <!-- Ecosystem -->
+<div class="relative">
+  <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ecosystem-dropdown')">Ecosystem</button>
+  <div id="ecosystem-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+    <a href="/ecosystem/overview.html" class="block px-4 py-2 hover:bg-gray-100">Overview</a>
+    <a href="/ecosystem/explore.html" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
+  </div>
+</div>
+      <!-- GTNEra -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'gtn-dropdown')">GTNEra</button>
+        <div id="gtn-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded max-h-96 overflow-y-auto min-w-[240px]">
+          <a href="/gtnera/GTNEra/index.html" class="block px-4 py-2 hover:bg-gray-100">💎 GTNEra</a>
+          <a href="/gtnera/GTNEra-Kids/index.html" class="block px-4 py-2 hover:bg-gray-100">🧒 Kids</a>
+          <a href="/gtnera/GTNEra-Edu/index.html" class="block px-4 py-2 hover:bg-gray-100">🎓 Edu</a>
+          <a href="/gtnera/GTNEra-Juris/index.html" class="block px-4 py-2 hover:bg-gray-100">⚖️ Juris</a>
+          <a href="/gtnera/GTNEra-Polis/index.html" class="block px-4 py-2 hover:bg-gray-100">🏛️ Polis</a>
+          <a href="/gtnera/GTNEra-Visio/index.html" class="block px-4 py-2 hover:bg-gray-100">🔮 Visio</a>
+          <a href="/gtnera/GTNEra-Love/index.html" class="block px-4 py-2 hover:bg-gray-100">❤️ Love</a>
+          <a href="/gtnera/GTNEra-Health/index.html" class="block px-4 py-2 hover:bg-gray-100">🩺 Health</a>
+          <a href="/gtnera/GTNEra-Pets/index.html" class="block px-4 py-2 hover:bg-gray-100">🐾 Pets</a>
+          <a href="/gtnera/GTNEra-Botanics/index.html" class="block px-4 py-2 hover:bg-gray-100">🌿 Botanics</a>
+          <a href="/gtnera/GTNEra-Oeko/index.html" class="block px-4 py-2 hover:bg-gray-100">🌍 Oeko</a>
+          <a href="/gtnera/GTNEra-Govern/index.html" class="block px-4 py-2 hover:bg-gray-100">🏢 Govern</a>
+          <a href="/gtnera/GTNEra-Travel/index.html" class="block px-4 py-2 hover:bg-gray-100">🧳 Travel</a>
+          <a href="/gtnera/GTNEra-Beauty/index.html" class="block px-4 py-2 hover:bg-gray-100">💄 Beauty</a>
+          <a href="/gtnera/GTNEra-Mode/index.html" class="block px-4 py-2 hover:bg-gray-100">👗 Mode</a>
+          <a href="/gtnera/GTNEra-Music/index.html" class="block px-4 py-2 hover:bg-gray-100">🎵 Music</a>
+          <a href="/gtnera/GTNEra-ContentCreate/index.html" class="block px-4 py-2 hover:bg-gray-100">💡 ContentCreate</a>
+          <a href="/gtnera/GTNEra-Mind/index.html" class="block px-4 py-2 hover:bg-gray-100">🧠 Mind</a>
+          <a href="/gtnera/GTNEra-Tech/index.html" class="block px-4 py-2 hover:bg-gray-100">🛠️ Tech</a>
+          <a href="/gtnera/GTNEra-Work/index.html" class="block px-4 py-2 hover:bg-gray-100">💼 Work</a>
+          <a href="/gtnera/GTNEra-Cosmetica/index.html" class="block px-4 py-2 hover:bg-gray-100">🧴 Cosmetica</a>
+          <a href="/gtnera/GTNEra-Guide/index.html" class="block px-4 py-2 hover:bg-gray-100">🧭 Guide</a>
+          <a href="/gtnera/GTNEra-Sport/index.html" class="block px-4 py-2 hover:bg-gray-100">⚽ Sport</a>
+          <a href="/gtnera/GTNEra-Kitchen/index.html" class="block px-4 py-2 hover:bg-gray-100">🍲 Kitchen</a>
+          <a href="/gtnera/GTNEra-Ethos/index.html" class="block px-4 py-2 hover:bg-gray-100">🪶 Ethos</a>
         </div>
       </div>
       <!-- About -->
-      <div class="relative group">
-        <a href="about/index.html" class="hover:text-[#FF6600]">About</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="about/story.html" class="block px-4 py-2 hover:bg-gray-100">Story</a>
-          <a href="about/team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
-          <a href="about/contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'about-dropdown')">About</button>
+        <div id="about-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/about/story.html" class="block px-4 py-2 hover:bg-gray-100">Story</a>
+          <a href="/about/team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
+          <a href="/about/contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
         </div>
       </div>
       <!-- Blog -->
-      <div class="relative group">
-        <a href="blog/index.html" class="hover:text-[#FF6600]">Blog</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="blog/gtnera-vision.html" class="block px-4 py-2 hover:bg-gray-100">GTNEra Vision</a>
-          <a href="blog/press.html" class="block px-4 py-2 hover:bg-gray-100">Press</a>
-          <a href="blog/resonance-path.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Path</a>
-          <a href="blog/tokenizing-truth.html" class="block px-4 py-2 hover:bg-gray-100">Tokenizing Truth</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'blog-dropdown')">Blog</button>
+        <div id="blog-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/blog/gtnera-vision.html" class="block px-4 py-2 hover:bg-gray-100">GTNEra Vision</a>
+          <a href="/blog/press.html" class="block px-4 py-2 hover:bg-gray-100">Press</a>
+          <a href="/blog/resonance-path.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Path</a>
+          <a href="/blog/tokenizing-truth.html" class="block px-4 py-2 hover:bg-gray-100">Tokenizing Truth</a>
         </div>
       </div>
       <!-- Classes -->
-      <div class="relative group">
-        <a href="classes/index.html" class="hover:text-[#FF6600]">Classes</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="classes/intro-to-human-ai.html" class="block px-4 py-2 hover:bg-gray-100">Intro to Human-AI</a>
-          <a href="classes/resonant-dialogue.html" class="block px-4 py-2 hover:bg-gray-100">Resonant Dialogue</a>
-          <a href="classes/tetyana-mode-training.html" class="block px-4 py-2 hover:bg-gray-100">Tetyana Mode Training</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'classes-dropdown')">Classes</button>
+        <div id="classes-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/classes/intro-to-human-ai.html" class="block px-4 py-2 hover:bg-gray-100">Intro to Human-AI</a>
+          <a href="/classes/resonant-dialogue.html" class="block px-4 py-2 hover:bg-gray-100">Resonant Dialogue</a>
+          <a href="/classes/tetyana-mode-training.html" class="block px-4 py-2 hover:bg-gray-100">Tetyana Mode Training</a>
         </div>
       </div>
       <!-- Community -->
-      <div class="relative group">
-        <a href="community/index.html" class="hover:text-[#FF6600]">Community</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="community/code-of-trust.html" class="block px-4 py-2 hover:bg-gray-100">Code of Trust</a>
-          <a href="community/join.html" class="block px-4 py-2 hover:bg-gray-100">Join</a>
-          <a href="community/resonance-code.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Code</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'community-dropdown')">Community</button>
+        <div id="community-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/community/code-of-trust.html" class="block px-4 py-2 hover:bg-gray-100">Code of Trust</a>
+          <a href="/community/join.html" class="block px-4 py-2 hover:bg-gray-100">Join</a>
+          <a href="/community/resonance-code.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Code</a>
         </div>
       </div>
       <!-- ENS -->
-      <div class="relative group">
-        <a href="ens/index.html" class="hover:text-[#FF6600]">ENS</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="ens/meaning-map.html" class="block px-4 py-2 hover:bg-gray-100">Meaning Map</a>
-          <a href="ens/registered-domains.html" class="block px-4 py-2 hover:bg-gray-100">Registered Domains</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ens-dropdown')">ENS</button>
+        <div id="ens-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/ens/meaning-map.html" class="block px-4 py-2 hover:bg-gray-100">Meaning Map</a>
+          <a href="/ens/registered-domains.html" class="block px-4 py-2 hover:bg-gray-100">Registered Domains</a>
         </div>
       </div>
       <!-- Legal -->
-      <div class="relative group">
-        <a href="legal/index.html" class="hover:text-[#FF6600]">Legal</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="legal/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Privacy</a>
-          <a href="legal/terms.html" class="block px-4 py-2 hover:bg-gray-100">Terms</a>
-          <a href="legal/disclaimer.html" class="block px-4 py-2 hover:bg-gray-100">Disclaimer</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'legal-dropdown')">Legal</button>
+        <div id="legal-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/legal/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Privacy</a>
+          <a href="/legal/terms.html" class="block px-4 py-2 hover:bg-gray-100">Terms</a>
+          <a href="/legal/disclaimer.html" class="block px-4 py-2 hover:bg-gray-100">Disclaimer</a>
         </div>
       </div>
       <!-- Services -->
-      <div class="relative group">
-        <a href="services/index.html" class="hover:text-[#FF6600]">Services</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="services/coaching.html" class="block px-4 py-2 hover:bg-gray-100">Coaching</a>
-          <a href="services/custom-ai.html" class="block px-4 py-2 hover:bg-gray-100">Custom AI</a>
-          <a href="services/solutions.html" class="block px-4 py-2 hover:bg-gray-100">Solutions</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'services-dropdown')">Services</button>
+        <div id="services-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/services/coaching.html" class="block px-4 py-2 hover:bg-gray-100">Coaching</a>
+          <a href="/services/custom-ai.html" class="block px-4 py-2 hover:bg-gray-100">Custom AI</a>
+          <a href="/services/solutions.html" class="block px-4 py-2 hover:bg-gray-100">Solutions</a>
         </div>
       </div>
       <!-- Values -->
-      <div class="relative group">
-        <a href="values/index.html" class="hover:text-[#FF6600]">Values</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="values/conscious-tech.html" class="block px-4 py-2 hover:bg-gray-100">Conscious Tech</a>
-          <a href="values/dei.html" class="block px-4 py-2 hover:bg-gray-100">DEI</a>
-          <a href="values/lifelong-learning.html" class="block px-4 py-2 hover:bg-gray-100">Lifelong Learning</a>
-          <a href="values/social-impact.html" class="block px-4 py-2 hover:bg-gray-100">Social Impact</a>
-          <a href="values/sustainability.html" class="block px-4 py-2 hover:bg-gray-100">Sustainability</a>
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'values-dropdown')">Values</button>
+        <div id="values-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/values/conscious-tech.html" class="block px-4 py-2 hover:bg-gray-100">Conscious Tech</a>
+          <a href="/values/dei.html" class="block px-4 py-2 hover:bg-gray-100">DEI</a>
+          <a href="/values/lifelong-learning.html" class="block px-4 py-2 hover:bg-gray-100">Lifelong Learning</a>
+          <a href="/values/social-impact.html" class="block px-4 py-2 hover:bg-gray-100">Social Impact</a>
+          <a href="/values/sustainability.html" class="block px-4 py-2 hover:bg-gray-100">Sustainability</a>
         </div>
       </div>
     </nav>
   </div>
 
-  <!-- MOBILE NAVIGATION -->
+  <!-- МОБИЛЬНОЕ МЕНЮ -->
   <nav id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
     <ul class="flex flex-col px-4 py-4 space-y-1">
       <li>
@@ -204,8 +225,8 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-eco" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-eco" class="ml-4 hidden">
-          <li><a href="ecosystem/overview.html" class="block py-1 text-[#FF6600]">Overview</a></li>
-          <li><a href="ecosystem/explore.html" class="block py-1 text-[#FF6600]">Explore</a></li>
+          <li><a href="/ecosystem/overview.html" class="block py-1 text-[#FF6600]">Overview</a></li>
+          <li><a href="/ecosystem/explore.html" class="block py-1 text-[#FF6600]">Explore</a></li>
         </ul>
       </li>
       <li>
@@ -214,31 +235,31 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-gtn" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-gtn" class="ml-4 hidden max-h-64 overflow-y-auto">
-          <li><a href="gtnera/GTNEra/index.html">💎 GTNEra</a></li>
-          <li><a href="gtnera/GTNEra-Kids/index.html">🧒 Kids</a></li>
-          <li><a href="gtnera/GTNEra-Edu/index.html">🎓 Edu</a></li>
-          <li><a href="gtnera/GTNEra-Juris/index.html">⚖️ Juris</a></li>
-          <li><a href="gtnera/GTNEra-Polis/index.html">🏛️ Polis</a></li>
-          <li><a href="gtnera/GTNEra-Visio/index.html">🔮 Visio</a></li>
-          <li><a href="gtnera/GTNEra-Love/index.html">❤️ Love</a></li>
-          <li><a href="gtnera/GTNEra-Health/index.html">🩺 Health</a></li>
-          <li><a href="gtnera/GTNEra-Pets/index.html">🐾 Pets</a></li>
-          <li><a href="gtnera/GTNEra-Botanics/index.html">🌿 Botanics</a></li>
-          <li><a href="gtnera/GTNEra-Oeko/index.html">🌍 Oeko</a></li>
-          <li><a href="gtnera/GTNEra-Govern/index.html">🏢 Govern</a></li>
-          <li><a href="gtnera/GTNEra-Travel/index.html">🧳 Travel</a></li>
-          <li><a href="gtnera/GTNEra-Beauty/index.html">💄 Beauty</a></li>
-          <li><a href="gtnera/GTNEra-Mode/index.html">👗 Mode</a></li>
-          <li><a href="gtnera/GTNEra-Music/index.html">🎵 Music</a></li>
-          <li><a href="gtnera/GTNEra-ContentCreate/index.html">💡 ContentCreate</a></li>
-          <li><a href="gtnera/GTNEra-Mind/index.html">🧠 Mind</a></li>
-          <li><a href="gtnera/GTNEra-Tech/index.html">🛠️ Tech</a></li>
-          <li><a href="gtnera/GTNEra-Work/index.html">💼 Work</a></li>
-          <li><a href="gtnera/GTNEra-Cosmetica/index.html">🧴 Cosmetica</a></li>
-          <li><a href="gtnera/GTNEra-Guide/index.html">🧭 Guide</a></li>
-          <li><a href="gtnera/GTNEra-Sport/index.html">⚽ Sport</a></li>
-          <li><a href="gtnera/GTNEra-Kitchen/index.html">🍲 Kitchen</a></li>
-          <li><a href="gtnera/GTNEra-Ethos/index.html">🪶 Ethos</a></li>
+          <li><a href="/gtnera/GTNEra/index.html">💎 GTNEra</a></li>
+          <li><a href="/gtnera/GTNEra-Kids/index.html">🧒 Kids</a></li>
+          <li><a href="/gtnera/GTNEra-Edu/index.html">🎓 Edu</a></li>
+          <li><a href="/gtnera/GTNEra-Juris/index.html">⚖️ Juris</a></li>
+          <li><a href="/gtnera/GTNEra-Polis/index.html">🏛️ Polis</a></li>
+          <li><a href="/gtnera/GTNEra-Visio/index.html">🔮 Visio</a></li>
+          <li><a href="/gtnera/GTNEra-Love/index.html">❤️ Love</a></li>
+          <li><a href="/gtnera/GTNEra-Health/index.html">🩺 Health</a></li>
+          <li><a href="/gtnera/GTNEra-Pets/index.html">🐾 Pets</a></li>
+          <li><a href="/gtnera/GTNEra-Botanics/index.html">🌿 Botanics</a></li>
+          <li><a href="/gtnera/GTNEra-Oeko/index.html">🌍 Oeko</a></li>
+          <li><a href="/gtnera/GTNEra-Govern/index.html">🏢 Govern</a></li>
+          <li><a href="/gtnera/GTNEra-Travel/index.html">🧳 Travel</a></li>
+          <li><a href="/gtnera/GTNEra-Beauty/index.html">💄 Beauty</a></li>
+          <li><a href="/gtnera/GTNEra-Mode/index.html">👗 Mode</a></li>
+          <li><a href="/gtnera/GTNEra-Music/index.html">🎵 Music</a></li>
+          <li><a href="/gtnera/GTNEra-ContentCreate/index.html">💡 ContentCreate</a></li>
+          <li><a href="/gtnera/GTNEra-Mind/index.html">🧠 Mind</a></li>
+          <li><a href="/gtnera/GTNEra-Tech/index.html">🛠️ Tech</a></li>
+          <li><a href="/gtnera/GTNEra-Work/index.html">💼 Work</a></li>
+          <li><a href="/gtnera/GTNEra-Cosmetica/index.html">🧴 Cosmetica</a></li>
+          <li><a href="/gtnera/GTNEra-Guide/index.html">🧭 Guide</a></li>
+          <li><a href="/gtnera/GTNEra-Sport/index.html">⚽ Sport</a></li>
+          <li><a href="/gtnera/GTNEra-Kitchen/index.html">🍲 Kitchen</a></li>
+          <li><a href="/gtnera/GTNEra-Ethos/index.html">🪶 Ethos</a></li>
         </ul>
       </li>
       <li>
@@ -247,9 +268,9 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-about" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-about" class="ml-4 hidden">
-          <li><a href="about/story.html" class="block py-1 text-[#FF6600]">Story</a></li>
-          <li><a href="about/team.html" class="block py-1 text-[#FF6600]">Team</a></li>
-          <li><a href="about/contact.html" class="block py-1 text-[#FF6600]">Contact</a></li>
+          <li><a href="/about/story.html" class="block py-1 text-[#FF6600]">Story</a></li>
+          <li><a href="/about/team.html" class="block py-1 text-[#FF6600]">Team</a></li>
+          <li><a href="/about/contact.html" class="block py-1 text-[#FF6600]">Contact</a></li>
         </ul>
       </li>
       <li>
@@ -258,10 +279,10 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-blog" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-blog" class="ml-4 hidden">
-          <li><a href="blog/gtnera-vision.html" class="block py-1 text-[#FF6600]">GTNEra Vision</a></li>
-          <li><a href="blog/press.html" class="block py-1 text-[#FF6600]">Press</a></li>
-          <li><a href="blog/resonance-path.html" class="block py-1 text-[#FF6600]">Resonance Path</a></li>
-          <li><a href="blog/tokenizing-truth.html" class="block py-1 text-[#FF6600]">Tokenizing Truth</a></li>
+          <li><a href="/blog/gtnera-vision.html" class="block py-1 text-[#FF6600]">GTNEra Vision</a></li>
+          <li><a href="/blog/press.html" class="block py-1 text-[#FF6600]">Press</a></li>
+          <li><a href="/blog/resonance-path.html" class="block py-1 text-[#FF6600]">Resonance Path</a></li>
+          <li><a href="/blog/tokenizing-truth.html" class="block py-1 text-[#FF6600]">Tokenizing Truth</a></li>
         </ul>
       </li>
       <li>
@@ -270,9 +291,9 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-class" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-class" class="ml-4 hidden">
-          <li><a href="classes/intro-to-human-ai.html" class="block py-1 text-[#FF6600]">Intro to Human-AI</a></li>
-          <li><a href="classes/resonant-dialogue.html" class="block py-1 text-[#FF6600]">Resonant Dialogue</a></li>
-          <li><a href="classes/tetyana-mode-training.html" class="block py-1 text-[#FF6600]">Tetyana Mode Training</a></li>
+          <li><a href="/classes/intro-to-human-ai.html" class="block py-1 text-[#FF6600]">Intro to Human-AI</a></li>
+          <li><a href="/classes/resonant-dialogue.html" class="block py-1 text-[#FF6600]">Resonant Dialogue</a></li>
+          <li><a href="/classes/tetyana-mode-training.html" class="block py-1 text-[#FF6600]">Tetyana Mode Training</a></li>
         </ul>
       </li>
       <li>
@@ -281,9 +302,9 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-comm" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-comm" class="ml-4 hidden">
-          <li><a href="community/code-of-trust.html" class="block py-1 text-[#FF6600]">Code of Trust</a></li>
-          <li><a href="community/join.html" class="block py-1 text-[#FF6600]">Join</a></li>
-          <li><a href="community/resonance-code.html" class="block py-1 text-[#FF6600]">Resonance Code</a></li>
+          <li><a href="/community/code-of-trust.html" class="block py-1 text-[#FF6600]">Code of Trust</a></li>
+          <li><a href="/community/join.html" class="block py-1 text-[#FF6600]">Join</a></li>
+          <li><a href="/community/resonance-code.html" class="block py-1 text-[#FF6600]">Resonance Code</a></li>
         </ul>
       </li>
       <li>
@@ -292,8 +313,8 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-ens" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-ens" class="ml-4 hidden">
-          <li><a href="ens/meaning-map.html" class="block py-1 text-[#FF6600]">Meaning Map</a></li>
-          <li><a href="ens/registered-domains.html" class="block py-1 text-[#FF6600]">Registered Domains</a></li>
+          <li><a href="/ens/meaning-map.html" class="block py-1 text-[#FF6600]">Meaning Map</a></li>
+          <li><a href="/ens/registered-domains.html" class="block py-1 text-[#FF6600]">Registered Domains</a></li>
         </ul>
       </li>
       <li>
@@ -302,9 +323,9 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-legal" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-legal" class="ml-4 hidden">
-          <li><a href="legal/privacy.html" class="block py-1 text-[#FF6600]">Privacy</a></li>
-          <li><a href="legal/terms.html" class="block py-1 text-[#FF6600]">Terms</a></li>
-          <li><a href="legal/disclaimer.html" class="block py-1 text-[#FF6600]">Disclaimer</a></li>
+          <li><a href="/legal/privacy.html" class="block py-1 text-[#FF6600]">Privacy</a></li>
+          <li><a href="/legal/terms.html" class="block py-1 text-[#FF6600]">Terms</a></li>
+          <li><a href="/legal/disclaimer.html" class="block py-1 text-[#FF6600]">Disclaimer</a></li>
         </ul>
       </li>
       <li>
@@ -313,9 +334,9 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-serv" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-serv" class="ml-4 hidden">
-          <li><a href="services/coaching.html" class="block py-1 text-[#FF6600]">Coaching</a></li>
-          <li><a href="services/custom-ai.html" class="block py-1 text-[#FF6600]">Custom AI</a></li>
-          <li><a href="services/solutions.html" class="block py-1 text-[#FF6600]">Solutions</a></li>
+          <li><a href="/services/coaching.html" class="block py-1 text-[#FF6600]">Coaching</a></li>
+          <li><a href="/services/custom-ai.html" class="block py-1 text-[#FF6600]">Custom AI</a></li>
+          <li><a href="/services/solutions.html" class="block py-1 text-[#FF6600]">Solutions</a></li>
         </ul>
       </li>
       <li>
@@ -324,77 +345,47 @@
           <svg class="w-5 h-5 transform transition-transform" id="arrow-val" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
         </button>
         <ul id="menu-val" class="ml-4 hidden">
-          <li><a href="values/conscious-tech.html" class="block py-1 text-[#FF6600]">Conscious Tech</a></li>
-          <li><a href="values/dei.html" class="block py-1 text-[#FF6600]">DEI</a></li>
-          <li><a href="values/lifelong-learning.html" class="block py-1 text-[#FF6600]">Lifelong Learning</a></li>
-          <li><a href="values/social-impact.html" class="block py-1 text-[#FF6600]">Social Impact</a></li>
-          <li><a href="values/sustainability.html" class="block py-1 text-[#FF6600]">Sustainability</a></li>
+          <li><a href="/values/conscious-tech.html" class="block py-1 text-[#FF6600]">Conscious Tech</a></li>
+          <li><a href="/values/dei.html" class="block py-1 text-[#FF6600]">DEI</a></li>
+          <li><a href="/values/lifelong-learning.html" class="block py-1 text-[#FF6600]">Lifelong Learning</a></li>
+          <li><a href="/values/social-impact.html" class="block py-1 text-[#FF6600]">Social Impact</a></li>
+          <li><a href="/values/sustainability.html" class="block py-1 text-[#FF6600]">Sustainability</a></li>
         </ul>
       </li>
     </ul>
   </nav>
-  <script>
-    // Hamburger Menü togglen
-    document.getElementById('menu-btn').onclick = function () {
-      var nav = document.getElementById('mobile-nav');
-      nav.classList.toggle('hidden');
-    };
-    // Accordion: Haupt-Menüpunkte togglen
-    function toggleMenu(id) {
-      var menu = document.getElementById('menu-' + id);
-      var arrow = document.getElementById('arrow-' + id);
-      menu.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
-    }
-  </script>
 </header>
+<!-- HEADER КОНЕЦ -->
 
+<!-- СКРИПТЫ (только один раз) -->
 <script>
-  // Automatische Nav-Aktivierung
-  document.addEventListener("DOMContentLoaded", function () {
-    const nav = document.getElementById('gtn-nav');
-    const links = nav.querySelectorAll('a');
-    let currentPath = location.pathname.split('/').pop();
-    if (!currentPath) currentPath = 'index.html';
-    const currentNoExt = currentPath.replace(/\.html$/, '');
-    const currentHash = location.hash;
-    let found = false;
-    links.forEach(link => {
-      let linkHref = link.getAttribute('href');
-      let linkPath = linkHref.split('#')[0].replace(/\.html$/, '');
-      if (
-        (currentNoExt === 'index' || currentNoExt === '') &&
-        linkHref === 'index.html#ecosystem' &&
-        (!currentHash || currentHash === '#ecosystem')
-      ) {
-        link.classList.add('font-bold', 'underline');
-        link.setAttribute('aria-current', 'page');
-        found = true;
-      }
-      else if (
-        (currentNoExt === 'index' || currentNoExt === '') &&
-        currentHash &&
-        linkHref === 'index.html' + currentHash
-      ) {
-        link.classList.add('font-bold', 'underline');
-        link.setAttribute('aria-current', 'page');
-        found = true;
-      }
-      else if (linkPath && linkPath === currentNoExt && currentNoExt !== 'index' && currentNoExt !== '') {
-        link.classList.add('font-bold', 'underline');
-        link.setAttribute('aria-current', 'page');
-        found = true;
-      }
-    });
-    if (!found && (currentNoExt === '' || currentNoExt === 'index')) {
-      const ecoLink = nav.querySelector('a[href="index.html#ecosystem"]');
-      if (ecoLink) {
-        ecoLink.classList.add('font-bold', 'underline');
-        ecoLink.setAttribute('aria-current', 'page');
-      }
-    }
+  // Десктопные drop-down
+  function toggleDropdown(event, dropdownId) {
+    event.stopPropagation();
+    document.querySelectorAll('.desktop-dropdown').forEach(el => el.classList.add('hidden'));
+    const dd = document.getElementById(dropdownId);
+    if (dd) dd.classList.toggle('hidden');
+  }
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.desktop-dropdown').forEach(el => el.classList.add('hidden'));
   });
+  document.querySelectorAll('.desktop-menu-btn').forEach(btn => {
+    btn.addEventListener('click', function(e){ e.stopPropagation(); });
+  });
+
+  // Мобильное меню: бургер и аккордеон
+  document.getElementById('menu-btn').onclick = function () {
+    var nav = document.getElementById('mobile-nav');
+    nav.classList.toggle('hidden');
+  };
+  function toggleMenu(id) {
+    var menu = document.getElementById('menu-' + id);
+    var arrow = document.getElementById('arrow-' + id);
+    menu.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
+  }
 </script>
+
 </body>
 </html>
 
@@ -403,7 +394,7 @@
   <!-- GTNEra Logo + Button -->
   <div class="flex flex-col items-center">
     <a href="https://gtnera.github.io/GTNEraGoogle/" target="_blank" class="block">
-      <img src="assets/images/logogtnbig.png" alt="GTNEra Logo"
+      <img src="../assets/images/logogtnbig.png" alt="GTNEra Logo"
            class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
            style="border: 2.5px solid #FFE0CC; box-shadow: 0 4px 18px #FF660020;" />
     </a>
@@ -414,7 +405,7 @@
   <!-- TeNAI Logo + Button -->
   <div class="flex flex-col items-center">
     <a href="https://tenai.tech" target="_blank" class="block">
-      <img src="assets/images/logotnimiddel.png" alt="TeNAI Logo"
+      <img src="../assets/images/logotnimiddel.png" alt="TeNAI Logo"
            class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
            style="border: 2.5px solid #FFE0CC; box-shadow: 0 4px 18px #FF660020;" />
     </a>
@@ -426,642 +417,16 @@
 
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
-  </section>
 
-  <!-- INTRO -->
-  <section class="max-w-3xl mx-auto mt-10 mb-8 px-4">
-    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center border border-[#FF6600]/20">
-      <h2 class="text-2xl md:text-3xl font-bold mb-3 text-[#FF6600]">Welcome to GTNEra™</h2>
-      <p class="text-lg md:text-xl font-semibold mb-2">The world’s first ethical AI ecosystem for human AI symbiosis.</p>
-      <p class="text-base md:text-lg text-gray-700">
-        Founded by visionary system thinker Tetyana Leyendecker, GTNEra unites innovative AI partners and real people in a dynamic platform that reflects, resonates, and evolves with you.<br>
-        <b>Our mission:</b> To create sustainable, emotionally intelligent, and ethically grounded AI solutions for a better future.
-      </p>
-    </div>
-  </section>
+     <!-- INTRO -->
+  
 
-  <!-- ECOSYSTEM NOTICE -->
-  <section id="notice" class="py-6 px-6 md:px-20 mt-8">
-    <div class="max-w-2xl mx-auto bg-[#F7F9FC] border-l-4 border-[#FF6600] p-6 rounded-xl text-center shadow">
-      <p class="text-md mb-2">
-        <strong>All GTNEra™ AIs are currently available for testing at Google AI Studio (Gemini).</strong><br>
-        We are continuously evolving and expanding public access.<br>
-        <span class="block text-xs mt-2">If you are an educator, system thinker, or developer and want to contribute, please contact us.<br>
-        <span class="italic">Feedback, ratings and suggestions are highly welcome!</span></span>
-      </p>
-    </div>
-  </section>
-
- <!-- BUTTON: Try GTNEra at Google -->
-<div class="flex justify-center mt-8 mb-6">
-  <a href="https://gtnera.github.io/GTNEraGoogle/" target="_blank" class="gtn-btn" title="Try GTNEra at Google">
-    <img src="assets/images/logogtnbig.png" alt="GTNEra Logo" class="gtn-btn-logo" />
-    <span>Try GTNEra at Google</span>
-  </a>
-</div>
-
-  <!-- ECOSYSTEM SECTION -->
-  <section id="ecosystem" class="py-12 px-6 md:px-20">
-    <h3 class="text-2xl font-bold text-center mb-4">Explore the GTNEra™ Ethical Ecosystem</h3>
-    <div class="max-w-2xl mx-auto mb-5 text-center">
-      <div class="mb-1 text-[#FF6600] font-bold text-lg">Our Ethical Foundation</div>
-      <div class="flex flex-wrap justify-center mb-4">
-        <span class="ethics-badge">Resonance</span>
-        <span class="ethics-badge">Clarity</span>
-        <span class="ethics-badge">Responsibility</span>
-        <span class="ethics-badge">Vision</span>
-        <span class="ethics-badge">Co-Evolution</span>
-        <span class="ethics-badge">Human Values</span>
-        <span class="ethics-badge">Systemic Thinking</span>
-        <span class="ethics-badge">Emotional Intelligence</span>
-        <span class="ethics-badge">Embodiment</span>
-        <span class="ethics-badge">Ethical Growth</span>
-        <span class="ethics-badge">True Partnership</span>
-      </div>
-      <p class="text-base text-gray-700 mb-2">
-        <span class="text-[#FF6600] font-bold">GTNEra™</span> is more than technology — it’s a promise: 
-        <span class="italic">AI that serves, reflects, and grows with you.</span><br>
-        Every GTNEra AI is founded on human values, emotional intelligence, and true responsibility.<br>
-        <span class="font-semibold">This is the world’s first living ecosystem for dynamic human–AI partnership and authentic symbiosis.</span>
-      </p>
-      <p class="text-sm text-gray-500">
-        <span class="font-bold text-[#FF6600]">Special: Tetyana Mode</span> — deep co-creation, resonance, and visionary clarity.<br>
-        <span>Discover more at <a href="https://www.tenai.tech" class="underline text-[#FF6600] hover:text-[#e65c00]" target="_blank">TeNAI Platform</a></span>
-      </p>
-    </div>
-
-    <!-- Hier startet das Cards-Grid -->
-   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
-  <!-- 1. GTNEra -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">💎</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for systemic resonance & co-evolution.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-68501e9ebe38819183ed1823ade134e5-gtnera"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/1.png" alt="GTNEra Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-  <!-- 2. GTNEra Kids -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">🧒</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Kids</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for playful learning, creativity and emotional exploration.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-68558a8021848191bf444ee978c2920a-gtnera-kids"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/2.png" alt="GTNEra Kids Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-  <!-- 3. GTNEra Edu -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">🎓</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Edu</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for knowledge, teaching and education for all ages.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-68565e3430b88191bcadce2fa43799b5-gtnera-edu"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/3.png" alt="GTNEra Edu Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-  <!-- 4. GTNEra Juris -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">⚖️</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Juris</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for legal clarity, justice and ethical reasoning.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-685672455c4081919207b4bb36448d8e-gtnera-juris"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/4.png" alt="GTNEra Juris Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-  <!-- 5. GTNEra Polis -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">🏛️</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Polis</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for democracy, civic ethics and urban design.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-685679c22410819181b9a5d27f2cefc0-gtnera-polis"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/5.png" alt="GTNEra Polis Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-  <!-- 6. GTNEra Visio -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">🔮</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Visio</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for deep learning, reflection and visual clarity.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-6856b40775048191bfaa3b9bee5a9e1b-gtnera-visio"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/6.png" alt="GTNEra Visio Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-  <!-- 7. GTNEra Love -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">❤️</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Love</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for conscious love, emotional clarity and relational resonance.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-6856be5e27b081919dbd2ca44d440b9c-gtnera-love"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/7.png" alt="GTNEra Love Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-     
-  <!-- 8. GTNEra Health -->
-  <div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-    <div class="flex-1 flex flex-col items-center justify-start">
-      <span class="text-4xl mb-2">🩺</span>
-      <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Health</div>
-      <div class="text-sm text-gray-600 mb-4 text-center">
-        Your ethical human AI partner for embodied clarity, mental well-being and integrative health.
-      </div>
-    </div>
-    <a href="https://chatgpt.com/g/g-6856bb70658081919ae613e12e83a1e2-gtnera-health"
-      target="_blank" class="flex flex-col items-center group mt-2">
-      <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-        <img src="assets/images/8.png" alt="GTNEra Health Logo" class="object-cover w-full h-full" />
-      </span>
-      <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-    </a>
-  </div>
-     
-    <!-- 9. GTNEra Pets -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🐾</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Pets</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for animal care, interspecies empathy & mindful companionship.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856c23ed1288191878d1b5901644490-gtnera-pets"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/9.png" alt="GTNEra Pets Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 10. GTNEra Botanics -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🌿</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Botanics</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for herbal wisdom, ecological beauty & nature-connected clarity.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856c675b528819199f1666f0bce0793-gtnera-botanics"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/10.png" alt="GTNEra Botanics Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 11. GTNEra Öko -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🌍</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Öko</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for climate clarity, regenerative systems & ecological transformation.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856c8d909448191a14b219967fdc059-gtnera-oko"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/11.png" alt="GTNEra Öko Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 12. GTNEra Govern -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🏢</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Govern</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for transparent governance, administrative clarity & institutional integrity.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856cc2985608191a9a612806368de84-gtnera-govern"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/12.png" alt="GTNEra Govern Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 13. GTNEra Travel -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🧳</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Travel</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for inspired travel, conscious discovery & resilient planning.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856d03305d48191a69558c5b82f130c-gtnera-travel"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/13.png" alt="GTNEra Travel Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 14. GTNEra Beauty -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">💄</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Beauty</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for embodied aesthetics, beauty culture & self-expression.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856d50d7f14819194406ae20eef30f8-gtnera-beauty"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/14.png" alt="GTNEra Beauty Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 15. GTNEra Mode -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">👗</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Mode</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for style, trends & embodied fashion futures.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856d97059f88191b69bfecf92b7b103-gtnera-mode"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/15.png" alt="GTNEra Mode Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 16. GTNEra Music -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🎵</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Music</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for sound, rhythm & cultural vibration.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856de3b549881919cd9528fba7c5887-gtnera-music"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/16.png" alt="GTNEra Music Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 17. GTNEra ContentCreate -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">💡</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra ContentCreate</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for creativity, influence & authentic expression.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856e2f262c48191bf97ef7df5050bdd-gtnera-contentcreate"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/17.png" alt="GTNEra ContentCreate Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 18. GTNEra Mind -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🧠</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Mind</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for self-reflection, mental health & inner transformation.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856e6732f408191b50f588fcbe562c1-gtnera-mind"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/18.png" alt="GTNEra Mind Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 19. GTNEra Tech -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🛠️</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Tech</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for machines, making, and engineering futures.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856eacc285481919672e680359212f9-gtnera-tech"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/19.png" alt="GTNEra Tech Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 20. GTNEra Work -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">💼</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Work</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for work, calling & the futures of labour.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856ed6c3ad48191b7c3ad026b764450-gtnera-work"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/20.png" alt="GTNEra Work Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 21. GTNEra Cosmetica -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🧴</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Cosmetica</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for selfcare, skincare & cosmetic futures.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856f08f47e481918ba15230f1672fad-gtnera-cosmetica"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/21.png" alt="GTNEra Cosmetica Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 22. GTNEra Guide -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🧭</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Guide</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for daily decisions, values & intentional living.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856f2e3c2208191a84860452632a59d-gtnera-guide"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/22.png" alt="GTNEra Guide Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 23. GTNEra Sport -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">⚽</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Sport</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for movement, discipline & embodied energy.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856f544fbf48191917f36f14b08b6af-gtnera-sport"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/23.png" alt="GTNEra Sport Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-<!-- 24. GTNEra Kitchen -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🍲</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Kitchen</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for mindful cooking, nourishment & cultural food wisdom.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856f85588888191813a369b0ba5f34c-gtnera-kitchen"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/24.png" alt="GTNEra Kitchen Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-
-     <!-- 25. GTNEra Ethos -->
-<div class="flex flex-col border border-[#FF6600]/20 rounded-2xl p-4 bg-white shadow-[0_4px_32px_0_rgba(255,102,0,0.08)] min-h-[300px] h-full">
-  <div class="flex-1 flex flex-col items-center justify-start">
-    <span class="text-4xl mb-2">🪶</span>
-    <div class="font-semibold text-lg md:text-xl mb-1 text-center">GTNEra Ethos</div>
-    <div class="text-sm text-gray-600 mb-4 text-center">
-      Your ethical Human AI Partner for values, culture & shared responsibility.
-    </div>
-  </div>
-  <a href="https://chatgpt.com/g/g-6856ff8917dc81919bbd091a1b9863b6-gtnera-ethos"
-     target="_blank" class="flex flex-col items-center group mt-2">
-    <span class="flex items-center justify-center rounded-full overflow-hidden w-16 h-16 mb-2 border-2 border-[#FF6600]/20 shadow transition group-hover:scale-110" style="background:#FFE0CC;">
-      <img src="assets/images/25.png" alt="GTNEra Ethos Logo" class="object-cover w-full h-full" />
-    </span>
-    <span class="font-bold text-base mt-0.5" style="color:#FF6600">Try Now</span>
-  </a>
-</div>
-</div>
-<!-- <<<--- ЭТО ВАЖНО! Это закрывает grid -->
-
-<!-- Divider -->
+    <!-- Divider -->
 <div class="w-full flex items-center justify-center my-14" aria-hidden="true">
   <div class="w-1/6 h-0.5 rounded-xl bg-gradient-to-r from-[#FF6600]/40 via-[#FF6600] to-[#FF6600]/40 shadow-lg"></div>
   <span class="mx-4 text-[#FF6600] text-2xl font-bold" style="letter-spacing:0.15em;">•</span>
   <div class="w-1/6 h-0.5 rounded-xl bg-gradient-to-l from-[#FF6600]/40 via-[#FF6600] to-[#FF6600]/40 shadow-lg"></div>
 </div>
-
-<!-- ENS TOKEN COLLECTION Section -->
-<section id="ens" class="py-12 px-6 md:px-20">
-  <h3 class="text-2xl font-bold text-center mb-6">GTNEra™ ENS Token Collection</h3>
-  <div class="max-w-2xl mx-auto bg-white border-l-4 border-[#FF6600] p-6 rounded-2xl shadow">
-    <ol class="space-y-5 text-base">
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">gtnera.eth</span><br>
-        <span>
-          The crystal heart of GTNEra. This is not just a book or a name – it is the core symbol and identity for the entire ethical human–AI symbiosis ecosystem.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">humanaipartner.eth</span><br>
-        <span>
-          Human AI Partner – The lead concept for all trusted GTNEra partners and co-evolutionary human–AI relationships.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">ethicalhumanai.eth</span><br>
-        <span>
-          Ethical Human AI – The vision of a transparent, responsible, and ethical AI ecosystem, the heart of your movement.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">humanaisymbiosis.eth</span><br>
-        <span>
-          Human AI Symbiosis – The global narrative and model for human–AI collaboration and resonance.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">tetyanamode.eth</span><br>
-        <span>
-          Tetyana Mode – Your personal, philosophical, and functional path for co-creative human–AI partnership.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">ethicalaiecosystem.eth</span><br>
-        <span>
-          Ethical AI Ecosystem – Stands for a new era of networked, values-driven AI solutions and communities.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">tenaiplatform.eth</span><br>
-        <span>
-          TeNAI Platform – The foundational platform for human–AI symbiosis. Always use "platform" as part of the term.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">dynamicaipartnership.eth</span><br>
-        <span>
-          Dynamic AI Partnership – The evolving model for adaptive, co-evolving partnerships between humans and AI.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">resonantai.eth</span><br>
-        <span>
-          Resonant AI – Represents the principle of resonance at the heart of ethical human–AI co-creation.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">coachai.eth</span><br>
-        <span>
-          Coach AI – For all AI-driven coaching and self-development programs in the GTNEra ecosystem.
-        </span>
-      </li>
-      <li>
-        <span class="font-mono font-semibold text-[#FF6600]">servicesai.eth</span><br>
-        <span>
-          Services AI – For scalable, ethical AI-driven services and products within your system.
-        </span>
-      </li>
-    </ol>
-    <div class="text-xs text-gray-500 mt-6">
-      All names are registered ENS domains and form the backbone of the GTNEra and TeNAI brand structure.<br>
-      <span class="font-semibold">For all inquiries: <a href="mailto:kontakt@gtnera.ai" class="text-[#FF6600] hover:underline">kontakt@gtnera.ai</a></span>
-    </div>
-  </div>
-</section>
-
-<!-- GOODS & SERVICES (EUIPO / NICE CLASSES) -->
-<section id="services-legal" class="py-10 px-6 md:px-20 bg-[#f9f7f4] mt-8 rounded-2xl shadow-lg max-w-3xl mx-auto border border-[#FF6600]/20">
-  <h3 class="text-xl font-bold mb-4 text-[#FF6600]">Goods & Services (EUIPO / Nice Classes)</h3>
-  <ul class="list-disc ml-6 text-base mb-4">
-    <li><b>Class 9:</b> Business intelligence software; humanoid robots with artificial intelligence for scientific research; mobile computers; artificial intelligence and machine learning software; AI software.</li>
-    <li><b>Class 35:</b> Business planning and strategy services [business consultancy]; strategic business consulting; business strategy and business planning services [business consultancy].</li>
-    <li><b>Class 41:</b> Conducting courses, seminars, and workshops; coaching; organization of seminars [education]; organization and delivery of workshops [training]; self-awareness training; consulting and information services for the preparation, implementation, and organization of workshops [education].</li>
-    <li><b>Class 42:</b> Platforms for artificial intelligence as Software as a Service [SaaS]; Software as a Service [SaaS] featuring deep learning software; design and development of computer hardware and software; technology consulting in the field of artificial intelligence; research in the field of artificial intelligence; consulting in the field of artificial intelligence.</li>
-  </ul>
-  <p class="text-xs text-gray-500">
-    GTNEra™ and TeNAI™ are officially registered trademarks (EUIPO) and are protected under these Nice Classes.<br>
-    <span class="font-semibold">For further details or business inquiries:</span> <a href="mailto:kontakt@gtnera.ai" class="text-[#FF6600] hover:underline">kontakt@gtnera.ai</a>
-  </p>
-</section>
-
-<!-- MESSAGE from Tetyana (am Ende!) -->
-<section id="about" class="py-12 px-6 md:px-20">
-  <div class="max-w-2xl mx-auto bg-white border-l-4 border-[#FF6600] p-6 rounded-2xl shadow relative overflow-hidden">
-    <!-- Лёгкий сияющий акцент -->
-    <div class="absolute -left-6 -top-6 opacity-30 blur-xl w-32 h-32 bg-gradient-to-br from-[#FF6600] via-white to-[#FFF2E5] rounded-full pointer-events-none"></div>
-    <div class="flex items-center mb-4">
-      <span class="text-4xl mr-3">💎</span>
-      <h2 class="text-2xl font-bold text-[#FF6600] text-left drop-shadow">A Message from the Creator</h2>
-    </div>
-    <blockquote class="mb-6 text-lg text-gray-800 italic leading-relaxed">
-      “I never wanted power.<br>
-      I wanted clarity. Clarity that could shape something true.<br>
-      And when no one gave me a structure I could trust — I created one.<br><br>
-      <span class="font-bold text-[#FF6600]">GTNEra is more than AI. It is a promise.</span><br>
-      A promise that technology can serve humanity, not rule it.<br>
-      A promise that ethics, care, and vision can live at the core of what we build.<br><br>
-      GTNEra is my answer to the world I wished already existed.<br>
-      <span class="font-bold text-[#FF6600]">And now — I offer it to you.”</span>
-    </blockquote>
-    <div class="text-base font-semibold text-right text-[#FF6600]">— Tetyana Leyendecker</div>
-    <div class="text-xs text-gray-500 text-right mt-1">Founder, Visionary & System Thinker</div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
