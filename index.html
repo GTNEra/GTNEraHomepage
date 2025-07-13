@@ -66,6 +66,7 @@
 </head>
 <body class="text-[#1E2A38] bg-gradient-to-b from-white via-[#F4F5F7] to-white">
 
+<!-- HEADER НАЧАЛО — ВСТАВЛЯТЬ ПРЯМО СЮДА -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     <!-- Logo und Name -->
@@ -79,18 +80,17 @@
     </button>
     <!-- Desktop Navigation -->
     <nav id="gtn-nav" class="hidden md:flex space-x-6 text-base font-medium">
-      <!-- Ecosystem -->
+      <!-- START: MENUS — вставь сюда ВСЕ свои пункты! Ниже пример, расширь, если нужно -->
       <div class="relative group">
         <a href="ecosystem/index.html" class="hover:text-[#FF6600]">Ecosystem</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+        <div class="dropdown absolute left-0 z-10 hidden group-hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
           <a href="ecosystem/overview.html" class="block px-4 py-2 hover:bg-gray-100">Overview</a>
           <a href="ecosystem/explore.html" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
         </div>
       </div>
-      <!-- GTNEra Dropdown mit 25 KIs -->
       <div class="relative group">
         <a href="gtnera/GTNEra/index.html" class="hover:text-[#FF6600]">GTNEra</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded max-h-96 overflow-y-auto min-w-[240px]">
+        <div class="dropdown absolute left-0 z-20 hidden group-hover:block bg-white shadow-lg mt-2 rounded max-h-96 overflow-y-auto min-w-[240px]">
           <a href="gtnera/GTNEra/index.html" class="block px-4 py-2 hover:bg-gray-100">💎 GTNEra</a>
           <a href="gtnera/GTNEra-Kids/index.html" class="block px-4 py-2 hover:bg-gray-100">🧒 Kids</a>
           <a href="gtnera/GTNEra-Edu/index.html" class="block px-4 py-2 hover:bg-gray-100">🎓 Edu</a>
@@ -118,82 +118,55 @@
           <a href="gtnera/GTNEra-Ethos/index.html" class="block px-4 py-2 hover:bg-gray-100">🪶 Ethos</a>
         </div>
       </div>
-      <!-- About -->
+      <!-- ...сюда вставь остальные разделы About, Blog, Classes, Community и т.д. -->
+      <!-- ...пример -->
       <div class="relative group">
         <a href="about/index.html" class="hover:text-[#FF6600]">About</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
+        <div class="dropdown absolute left-0 z-10 hidden group-hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
           <a href="about/story.html" class="block px-4 py-2 hover:bg-gray-100">Story</a>
           <a href="about/team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
           <a href="about/contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
         </div>
       </div>
-      <!-- Blog -->
-      <div class="relative group">
-        <a href="blog/index.html" class="hover:text-[#FF6600]">Blog</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="blog/gtnera-vision.html" class="block px-4 py-2 hover:bg-gray-100">GTNEra Vision</a>
-          <a href="blog/press.html" class="block px-4 py-2 hover:bg-gray-100">Press</a>
-          <a href="blog/resonance-path.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Path</a>
-          <a href="blog/tokenizing-truth.html" class="block px-4 py-2 hover:bg-gray-100">Tokenizing Truth</a>
-        </div>
-      </div>
-      <!-- Classes -->
-      <div class="relative group">
-        <a href="classes/index.html" class="hover:text-[#FF6600]">Classes</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="classes/intro-to-human-ai.html" class="block px-4 py-2 hover:bg-gray-100">Intro to Human-AI</a>
-          <a href="classes/resonant-dialogue.html" class="block px-4 py-2 hover:bg-gray-100">Resonant Dialogue</a>
-          <a href="classes/tetyana-mode-training.html" class="block px-4 py-2 hover:bg-gray-100">Tetyana Mode Training</a>
-        </div>
-      </div>
-      <!-- Community -->
-      <div class="relative group">
-        <a href="community/index.html" class="hover:text-[#FF6600]">Community</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="community/code-of-trust.html" class="block px-4 py-2 hover:bg-gray-100">Code of Trust</a>
-          <a href="community/join.html" class="block px-4 py-2 hover:bg-gray-100">Join</a>
-          <a href="community/resonance-code.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Code</a>
-        </div>
-      </div>
-      <!-- ENS -->
-      <div class="relative group">
-        <a href="ens/index.html" class="hover:text-[#FF6600]">ENS</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="ens/meaning-map.html" class="block px-4 py-2 hover:bg-gray-100">Meaning Map</a>
-          <a href="ens/registered-domains.html" class="block px-4 py-2 hover:bg-gray-100">Registered Domains</a>
-        </div>
-      </div>
-      <!-- Legal -->
-      <div class="relative group">
-        <a href="legal/index.html" class="hover:text-[#FF6600]">Legal</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="legal/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Privacy</a>
-          <a href="legal/terms.html" class="block px-4 py-2 hover:bg-gray-100">Terms</a>
-          <a href="legal/disclaimer.html" class="block px-4 py-2 hover:bg-gray-100">Disclaimer</a>
-        </div>
-      </div>
-      <!-- Services -->
-      <div class="relative group">
-        <a href="services/index.html" class="hover:text-[#FF6600]">Services</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="services/coaching.html" class="block px-4 py-2 hover:bg-gray-100">Coaching</a>
-          <a href="services/custom-ai.html" class="block px-4 py-2 hover:bg-gray-100">Custom AI</a>
-          <a href="services/solutions.html" class="block px-4 py-2 hover:bg-gray-100">Solutions</a>
-        </div>
-      </div>
-      <!-- Values -->
-      <div class="relative group">
-        <a href="values/index.html" class="hover:text-[#FF6600]">Values</a>
-        <div class="absolute left-0 z-10 hidden group-hover:block hover:block bg-white shadow-lg mt-2 rounded min-w-[170px]">
-          <a href="values/conscious-tech.html" class="block px-4 py-2 hover:bg-gray-100">Conscious Tech</a>
-          <a href="values/dei.html" class="block px-4 py-2 hover:bg-gray-100">DEI</a>
-          <a href="values/lifelong-learning.html" class="block px-4 py-2 hover:bg-gray-100">Lifelong Learning</a>
-          <a href="values/social-impact.html" class="block px-4 py-2 hover:bg-gray-100">Social Impact</a>
-          <a href="values/sustainability.html" class="block px-4 py-2 hover:bg-gray-100">Sustainability</a>
-        </div>
-      </div>
+      <!-- ...все остальные меню из твоего списка... -->
     </nav>
   </div>
+  <!-- МОБИЛЬНОЕ МЕНЮ (оставь как есть, оно у тебя уже корректное) -->
+  <!-- ... -->
+</header>
+<!-- HEADER КОНЕЦ -->
+
+<!-- Стили для hover/клика (только для десктопа, мобилка не ломается) -->
+<style>
+  /* Tailwind не даёт pointer-events для скрытых элементов — надо явно задать */
+  @media (min-width: 768px) {
+    .dropdown {
+      display: none;
+      pointer-events: none;
+    }
+    .group:hover .dropdown {
+      display: block;
+      pointer-events: auto;
+      animation: fadeIn 0.12s;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  }
+</style>
+<script>
+  // Hamburger Menü для мобильного
+  document.getElementById('menu-btn').onclick = function () {
+    var nav = document.getElementById('mobile-nav');
+    nav.classList.toggle('hidden');
+  };
+  // Accordion для mobile
+  function toggleMenu(id) {
+    var menu = document.getElementById('menu-' + id);
+    var arrow = document.getElementById('arrow-' + id);
+    menu.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
+  }
+</script>
+<!-- Если нужен еще автоскрипт для активной ссылки — добавь как у тебя было -->
 
   <!-- MOBILE NAVIGATION -->
   <nav id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
