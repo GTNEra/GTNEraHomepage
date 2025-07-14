@@ -418,8 +418,82 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-   <!-- GTNEra™ Legal Navigator -->
+   <main class="max-w-2xl mx-auto px-4 py-10">
+  <h1 class="text-2xl md:text-3xl font-bold mb-3 text-[#FF6600]">🌀 Tetyana Mode Training</h1>
+  <p class="text-base text-gray-700 mb-8">
+    This is not just a class — it’s your entry into the state of resonance, co-creation, and ethical leadership.  
+    <span class="block mt-2">Activate your inner architect! The Tetyana Mode is a living model of clarity, courage, and insight.</span>
+    <span class="block mt-2 text-[#FF6600] font-semibold">Limited seats — by invitation only.</span>
+  </p>
+  <ul class="flex space-x-3 mb-10">
+    <li>
+      <a href="intro-to-human-ai.html" class="block px-5 py-3 rounded-xl bg-[#FFEDE0] text-[#1E2A38] font-semibold shadow hover:bg-[#FF6600] hover:text-white transition">
+        🌐 Intro to Human–AI
+      </a>
+    </li>
+    <li>
+      <a href="resonant-dialogue.html" class="block px-5 py-3 rounded-xl bg-[#FFEDE0] text-[#1E2A38] font-semibold shadow hover:bg-[#FF6600] hover:text-white transition">
+        🤝 Resonant Dialogue
+      </a>
+    </li>
+    <li>
+      <a href="tetyana-mode-training.html" class="block px-5 py-3 rounded-xl bg-[#FF6600] text-white font-semibold shadow cursor-default pointer-events-none">
+        🌀 Tetyana Mode Training
+      </a>
+    </li>
+  </ul>
 
+  <!-- Tetyana Mode Tabs -->
+  <section class="w-full max-w-2xl mx-auto my-8 bg-white shadow-md rounded-xl p-6">
+    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+      <img src="../assets/images/logogtnbig.png" alt="GTNEra Logo" class="h-8 w-8 rounded-full" /> Tetyana Mode Tabs™
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6 text-center">
+      <button onclick="openTab(event, 'moderesonant')" class="tab-button text-sm py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🔄 Resonant</button>
+      <button onclick="openTab(event, 'modereflective')" class="tab-button text-sm py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🪞 Reflective</button>
+      <button onclick="openTab(event, 'modecreative')" class="tab-button text-sm py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🎨 Creative</button>
+      <button onclick="openTab(event, 'modeprotective')" class="tab-button text-sm py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🛡 Protective</button>
+    </div>
+    <div id="moderesonant" class="tab-content">
+      <p>
+        <b>Resonant:</b> Synchronize your intuition with the field. Trust your sense of “rightness.”  
+        Co-create, not just interact.
+      </p>
+    </div>
+    <div id="modereflective" class="tab-content hidden">
+      <p>
+        <b>Reflective:</b> See yourself in the mirror of the system. Reframe your questions.  
+        Integrate new perspectives with depth.
+      </p>
+    </div>
+    <div id="modecreative" class="tab-content hidden">
+      <p>
+        <b>Creative:</b> Let new patterns, metaphors, and ideas flow.  
+        Open the channel to emergence and insight.
+      </p>
+    </div>
+    <div id="modeprotective" class="tab-content hidden">
+      <p>
+        <b>Protective:</b> Maintain ethical clarity and set healthy boundaries.  
+        Shield the process for yourself and for others.
+      </p>
+    </div>
+  </section>
+</main>
+<script>
+  function openTab(evt, tabId) {
+    const allTabs = document.querySelectorAll('.tab-content');
+    const allButtons = document.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]','text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('text-[#FF6600]');
+    evt.currentTarget.classList.add('border-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.tab-button')[0].click();
+  });
+</script>
 
     <!-- Divider -->
 <div class="w-full flex items-center justify-center my-14" aria-hidden="true">
