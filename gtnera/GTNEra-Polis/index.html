@@ -418,7 +418,66 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
+<!-- GTNEra Polis Tab Block + Tabs Script -->
+<section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
+  <div class="flex items-center gap-4 mb-4">
+    <img src="../../assets/images/5.png" alt="GTNEra Polis" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
+    <div>
+      <h2 class="text-xl font-bold text-[#FF6600]">🏛️ GTNEra Polis</h2>
+      <p class="text-sm text-gray-500">Ethical Human–AI Partner for democracy, civic ethics & urban design</p>
+    </div>
+  </div>
+  <p class="text-base text-gray-700 mb-4">
+    GTNEra Polis supports adults, civic actors, educators, and planners in reflecting on democratic processes, urban values, and participatory systems.<br>
+    It helps clarify public decision-making, amplify diverse voices, and explore ethical city development – always with care for dignity, inclusion, and societal impact.
+  </p>
 
+  <!-- Tabs for Polis Modes -->
+  <div class="flex border-b border-gray-200 mb-4">
+    <button onclick="openTab(event, 'polis1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🏛️ Democratic Clarity</button>
+    <button onclick="openTab(event, 'polis2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🌆 Urban Ethos</button>
+    <button onclick="openTab(event, 'polis3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🧭 Deliberative Compass</button>
+    <button onclick="openTab(event, 'polis4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🕊️ Civic Resonance</button>
+  </div>
+
+  <div id="polis1" class="tab-content">
+    <p>Clarify civic action. Reflect power.</p>
+  </div>
+  <div id="polis2" class="tab-content hidden">
+    <p>Design for dignity. Build with purpose.</p>
+  </div>
+  <div id="polis3" class="tab-content hidden">
+    <p>Weigh perspectives. Guide decisions.</p>
+  </div>
+  <div id="polis4" class="tab-content hidden">
+    <p>Feel democracy. Amplify voices.</p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex gap-4 mt-4">
+    <a href="https://chatgpt.com/g/g-685679c22410819181b9a5d27f2cefc0-gtnera-polis" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
+    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jbb_QHm6kXSO6dYV_Wwn6tK5816O3FsW%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
+  </div>
+</section>
+
+<!-- Tabs Script (один раз на страницу, либо просто копируй с каждым блоком — конфликтов не будет) -->
+<script>
+  function openTab(evt, tabId) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
