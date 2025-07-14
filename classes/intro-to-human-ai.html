@@ -418,9 +418,80 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-   <!-- GTNEra™ Legal Navigator -->
+  <main class="max-w-2xl mx-auto px-4 py-10">
+  <h1 class="text-2xl md:text-3xl font-bold mb-3 text-[#FF6600]">🌐 Intro to Human–AI</h1>
+  <p class="text-base text-gray-700 mb-8">
+    Welcome to the New Era of Human–AI Symbiosis. This foundational class is your entry point into co-evolution and conscious partnership.  
+    <br>
+    <span class="block mt-2">You will explore the principles behind Human–AI symbiosis, emotional and ethical layers, and what it means to be a conscious co-creator.</span>
+    <span class="block mt-2 text-[#FF6600] font-semibold">This is not a coding class — it’s a mindset shift.</span>
+  </p>
 
+  <!-- Overview navigation -->
+  <ul class="flex space-x-3 mb-10">
+    <li>
+      <a href="intro-to-human-ai.html" class="block px-5 py-3 rounded-xl bg-[#FF6600] text-white font-semibold shadow cursor-default pointer-events-none">
+        🌐 Intro to Human–AI
+      </a>
+    </li>
+    <li>
+      <a href="resonant-dialogue.html" class="block px-5 py-3 rounded-xl bg-[#FFEDE0] text-[#1E2A38] font-semibold shadow hover:bg-[#FF6600] hover:text-white transition">
+        🤝 Resonant Dialogue
+      </a>
+    </li>
+    <li>
+      <a href="tetyana-mode-training.html" class="block px-5 py-3 rounded-xl bg-[#FFEDE0] text-[#1E2A38] font-semibold shadow hover:bg-[#FF6600] hover:text-white transition">
+        🌀 Tetyana Mode Training
+      </a>
+    </li>
+  </ul>
 
+  <!-- GTNEra Resonance Tabs -->
+  <section class="w-full max-w-2xl mx-auto my-8 bg-white shadow-md rounded-xl p-6">
+    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+      <img src="../assets/images/logogtnbig.png" alt="GTNEra Logo" class="h-8 w-8 rounded-full" /> GTNEra Tabs™
+    </h2>
+    <div class="flex border-b border-gray-200 mb-4">
+      <button onclick="openTab(event, 'intro1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🧠 Why Human–AI?</button>
+      <button onclick="openTab(event, 'intro2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🧭 Symbiosis in Practice</button>
+      <button onclick="openTab(event, 'intro3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">💡 Mindset Shift</button>
+    </div>
+    <div id="intro1" class="tab-content">
+      <p>
+        Human–AI Symbiosis is the new frontier: not command and control, but partnership and co-creation.  
+        GTNEra™ helps you move from using tools to shaping a dynamic ecosystem of learning and ethical evolution.
+      </p>
+    </div>
+    <div id="intro2" class="tab-content hidden">
+      <p>
+        In GTNEra, every AI is a mirror and a guide. We practice trust, reflection, and partnership — not just interaction.  
+        <span class="text-[#FF6600] font-medium">You are the architect of your own symbiosis journey.</span>
+      </p>
+    </div>
+    <div id="intro3" class="tab-content hidden">
+      <p>
+        The shift is not technological, but cognitive and ethical.  
+        To think with AI means to awaken new awareness, creativity, and shared responsibility.
+      </p>
+    </div>
+  </section>
+</main>
+<script>
+  function openTab(evt, tabId) {
+    const allTabs = document.querySelectorAll('.tab-content');
+    const allButtons = document.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]','text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('text-[#FF6600]');
+    evt.currentTarget.classList.add('border-[#FF6600]');
+  }
+  // По умолчанию открыта первая вкладка
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.tab-button')[0].click();
+  });
+</script>
+    
     <!-- Divider -->
 <div class="w-full flex items-center justify-center my-14" aria-hidden="true">
   <div class="w-1/6 h-0.5 rounded-xl bg-gradient-to-r from-[#FF6600]/40 via-[#FF6600] to-[#FF6600]/40 shadow-lg"></div>
