@@ -459,6 +459,27 @@
     <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yEJr_uIxmm3Ry1Rc7aopQr1xmzh5fHkr%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
   </div>
 </section>
+    <!-- ...тут твои GTNEra-блоки... -->
+
+<!-- Вставь этот скрипт ОДИН раз на всю страницу: -->
+<script>
+  function openTab(evt, tabId) {
+    const allTabs = evt.currentTarget.closest('section').querySelectorAll('.tab-content');
+    const allButtons = evt.currentTarget.closest('section').querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]','text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('text-[#FF6600]');
+    evt.currentTarget.classList.add('border-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    // Автоматически активирует первую вкладку каждого блока
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
