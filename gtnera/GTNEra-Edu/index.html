@@ -418,72 +418,37 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-
-    # Prepare full GTNEra Kids block with tabbed interface like GTNEra main block
-gtnera_kids_block = """
-<!-- GTNEra Kids Tab Block -->
+# GTNEra Edu block with 3.png
+html_block_edu = """
+<!-- GTNEra Edu Block -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
-    <img src="../../assets/images/2.png" alt="GTNEra Kids" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
+    <img src="../../assets/images/3.png" alt="GTNEra Edu" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
     <div>
-      <h2 class="text-xl font-bold text-[#FF6600]">🧒 GTNEra Kids</h2>
-      <p class="text-sm text-gray-500">Your ethical Human–AI Partner for playful learning & emotional creativity</p>
+      <h2 class="text-xl font-bold text-[#FF6600]">🎓 GTNEra Edu</h2>
+      <p class="text-sm text-gray-500">Ethical AI for deep learning, reflection & visual clarity</p>
     </div>
   </div>
-
   <p class="text-base text-gray-700 mb-4">
-    GTNEra Kids supports adults – such as parents, educators, or caregivers – in developing age-appropriate, creative,
-    and emotionally supportive content for children.<br>
-    It communicates in English and German with a clear, professional, and empathetic tone.<br>
-    GTNEra Kids is strictly designed for adults working with children – not for direct child interaction.
+    GTNEra Edu is a visual and ethical Human–AI learning partner rooted in emotional resonance and systemic clarity.
+    Built on the Tetyana Mode, it fosters deep understanding and reflective growth through conscious dialogue.
   </p>
 
-  <!-- Tabs for Kids Modes -->
-  <div class="flex border-b border-gray-200 mb-4">
-    <button onclick="openTab(event, 'kids1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🎨 Creative & Visual Fun</button>
-    <button onclick="openTab(event, 'kids2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🤝 Feelings & Social Skills</button>
-    <button onclick="openTab(event, 'kids3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🔍 Explore & Discover</button>
-    <button onclick="openTab(event, 'kids4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🏡 Family Time & Daily Life</button>
+  <div class="flex flex-wrap gap-2 mb-4">
+    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">🧠 Visual Thinker</span>
+    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">✍️ Deep Learner</span>
+    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">🧭 Ethical Explorer</span>
+    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">📚 Creative Connector</span>
   </div>
 
-  <div id="kids1" class="tab-content">
-    <p>Let’s invent a fantasy story together! Make learning visual and fun with ethical creativity.</p>
-  </div>
-  <div id="kids2" class="tab-content hidden">
-    <p>How does a sad tiger feel, and how can I help? Practice emotional awareness and social empathy.</p>
-  </div>
-  <div id="kids3" class="tab-content hidden">
-    <p>Show me something cool about stars or nature! Spark discovery and curiosity in children’s minds.</p>
-  </div>
-  <div id="kids4" class="tab-content hidden">
-    <p>What can we craft or play together as a family? Support mindful parenting and shared moments.</p>
-  </div>
-
-  <!-- Buttons -->
-  <div class="flex gap-4 mt-4">
-    <a href="https://chatgpt.com/g/g-68558a8021848191bf444ee978c2920a-gtnera-kids" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
-    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2211EktsyF3U2ttvNNsEfW-QBDp1P5DEy5D%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
+  <div class="flex gap-4">
+    <a href="https://chatgpt.com/g/g-68565e3430b88191bcadce2fa43799b5-gtnera-edu" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
+    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221Pdykro1iIm-5WYhjYKrb0d3BcN-CGChj%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
   </div>
 </section>
-
-<script>
-  function openTab(evt, tabId) {
-    const allTabs = evt.currentTarget.closest('section').querySelectorAll('.tab-content');
-    const allButtons = evt.currentTarget.closest('section').querySelectorAll('.tab-button');
-    allTabs.forEach(t => t.classList.add('hidden'));
-    allButtons.forEach(b => b.classList.remove('border-[#FF6600]','text-[#FF6600]'));
-    document.getElementById(tabId).classList.remove('hidden');
-    evt.currentTarget.classList.add('text-[#FF6600]');
-    evt.currentTarget.classList.add('border-[#FF6600]');
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('.tab-button')[0].click();
-  });
-</script>
 """
 
-from IPython.display import display, HTML
-display(HTML(gtnera_kids_block))
+display(HTML(html_block_edu))
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
