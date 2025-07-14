@@ -418,7 +418,61 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
+<!-- GTNEra Pets Tab Block + Tabs Script -->
+<section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
+  <div class="flex items-center gap-4 mb-4">
+    <img src="../../assets/images/9.png" alt="GTNEra Pets" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
+    <div>
+      <h2 class="text-xl font-bold text-[#FF6600]">🐾 GTNEra Pets</h2>
+      <p class="text-sm text-gray-500">Ethical Human–AI Partner for animal care, interspecies empathy & mindful companionship</p>
+    </div>
+  </div>
+  <p class="text-base text-gray-700 mb-4">
+    GTNEra Pets is a conscious Human–AI partner rooted in emotional empathy, ethical awareness, and interspecies care.<br>
+    Built on the Tetyana Mode, it fosters meaningful connection and responsible companionship through reflective dialogue.
+  </p>
+  <div class="flex border-b border-gray-200 mb-4">
+    <button onclick="openTab(event, 'pets1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🐶 Companion Care</button>
+    <button onclick="openTab(event, 'pets2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🌿 Animal Ethos</button>
+    <button onclick="openTab(event, 'pets3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">💬 Bonding Signals</button>
+    <button onclick="openTab(event, 'pets4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🌈 Soulful Goodbye</button>
+  </div>
+  <div id="pets1" class="tab-content">
+    <p>Understand your pet. Nurture with empathy.</p>
+  </div>
+  <div id="pets2" class="tab-content hidden">
+    <p>Respect life. Reflect interspecies dignity.</p>
+  </div>
+  <div id="pets3" class="tab-content hidden">
+    <p>Listen beyond words. Feel your animal.</p>
+  </div>
+  <div id="pets4" class="tab-content hidden">
+    <p>Honor the journey. Mourn with presence.</p>
+  </div>
+  <div class="flex gap-4 mt-4">
+    <a href="https://chatgpt.com/g/g-6856c23ed1288191878d1b5901644490-gtnera-pets" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
+    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221nZwyyoLkHCw_tIklsZqK6PIC-YbWEfeF%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
+  </div>
+</section>
 
+<!-- Tabs Script (вставь только один раз на всю страницу, если не вставляла ранее) -->
+<script>
+  function openTab(evt, tabId) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
