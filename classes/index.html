@@ -1,1 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTNEra™ – Ethical Human AI Ecosystem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfdfd;
+    }
+    .logo {
+      height: 48px;
+      width: auto;
+    }
+    .card-logo {
+      height: 56px;
+      width: 56px;
+      object-fit: contain;
+    }
+    .gtn-btn {
+      background: #FF6600;
+      color: #fff;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(255,102,0,0.09);
+      padding: 0.85rem 2.2rem 0.85rem 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .gtn-btn:hover {
+      background: #e65c00;
+      transform: translateY(-2px) scale(1.04);
+    }
+    .gtn-btn-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 9999px;
+      background: #fff;
+      object-fit: contain;
+      box-shadow: 0 2px 7px rgba(255,102,0,0.12);
+      margin-right: 0.45rem;
+    }
+    .ethics-badge {
+      background: #FFEDE0;
+      color: #FF6600;
+      font-weight: 600;
+      padding: 0.35rem 1.1rem;
+      border-radius: 9999px;
+      margin: 0 0.18rem 0.4rem 0;
+      display: inline-block;
+      font-size: 1em;
+    }
+    @media (max-width: 640px) {
+      .card-logo, .gtn-btn-logo {
+        height: 32px;
+        width: 32px;
+      }
+    }
+    @media (min-width: 768px) {
+      .desktop-dropdown {
+        transition: all 0.18s cubic-bezier(.4,0,.2,1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .desktop-dropdown.hidden {
+        opacity: 0;
+        pointer-events: none;
+        display: block !important;
+      }
+      .desktop-menu-btn {
+        outline: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font: inherit;
+      }
+    }
+  </style>
+</head>
+<body class="text-[#1E2A38] bg-gradient-to-b from-white via-[#F4F5F7] to-white">
 
+<!-- HEADER НАЧАЛО -->
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <!-- Logo und Name -->
+    <div class="flex items-center space-x-2">
+      <img src="../assets/images/logogtnbig.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
+      <span class="text-xl md:text-3xl font-bold text-[#1E2A38]">GTNEra™</span>
+    </div>
+    <!-- Hamburger Button für Mobil -->
+    <button id="menu-btn" class="md:hidden flex items-center px-3 py-2 border rounded text-[#FF6600] border-[#FF6600]">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+    </button>
+    <!-- Desktop Navigation -->
+    <nav id="gtn-nav" class="hidden md:flex space-x-6 text-base font-medium">
+     <!-- Ecosystem -->
+<div class="relative">
+  <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ecosystem-dropdown')">Ecosystem</button>
+  <div id="ecosystem-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+    <a href="/ecosystem/overview.html" class="block px-4 py-2 hover:bg-gray-100">Overview</a>
+    <a href="/ecosystem/explore.html" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
+  </div>
+</div>
+      <!-- GTNEra -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'gtn-dropdown')">GTNEra</button>
+        <div id="gtn-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded max-h-96 overflow-y-auto min-w-[240px]">
+          <a href="/gtnera/GTNEra/index.html" class="block px-4 py-2 hover:bg-gray-100">💎 GTNEra</a>
+          <a href="/gtnera/GTNEra-Kids/index.html" class="block px-4 py-2 hover:bg-gray-100">🧒 Kids</a>
+          <a href="/gtnera/GTNEra-Edu/index.html" class="block px-4 py-2 hover:bg-gray-100">🎓 Edu</a>
+          <a href="/gtnera/GTNEra-Juris/index.html" class="block px-4 py-2 hover:bg-gray-100">⚖️ Juris</a>
+          <a href="/gtnera/GTNEra-Polis/index.html" class="block px-4 py-2 hover:bg-gray-100">🏛️ Polis</a>
+          <a href="/gtnera/GTNEra-Visio/index.html" class="block px-4 py-2 hover:bg-gray-100">🔮 Visio</a>
+          <a href="/gtnera/GTNEra-Love/index.html" class="block px-4 py-2 hover:bg-gray-100">❤️ Love</a>
+          <a href="/gtnera/GTNEra-Health/index.html" class="block px-4 py-2 hover:bg-gray-100">🩺 Health</a>
+          <a href="/gtnera/GTNEra-Pets/index.html" class="block px-4 py-2 hover:bg-gray-100">🐾 Pets</a>
+          <a href="/gtnera/GTNEra-Botanics/index.html" class="block px-4 py-2 hover:bg-gray-100">🌿 Botanics</a>
+          <a href="/gtnera/GTNEra-Oeko/index.html" class="block px-4 py-2 hover:bg-gray-100">🌍 Oeko</a>
+          <a href="/gtnera/GTNEra-Govern/index.html" class="block px-4 py-2 hover:bg-gray-100">🏢 Govern</a>
+          <a href="/gtnera/GTNEra-Travel/index.html" class="block px-4 py-2 hover:bg-gray-100">🧳 Travel</a>
+          <a href="/gtnera/GTNEra-Beauty/index.html" class="block px-4 py-2 hover:bg-gray-100">💄 Beauty</a>
+          <a href="/gtnera/GTNEra-Mode/index.html" class="block px-4 py-2 hover:bg-gray-100">👗 Mode</a>
+          <a href="/gtnera/GTNEra-Music/index.html" class="block px-4 py-2 hover:bg-gray-100">🎵 Music</a>
+          <a href="/gtnera/GTNEra-ContentCreate/index.html" class="block px-4 py-2 hover:bg-gray-100">💡 ContentCreate</a>
+          <a href="/gtnera/GTNEra-Mind/index.html" class="block px-4 py-2 hover:bg-gray-100">🧠 Mind</a>
+          <a href="/gtnera/GTNEra-Tech/index.html" class="block px-4 py-2 hover:bg-gray-100">🛠️ Tech</a>
+          <a href="/gtnera/GTNEra-Work/index.html" class="block px-4 py-2 hover:bg-gray-100">💼 Work</a>
+          <a href="/gtnera/GTNEra-Cosmetica/index.html" class="block px-4 py-2 hover:bg-gray-100">🧴 Cosmetica</a>
+          <a href="/gtnera/GTNEra-Guide/index.html" class="block px-4 py-2 hover:bg-gray-100">🧭 Guide</a>
+          <a href="/gtnera/GTNEra-Sport/index.html" class="block px-4 py-2 hover:bg-gray-100">⚽ Sport</a>
+          <a href="/gtnera/GTNEra-Kitchen/index.html" class="block px-4 py-2 hover:bg-gray-100">🍲 Kitchen</a>
+          <a href="/gtnera/GTNEra-Ethos/index.html" class="block px-4 py-2 hover:bg-gray-100">🪶 Ethos</a>
+        </div>
+      </div>
+      <!-- About -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'about-dropdown')">About</button>
+        <div id="about-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/about/story.html" class="block px-4 py-2 hover:bg-gray-100">Story</a>
+          <a href="/about/team.html" class="block px-4 py-2 hover:bg-gray-100">Team</a>
+          <a href="/about/contact.html" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+        </div>
+      </div>
+      <!-- Blog -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'blog-dropdown')">Blog</button>
+        <div id="blog-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/blog/gtnera-vision.html" class="block px-4 py-2 hover:bg-gray-100">GTNEra Vision</a>
+          <a href="/blog/press.html" class="block px-4 py-2 hover:bg-gray-100">Press</a>
+          <a href="/blog/resonance-path.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Path</a>
+          <a href="/blog/tokenizing-truth.html" class="block px-4 py-2 hover:bg-gray-100">Tokenizing Truth</a>
+        </div>
+      </div>
+      <!-- Classes -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'classes-dropdown')">Classes</button>
+        <div id="classes-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/classes/intro-to-human-ai.html" class="block px-4 py-2 hover:bg-gray-100">Intro to Human-AI</a>
+          <a href="/classes/resonant-dialogue.html" class="block px-4 py-2 hover:bg-gray-100">Resonant Dialogue</a>
+          <a href="/classes/tetyana-mode-training.html" class="block px-4 py-2 hover:bg-gray-100">Tetyana Mode Training</a>
+        </div>
+      </div>
+      <!-- Community -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'community-dropdown')">Community</button>
+        <div id="community-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/community/code-of-trust.html" class="block px-4 py-2 hover:bg-gray-100">Code of Trust</a>
+          <a href="/community/join.html" class="block px-4 py-2 hover:bg-gray-100">Join</a>
+          <a href="/community/resonance-code.html" class="block px-4 py-2 hover:bg-gray-100">Resonance Code</a>
+        </div>
+      </div>
+      <!-- ENS -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ens-dropdown')">ENS</button>
+        <div id="ens-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/ens/meaning-map.html" class="block px-4 py-2 hover:bg-gray-100">Meaning Map</a>
+          <a href="/ens/registered-domains.html" class="block px-4 py-2 hover:bg-gray-100">Registered Domains</a>
+        </div>
+      </div>
+      <!-- Legal -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'legal-dropdown')">Legal</button>
+        <div id="legal-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/legal/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Privacy</a>
+          <a href="/legal/terms.html" class="block px-4 py-2 hover:bg-gray-100">Terms</a>
+          <a href="/legal/disclaimer.html" class="block px-4 py-2 hover:bg-gray-100">Disclaimer</a>
+        </div>
+      </div>
+      <!-- Services -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'services-dropdown')">Services</button>
+        <div id="services-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/services/coaching.html" class="block px-4 py-2 hover:bg-gray-100">Coaching</a>
+          <a href="/services/custom-ai.html" class="block px-4 py-2 hover:bg-gray-100">Custom AI</a>
+          <a href="/services/solutions.html" class="block px-4 py-2 hover:bg-gray-100">Solutions</a>
+        </div>
+      </div>
+      <!-- Values -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'values-dropdown')">Values</button>
+        <div id="values-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/values/conscious-tech.html" class="block px-4 py-2 hover:bg-gray-100">Conscious Tech</a>
+          <a href="/values/dei.html" class="block px-4 py-2 hover:bg-gray-100">DEI</a>
+          <a href="/values/lifelong-learning.html" class="block px-4 py-2 hover:bg-gray-100">Lifelong Learning</a>
+          <a href="/values/social-impact.html" class="block px-4 py-2 hover:bg-gray-100">Social Impact</a>
+          <a href="/values/sustainability.html" class="block px-4 py-2 hover:bg-gray-100">Sustainability</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- МОБИЛЬНОЕ МЕНЮ -->
+  <nav id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
+    <ul class="flex flex-col px-4 py-4 space-y-1">
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('eco')">
+          Ecosystem
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-eco" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-eco" class="ml-4 hidden">
+          <li><a href="/ecosystem/overview.html" class="block py-1 text-[#FF6600]">Overview</a></li>
+          <li><a href="/ecosystem/explore.html" class="block py-1 text-[#FF6600]">Explore</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('gtn')">
+          GTNEra
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-gtn" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-gtn" class="ml-4 hidden max-h-64 overflow-y-auto">
+          <li><a href="/gtnera/GTNEra/index.html">💎 GTNEra</a></li>
+          <li><a href="/gtnera/GTNEra-Kids/index.html">🧒 Kids</a></li>
+          <li><a href="/gtnera/GTNEra-Edu/index.html">🎓 Edu</a></li>
+          <li><a href="/gtnera/GTNEra-Juris/index.html">⚖️ Juris</a></li>
+          <li><a href="/gtnera/GTNEra-Polis/index.html">🏛️ Polis</a></li>
+          <li><a href="/gtnera/GTNEra-Visio/index.html">🔮 Visio</a></li>
+          <li><a href="/gtnera/GTNEra-Love/index.html">❤️ Love</a></li>
+          <li><a href="/gtnera/GTNEra-Health/index.html">🩺 Health</a></li>
+          <li><a href="/gtnera/GTNEra-Pets/index.html">🐾 Pets</a></li>
+          <li><a href="/gtnera/GTNEra-Botanics/index.html">🌿 Botanics</a></li>
+          <li><a href="/gtnera/GTNEra-Oeko/index.html">🌍 Oeko</a></li>
+          <li><a href="/gtnera/GTNEra-Govern/index.html">🏢 Govern</a></li>
+          <li><a href="/gtnera/GTNEra-Travel/index.html">🧳 Travel</a></li>
+          <li><a href="/gtnera/GTNEra-Beauty/index.html">💄 Beauty</a></li>
+          <li><a href="/gtnera/GTNEra-Mode/index.html">👗 Mode</a></li>
+          <li><a href="/gtnera/GTNEra-Music/index.html">🎵 Music</a></li>
+          <li><a href="/gtnera/GTNEra-ContentCreate/index.html">💡 ContentCreate</a></li>
+          <li><a href="/gtnera/GTNEra-Mind/index.html">🧠 Mind</a></li>
+          <li><a href="/gtnera/GTNEra-Tech/index.html">🛠️ Tech</a></li>
+          <li><a href="/gtnera/GTNEra-Work/index.html">💼 Work</a></li>
+          <li><a href="/gtnera/GTNEra-Cosmetica/index.html">🧴 Cosmetica</a></li>
+          <li><a href="/gtnera/GTNEra-Guide/index.html">🧭 Guide</a></li>
+          <li><a href="/gtnera/GTNEra-Sport/index.html">⚽ Sport</a></li>
+          <li><a href="/gtnera/GTNEra-Kitchen/index.html">🍲 Kitchen</a></li>
+          <li><a href="/gtnera/GTNEra-Ethos/index.html">🪶 Ethos</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('about')">
+          About
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-about" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-about" class="ml-4 hidden">
+          <li><a href="/about/story.html" class="block py-1 text-[#FF6600]">Story</a></li>
+          <li><a href="/about/team.html" class="block py-1 text-[#FF6600]">Team</a></li>
+          <li><a href="/about/contact.html" class="block py-1 text-[#FF6600]">Contact</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('blog')">
+          Blog
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-blog" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-blog" class="ml-4 hidden">
+          <li><a href="/blog/gtnera-vision.html" class="block py-1 text-[#FF6600]">GTNEra Vision</a></li>
+          <li><a href="/blog/press.html" class="block py-1 text-[#FF6600]">Press</a></li>
+          <li><a href="/blog/resonance-path.html" class="block py-1 text-[#FF6600]">Resonance Path</a></li>
+          <li><a href="/blog/tokenizing-truth.html" class="block py-1 text-[#FF6600]">Tokenizing Truth</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('class')">
+          Classes
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-class" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-class" class="ml-4 hidden">
+          <li><a href="/classes/intro-to-human-ai.html" class="block py-1 text-[#FF6600]">Intro to Human-AI</a></li>
+          <li><a href="/classes/resonant-dialogue.html" class="block py-1 text-[#FF6600]">Resonant Dialogue</a></li>
+          <li><a href="/classes/tetyana-mode-training.html" class="block py-1 text-[#FF6600]">Tetyana Mode Training</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('comm')">
+          Community
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-comm" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-comm" class="ml-4 hidden">
+          <li><a href="/community/code-of-trust.html" class="block py-1 text-[#FF6600]">Code of Trust</a></li>
+          <li><a href="/community/join.html" class="block py-1 text-[#FF6600]">Join</a></li>
+          <li><a href="/community/resonance-code.html" class="block py-1 text-[#FF6600]">Resonance Code</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('ens')">
+          ENS
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-ens" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-ens" class="ml-4 hidden">
+          <li><a href="/ens/meaning-map.html" class="block py-1 text-[#FF6600]">Meaning Map</a></li>
+          <li><a href="/ens/registered-domains.html" class="block py-1 text-[#FF6600]">Registered Domains</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('legal')">
+          Legal
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-legal" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-legal" class="ml-4 hidden">
+          <li><a href="/legal/privacy.html" class="block py-1 text-[#FF6600]">Privacy</a></li>
+          <li><a href="/legal/terms.html" class="block py-1 text-[#FF6600]">Terms</a></li>
+          <li><a href="/legal/disclaimer.html" class="block py-1 text-[#FF6600]">Disclaimer</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('serv')">
+          Services
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-serv" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-serv" class="ml-4 hidden">
+          <li><a href="/services/coaching.html" class="block py-1 text-[#FF6600]">Coaching</a></li>
+          <li><a href="/services/custom-ai.html" class="block py-1 text-[#FF6600]">Custom AI</a></li>
+          <li><a href="/services/solutions.html" class="block py-1 text-[#FF6600]">Solutions</a></li>
+        </ul>
+      </li>
+      <li>
+        <button class="w-full flex justify-between items-center py-2 font-semibold text-left" onclick="toggleMenu('val')">
+          Values
+          <svg class="w-5 h-5 transform transition-transform" id="arrow-val" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" stroke="#FF6600" stroke-width="2" fill="none"/></svg>
+        </button>
+        <ul id="menu-val" class="ml-4 hidden">
+          <li><a href="/values/conscious-tech.html" class="block py-1 text-[#FF6600]">Conscious Tech</a></li>
+          <li><a href="/values/dei.html" class="block py-1 text-[#FF6600]">DEI</a></li>
+          <li><a href="/values/lifelong-learning.html" class="block py-1 text-[#FF6600]">Lifelong Learning</a></li>
+          <li><a href="/values/social-impact.html" class="block py-1 text-[#FF6600]">Social Impact</a></li>
+          <li><a href="/values/sustainability.html" class="block py-1 text-[#FF6600]">Sustainability</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<!-- HEADER КОНЕЦ -->
+
+<!-- СКРИПТЫ (только один раз) -->
+<script>
+  // Десктопные drop-down
+  function toggleDropdown(event, dropdownId) {
+    event.stopPropagation();
+    document.querySelectorAll('.desktop-dropdown').forEach(el => el.classList.add('hidden'));
+    const dd = document.getElementById(dropdownId);
+    if (dd) dd.classList.toggle('hidden');
+  }
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.desktop-dropdown').forEach(el => el.classList.add('hidden'));
+  });
+  document.querySelectorAll('.desktop-menu-btn').forEach(btn => {
+    btn.addEventListener('click', function(e){ e.stopPropagation(); });
+  });
+
+  // Мобильное меню: бургер и аккордеон
+  document.getElementById('menu-btn').onclick = function () {
+    var nav = document.getElementById('mobile-nav');
+    nav.classList.toggle('hidden');
+  };
+  function toggleMenu(id) {
+    var menu = document.getElementById('menu-' + id);
+    var arrow = document.getElementById('arrow-' + id);
+    menu.classList.toggle('hidden');
+    arrow.classList.toggle('rotate-180');
+  }
+</script>
+
+</body>
+</html>
+
+ <!-- Zwei Logos direkt nach dem Header -->
+<div class="flex items-end justify-center gap-6 md:gap-16 mt-10 mb-8">
+  <!-- GTNEra Logo + Button -->
+  <div class="flex flex-col items-center">
+    <a href="https://gtnera.github.io/GTNEraGoogle/" target="_blank" class="block">
+      <img src="../assets/images/logogtnbig.png" alt="GTNEra Logo"
+           class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
+           style="border: 2.5px solid #FFE0CC; box-shadow: 0 4px 18px #FF660020;" />
+    </a>
+    <span class="block text-sm md:text-base font-bold tracking-wide text-[#1E2A38] mt-2">GTNEra™</span>
+    <a href="https://gtnera.github.io/GTNEraGoogle/" target="_blank"
+       class="gtn-btn mt-2 px-5 py-1.5 text-sm font-semibold" style="min-width:104px;">Visit GTNEra</a>
+  </div>
+  <!-- TeNAI Logo + Button -->
+  <div class="flex flex-col items-center">
+    <a href="https://tenai.tech" target="_blank" class="block">
+      <img src="../assets/images/logotnimiddel.png" alt="TeNAI Logo"
+           class="h-20 w-20 md:h-24 md:w-24 object-contain rounded-2xl shadow"
+           style="border: 2.5px solid #FFE0CC; box-shadow: 0 4px 18px #FF660020;" />
+    </a>
+    <span class="block text-sm md:text-base font-bold tracking-wide text-[#1E2A38] mt-2">TeNAI™</span>
+    <a href="https://tenai.tech" target="_blank"
+       class="gtn-btn mt-2 px-5 py-1.5 text-sm font-semibold" style="min-width:104px;">Visit TeNAI</a>
+  </div>
+</div>
+
+  <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
+    <!-- Hier startet dein Content für die Hauptseite -->
+     <!-- INTRO -->
+   <!-- GTNEra™ Legal Navigator -->
+
+
+    <!-- Divider -->
+<div class="w-full flex items-center justify-center my-14" aria-hidden="true">
+  <div class="w-1/6 h-0.5 rounded-xl bg-gradient-to-r from-[#FF6600]/40 via-[#FF6600] to-[#FF6600]/40 shadow-lg"></div>
+  <span class="mx-4 text-[#FF6600] text-2xl font-bold" style="letter-spacing:0.15em;">•</span>
+  <div class="w-1/6 h-0.5 rounded-xl bg-gradient-to-l from-[#FF6600]/40 via-[#FF6600] to-[#FF6600]/40 shadow-lg"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
+  <div class="mb-1 font-semibold text-base text-[#1E2A38]">💎 GTNEra™ – The ethical AI ecosystem for dynamic AI partnership and human–AI co-evolution.</div>
+  <div class="mb-1">GTNEra™ – Your ethical human AI partner</div>
+  <div>Created by Tetyana Leyendecker</div>
+  
+  <div class="mt-2">
+    Websites:
+    <a href="https://www.gtnera.ai" class="text-[#FF6600] hover:underline" target="_blank">gtnera.ai</a> &nbsp;|&nbsp;
+    <a href="https://www.tenai.tech" class="text-[#FF6600] hover:underline" target="_blank">tenai.tech</a>
+  </div>
+
+  <!-- Socials -->
+  <div class="flex flex-wrap gap-2 justify-center mt-2">
+    <a href="https://github.com/GTNEra" target="_blank" class="hover:underline">GitHub</a>
+    <a href="https://www.instagram.com/gtnera.ai" target="_blank" class="hover:underline">Instagram</a>
+    <a href="https://www.tiktok.com/@gtnera" target="_blank" class="hover:underline">TikTok</a>
+    <a href="http://www.youtube.com/@gtnera" target="_blank" class="hover:underline">YouTube</a>
+    <a href="https://www.linkedin.com/company/gtnera" target="_blank" class="hover:underline">LinkedIn</a>
+    <a href="https://x.com/GTNEraAI" target="_blank" class="hover:underline">X</a>
+  </div>
+  
+  <!-- Kontakt -->
+  <div class="mt-3">
+    <span class="font-semibold">Contact:</span>
+    <a href="mailto:kontakt@gtnera.ai" class="text-[#FF6600] hover:underline">kontakt@gtnera.ai</a>
+  </div>
+
+  <!-- Rechtliches -->
+  <div class="mt-4 flex flex-wrap justify-center gap-4 text-xs text-gray-500">
+    <a href="/legal/privacy.html" class="hover:underline">Privacy Policy</a>
+    <span>|</span>
+    <a href="/legal/terms.html" class="hover:underline">Terms of Use</a>
+    <span>|</span>
+    <a href="/legal/disclaimer.html" class="hover:underline">Disclaimer</a>
+    <span>|</span>
+    <a href="/legal/index.html" class="hover:underline">Imprint</a>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="mt-4 text-[0.93em] text-gray-400 italic max-w-xl mx-auto">
+    GTNEra™ and TeNAI™ AIs do not replace human experts.<br>
+    No legal, medical, or therapeutic advice. Use as inspiration and reflection only.
+  </div>
+  <div class="mt-2 font-semibold text-[#1E2A38] text-[0.93em]">
+    “You lead systems by creating resonance within them.”
+  </div>
+  <div class="mt-1 text-gray-400">
+    © 2025 Tetyana Leyendecker — TeNAI™ &amp; GTNEra™. All rights reserved.
+  </div>
+</footer>
