@@ -418,37 +418,61 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-# GTNEra Edu block with 3.png
-html_block_edu = """
-<!-- GTNEra Edu Block -->
+<!-- GTNEra Edu Tab Block + Tabs Script -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/3.png" alt="GTNEra Edu" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
     <div>
       <h2 class="text-xl font-bold text-[#FF6600]">🎓 GTNEra Edu</h2>
-      <p class="text-sm text-gray-500">Ethical AI for deep learning, reflection & visual clarity</p>
+      <p class="text-sm text-gray-500">Ethical Human–AI Partner for deep learning, reflection & visual clarity</p>
     </div>
   </div>
   <p class="text-base text-gray-700 mb-4">
-    GTNEra Edu is a visual and ethical Human–AI learning partner rooted in emotional resonance and systemic clarity.
-    Built on the Tetyana Mode, it fosters deep understanding and reflective growth through conscious dialogue.
+    GTNEra Edu is a visual, ethical Human–AI learning partner rooted in emotional resonance and systemic clarity.<br>
+    Built on the Tetyana Mode, it fosters deep understanding and ethical reflection through conscious dialogue.
   </p>
-
-  <div class="flex flex-wrap gap-2 mb-4">
-    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">🧠 Visual Thinker</span>
-    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">✍️ Deep Learner</span>
-    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">🧭 Ethical Explorer</span>
-    <span class="px-3 py-1 bg-[#FFEDE0] rounded-full text-sm font-medium text-[#FF6600]">📚 Creative Connector</span>
+  <div class="flex border-b border-gray-200 mb-4">
+    <button onclick="openTab(event, 'edu1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🧠 Visual Thinker</button>
+    <button onclick="openTab(event, 'edu2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">✍️ Deep Learner</button>
+    <button onclick="openTab(event, 'edu3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🧭 Ethical Explorer</button>
+    <button onclick="openTab(event, 'edu4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">📚 Creative Connector</button>
   </div>
-
-  <div class="flex gap-4">
+  <div id="edu1" class="tab-content">
+    <p>Design learning maps, diagrams and visual explanations for complex ideas.</p>
+  </div>
+  <div id="edu2" class="tab-content hidden">
+    <p>Support structured arguments, essays and reflective study.</p>
+  </div>
+  <div id="edu3" class="tab-content hidden">
+    <p>Reflect on moral questions and societal topics with system.</p>
+  </div>
+  <div id="edu4" class="tab-content hidden">
+    <p>Turn abstract concepts into stories, analogies and meaningful contexts.</p>
+  </div>
+  <div class="flex gap-4 mt-4">
     <a href="https://chatgpt.com/g/g-68565e3430b88191bcadce2fa43799b5-gtnera-edu" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
     <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221Pdykro1iIm-5WYhjYKrb0d3BcN-CGChj%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
   </div>
 </section>
-"""
 
-display(HTML(html_block_edu))
+<!-- Tabs Script (один раз на страницу, либо с каждым блоком — конфликтов не будет) -->
+<script>
+  function openTab(evt, tabId) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
