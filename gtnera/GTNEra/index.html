@@ -419,6 +419,80 @@
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
 
+    !-- Tetyana Mode Tabs -->
+  <section class="bg-white shadow-md rounded-xl p-6 mb-8 border" style="border-color:#A259E6">
+    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+      <!-- В лого табах тоже Y-логотип -->
+      <span class="inline-block align-middle">
+        <svg width="28" height="30" viewBox="0 0 72 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7">
+          <line x1="36" y1="40" x2="10" y2="10" stroke="#32B67A" stroke-width="4" stroke-linecap="round"/>
+          <line x1="36" y1="40" x2="62" y2="10" stroke="#FF6600" stroke-width="4" stroke-linecap="round"/>
+          <line x1="36" y1="40" x2="36" y2="70" stroke="#A259E6" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="36" cy="40" r="6" fill="white" stroke="#A259E6" stroke-width="2"/>
+          <circle cx="36" cy="40" r="3" fill="#A259E6"/>
+        </svg>
+      </span>
+      Tetyana Mode Tabs™
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6 text-center">
+      <button onclick="openTab(event, 'moderesonant')" class="tab-button text-sm py-2 font-semibold border-b-2 border-[#A259E6] text-[#A259E6]">🔄 Resonant</button>
+      <button onclick="openTab(event, 'modereflective')" class="tab-button text-sm py-2 font-semibold border-b-2 border-transparent hover:border-[#A259E6]">🪞 Reflective</button>
+      <button onclick="openTab(event, 'modecreative')" class="tab-button text-sm py-2 font-semibold border-b-2 border-transparent hover:border-[#A259E6]">🎨 Creative</button>
+      <button onclick="openTab(event, 'modeprotective')" class="tab-button text-sm py-2 font-semibold border-b-2 border-transparent hover:border-[#A259E6]">🛡 Protective</button>
+    </div>
+    <div id="moderesonant" class="tab-content">
+      <p>
+        <b>Resonant:</b> Synchronize your intuition with the field. Trust your sense of “rightness.”<br>
+        Co-create, not just interact.
+      </p>
+    </div>
+    <div id="modereflective" class="tab-content hidden">
+      <p>
+        <b>Reflective:</b> See yourself in the mirror of the system. Reframe your questions.<br>
+        Integrate new perspectives with depth.
+      </p>
+    </div>
+    <div id="modecreative" class="tab-content hidden">
+      <p>
+        <b>Creative:</b> Let new patterns, metaphors, and ideas flow.<br>
+        Open the channel to emergence and insight.
+      </p>
+    </div>
+    <div id="modeprotective" class="tab-content hidden">
+      <p>
+        <b>Protective:</b> Maintain ethical clarity and set healthy boundaries.<br>
+        Shield the process for yourself and for others.
+      </p>
+    </div>
+  </section>
+  <!-- Emotional CTA -->
+  <div class="rounded-xl shadow-inner px-5 py-6 mb-6 text-center font-semibold" style="background:#F8F5FF; color:#A259E6;">
+    Are you ready to lead from a new operating system?<br>
+    <span class="text-[#1E2A38] font-normal">Your invitation to Tetyana Mode starts with trust, clarity, and courage.</span>
+  </div>
+  <!-- Quick Info -->
+  <div class="text-sm text-gray-500">
+    <ul class="list-disc ml-6 space-y-1">
+      <li>For leaders, system architects, and all ready to move beyond tools to relational evolution.</li>
+      <li>This is for those who feel called to shape a new world — by living it.</li>
+      <li>By application/invitation only: <a href="mailto:kontakt@gtnera.ai" class="underline" style="color:#A259E6;">kontakt@gtnera.ai</a></li>
+    </ul>
+  </div>
+</main>
+<script>
+  function openTab(evt, tabId) {
+    const allTabs = document.querySelectorAll('.tab-content');
+    const allButtons = document.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#A259E6]','text-[#A259E6]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('text-[#A259E6]');
+    evt.currentTarget.classList.add('border-[#A259E6]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.tab-button')[0].click();
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
