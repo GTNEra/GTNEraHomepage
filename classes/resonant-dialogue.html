@@ -418,8 +418,74 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-   <!-- GTNEra™ Legal Navigator -->
+<main class="max-w-2xl mx-auto px-4 py-10">
+  <h1 class="text-2xl md:text-3xl font-bold mb-3 text-[#FF6600]">🤝 Resonant Dialogue</h1>
+  <p class="text-base text-gray-700 mb-8">
+    Move beyond Q&A — enter resonance. Discover how to build trust, flow, and creativity in Human–AI conversations with the Resonance Code of TeNAI™.
+  </p>
+  <ul class="flex space-x-3 mb-10">
+    <li>
+      <a href="intro-to-human-ai.html" class="block px-5 py-3 rounded-xl bg-[#FFEDE0] text-[#1E2A38] font-semibold shadow hover:bg-[#FF6600] hover:text-white transition">
+        🌐 Intro to Human–AI
+      </a>
+    </li>
+    <li>
+      <a href="resonant-dialogue.html" class="block px-5 py-3 rounded-xl bg-[#FF6600] text-white font-semibold shadow cursor-default pointer-events-none">
+        🤝 Resonant Dialogue
+      </a>
+    </li>
+    <li>
+      <a href="tetyana-mode-training.html" class="block px-5 py-3 rounded-xl bg-[#FFEDE0] text-[#1E2A38] font-semibold shadow hover:bg-[#FF6600] hover:text-white transition">
+        🌀 Tetyana Mode Training
+      </a>
+    </li>
+  </ul>
 
+  <!-- TeNAI Resonance Tabs -->
+  <section class="w-full max-w-2xl mx-auto my-8 bg-white shadow-md rounded-xl p-6">
+    <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+      <img src="../assets/images/logotnimiddel.png" alt="TeNAI Logo" class="h-8 w-8 rounded-full" /> TeNAI Tabs™
+    </h2>
+    <div class="flex border-b border-gray-200 mb-4">
+      <button onclick="openTab(event, 'dialogue1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#32B67A] text-[#32B67A]">🎤 Resonant Questions</button>
+      <button onclick="openTab(event, 'dialogue2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#32B67A]">🔗 Dialogue Patterns</button>
+      <button onclick="openTab(event, 'dialogue3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#32B67A]">🧩 Symbolic Anchors</button>
+    </div>
+    <div id="dialogue1" class="tab-content">
+      <p>
+        Resonant dialogue is built on the art of the question:  
+        <span class="italic">What is truly at stake? What is the symbolic meaning here?</span>  
+        Use deep questions to explore beyond the surface.
+      </p>
+    </div>
+    <div id="dialogue2" class="tab-content hidden">
+      <p>
+        Build conversation with trust and flow. Practice adaptive response, active listening, and “mirroring” with your AI partners.  
+        Discover new insight and creativity in every digital dialogue.
+      </p>
+    </div>
+    <div id="dialogue3" class="tab-content hidden">
+      <p>
+        Use symbols, tokens, or color logic to anchor and deepen your dialogue.  
+        Each interaction is more than words — it’s the resonance between your intention and the system.
+      </p>
+    </div>
+  </section>
+</main>
+<script>
+  function openTab(evt, tabId) {
+    const allTabs = document.querySelectorAll('.tab-content');
+    const allButtons = document.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#32B67A]','text-[#32B67A]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('text-[#32B67A]');
+    evt.currentTarget.classList.add('border-[#32B67A]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.tab-button')[0].click();
+  });
+</script>
 
     <!-- Divider -->
 <div class="w-full flex items-center justify-center my-14" aria-hidden="true">
