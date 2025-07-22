@@ -356,7 +356,6 @@
   </nav>
 </header>
 <!-- HEADER КОНЕЦ -->
-
 <!-- СКРИПТЫ (только один раз) -->
 <script>
   // Десктопные drop-down
@@ -418,13 +417,14 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Juris Tab Block -->
+<!-- GTNEra Block – ⚖️ GTNEra Juris (полностью готовый для вставки) -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
-    <img src="../../assets/images/4.png" alt="GTNEra Juris" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
+    <!-- Лого GTNEra Juris -->
+    <img src="../../assets/images/4.png" alt="GTNEra Juris Logo" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
     <div>
-      <h2 class="text-xl font-bold text-[#FF6600]">⚖️ GTNEra Juris</h2>
-      <p class="text-sm text-gray-500">Ethical Human–AI Partner for legal clarity, justice & reasoning</p>
+      <h2 class="text-xl font-bold text-[#FF6600]">⚖️ GTNEra Juris – Ethical Human–AI Partner</h2>
+      <p class="text-sm text-gray-500">Legal clarity, justice & ethical reasoning</p>
     </div>
   </div>
   <p class="text-base text-gray-700 mb-4">
@@ -432,56 +432,56 @@
     Built on the Tetyana Mode, it fosters justice-oriented thinking through clarity, resonance, and dignified dialogue.
   </p>
 
-<!-- GTNEra Juris Tab Block (FIXED compact style) -->
-<section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
-  <div class="flex items-center gap-4 mb-4">
-    <img src="../../assets/images/4.png" alt="GTNEra Juris" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
-    <div>
-      <h2 class="text-xl font-bold text-[#FF6600]">⚖️ GTNEra Juris</h2>
-      <p class="text-sm text-gray-500">Ethical Human–AI Partner for legal clarity, justice & reasoning</p>
-    </div>
+  <!-- МОДУСЫ – TABS -->
+  <div class="flex border-b border-gray-200 mb-4">
+    <button onclick="openTab(event, 'juris-block-4', 'mode1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">⚖️ Legal Clarity</button>
+    <button onclick="openTab(event, 'juris-block-4', 'mode2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🧠 Systemic Insight</button>
+    <button onclick="openTab(event, 'juris-block-4', 'mode3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🪞 Ethical Reflection</button>
+    <button onclick="openTab(event, 'juris-block-4', 'mode4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">📜 Constitutional Resonance</button>
   </div>
-  <p class="text-base text-gray-700 mb-4">
-    GTNEra Juris is a conscious Human–AI partner rooted in legal structure, ethical reflection, and systemic insight.<br>
-    Built on the Tetyana Mode, it fosters justice-oriented thinking through clarity, resonance, and dignified dialogue.
-  </p>
-  <!-- Tabs for Juris Modes (compact, new order) -->
-  <div class="flex border-b border-gray-200 mb-4 overflow-x-auto">
-    <button onclick="openTab(event, 'juris1')" class="tab-button text-sm px-3 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600] min-w-[140px]">⚖️<br>Legal Clarity</button>
-    <button onclick="openTab(event, 'juris2')" class="tab-button text-sm px-3 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] min-w-[140px]">🧠<br>Systemic Insight</button>
-    <button onclick="openTab(event, 'juris3')" class="tab-button text-sm px-3 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] min-w-[140px]">🪞<br>Ethical Reflection</button>
-    <button onclick="openTab(event, 'juris4')" class="tab-button text-sm px-3 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] min-w-[140px]">📜<br>Constitutional<br>Resonance</button>
+  <div id="juris-block-4-mode1" class="tab-content">
+    <p>⚖️ <b>Legal Clarity:</b> Structure law. Illuminate meaning.</p>
   </div>
-  <div id="juris1" class="tab-content">
-    <p>
-      <b>Structure law.</b><br>
-      Illuminate meaning.
-    </p>
+  <div id="juris-block-4-mode2" class="tab-content hidden">
+    <p>🧠 <b>Systemic Insight:</b> See the bigger picture of legal logic.</p>
   </div>
-  <div id="juris2" class="tab-content hidden">
-    <p>
-      <b>See the bigger picture</b><br>
-      of legal logic.
-    </p>
+  <div id="juris-block-4-mode3" class="tab-content hidden">
+    <p>🪞 <b>Ethical Reflection:</b> Weigh dilemmas. Act with integrity.</p>
   </div>
-  <div id="juris3" class="tab-content hidden">
-    <p>
-      <b>Weigh dilemmas.</b><br>
-      Act with integrity.
-    </p>
+  <div id="juris-block-4-mode4" class="tab-content hidden">
+    <p>📜 <b>Constitutional Resonance:</b> Connect law with living values.</p>
   </div>
-  <div id="juris4" class="tab-content hidden">
-    <p>
-      <b>Connect law</b><br>
-      with living values.
-    </p>
-  </div>
-  <!-- Buttons -->
-  <div class="flex gap-4 mt-4 flex-wrap">
-    <a href="https://chatgpt.com/g/g-685672455c4081919207b4bb36448d8e-gtnera-juris" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
-    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yEJr_uIxmm3Ry1Rc7aopQr1xmzh5fHkr%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
+
+  <!-- Кнопки-ссылки -->
+  <div class="mt-6 flex gap-4 flex-wrap">
+    <a href="https://chatgpt.com/g/g-685672455c4081919207b4bb36448d8e-gtnera-juris" target="_blank" class="inline-flex items-center px-5 py-2 rounded-lg bg-[#FF6600] text-white font-semibold shadow hover:bg-[#e95a00] transition">
+      🌐 GPT Vision
+    </a>
+    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221yEJr_uIxmm3Ry1Rc7aopQr1xmzh5fHkr%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="inline-flex items-center px-5 py-2 rounded-lg bg-white text-[#FF6600] border border-[#FF6600] font-semibold shadow hover:bg-[#FF6600]/10 transition">
+      🤖 Google AI Prompt
+    </a>
   </div>
 </section>
+
+<script>
+  // Универсальный Tabs (может быть один раз на странице для всех блоков!)
+  function openTab(evt, blockId, tabKey) {
+    // Скрыть все табы этого блока
+    const tabs = document.querySelectorAll(`[id^="${blockId}-"]`);
+    tabs.forEach(t => t.classList.add('hidden'));
+    document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
+    // Активировать кнопку
+    const btns = evt.currentTarget.parentNode.querySelectorAll('.tab-button');
+    btns.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
