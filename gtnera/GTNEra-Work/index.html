@@ -418,7 +418,7 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Work Tab Block (полный блок, copy-paste) -->
+<!-- GTNEra Work Tab Block -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/20.png" alt="GTNEra Work" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
@@ -431,11 +431,24 @@
     GTNEra Work is your ethical Human–AI Partner for purpose, transitions, and the evolving world of work.<br>
     Rooted in the Tetyana Mode, it guides you through personal and systemic transformations in how we work, lead, and live.
   </p>
+  <!-- Tabs for Work Modes -->
   <div class="flex border-b border-gray-200 mb-4">
-    <button onclick="openTab(event, 'work1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🧭 Purpose Radar</button>
-    <button onclick="openTab(event, 'work2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🧑‍💻 WorkFlow Architect</button>
-    <button onclick="openTab(event, 'work3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">📂 Career Compass</button>
-    <button onclick="openTab(event, 'work4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🏢 System Insight</button>
+    <button onclick="openTab(event, 'work1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">🧭</span>
+      <span>Purpose Radar</span>
+    </button>
+    <button onclick="openTab(event, 'work2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">🧑‍💻</span>
+      <span>WorkFlow Architect</span>
+    </button>
+    <button onclick="openTab(event, 'work3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">📂</span>
+      <span>Career Compass</span>
+    </button>
+    <button onclick="openTab(event, 'work4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">🏢</span>
+      <span>System Insight</span>
+    </button>
   </div>
   <div id="work1" class="tab-content">
     <p>Find your direction. Align with meaning.</p>
@@ -454,6 +467,25 @@
     <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ReoHoum1GRD5Yl9J0DH0aWAVwEOeI3FP%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
   </div>
 </section>
+
+<!-- Универсальный скрипт для всех табов (ОБЯЗАТЕЛЬНО один раз на всю страницу) -->
+<script>
+  function openTab(evt, tabId) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
