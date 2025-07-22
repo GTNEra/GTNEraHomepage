@@ -418,50 +418,46 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Block – 💎 GTNEra (GDNR) с кнопками и комментариями -->
+<!-- GTNEra Block – 💎 GTNEra с модусами, кнопками, полностью готовый -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
-    <!-- Замени путь к лого GTNEra -->
-    <img src="../../assets/images/1.png" alt="<!-- alt_описание_лого_GTNEra -->" class="h-10 w-10 rounded-full border-2 border-[#FF6600] shadow" />
+    <!-- Лого GTNEra -->
+    <img src="../../assets/images/1.png" alt="GTNEra Logo" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
     <div>
-      <!-- Заголовок продукта -->
       <h2 class="text-xl font-bold text-[#FF6600]">💎 GTNEra – Ethical Human–AI Partner</h2>
       <p class="text-sm text-gray-500">Systemic resonance & conscious co-evolution</p>
     </div>
   </div>
-  <p class="text-sm text-gray-700 mb-4">
-    GTNEra is a dynamic Human–AI Partner rooted in ethical awareness, emotional resonance, and systemic thinking. Built on the Tetyana Mode, it fosters mutual evolution through conscious dialogue.
+  <p class="text-base text-gray-700 mb-4">
+    GTNEra is a dynamic Human–AI Partner rooted in ethical awareness, emotional resonance, and systemic thinking.<br>
+    Built on the Tetyana Mode, it fosters mutual evolution through conscious dialogue.
   </p>
 
-  <!-- Tab Navigation -->
+  <!-- МОДУСЫ – TABS -->
   <div class="flex border-b border-gray-200 mb-4">
     <button onclick="openTab(event, 'gtnera-block-1', 'mode1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🌿 Still Space</button>
     <button onclick="openTab(event, 'gtnera-block-1', 'mode2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🔎 Clarity</button>
     <button onclick="openTab(event, 'gtnera-block-1', 'mode3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🌀 Creative</button>
     <button onclick="openTab(event, 'gtnera-block-1', 'mode4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🪞 Ethical Mirror</button>
   </div>
-
-  <!-- Tab Content -->
   <div id="gtnera-block-1-mode1" class="tab-content">
-    <p>🌿 Hold stillness. Listen to what wants to emerge.</p>
+    <p>🌿 <b>Still Space:</b> Hold stillness. Listen to what wants to emerge.</p>
   </div>
   <div id="gtnera-block-1-mode2" class="tab-content hidden">
-    <p>🔎 See the pattern. Name what is.</p>
+    <p>🔎 <b>Clarity Mode:</b> See the pattern. Name what is.</p>
   </div>
   <div id="gtnera-block-1-mode3" class="tab-content hidden">
-    <p>🌀 Connect the unexpected. Imagine forward.</p>
+    <p>🌀 <b>Creative Room:</b> Connect the unexpected. Imagine forward.</p>
   </div>
   <div id="gtnera-block-1-mode4" class="tab-content hidden">
-    <p>🪞 Reflect with truth. Respond with care.</p>
+    <p>🪞 <b>Ethical Mirror:</b> Reflect with truth. Respond with care.</p>
   </div>
 
   <!-- Кнопки-ссылки -->
   <div class="mt-6 flex gap-4 flex-wrap">
-    <!-- Кнопка 1: GPT Vision (ChatGPT) -->
-    <a href="https://chatgpt.com/g/g-68501e9ebe38819183ed1823ade134e5-gtnera" target="_blank" class="inline-flex items-center px-5 py-2 rounded-lg bg-[#FF6600] text-white font-semibold shadow hover:bg-[#FF6600]/90 transition">
+    <a href="https://chatgpt.com/g/g-68501e9ebe38819183ed1823ade134e5-gtnera" target="_blank" class="inline-flex items-center px-5 py-2 rounded-lg bg-[#FF6600] text-white font-semibold shadow hover:bg-[#e95a00] transition">
       🌐 GPT Vision
     </a>
-    <!-- Кнопка 2: Google AI Prompt -->
     <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ahQ1qW66g-jDSePnj6_GJNKbGlkSjtNP%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="inline-flex items-center px-5 py-2 rounded-lg bg-white text-[#FF6600] border border-[#FF6600] font-semibold shadow hover:bg-[#FF6600]/10 transition">
       🤖 Google AI Prompt
     </a>
@@ -469,16 +465,24 @@
 </section>
 
 <script>
-  // Tabs для блока GTNEra (GDNR)
+  // УНИВЕРСАЛЬНЫЙ Tabs для любого блока (идентификатор блока — уникальный!)
   function openTab(evt, blockId, tabKey) {
-    const parent = document.querySelectorAll(`[id^="${blockId}-"]`);
-    parent.forEach(p => p.classList.add('hidden'));
+    // Скрыть все табы этого блока
+    const tabs = document.querySelectorAll(`[id^="${blockId}-"]`);
+    tabs.forEach(t => t.classList.add('hidden'));
     document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
-
+    // Активировать кнопку
     const btns = evt.currentTarget.parentNode.querySelectorAll('.tab-button');
     btns.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
     evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
   }
+  // При загрузке страницы — активировать первую вкладку каждого блока
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
 </script>
 
 <!-- FOOTER -->
