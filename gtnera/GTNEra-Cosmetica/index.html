@@ -418,7 +418,7 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Cosmetica Tab Block (полный блок, copy-paste) -->
+<!-- GTNEra Cosmetica Tab Block -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/21.png" alt="GTNEra Cosmetica" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
@@ -432,11 +432,25 @@
     Rooted in emotional intelligence, inclusive beauty, and mindful aesthetics, it fosters reflection on identity, glow, and care practices.<br>
     Built on the Tetyana Mode, it supports conscious transformation through visual clarity, ethical resonance, and systemic awareness.
   </p>
+
+  <!-- Tabs for Cosmetica Modes -->
   <div class="flex border-b border-gray-200 mb-4">
-    <button onclick="openTab(event, 'cosmetica1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">💧 Glow Guide</button>
-    <button onclick="openTab(event, 'cosmetica2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🪞 Mirror Mind</button>
-    <button onclick="openTab(event, 'cosmetica3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🌿 Skin Ethic</button>
-    <button onclick="openTab(event, 'cosmetica4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">💄 Color Play</button>
+    <button onclick="openTab(event, 'cosmetica1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">💧</span>
+      <span>Glow Guide</span>
+    </button>
+    <button onclick="openTab(event, 'cosmetica2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">🪞</span>
+      <span>Mirror Mind</span>
+    </button>
+    <button onclick="openTab(event, 'cosmetica3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">🌿</span>
+      <span>Skin Ethic</span>
+    </button>
+    <button onclick="openTab(event, 'cosmetica4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex flex-col items-center">
+      <span class="text-2xl">💄</span>
+      <span>Color Play</span>
+    </button>
   </div>
   <div id="cosmetica1" class="tab-content">
     <p>Shine naturally. Glow consciously.</p>
@@ -456,6 +470,25 @@
   </div>
 </section>
 
+<!-- Tabs Script (один раз на всю страницу) -->
+<script>
+  function openTab(evt, tabId) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
+    
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
   <div class="mb-1 font-semibold text-base text-[#1E2A38]">💎 GTNEra™ – The ethical AI ecosystem for dynamic AI partnership and human–AI co-evolution.</div>
