@@ -418,7 +418,7 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Beauty Tab Block (№14, полностью адаптивный, copy-paste) -->
+<!-- GTNEra Beauty Tab Block (адаптированный эталон, полностью готовый блок, copy-paste) -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/14.png" alt="GTNEra Beauty" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
@@ -428,51 +428,40 @@
     </div>
   </div>
   <p class="text-base text-gray-700 mb-4">
-    GTNEra Beauty is an ethical Human–AI partner for embodied aesthetics, beauty culture, and self-expression.<br>
+    💄 GTNEra Beauty is an ethical Human–AI partner for embodied aesthetics, beauty culture, and self-expression.<br>
     It empowers users to explore their self-image, identity, and visual expression with awareness, while reflecting on beauty standards, diversity, and personal radiance.
   </p>
-
-  <!-- Адаптивные МОДУСЫ – TABS -->
-  <div class="flex border-b border-gray-200 mb-4 flex-wrap">
-    <button onclick="openTab(event, 'beauty-main', 'mode1')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600] flex-1 min-w-[110px]">
-      <div class="flex flex-col items-center leading-none">
-        <span class="text-2xl mb-1">💋</span>
-        <span class="whitespace-pre-line text-center">Self-Expression<br>Lens</span>
-      </div>
+  <!-- Beauty Modi Tabs -->
+  <div class="grid grid-cols-4 border-b border-gray-200 mb-4 gap-x-1">
+    <button onclick="openTab(event, 'gtnera-beauty', 'mode1')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">💋</span>
+      <span class="block leading-tight">Self-Expression</span>
     </button>
-    <button onclick="openTab(event, 'beauty-main', 'mode2')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex-1 min-w-[110px]">
-      <div class="flex flex-col items-center leading-none">
-        <span class="text-2xl mb-1">🪞</span>
-        <span class="whitespace-pre-line text-center">Aesthetic<br>Ethos</span>
-      </div>
+    <button onclick="openTab(event, 'gtnera-beauty', 'mode2')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">🪞</span>
+      <span class="block leading-tight">Aesthetic Ethos</span>
     </button>
-    <button onclick="openTab(event, 'beauty-main', 'mode3')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex-1 min-w-[110px]">
-      <div class="flex flex-col items-center leading-none">
-        <span class="text-2xl mb-1">🎨</span>
-        <span class="whitespace-pre-line text-center">Visual<br>Harmony</span>
-      </div>
+    <button onclick="openTab(event, 'gtnera-beauty', 'mode3')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">🎨</span>
+      <span class="block leading-tight">Visual Harmony</span>
     </button>
-    <button onclick="openTab(event, 'beauty-main', 'mode4')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex-1 min-w-[110px]">
-      <div class="flex flex-col items-center leading-none">
-        <span class="text-2xl mb-1">🧴</span>
-        <span class="whitespace-pre-line text-center">Care &<br>Radiance</span>
-      </div>
+    <button onclick="openTab(event, 'gtnera-beauty', 'mode4')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">🧴</span>
+      <span class="block leading-tight">Care &amp; Radiance</span>
     </button>
   </div>
-
-  <div id="beauty-main-mode1" class="tab-content">
+  <div id="gtnera-beauty-mode1" class="tab-content">
     <p>See your beauty. Express your truth.</p>
   </div>
-  <div id="beauty-main-mode2" class="tab-content hidden">
+  <div id="gtnera-beauty-mode2" class="tab-content hidden">
     <p>Reflect culture. Redefine standards.</p>
   </div>
-  <div id="beauty-main-mode3" class="tab-content hidden">
+  <div id="gtnera-beauty-mode3" class="tab-content hidden">
     <p>Design your image. Embody balance.</p>
   </div>
-  <div id="beauty-main-mode4" class="tab-content hidden">
+  <div id="gtnera-beauty-mode4" class="tab-content hidden">
     <p>Nurture yourself. Glow with intention.</p>
   </div>
-
   <div class="flex gap-4 mt-4 flex-wrap">
     <a href="https://chatgpt.com/g/g-6856d50d7f14819194406ae20eef30f8-gtnera-beauty" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">
       ChatGPT Link
@@ -483,26 +472,6 @@
     </a>
   </div>
 </section>
-
-<!-- Tabs Script (вставь только один раз на всю страницу, если еще не вставляла) -->
-<script>
-  function openTab(evt, blockId, tabKey) {
-    // Скрыть все табы этого блока
-    const tabs = document.querySelectorAll(`[id^="${blockId}-"]`);
-    tabs.forEach(t => t.classList.add('hidden'));
-    document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
-    // Активировать кнопку
-    const btns = evt.currentTarget.parentNode.querySelectorAll('.tab-button');
-    btns.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
-    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('section').forEach(section => {
-      const firstBtn = section.querySelector('.tab-button');
-      if (firstBtn) firstBtn.click();
-    });
-  });
-</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
