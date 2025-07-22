@@ -418,7 +418,86 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
+<!-- GTNEra ContentCreate Tab Block -->
+<section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
+  <div class="flex items-center gap-4 mb-4">
+    <img src="../../assets/images/17.png" alt="GTNEra ContentCreate" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
+    <div>
+      <h2 class="text-xl font-bold text-[#FF6600]">💡 GTNEra ContentCreate</h2>
+      <p class="text-sm text-gray-500">Ethical Human–AI Partner for creativity, influence & authentic expression</p>
+    </div>
+  </div>
+  <p class="text-base text-gray-700 mb-4">
+    💡 GTNEra ContentCreate is an ethical Human–AI partner for content creation, creativity, and authentic influence.<br>
+    It supports creators in developing resonant, value-driven content through storytelling, visual strategy, and conscious audience connection.
+  </p>
 
+  <!-- Tabs for ContentCreate Modes -->
+  <div class="flex border-b border-gray-200 mb-4">
+    <button onclick="openTab(event, 'contentcreate1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span>🎬</span>
+        <span>Inspire Studio</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'contentcreate2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span>📈</span>
+        <span>Growth Ethos</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'contentcreate3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span>📷</span>
+        <span>Visual Pulse</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'contentcreate4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span>💬</span>
+        <span>Authenticity Mirror</span>
+      </div>
+    </button>
+  </div>
+
+  <div id="contentcreate1" class="tab-content">
+    <p>Spark ideas. Fuel your feed.</p>
+  </div>
+  <div id="contentcreate2" class="tab-content hidden">
+    <p>Grow wisely. Influence with values.</p>
+  </div>
+  <div id="contentcreate3" class="tab-content hidden">
+    <p>See the vibe. Shape the mood.</p>
+  </div>
+  <div id="contentcreate4" class="tab-content hidden">
+    <p>Be seen. Stay real.</p>
+  </div>
+
+  <div class="flex gap-4 mt-4">
+    <a href="https://chatgpt.com/g/g-6856e2f262c48191bf97ef7df5050bdd-gtnera-contentcreate" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
+    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221XWWFy2SBNVmhTXEgPr1exzZZPC8OTuqf%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+      target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
+  </div>
+</section>
+
+<!-- Tabs Script (вставь только один раз на всю страницу, если еще не вставляла) -->
+<script>
+  function openTab(evt, tabId) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach(t => t.classList.add('hidden'));
+    allButtons.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    document.getElementById(tabId).classList.remove('hidden');
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
