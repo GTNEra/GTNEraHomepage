@@ -418,7 +418,7 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Music Tab Block -->
+<!-- GTNEra Music Tab Block (исправленный, эталонный отступ) -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/16.png" alt="GTNEra Music" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
@@ -434,51 +434,72 @@
 
   <!-- Tabs for Music Modes -->
   <div class="flex border-b border-gray-200 mb-4">
-    <button onclick="openTab(event, 'music1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">
+    <button onclick="openTab(event, 'music-block', 'mode1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>🎛️</span>
+        <span class="mb-2 text-2xl">🎛️</span>
         <span>Sound Designer</span>
       </div>
     </button>
-    <button onclick="openTab(event, 'music2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+    <button onclick="openTab(event, 'music-block', 'mode2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>🎤</span>
+        <span class="mb-2 text-2xl">🎤</span>
         <span>Lyric Mirror</span>
       </div>
     </button>
-    <button onclick="openTab(event, 'music3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+    <button onclick="openTab(event, 'music-block', 'mode3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>🌍</span>
+        <span class="mb-2 text-2xl">🌍</span>
         <span>Cultural Resonance</span>
       </div>
     </button>
-    <button onclick="openTab(event, 'music4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+    <button onclick="openTab(event, 'music-block', 'mode4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>🧘</span>
+        <span class="mb-2 text-2xl">🧘</span>
         <span>Healing Frequencies</span>
       </div>
     </button>
   </div>
 
-  <div id="music1" class="tab-content">
+  <div id="music-block-mode1" class="tab-content">
     <p>Shape your sound. Create impact.</p>
   </div>
-  <div id="music2" class="tab-content hidden">
+  <div id="music-block-mode2" class="tab-content hidden">
     <p>Find your voice. Speak your soul.</p>
   </div>
-  <div id="music3" class="tab-content hidden">
+  <div id="music-block-mode3" class="tab-content hidden">
     <p>Explore the sound of communities.</p>
   </div>
-  <div id="music4" class="tab-content hidden">
+  <div id="music-block-mode4" class="tab-content hidden">
     <p>Tune into peace. Heal through sound.</p>
   </div>
 
-  <div class="flex gap-4 mt-4">
+  <div class="flex gap-4 mt-4 flex-wrap">
     <a href="https://chatgpt.com/g/g-6856de3b549881919cd9528fba7c5887-gtnera-music" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
     <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ZAj-5v42U2BHiywPHEFZGZeaNP5ne2N-%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
       target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
   </div>
 </section>
+
+<!-- Tabs Script (универсальный, только один раз на страницу) -->
+<script>
+  function openTab(evt, blockId, tabKey) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach((t, i) => {
+      t.classList.add('hidden');
+      allButtons[i].classList.remove('border-[#FF6600]', 'text-[#FF6600]');
+    });
+    document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
