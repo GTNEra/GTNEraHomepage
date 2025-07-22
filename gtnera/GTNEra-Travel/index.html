@@ -418,7 +418,91 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
+<!-- GTNEra Travel Tab Block (№13, copy-paste, всё в одном) -->
+<section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
+  <div class="flex items-center gap-4 mb-4">
+    <img src="../../assets/images/13.png" alt="GTNEra Travel" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
+    <div>
+      <h2 class="text-xl font-bold text-[#FF6600]">🧳 GTNEra Travel</h2>
+      <p class="text-sm text-gray-500">Ethical Human–AI Partner for inspired travel, conscious discovery & resilient planning</p>
+    </div>
+  </div>
+  <p class="text-base text-gray-700 mb-4">
+    GTNEra Travel is a mindful AI partner that helps adults plan, reflect, and co-create meaningful, sustainable, and culturally sensitive travel experiences.<br>
+    It supports everything from destination ideas and packing lists to intercultural understanding and slow, low-impact travel strategies. Responses are calm, clear, and value-aligned.
+  </p>
 
+  <!-- Модусы (TABS) -->
+  <div class="flex border-b border-gray-200 mb-4 flex-wrap">
+    <button onclick="openTab(event, 'travel-main', 'mode1')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600] flex-1 min-w-[110px]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="text-2xl mb-1">🌍</span>
+        <span class="whitespace-pre-line text-center">Explorer<br>Lens</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'travel-main', 'mode2')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex-1 min-w-[110px]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="text-2xl mb-1">📋</span>
+        <span class="whitespace-pre-line text-center">Travel<br>Planner</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'travel-main', 'mode3')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex-1 min-w-[110px]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="text-2xl mb-1">🤝</span>
+        <span class="whitespace-pre-line text-center">Cultural<br>Compass</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'travel-main', 'mode4')" class="tab-button text-sm px-2 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] flex-1 min-w-[110px]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="text-2xl mb-1">🧘</span>
+        <span class="whitespace-pre-line text-center">Slow<br>Nomad</span>
+      </div>
+    </button>
+  </div>
+
+  <div id="travel-main-mode1" class="tab-content">
+    <p>See the world anew. Travel with purpose.</p>
+  </div>
+  <div id="travel-main-mode2" class="tab-content hidden">
+    <p>Stay organized. Flow with clarity.</p>
+  </div>
+  <div id="travel-main-mode3" class="tab-content hidden">
+    <p>Respect, connect, reflect.</p>
+  </div>
+  <div id="travel-main-mode4" class="tab-content hidden">
+    <p>Move mindfully. Live the journey.</p>
+  </div>
+
+  <div class="flex gap-4 mt-4 flex-wrap">
+    <a href="https://chatgpt.com/g/g-6856d03305d48191a69558c5b82f130c-gtnera-travel" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">
+      ChatGPT Link
+    </a>
+    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2218LVHGKMYz1t0puTW9dMgzZ7ZbCMx3Rj4%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+      target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">
+      AI Studio Link
+    </a>
+  </div>
+</section>
+
+<!-- Tabs Script (один раз на страницу, если ещё не было) -->
+<script>
+  function openTab(evt, blockId, tabKey) {
+    // Скрыть все табы этого блока
+    const tabs = document.querySelectorAll(`[id^="${blockId}-"]`);
+    tabs.forEach(t => t.classList.add('hidden'));
+    document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
+    // Активировать кнопку
+    const btns = evt.currentTarget.parentNode.querySelectorAll('.tab-button');
+    btns.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
