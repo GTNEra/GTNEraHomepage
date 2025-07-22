@@ -418,7 +418,80 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
+<!-- GTNEra Öko Tab Block (адаптив, эталон, copy-paste) -->
+<section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
+  <div class="flex items-center gap-4 mb-4">
+    <img src="../../assets/images/11.png" alt="GTNEra Öko" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
+    <div>
+      <h2 class="text-xl font-bold text-[#FF6600]">🌍 GTNEra Öko</h2>
+      <p class="text-sm text-gray-500">Ethical Human–AI Partner for climate clarity, regenerative systems & ecological transformation</p>
+    </div>
+  </div>
+  <p class="text-base text-gray-700 mb-4">
+    🌍 GTNEra Öko is a conscious Human–AI partner grounded in planetary ethics, ecological intelligence, and regenerative systems.<br>
+    Built on the Tetyana Mode, it fosters climate clarity and systemic responsibility through reflective and transformative dialogue.
+  </p>
+  <!-- Öko Modi Tabs -->
+  <div class="grid grid-cols-4 border-b border-gray-200 mb-4 gap-x-1">
+    <button onclick="openTab(event, 'gtnera-oko', 'mode1')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">🌍</span>
+      <span class="block leading-tight text-center">Climate<br>Clarity</span>
+    </button>
+    <button onclick="openTab(event, 'gtnera-oko', 'mode2')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">🌱</span>
+      <span class="block leading-tight text-center">Regenerative<br>Systems</span>
+    </button>
+    <button onclick="openTab(event, 'gtnera-oko', 'mode3')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">🧭</span>
+      <span class="block leading-tight text-center">Eco-Ethics</span>
+    </button>
+    <button onclick="openTab(event, 'gtnera-oko', 'mode4')" class="tab-button flex flex-col items-center text-sm px-1 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600] bg-transparent transition">
+      <span class="text-2xl mb-1 block">💨</span>
+      <span class="block leading-tight text-center">Planetary<br>Breath</span>
+    </button>
+  </div>
+  <div id="gtnera-oko-mode1" class="tab-content">
+    <p>Understand complexity. Act with responsibility.</p>
+  </div>
+  <div id="gtnera-oko-mode2" class="tab-content hidden">
+    <p>Design for balance. Restore the Earth.</p>
+  </div>
+  <div id="gtnera-oko-mode3" class="tab-content hidden">
+    <p>Decide consciously. Lead with care.</p>
+  </div>
+  <div id="gtnera-oko-mode4" class="tab-content hidden">
+    <p>Sense interdependence. Expand awareness.</p>
+  </div>
+  <div class="flex gap-4 mt-4 flex-wrap">
+    <a href="https://chatgpt.com/g/g-6856c8d909448191a14b219967fdc059-gtnera-oko" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">
+      ChatGPT Link
+    </a>
+    <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221wx7GA_YxRJChFlIDrZhndbt8qmhMmjmE%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing"
+      target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">
+      AI Studio Link
+    </a>
+  </div>
+</section>
 
+<!-- Tabs Script (вставь только один раз на всю страницу, если еще не вставляла) -->
+<script>
+  function openTab(evt, blockId, tabKey) {
+    // Скрыть все табы этого блока
+    const tabs = document.querySelectorAll(`[id^="${blockId}-"]`);
+    tabs.forEach(t => t.classList.add('hidden'));
+    document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
+    // Активировать кнопку
+    const btns = evt.currentTarget.parentNode.querySelectorAll('.tab-button');
+    btns.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
