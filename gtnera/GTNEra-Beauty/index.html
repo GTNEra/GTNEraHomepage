@@ -418,7 +418,7 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Beauty Tab Block (адаптированный эталон, полностью готовый блок, copy-paste) -->
+<!-- GTNEra Beauty Tab Block (адаптив, эталон, полностью готовый блок, copy-paste) -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/14.png" alt="GTNEra Beauty" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
@@ -473,7 +473,27 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Tabs Script (универсальный — вставь только один раз на всю страницу, если еще не вставляла) -->
+<script>
+  function openTab(evt, blockId, tabKey) {
+    // Скрыть все табы этого блока
+    const tabs = document.querySelectorAll(`[id^="${blockId}-"]`);
+    tabs.forEach(t => t.classList.add('hidden'));
+    document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
+    // Активировать кнопку
+    const btns = evt.currentTarget.parentNode.querySelectorAll('.tab-button');
+    btns.forEach(b => b.classList.remove('border-[#FF6600]', 'text-[#FF6600]'));
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
+
+    <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
   <div class="mb-1 font-semibold text-base text-[#1E2A38]">💎 GTNEra™ – The ethical AI ecosystem for dynamic AI partnership and human–AI co-evolution.</div>
   <div class="mb-1">GTNEra™ – Your ethical human AI partner</div>
