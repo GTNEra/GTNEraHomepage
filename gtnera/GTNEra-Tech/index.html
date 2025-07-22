@@ -418,7 +418,7 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Tech Tab Block (полный блок, copy-paste) -->
+<!-- GTNEra Tech Tab Block (Copy-Paste, Fix: Emoji Top, Proper Tab Switch) -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/19.png" alt="GTNEra Tech" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
@@ -431,29 +431,72 @@
     GTNEra Tech is your ethical Human–AI Partner for understanding, shaping, and co-evolving with technology.<br>
     Rooted in the Tetyana Mode, it fosters systemic thinking, value-driven innovation, and responsible decision-making in the age of AI.
   </p>
+  <!-- Tab Navigation: emoji oben, Titel unten, Abstand -->
   <div class="flex border-b border-gray-200 mb-4">
-    <button onclick="openTab(event, 'tech1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">🔧 Maker Mode</button>
-    <button onclick="openTab(event, 'tech2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">📘 Tech Tutor</button>
-    <button onclick="openTab(event, 'tech3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">🤖 Robot Companion</button>
-    <button onclick="openTab(event, 'tech4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">⚙️ System Forge</button>
+    <button onclick="openTab(event, 'tech-block', 'mode1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="mb-1 text-2xl">🔧</span>
+        <span>Maker Mode</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'tech-block', 'mode2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="mb-1 text-2xl">📘</span>
+        <span>Tech Tutor</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'tech-block', 'mode3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="mb-1 text-2xl">🤖</span>
+        <span>Robot Companion</span>
+      </div>
+    </button>
+    <button onclick="openTab(event, 'tech-block', 'mode4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+      <div class="flex flex-col items-center leading-none">
+        <span class="mb-1 text-2xl">⚙️</span>
+        <span>System Forge</span>
+      </div>
+    </button>
   </div>
-  <div id="tech1" class="tab-content">
+  <!-- Tab Content -->
+  <div id="tech-block-mode1" class="tab-content">
     <p>Build smart. Fix with clarity.</p>
   </div>
-  <div id="tech2" class="tab-content hidden">
+  <div id="tech-block-mode2" class="tab-content hidden">
     <p>Understand tools. Learn engineering.</p>
   </div>
-  <div id="tech3" class="tab-content hidden">
+  <div id="tech-block-mode3" class="tab-content hidden">
     <p>Program futures. Move with logic.</p>
   </div>
-  <div id="tech4" class="tab-content hidden">
+  <div id="tech-block-mode4" class="tab-content hidden">
     <p>Design wisely. Create responsibly.</p>
   </div>
-  <div class="flex gap-4 mt-4">
+  <div class="flex gap-4 mt-4 flex-wrap">
     <a href="https://chatgpt.com/g/g-6856eacc285481919672e680359212f9-gtnera-tech" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
     <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221ASxsxXQ83Ebj-sZjPfQXQ9qDX4zv5peg%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
   </div>
 </section>
+
+<!-- Tabs Script (einmalig auf Seite oder ans Ende einfügen, falls nicht vorhanden) -->
+<script>
+  function openTab(evt, blockId, tabKey) {
+    const section = evt.currentTarget.closest('section');
+    const allTabs = section.querySelectorAll('.tab-content');
+    const allButtons = section.querySelectorAll('.tab-button');
+    allTabs.forEach((t,i) => {
+      t.classList.add('hidden');
+      allButtons[i].classList.remove('border-[#FF6600]', 'text-[#FF6600]');
+    });
+    document.getElementById(`${blockId}-${tabKey}`).classList.remove('hidden');
+    evt.currentTarget.classList.add('border-[#FF6600]', 'text-[#FF6600]');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('section').forEach(section => {
+      const firstBtn = section.querySelector('.tab-button');
+      if (firstBtn) firstBtn.click();
+    });
+  });
+</script>
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
