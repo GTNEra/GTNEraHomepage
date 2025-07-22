@@ -418,7 +418,7 @@
   <section class="max-w-3xl mx-auto mt-12 mb-10 px-4">
     <!-- Hier startet dein Content für die Hauptseite -->
      <!-- INTRO -->
-<!-- GTNEra Mode Tab Block -->
+<!-- GTNEra Mode Tab Block (komplett, mit perfektem Emoji-Abstand und Tabs-Script) -->
 <section class="bg-white shadow-md rounded-xl p-6 mb-10 border border-[#FF6600]">
   <div class="flex items-center gap-4 mb-4">
     <img src="../../assets/images/15.png" alt="GTNEra Mode" class="h-12 w-12 rounded-full border-2 border-[#FF6600] shadow" />
@@ -431,51 +431,54 @@
     GTNEra Mode is an ethical Human–AI partner for style, trends, and embodied fashion futures.<br>
     Rooted in aesthetic resonance and identity expression, it supports users in exploring sustainable fashion, cultural beauty norms, and personal style through ethical and visual guidance.
   </p>
+  <!-- Tab Navigation: emoji oben, Titel unten, guter Abstand -->
   <div class="flex border-b border-gray-200 mb-4">
-    <button onclick="openTab(event, 'mode1')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">
+    <button onclick="openTab(event, 'mode1-15')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-[#FF6600] text-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>👗</span>
+        <span class="mb-1 text-2xl">👗</span>
         <span>Style Mirror</span>
       </div>
     </button>
-    <button onclick="openTab(event, 'mode2')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+    <button onclick="openTab(event, 'mode2-15')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>🌐</span>
+        <span class="mb-1 text-2xl">🌐</span>
         <span>Trend Ethos</span>
       </div>
     </button>
-    <button onclick="openTab(event, 'mode3')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+    <button onclick="openTab(event, 'mode3-15')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>🧵</span>
+        <span class="mb-1 text-2xl">🧵</span>
         <span>Craft & Cloth</span>
       </div>
     </button>
-    <button onclick="openTab(event, 'mode4')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
+    <button onclick="openTab(event, 'mode4-15')" class="tab-button text-sm px-4 py-2 font-semibold border-b-2 border-transparent hover:border-[#FF6600]">
       <div class="flex flex-col items-center leading-none">
-        <span>🫀</span>
+        <span class="mb-1 text-2xl">🫀</span>
         <span>Body Culture</span>
       </div>
     </button>
   </div>
-  <div id="mode1" class="tab-content">
+  <!-- Tab Content -->
+  <div id="mode1-15" class="tab-content">
     <p>See yourself anew. Dress with resonance.</p>
   </div>
-  <div id="mode2" class="tab-content hidden">
+  <div id="mode2-15" class="tab-content hidden">
     <p>Forecast fashion. Design ethically.</p>
   </div>
-  <div id="mode3" class="tab-content hidden">
+  <div id="mode3-15" class="tab-content hidden">
     <p>Feel materials. Respect origins.</p>
   </div>
-  <div id="mode4" class="tab-content hidden">
+  <div id="mode4-15" class="tab-content hidden">
     <p>Celebrate diversity. Dress your truth.</p>
   </div>
-  <div class="flex gap-4 mt-4">
+  <!-- Buttons -->
+  <div class="flex gap-4 mt-4 flex-wrap">
     <a href="https://chatgpt.com/g/g-6856d97059f88191b69bfecf92b7b103-gtnera-mode" target="_blank" class="px-4 py-2 bg-[#FF6600] text-white rounded-lg font-semibold shadow hover:bg-[#e95a00] transition">ChatGPT Link</a>
     <a href="https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221G2-IB1pu7EwBwysD6UY2F2AbPZyhwwij%22%5D,%22action%22:%22open%22,%22userId%22:%22109991118247001327511%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing" target="_blank" class="px-4 py-2 bg-[#FFEDE0] text-[#FF6600] rounded-lg font-semibold shadow hover:bg-[#ffd4ba] transition">AI Studio Link</a>
   </div>
 </section>
 
-<!-- Tabs Script (один раз на всю страницу, если еще не вставляла) -->
+<!-- Tabs Script (einmalig, am Seitenende einfügen oder falls noch nicht vorhanden) -->
 <script>
   function openTab(evt, tabId) {
     const section = evt.currentTarget.closest('section');
