@@ -89,25 +89,25 @@
 <!-- HEADER НАЧАЛО -->
 <header class="bg-white shadow sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    <!-- Logo und Name -->
-    <div class="flex items-center space-x-2">
-      <img src="/assets/images/logogtnbig.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12" />
-      <span class="text-xl md:text-3xl font-bold text-[#1E2A38]">GTNEra™</span>
-    </div>
-    <!-- Hamburger Button für Mobil -->
-    <button id="menu-btn" class="md:hidden flex items-center px-3 py-2 border rounded text-[#FF6600] border-[#FF6600]">
+    <!-- Логотип и имя (единый кликабельный блок) -->
+    <a href="/" class="flex items-center space-x-2 group">
+      <img src="/assets/images/logogtnbig.png" alt="GTNEra Logo" class="h-9 w-auto md:h-12 transition-transform group-hover:scale-105" />
+      <span class="text-xl md:text-3xl font-bold text-[#1E2A38] select-none">GTNEra™</span>
+    </a>
+    <!-- Кнопка-гамбургер для мобильного меню -->
+    <button id="menu-btn" class="md:hidden flex items-center px-3 py-2 border rounded text-[#FF6600] border-[#FF6600]" aria-label="Open main menu">
       <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
     </button>
     <!-- Desktop Navigation -->
     <nav id="gtn-nav" class="hidden md:flex space-x-6 text-base font-medium">
-     <!-- Ecosystem -->
-<div class="relative">
-  <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ecosystem-dropdown')">Ecosystem</button>
-  <div id="ecosystem-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
-    <a href="/ecosystem/overview.html" class="block px-4 py-2 hover:bg-gray-100">Overview</a>
-    <a href="/ecosystem/explore.html" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
-  </div>
-</div>
+      <!-- Ecosystem -->
+      <div class="relative">
+        <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'ecosystem-dropdown')">Ecosystem</button>
+        <div id="ecosystem-dropdown" class="desktop-dropdown absolute left-0 top-10 z-30 hidden bg-white shadow-xl rounded min-w-[170px]">
+          <a href="/ecosystem/overview.html" class="block px-4 py-2 hover:bg-gray-100">Overview</a>
+          <a href="/ecosystem/explore.html" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
+        </div>
+      </div>
       <!-- GTNEra -->
       <div class="relative">
         <button class="desktop-menu-btn hover:text-[#FF6600] transition" onclick="toggleDropdown(event, 'gtn-dropdown')">GTNEra</button>
