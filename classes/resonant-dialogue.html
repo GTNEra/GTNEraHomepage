@@ -594,18 +594,27 @@
   <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#32B67A]/10 rounded-full blur-2xl z-0 pointer-events-none"></div>
 
   <!-- Текст/шутка -->
-  <div class="mt-10 text-center max-w-xl">
-    <span class="inline-flex items-center gap-2 text-lg font-semibold text-[#32B67A] bg-[#E9FDF7] rounded-xl px-5 py-3 shadow-sm">
-      🥒 "The Cucumber of Clarity"  
-      <span class="text-sm text-gray-500 ml-2">is floating into your thoughts...</span>
-    </span>
-    <div class="mt-4 text-base text-gray-600 font-medium">  
-      <span>
-        If you ever feel lost, just ask yourself:<br>
-        <span class="italic text-[#A259E6]">"What would a cucumber do?"</span>
-      </span>
-    </div>
+  <section class="bg-white rounded-2xl shadow px-6 py-24 mb-8 flex flex-col justify-center items-center min-h-[500px] relative overflow-hidden">
+  <!-- Огурец с анимацией "парения" -->
+  <img src="../assets/images/cucumber-image.jpeg" alt="Cucumber"
+       class="w-auto max-h-[420px] object-contain drop-shadow-xl transition-transform duration-700 ease-in-out animate-float" />
+  <!-- Легкая аура вокруг (убирай, если не хочется!) -->
+  <!-- <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-32 bg-[#32B67A]/15 blur-2xl rounded-full pointer-events-none"></div> -->
+  <!-- Подпись снизу -->
+  <div class="mt-8 text-center">
+    <div class="text-2xl font-bold text-[#32B67A] mb-2">🧪🥒 The Cucumber Experiment</div>
+    <div class="text-gray-500 text-lg">Sometimes all you need is… cucumber magic.<br/>Test the logic. Squeeze the fun.</div>
   </div>
+  <!-- Анимация "парения" для огурца (Tailwind + custom) -->
+  <style>
+    .animate-float {
+      animation: floatY 3.4s ease-in-out infinite alternate;
+    }
+    @keyframes floatY {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-22px);}
+    }
+  </style>
 </section>
 
   <!-- <div class="text-gray-300 text-3xl italic">[Cucumber Image Placeholder]</div> -->
@@ -1096,6 +1105,7 @@ where wL + wE + wR = 1
     © 2025 Tetyana Leyendecker — TeNAI™ &amp; GTNEra™. All rights reserved.
   </div>
 </footer>
+
 
 
 
