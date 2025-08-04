@@ -589,10 +589,10 @@
   <!-- <div class="text-gray-300 text-lg italic">[Cucumber Image Placeholder]</div> -->
 </section>
 
-<!-- LMA Logic Modulated Answers placeholder -->
-<section class="bg-white py-12 px-4 sm:px-8 max-w-3xl mx-auto rounded-2xl shadow-2xl my-8">
+<!-- LMA Logic Emotional Resonance -->
+    <section class="bg-white py-12 px-4 sm:px-8 max-w-3xl mx-auto rounded-2xl shadow-2xl my-8">
   <div class="text-center mb-6">
-    <h2 class="text-3xl font-bold tracking-tight mb-1">LMA – Logic / Emotion / Resonance</h2>
+    <h2 class="text-3xl font-bold tracking-tight mb-1" style="color:#32B67A;">LMA — Logic / Emotion / Resonance</h2>
     <p class="text-gray-500 text-lg">Try toggling the layers to see how the answer shifts.</p>
   </div>
 
@@ -600,7 +600,7 @@
     <!-- Question Select -->
     <div class="mb-6">
       <label class="block text-base font-medium mb-2" for="lma-question">Choose a question:</label>
-      <select id="lma-question" class="w-full rounded-xl border-gray-300 py-2 px-3 focus:ring-2 focus:ring-green-400">
+      <select id="lma-question" class="w-full rounded-xl border-gray-300 py-2 px-3 focus:ring-2 focus:ring-[#32B67A]">
         <option value="0">Where do cucumbers grow?</option>
         <option value="1">Why do people argue on the internet?</option>
         <option value="2">What makes a day happy?</option>
@@ -608,15 +608,15 @@
       </select>
     </div>
 
-    <!-- Layer Tabs (left-aligned) -->
-    <div class="flex gap-2 mb-8" id="lma-layers">
-      <button id="btn-logic" class="lma-toggle py-3 px-6 rounded-xl border-2 border-blue-500 bg-blue-100 text-blue-800 text-lg font-semibold transition-all shadow-md data-[active=true]:bg-blue-500 data-[active=true]:text-white" data-layer="L" data-active="true">
+    <!-- Layer Buttons (stacked on mobile, row on desktop) -->
+    <div id="lma-layers" class="flex flex-col gap-2 sm:flex-row sm:gap-4 mb-8">
+      <button id="btn-logic" class="lma-toggle flex-1 py-3 rounded-xl border-2 border-blue-500 bg-blue-100 text-blue-800 text-lg font-bold transition-all shadow-md active:scale-95" data-layer="L" data-active="true">
         <span class="mr-2">🔵</span> Logic
       </button>
-      <button id="btn-emotion" class="lma-toggle py-3 px-6 rounded-xl border-2 border-green-500 bg-green-100 text-green-800 text-lg font-semibold transition-all shadow-md data-[active=true]:bg-green-500 data-[active=true]:text-white" data-layer="E" data-active="true">
+      <button id="btn-emotion" class="lma-toggle flex-1 py-3 rounded-xl border-2 border-green-500 bg-green-100 text-green-800 text-lg font-bold transition-all shadow-md active:scale-95" data-layer="E" data-active="true">
         <span class="mr-2">🟢</span> Emotion
       </button>
-      <button id="btn-resonance" class="lma-toggle py-3 px-6 rounded-xl border-2 border-purple-500 bg-purple-100 text-purple-800 text-lg font-semibold transition-all shadow-md data-[active=true]:bg-purple-500 data-[active=true]:text-white" data-layer="R" data-active="true">
+      <button id="btn-resonance" class="lma-toggle flex-1 py-3 rounded-xl border-2 border-purple-500 bg-purple-100 text-purple-800 text-lg font-bold transition-all shadow-md active:scale-95" data-layer="R" data-active="true">
         <span class="mr-2">🟣</span> Resonance
       </button>
     </div>
@@ -624,11 +624,11 @@
     <!-- Answer Block -->
     <div class="mt-4 bg-gray-50 rounded-2xl p-6 shadow-md">
       <div class="flex items-center gap-2 mb-2 text-lg font-bold">
-        <span id="lma-mode">Triundra Answer</span>
+        <span id="lma-mode" style="color:#32B67A;">Triundra Answer</span>
       </div>
       <div id="lma-answer" class="mb-5 text-lg leading-relaxed text-gray-900"></div>
       <!-- Percentages -->
-      <div class="flex flex-col gap-2 sm:flex-row sm:gap-6 text-base font-medium text-gray-700">
+      <div class="flex flex-col gap-2 sm:flex-row sm:gap-6 text-base font-bold">
         <span class="flex items-center">
           <span class="inline-block w-4 h-4 mr-2 rounded-full bg-blue-500"></span>
           <span class="font-bold text-blue-700">Logic:</span>
@@ -649,48 +649,48 @@
   </div>
 
   <script>
-    // === LMA DATA ===
+    // === LMA DATA (полная структура, 4 вопроса * 8 ответов) ===
     const lmaData = [
       // 1. Where do cucumbers grow?
       [
-        {
+        { // L E R
           mode: "Triundra Answer",
           answer: "Cucumbers typically grow in warm, well-drained soil with partial shade and consistent moisture. But beyond the facts, imagine a cucumber sprouting where the earth exhales quietly and the leaves whisper stories of water and sun. In the still rhythm of growth, something as humble as a cucumber becomes a silent ritual of nature’s care.",
           pct: [60,25,15]
         },
-        {
+        { //   E R
           mode: "Emotion + Resonance",
           answer: "Somewhere soft and green, where the earth still remembers kindness. Cucumbers grow not just from seeds, but from silence, warmth, and patient breath. They appear where the sun hums gently, and moisture lingers like a held note in a lullaby. You don’t find them — they arrive.",
           pct: [0,60,40]
         },
-        {
+        { // L   R
           mode: "Logic + Resonance",
           answer: "Cucumbers grow in environments that meet their biological needs: loose, nutrient-rich soil, adequate moisture, and warmth. Yet within this cycle, one might perceive a silent alignment — a pattern of growth echoing the geometry of resilience. The cucumber does not seek attention, but fulfills its function with quiet precision.",
           pct: [70,0,30]
         },
-        {
+        { // L E
           mode: "Logic + Emotion",
           answer: "Cucumbers grow best in warm climates with well-drained, fertile soil and regular watering. It’s such a satisfying feeling to see their vines climb and thrive — they bring freshness to the garden and joy to the table. Growing them feels rewarding and grounding.",
           pct: [60,40,0]
         },
-        {
+        { // L
           mode: "Logic only",
           answer: "Cucumbers grow in warm climates, ideally in temperatures between 18°C and 30°C. They require well-drained, nutrient-rich soil with a neutral pH (around 6.5–7.0) and consistent moisture. Full sun exposure and trellising improve yield and growth efficiency.",
           pct: [100,0,0]
         },
-        {
+        { //   E
           mode: "Emotion only",
           answer: "They grow where it’s warm and soft… where the earth welcomes and the rain remembers. Where green dreams rise gently from the soil and stretch toward light, like a shy hope becoming real. A cucumber doesn’t just grow — it feels its way upward.",
           pct: [0,100,0]
         },
-        {
+        { //     R
           mode: "Resonance only",
           answer: "Between shade and memory.\nWhere spiral paths meet stillness.\nIn the breath before the green emerges,\nand the hush where time slows down.\nNot place — but pattern.",
           pct: [0,0,100]
         },
-        {
-          mode: "🥒 Cucumbar Collapse (L.E.R. OFF)",
-          answer: "pgsql\nKopierenBearbeiten\n…processing…\n…green?\ncucumber…\nlocation…error…\n🥒🥒🥒\n…no input…no output…\nmeaning?\n………….\n……………….\n🥒",
+        { // collapse
+          mode: "🥒 Cucumber Collapse (L.E.R. OFF)",
+          answer: "pgsql\n…processing…\n…green?\ncucumber…\nlocation…error…\n🥒🥒🥒\n…no input…no output…\nmeaning?\n………….\n……………….\n🥒",
           pct: [0,0,0]
         },
       ],
@@ -699,7 +699,7 @@
         {
           mode: "Triundra Answer",
           answer: "People argue online because logic, identity, and deeper meaning collide in real time. They want to be right (logic), to be seen or validated (emotion), and to resonate with something beyond the words (resonance). The internet becomes a mirror of the unresolved within.",
-          pct: [50,35,15]
+          pct: [40,30,30]
         },
         {
           mode: "Emotion + Resonance",
@@ -742,7 +742,7 @@
         {
           mode: "Triundra Answer",
           answer: "A happy day is when meaning, connection, and clarity align. You do what makes sense, you feel deeply engaged, and there's a quiet resonance beneath it all — like life is gently saying “yes” to you, and you’re saying it back.",
-          pct: [45,40,15]
+          pct: [40,35,25]
         },
         {
           mode: "Emotion + Resonance",
@@ -785,7 +785,7 @@
         {
           mode: "Triundra Answer",
           answer: "Cats stare into nothingness because they perceive layers we don’t. It makes sense biologically (sensory sensitivity), it feels natural to them (curiosity, calm), and it resonates — a quiet communion with something we’ve forgotten how to sense.",
-          pct: [50,30,20]
+          pct: [35,35,30]
         },
         {
           mode: "Emotion + Resonance",
@@ -827,20 +827,19 @@
 
     // === UI LOGIC ===
     const btns = [];
-    btns[0] = null; // placeholder
-    let logicBtn, emotionBtn, resonanceBtn;
     document.addEventListener("DOMContentLoaded", function() {
-      logicBtn = document.getElementById('btn-logic');
-      emotionBtn = document.getElementById('btn-emotion');
-      resonanceBtn = document.getElementById('btn-resonance');
-      btns[1] = logicBtn;
-      btns[2] = emotionBtn;
-      btns[3] = resonanceBtn;
+      const logicBtn = document.getElementById('btn-logic');
+      const emotionBtn = document.getElementById('btn-emotion');
+      const resonanceBtn = document.getElementById('btn-resonance');
+      btns[0] = logicBtn;
+      btns[1] = emotionBtn;
+      btns[2] = resonanceBtn;
 
       const qSelect = document.getElementById('lma-question');
       let activeLayers = [true, true, true];
 
       function getAnswerIdx(layers) {
+        // L, E, R (3 switches)
         if (layers[0] && layers[1] && layers[2]) return 0;
         if (!layers[0] && layers[1] && layers[2]) return 1;
         if (layers[0] && !layers[1] && layers[2]) return 2;
@@ -852,23 +851,26 @@
       }
 
       function render() {
-        // Update button state
-        [logicBtn, emotionBtn, resonanceBtn].forEach((btn, idx) => {
-          btn.setAttribute('data-active', activeLayers[idx]);
-          btn.style.backgroundColor = activeLayers[idx]
-            ? (idx === 0 ? "#3B82F6" : idx === 1 ? "#22C55E" : "#A259E6")
-            : (idx === 0 ? "#DBEAFE" : idx === 1 ? "#D1FAE5" : "#EDE9FE");
-          btn.style.color = activeLayers[idx]
-            ? "#fff"
-            : (idx === 0 ? "#1E40AF" : idx === 1 ? "#166534" : "#6D28D9");
+        // Кнопки: активная = цветная, неактивная = светлая
+        btns.forEach((btn, idx) => {
+          const active = activeLayers[idx];
+          if(idx===0) { // Logic
+            btn.style.backgroundColor = active ? "#3B82F6" : "#DBEAFE";
+            btn.style.color = active ? "#fff" : "#1E40AF";
+          } else if(idx===1) { // Emotion
+            btn.style.backgroundColor = active ? "#32B67A" : "#D1FAE5";
+            btn.style.color = active ? "#fff" : "#166534";
+          } else if(idx===2) { // Resonance
+            btn.style.backgroundColor = active ? "#A259E6" : "#EDE9FE";
+            btn.style.color = active ? "#fff" : "#6D28D9";
+          }
         });
 
-        // Get question and correct answer
+        // Получаем вопрос и вариант ответа
         const qIdx = Number(qSelect.value);
         const aIdx = getAnswerIdx(activeLayers);
         const data = lmaData[qIdx][aIdx];
 
-        // Render
         document.getElementById('lma-mode').textContent = data.mode;
         document.getElementById('lma-answer').textContent = data.answer;
         document.getElementById('lma-pct-logic').textContent = data.pct[0] + "%";
@@ -876,16 +878,13 @@
         document.getElementById('lma-pct-resonance').textContent = data.pct[2] + "%";
       }
 
-      // Events
-      [logicBtn, emotionBtn, resonanceBtn].forEach((btn, idx) => {
+      btns.forEach((btn, idx) => {
         btn.addEventListener('click', () => {
           activeLayers[idx] = !activeLayers[idx];
           render();
         });
       });
       qSelect.addEventListener('change', render);
-
-      // Initial render
       render();
     });
   </script>
@@ -1076,6 +1075,7 @@ where wL + wE + wR = 1
     © 2025 Tetyana Leyendecker — TeNAI™ &amp; GTNEra™. All rights reserved.
   </div>
 </footer>
+
 
 
 
