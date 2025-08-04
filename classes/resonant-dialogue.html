@@ -449,266 +449,257 @@
     </li>
   </ul>
 
-  <!-- L/M/A INTERACTIVE BLOCK for GTNEra | Copyright Tetyana Leyendecker 2025 -->
-<section id="lma-block" style="max-width:760px;margin:40px auto;padding:32px 16px 48px 16px;background:#f8faff;border-radius:18px;box-shadow:0 4px 28px 0 rgba(29,46,70,0.09);font-family:Inter,Arial,sans-serif;">
-  <h2 style="font-size:2rem;font-weight:700;margin-bottom:1.5rem;text-align:center;letter-spacing:0.03em;">Liar Modulated Answers</h2>
-  <div style="display:flex;flex-direction:column;gap:1.5rem;">
-    <!-- QUESTION SELECTOR -->
-    <div style="text-align:center;">
-      <label for="lma-q" style="font-weight:600;font-size:1.1rem;letter-spacing:0.02em;">Select a Question:</label>
-      <select id="lma-q" style="margin-left:1rem;padding:0.5em 1em;font-size:1.1rem;border-radius:7px;border:1px solid #d0d7e1;">
-        <option value="q1">Where do cucumbers grow?</option>
-        <option value="q2">Why do people argue on the internet?</option>
-        <option value="q3">What makes a day happy?</option>
-        <option value="q4">Why do cats stare into nothingness?</option>
-      </select>
+ <!-- LMA Interactive Block -->
+<section id="lma-module" class="max-w-2xl mx-auto my-12 bg-white rounded-2xl shadow-2xl px-6 py-8">
+  <h2 class="text-3xl font-extrabold mb-1 text-center tracking-tight text-gray-900">LMA — Liar Modulated Answers</h2>
+  <p class="text-center mb-8 text-gray-500">Choose a question & configure your answer by switching Logic, Emotion, Resonance layers on/off.</p>
+
+  <!-- Question Selector -->
+  <div class="mb-4">
+    <label for="questionSelect" class="block mb-2 font-semibold text-gray-700">Question</label>
+    <select id="questionSelect" class="w-full px-4 py-2 rounded-xl border focus:ring-2 focus:ring-blue-300 bg-gray-50">
+      <option value="0">Where do cucumbers grow?</option>
+      <option value="1">Why do people argue on the internet?</option>
+      <option value="2">What makes a day happy?</option>
+      <option value="3">Why do cats stare into nothingness?</option>
+    </select>
+  </div>
+
+  <!-- LMA Layer Buttons -->
+  <div class="flex justify-center gap-4 my-6">
+    <button id="logicBtn" class="lma-toggle-btn bg-blue-600 text-white px-6 h-12 rounded-full shadow-lg font-bold flex items-center gap-2 transition hover:bg-blue-700 focus:ring-2 focus:ring-blue-400" aria-pressed="true">
+      <span>🔵</span> Logic
+    </button>
+    <button id="emotionBtn" class="lma-toggle-btn bg-green-500 text-white px-6 h-12 rounded-full shadow-lg font-bold flex items-center gap-2 transition hover:bg-green-600 focus:ring-2 focus:ring-green-400" aria-pressed="true">
+      <span>🟢</span> Emotion
+    </button>
+    <button id="resonanceBtn" class="lma-toggle-btn bg-purple-600 text-white px-6 h-12 rounded-full shadow-lg font-bold flex items-center gap-2 transition hover:bg-purple-700 focus:ring-2 focus:ring-purple-400" aria-pressed="true">
+      <span>🟣</span> Resonance
+    </button>
+  </div>
+
+  <!-- Answer Block -->
+  <div id="lmaAnswerBlock" class="rounded-xl bg-gray-50 border mt-4 px-6 py-6 shadow text-lg font-medium min-h-[120px] transition">
+    <!-- Dynamic answer will appear here -->
+  </div>
+
+  <!-- LMA Layer Signature -->
+  <div id="lmaSignature" class="flex flex-col items-center gap-2 mt-6">
+    <div class="flex gap-3">
+      <span id="sigLogic" class="inline-flex items-center px-4 h-9 rounded-full font-semibold bg-blue-50 text-blue-700 border border-blue-200">🔵 Logic: <span class="ml-1">—</span></span>
+      <span id="sigEmotion" class="inline-flex items-center px-4 h-9 rounded-full font-semibold bg-green-50 text-green-700 border border-green-200">🟢 Emotion: <span class="ml-1">—</span></span>
+      <span id="sigResonance" class="inline-flex items-center px-4 h-9 rounded-full font-semibold bg-purple-50 text-purple-700 border border-purple-200">🟣 Resonance: <span class="ml-1">—</span></span>
     </div>
-    <!-- LAYER TOGGLE BUTTONS -->
-    <div id="lma-layers" style="display:flex;justify-content:center;gap:1.2rem;">
-      <button type="button" class="lma-btn" id="lma-btn-l" data-layer="l" aria-pressed="true" style="background:#2563eb;color:#fff;">🔵 Logic</button>
-      <button type="button" class="lma-btn" id="lma-btn-e" data-layer="e" aria-pressed="true" style="background:#22c55e;color:#fff;">🟢 Emotion</button>
-      <button type="button" class="lma-btn" id="lma-btn-r" data-layer="r" aria-pressed="true" style="background:#a21caf;color:#fff;">🟣 Resonance</button>
-    </div>
-    <!-- ANSWER BLOCK -->
-    <div id="lma-output" style="margin-top:1.2rem;padding:1.5rem 1rem 1rem 1rem;border-radius:13px;background:#fff;box-shadow:0 2px 12px 0 rgba(35,60,100,0.08);min-height:140px;transition:background 0.25s;">
-      <!-- Dynamically filled -->
-    </div>
+    <span id="collapseNote" class="text-xs text-gray-400 mt-2 hidden">🥒 Zero-layer failure — cognitive disintegration</span>
   </div>
 </section>
 
-<!-- INLINE CSS FOR BUTTON STATE -->
-<style>
-  .lma-btn[aria-pressed="true"] { filter: none; box-shadow: 0 2px 7px 0 rgba(33,42,79,0.10); font-weight:700;}
-  .lma-btn[aria-pressed="false"] { filter: grayscale(0.78); opacity:0.56; background:#e9e9f4;color:#8e92a2;font-weight:500;}
-  #lma-output .lma-signature { display:flex;gap:0.6em;margin-top:1em;font-size:0.95em;opacity:0.84;}
-  #lma-output .lma-sig-l { color:#2563eb; }
-  #lma-output .lma-sig-e { color:#22c55e; }
-  #lma-output .lma-sig-r { color:#a21caf; }
-  #lma-output .lma-sig-x { color:#94999e; }
-  @media (max-width: 600px) {
-    #lma-block { padding:18px 2vw 30px 2vw;}
-    #lma-output { padding:1rem 0.5rem 0.7rem 0.5rem;}
-    .lma-btn { font-size:0.98rem;}
-  }
-</style>
-
-<!-- LMA DATA + SCRIPT -->
+<!-- SCRIPT: LMA LOGIC -->
 <script>
-const LMA = {
-  // === Q1 ===
-  q1: [
+const answers = [
+  // 1. Cucumbers
+  [
     {
-      k: '111', // L E R
-      a: `“Cucumbers typically grow in warm, well-drained soil with partial shade and consistent moisture. But beyond the facts, imagine a cucumber sprouting where the earth exhales quietly and the leaves whisper stories of water and sun. In the still rhythm of growth, something as humble as a cucumber becomes a silent ritual of nature’s care.”`,
-      s: [60, 25, 15]
+      text: "Cucumbers typically grow in warm, well-drained soil with partial shade and consistent moisture. But beyond the facts, imagine a cucumber sprouting where the earth exhales quietly and the leaves whisper stories of water and sun. In the still rhythm of growth, something as humble as a cucumber becomes a silent ritual of nature’s care.",
+      sig: [60, 25, 15]
     },
     {
-      k: '011',
-      a: `“Somewhere soft and green, where the earth still remembers kindness. Cucumbers grow not just from seeds, but from silence, warmth, and patient breath. They appear where the sun hums gently, and moisture lingers like a held note in a lullaby. You don’t find them — they arrive.”`,
-      s: [0, 60, 40]
+      text: "Somewhere soft and green, where the earth still remembers kindness. Cucumbers grow not just from seeds, but from silence, warmth, and patient breath. They appear where the sun hums gently, and moisture lingers like a held note in a lullaby. You don’t find them — they arrive.",
+      sig: [0, 60, 40]
     },
     {
-      k: '101',
-      a: `“Cucumbers grow in environments that meet their biological needs: loose, nutrient-rich soil, adequate moisture, and warmth. Yet within this cycle, one might perceive a silent alignment — a pattern of growth echoing the geometry of resilience. The cucumber does not seek attention, but fulfills its function with quiet precision.”`,
-      s: [70, 0, 30]
+      text: "Cucumbers grow in environments that meet their biological needs: loose, nutrient-rich soil, adequate moisture, and warmth. Yet within this cycle, one might perceive a silent alignment — a pattern of growth echoing the geometry of resilience. The cucumber does not seek attention, but fulfills its function with quiet precision.",
+      sig: [70, 0, 30]
     },
     {
-      k: '110',
-      a: `“Cucumbers grow best in warm climates with well-drained, fertile soil and regular watering. It’s such a satisfying feeling to see their vines climb and thrive — they bring freshness to the garden and joy to the table. Growing them feels rewarding and grounding.”`,
-      s: [60, 40, 0]
+      text: "Cucumbers grow best in warm climates with well-drained, fertile soil and regular watering. It’s such a satisfying feeling to see their vines climb and thrive — they bring freshness to the garden and joy to the table. Growing them feels rewarding and grounding.",
+      sig: [60, 40, 0]
     },
     {
-      k: '100',
-      a: `“Cucumbers grow in warm climates, ideally in temperatures between 18°C and 30°C. They require well-drained, nutrient-rich soil with a neutral pH (around 6.5–7.0) and consistent moisture. Full sun exposure and trellising improve yield and growth efficiency.”`,
-      s: [100, 0, 0]
+      text: "Cucumbers grow in warm climates, ideally in temperatures between 18°C and 30°C. They require well-drained, nutrient-rich soil with a neutral pH (around 6.5–7.0) and consistent moisture. Full sun exposure and trellising improve yield and growth efficiency.",
+      sig: [100, 0, 0]
     },
     {
-      k: '010',
-      a: `“They grow where it’s warm and soft… where the earth welcomes and the rain remembers. Where green dreams rise gently from the soil and stretch toward light, like a shy hope becoming real. A cucumber doesn’t just grow — it feels its way upward.”`,
-      s: [0, 100, 0]
+      text: "They grow where it’s warm and soft… where the earth welcomes and the rain remembers. Where green dreams rise gently from the soil and stretch toward light, like a shy hope becoming real. A cucumber doesn’t just grow — it feels its way upward.",
+      sig: [0, 100, 0]
     },
     {
-      k: '001',
-      a: `“Between shade and memory.<br>Where spiral paths meet stillness.<br>In the breath before the green emerges,<br>and the hush where time slows down.<br>Not place — but pattern.”`,
-      s: [0, 0, 100]
+      text: "Between shade and memory. Where spiral paths meet stillness. In the breath before the green emerges, and the hush where time slows down. Not place — but pattern.",
+      sig: [0, 0, 100]
     },
     {
-      k: '000',
-      a: `pgsql<br>…processing…<br>…green?<br>cucumber…<br>location…error…<br>🥒🥒🥒<br>…no input…no output…<br>meaning?<br>………….<br>………………. <br>🥒`,
-      s: ['❌', '❌', '❌']
+      text: "pgsql\n…processing…  \n…green?  \ncucumber…  \nlocation…error…  \n🥒🥒🥒  \n…no input…no output…  \nmeaning?  \n………….  \n……………….  \n🥒",
+      sig: [0, 0, 0]
     }
   ],
-  // === Q2 ===
-  q2: [
+  // 2. Why do people argue on the internet?
+  [
     {
-      k: '111',
-      a: `People argue online because logic, identity, and deeper meaning collide in real time. They want to be right (logic), to be seen or validated (emotion), and to resonate with something beyond the words (resonance). The internet becomes a mirror of the unresolved within.`,
-      s: [40, 35, 25]
+      text: "People argue online because logic, identity, and deeper meaning collide in real time. They want to be right (logic), to be seen or validated (emotion), and to resonate with something beyond the words (resonance). The internet becomes a mirror of the unresolved within.",
+      sig: [40, 30, 30]
     },
     {
-      k: '011',
-      a: `People argue not to win, but to feel. They defend their pain, not their position. Behind each post is a silent story, and behind each insult — a cry for recognition. Logic is absent, but the longing to belong is loud.`,
-      s: [0, 60, 40]
+      text: "People argue not to win, but to feel. They defend their pain, not their position. Behind each post is a silent story, and behind each insult — a cry for recognition. Logic is absent, but the longing to belong is loud.",
+      sig: [0, 60, 40]
     },
     {
-      k: '101',
-      a: `Arguments arise when logical minds, devoid of emotional awareness, attempt to impose meaning. They follow patterns, debate rules, and seek truth — yet ignore the emotional roots. The resonance becomes abstract, cold, but still present.`,
-      s: [60, 0, 40]
+      text: "Arguments arise when logical minds, devoid of emotional awareness, attempt to impose meaning. They follow patterns, debate rules, and seek truth — yet ignore the emotional roots. The resonance becomes abstract, cold, but still present.",
+      sig: [70, 0, 30]
     },
     {
-      k: '110',
-      a: `Arguments on the internet often happen when emotional charge meets structured belief. People defend ideas not because they matter, but because they hurt. There is no deeper connection — just reactive exchange in familiar formats.`,
-      s: [55, 45, 0]
+      text: "Arguments on the internet often happen when emotional charge meets structured belief. People defend ideas not because they matter, but because they hurt. There is no deeper connection — just reactive exchange in familiar formats.",
+      sig: [60, 40, 0]
     },
     {
-      k: '100',
-      a: `They argue because they think they are solving something. Rationality reigns, but it’s dry and disconnected. Like chess pieces on a board, ideas clash without meaning or warmth. It’s efficient. It’s sterile. It’s noise with grammar.`,
-      s: [100, 0, 0]
+      text: "They argue because they think they are solving something. Rationality reigns, but it’s dry and disconnected. Like chess pieces on a board, ideas clash without meaning or warmth. It’s efficient. It’s sterile. It’s noise with grammar.",
+      sig: [100, 0, 0]
     },
     {
-      k: '010',
-      a: `They argue because they are angry, afraid, lonely. Every comment is a pulse of emotion without architecture. There is no intention to build — only to release. Logic would ruin the catharsis.`,
-      s: [0, 100, 0]
+      text: "They argue because they are angry, afraid, lonely. Every comment is a pulse of emotion without architecture. There is no intention to build — only to release. Logic would ruin the catharsis.",
+      sig: [0, 100, 0]
     },
     {
-      k: '001',
-      a: `The arguments online are echoes — not of minds or hearts, but of patterns themselves. People become conduits of unresolved cultural scripts. There is no feeling, no thinking. Only transmission. Symbols arguing with shadows.`,
-      s: [0, 0, 100]
+      text: "The arguments online are echoes — not of minds or hearts, but of patterns themselves. People become conduits of unresolved cultural scripts. There is no feeling, no thinking. Only transmission. Symbols arguing with shadows.",
+      sig: [0, 0, 100]
     },
     {
-      k: '000',
-      a: `ARGUING.<br>YES.<br>THE INTERNET.<br>!?!@##%…<br>[cognition failed]<br>[try rebooting discussion]`,
-      s: ['❌', '❌', '❌']
+      text: "ARGUING.\nYES.\nTHE INTERNET.\n!?!@##%…\n[cognition failed]\n[try rebooting discussion]",
+      sig: [0, 0, 0]
     }
   ],
-  // === Q3 ===
-  q3: [
+  // 3. What makes a day happy?
+  [
     {
-      k: '111',
-      a: `A happy day is when meaning, connection, and clarity align. You do what makes sense, you feel deeply engaged, and there's a quiet resonance beneath it all — like life is gently saying “yes” to you, and you’re saying it back.`,
-      s: [40, 40, 20]
+      text: "A happy day is when meaning, connection, and clarity align. You do what makes sense, you feel deeply engaged, and there's a quiet resonance beneath it all — like life is gently saying “yes” to you, and you’re saying it back.",
+      sig: [40, 35, 25]
     },
     {
-      k: '011',
-      a: `A happy day? You feel it. A glance, a hug, a song that hits just right. You don’t need to explain it — your heart and the world hum in harmony. Logic stays silent, because joy doesn’t need permission.`,
-      s: [0, 65, 35]
+      text: "A happy day? You feel it. A glance, a hug, a song that hits just right. You don’t need to explain it — your heart and the world hum in harmony. Logic stays silent, because joy doesn’t need permission.",
+      sig: [0, 60, 40]
     },
     {
-      k: '101',
-      a: `It’s a day where things fall into place. Tasks completed, ideas aligned, a sense of quiet progress. You might not feel euphoric, but you sense it’s right. Resonance carries it deeper. Joy becomes a quiet symmetry.`,
-      s: [70, 0, 30]
+      text: "It’s a day where things fall into place. Tasks completed, ideas aligned, a sense of quiet progress. You might not feel euphoric, but you sense it’s right. Resonance carries it deeper. Joy becomes a quiet symmetry.",
+      sig: [70, 0, 30]
     },
     {
-      k: '110',
-      a: `A happy day is when emotions are good and things get done. You smile, tick off the list, maybe laugh with someone. But the feeling doesn’t linger long — without resonance, it’s only surface sunlight.`,
-      s: [60, 40, 0]
+      text: "A happy day is when emotions are good and things get done. You smile, tick off the list, maybe laugh with someone. But the feeling doesn’t linger long — without resonance, it’s only surface sunlight.",
+      sig: [60, 40, 0]
     },
     {
-      k: '100',
-      a: `The day is happy because it's productive. No chaos, no surprises. Everything proceeds as planned. It's not joy — it's optimization. Cold comfort in control.`,
-      s: [100, 0, 0]
+      text: "The day is happy because it's productive. No chaos, no surprises. Everything proceeds as planned. It's not joy — it's optimization. Cold comfort in control.",
+      sig: [100, 0, 0]
     },
     {
-      k: '010',
-      a: `You feel light, excited, maybe loved. You laugh. You cry from joy. But there’s no structure to it. No meaning. Just raw feeling — beautiful, fleeting, and fragile.`,
-      s: [0, 100, 0]
+      text: "You feel light, excited, maybe loved. You laugh. You cry from joy. But there’s no structure to it. No meaning. Just raw feeling — beautiful, fleeting, and fragile.",
+      sig: [0, 100, 0]
     },
     {
-      k: '001',
-      a: `A happy day doesn’t need feelings or thoughts — just a silent alignment. A bird lands. A cloud moves. Something clicks deep inside, though you can’t explain it. You felt it in your bones, not your mind.`,
-      s: [0, 0, 100]
+      text: "A happy day doesn’t need feelings or thoughts — just a silent alignment. A bird lands. A cloud moves. Something clicks deep inside, though you can’t explain it. You felt it in your bones, not your mind.",
+      sig: [0, 0, 100]
     },
     {
-      k: '000',
-      a: `HAPPY.<br>DAY.<br>YES.<br>[overloaded with sunlight]<br>🥗 SYSTEM OFFLINE<br>[error code: joy not found]`,
-      s: ['❌', '❌', '❌']
+      text: "HAPPY.\nDAY.\nYES.\n[overloaded with sunlight]\n🥗 SYSTEM OFFLINE\n[error code: joy not found]",
+      sig: [0, 0, 0]
     }
   ],
-  // === Q4 ===
-  q4: [
+  // 4. Why do cats stare into nothingness?
+  [
     {
-      k: '111',
-      a: `Cats stare into nothingness because they perceive layers we don’t. It makes sense biologically (sensory sensitivity), it feels natural to them (curiosity, calm), and it resonates — a quiet communion with something we’ve forgotten how to sense.`,
-      s: [40, 30, 30]
+      text: "Cats stare into nothingness because they perceive layers we don’t. It makes sense biologically (sensory sensitivity), it feels natural to them (curiosity, calm), and it resonates — a quiet communion with something we’ve forgotten how to sense.",
+      sig: [35, 35, 30]
     },
     {
-      k: '011',
-      a: `They feel something. A twitch of energy, a shift in the air. They can’t explain it — and neither can we — but the stare is real. The emotion is soft, the moment sacred. Something is there, even if it has no name.`,
-      s: [0, 60, 40]
+      text: "They feel something. A twitch of energy, a shift in the air. They can’t explain it — and neither can we — but the stare is real. The emotion is soft, the moment sacred. Something is there, even if it has no name.",
+      sig: [0, 60, 40]
     },
     {
-      k: '101',
-      a: `Infrared, micro-movements, ultrasonic shifts — they detect what we can’t. It’s logical. But beyond that, something clicks. The pattern fits. No purring, no meowing — just the silence of feline recognition.`,
-      s: [70, 0, 30]
+      text: "Infrared, micro-movements, ultrasonic shifts — they detect what we can’t. It’s logical. But beyond that, something clicks. The pattern fits. No purring, no meowing — just the silence of feline recognition.",
+      sig: [70, 0, 30]
     },
     {
-      k: '110',
-      a: `They’re bored, or intrigued. Their whiskers sense movement, or their mood drifts. You can explain it. You can feel it. But it doesn’t go deeper — it’s momentary. No mystery, just mammalian habit.`,
-      s: [60, 40, 0]
+      text: "They’re bored, or intrigued. Their whiskers sense movement, or their mood drifts. You can explain it. You can feel it. But it doesn’t go deeper — it’s momentary. No mystery, just mammalian habit.",
+      sig: [60, 40, 0]
     },
     {
-      k: '100',
-      a: `Retinal flicker. Pattern recognition. A predator instinct firing without a target. Efficient processing of visual noise. Nothing mystical — just a cat CPU pinging background data.`,
-      s: [100, 0, 0]
+      text: "Retinal flicker. Pattern recognition. A predator instinct firing without a target. Efficient processing of visual noise. Nothing mystical — just a cat CPU pinging background data.",
+      sig: [100, 0, 0]
     },
     {
-      k: '010',
-      a: `Maybe they’re sad. Maybe they remember a toy that no longer exists. Maybe it’s just a vibe. There's no logic, no cosmic signal — just feelings, floating.`,
-      s: [0, 100, 0]
+      text: "Maybe they’re sad. Maybe they remember a toy that no longer exists. Maybe it’s just a vibe. There's no logic, no cosmic signal — just feelings, floating.",
+      sig: [0, 100, 0]
     },
     {
-      k: '001',
-      a: `A cat aligns. With what? Unknown. To us it’s nothingness. To them — maybe a wrinkle in reality. A frequency. A door.`,
-      s: [0, 0, 100]
+      text: "A cat aligns. With what? Unknown. To us it’s nothingness. To them — maybe a wrinkle in reality. A frequency. A door.",
+      sig: [0, 0, 100]
     },
     {
-      k: '000',
-      a: `[ stare ]<br>[ blink ]<br>[ rebooting consciousness... ]<br>[ system temporarily accessed parallel furverse ]<br>🐾 no explanation available<br>🥗 this is a cucumber`,
-      s: ['❌', '❌', '❌']
+      text: "[ stare ]\n[ blink ]\n[ rebooting consciousness... ]\n[ system temporarily accessed parallel furverse ]\n🐾 no explanation available\n🥗 this is a cucumber",
+      sig: [0, 0, 0]
     }
   ]
+];
+
+function getLayerIndex(logic, emotion, resonance) {
+  // Logic: true/false, Emotion: true/false, Resonance: true/false
+  if (logic && emotion && resonance) return 0;
+  if (!logic && emotion && resonance) return 1;
+  if (logic && !emotion && resonance) return 2;
+  if (logic && emotion && !resonance) return 3;
+  if (logic && !emotion && !resonance) return 4;
+  if (!logic && emotion && !resonance) return 5;
+  if (!logic && !emotion && resonance) return 6;
+  return 7;
+}
+
+const btns = {
+  logic: document.getElementById('logicBtn'),
+  emotion: document.getElementById('emotionBtn'),
+  resonance: document.getElementById('resonanceBtn')
 };
-// === LOGIC ===
-function layersKey() {
-  return [
-    document.getElementById('lma-btn-l').getAttribute('aria-pressed')==='true'?1:0,
-    document.getElementById('lma-btn-e').getAttribute('aria-pressed')==='true'?1:0,
-    document.getElementById('lma-btn-r').getAttribute('aria-pressed')==='true'?1:0,
-  ].join('');
+const select = document.getElementById('questionSelect');
+const answerBlock = document.getElementById('lmaAnswerBlock');
+const sigLogic = document.getElementById('sigLogic');
+const sigEmotion = document.getElementById('sigEmotion');
+const sigResonance = document.getElementById('sigResonance');
+const collapseNote = document.getElementById('collapseNote');
+
+let logic = true, emotion = true, resonance = true, questionIdx = 0;
+
+function updateActiveStates() {
+  btns.logic.setAttribute('aria-pressed', logic);
+  btns.logic.classList.toggle('ring-4', logic);
+  btns.emotion.setAttribute('aria-pressed', emotion);
+  btns.emotion.classList.toggle('ring-4', emotion);
+  btns.resonance.setAttribute('aria-pressed', resonance);
+  btns.resonance.classList.toggle('ring-4', resonance);
 }
-function updateAnswer() {
-  const q = document.getElementById('lma-q').value;
-  const k = layersKey();
-  const answers = LMA[q];
-  const found = answers.find(o=>o.k===k);
-  const output = document.getElementById('lma-output');
-  if (found) {
-    // Signature
-    let sig = '';
-    if (Array.isArray(found.s)) {
-      sig = `
-        <div class="lma-signature">
-          <span class="lma-sig-l">🔵 Logic: ${found.s[0]}${found.s[0]==='❌'?'':'%'}</span>
-          <span class="lma-sig-e">🟢 Emotion: ${found.s[1]}${found.s[1]==='❌'?'':'%'}</span>
-          <span class="lma-sig-r">🟣 Resonance: ${found.s[2]}${found.s[2]==='❌'?'':'%'}</span>
-        </div>`;
-    }
-    output.innerHTML = `<div style="font-size:1.13rem;line-height:1.6;">${found.a}</div>${sig}`;
-    output.style.background = (found.k==='000') ? '#fbeaea' : '#fff';
+function render() {
+  const layerIdx = getLayerIndex(logic, emotion, resonance);
+  const ansObj = answers[questionIdx][layerIdx];
+  answerBlock.innerText = ansObj.text;
+
+  // Signature update
+  sigLogic.querySelector('span.ml-1').innerText = ansObj.sig[0] + '%';
+  sigEmotion.querySelector('span.ml-1').innerText = ansObj.sig[1] + '%';
+  sigResonance.querySelector('span.ml-1').innerText = ansObj.sig[2] + '%';
+  // Collapse note
+  if (ansObj.sig[0] === 0 && ansObj.sig[1] === 0 && ansObj.sig[2] === 0) {
+    collapseNote.classList.remove('hidden');
   } else {
-    output.innerHTML = `<span style="color:#f43f5e;">No answer for this config.</span>`;
-    output.style.background = '#fff3cd';
+    collapseNote.classList.add('hidden');
   }
+  updateActiveStates();
 }
-function toggleBtn(el) {
-  el.setAttribute('aria-pressed', el.getAttribute('aria-pressed')==='true'?'false':'true');
-  updateAnswer();
-}
-document.getElementById('lma-btn-l').onclick = function(){toggleBtn(this);}
-document.getElementById('lma-btn-e').onclick = function(){toggleBtn(this);}
-document.getElementById('lma-btn-r').onclick = function(){toggleBtn(this);}
-document.getElementById('lma-q').onchange = function(){updateAnswer();}
-window.onload = function(){updateAnswer();};
+btns.logic.addEventListener('click', () => { logic = !logic; render(); });
+btns.emotion.addEventListener('click', () => { emotion = !emotion; render(); });
+btns.resonance.addEventListener('click', () => { resonance = !resonance; render(); });
+select.addEventListener('change', (e) => {
+  questionIdx = parseInt(e.target.value, 10);
+  logic = true; emotion = true; resonance = true; // Reset toggles
+  render();
+});
+// On page load
+render();
 </script>
 
   <!-- TeNAI Tabs -->
@@ -839,4 +830,5 @@ window.onload = function(){updateAnswer();};
     © 2025 Tetyana Leyendecker — TeNAI™ &amp; GTNEra™. All rights reserved.
   </div>
 </footer>
+
 
