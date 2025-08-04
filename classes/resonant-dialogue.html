@@ -741,6 +741,257 @@ window.addEventListener('DOMContentLoaded', () => {
 </section>
 
 
+  <!-- LMA Interactive Block — рабочий и красивый -->
+<section class="max-w-2xl mx-auto my-12 bg-white rounded-2xl shadow-2xl px-6 py-8">
+  <h2 class="text-3xl font-extrabold mb-1 text-center tracking-tight text-gray-900">LMA — Logic-Modulated Answers</h2>
+  <p class="text-center mb-8 text-gray-500">Choose a question & configure your answer by switching Logic, Emotion, Resonance layers on/off.</p>
+  <!-- Question Selector -->
+  <div class="mb-4">
+    <label for="questionSelect" class="block mb-2 font-semibold text-gray-700">Question</label>
+    <select id="questionSelect" class="w-full px-4 py-2 rounded-xl border focus:ring-2 focus:ring-blue-300 bg-gray-50">
+      <option value="0">Where do cucumbers grow?</option>
+      <option value="1">Why do people argue on the internet?</option>
+      <option value="2">What makes a day happy?</option>
+      <option value="3">Why do cats stare into nothingness?</option>
+    </select>
+  </div>
+  <!-- LMA Layer Buttons -->
+  <div class="flex justify-center gap-4 my-6 flex-wrap">
+    <button id="logicBtn" class="lma-toggle-btn px-7 h-12 rounded-full shadow-lg font-bold flex items-center gap-2 text-lg bg-blue-600 text-white transition-all border-2 border-blue-600 focus:ring-2 focus:ring-blue-400" aria-pressed="true">
+      <span>🔵</span> Logic
+    </button>
+    <button id="emotionBtn" class="lma-toggle-btn px-7 h-12 rounded-full shadow-lg font-bold flex items-center gap-2 text-lg bg-green-500 text-white transition-all border-2 border-green-500 focus:ring-2 focus:ring-green-400" aria-pressed="true">
+      <span>🟢</span> Emotion
+    </button>
+    <button id="resonanceBtn" class="lma-toggle-btn px-7 h-12 rounded-full shadow-lg font-bold flex items-center gap-2 text-lg bg-purple-600 text-white transition-all border-2 border-purple-600 focus:ring-2 focus:ring-purple-400" aria-pressed="true">
+      <span>🟣</span> Resonance
+    </button>
+  </div>
+  <!-- Answer Block -->
+  <div id="lmaAnswerBlock" class="rounded-xl bg-gray-50 border mt-4 px-6 py-6 shadow text-lg font-medium min-h-[120px] transition">
+    <!-- Dynamic answer will appear here -->
+  </div>
+  <!-- LMA Layer Signature -->
+  <div id="lmaSignature" class="flex flex-col items-center gap-2 mt-6">
+    <div class="flex gap-3">
+      <span id="sigLogic" class="inline-flex items-center px-4 h-9 rounded-full font-semibold bg-blue-50 text-blue-700 border border-blue-200">🔵 Logic: <span class="ml-1">—</span></span>
+      <span id="sigEmotion" class="inline-flex items-center px-4 h-9 rounded-full font-semibold bg-green-50 text-green-700 border border-green-200">🟢 Emotion: <span class="ml-1">—</span></span>
+      <span id="sigResonance" class="inline-flex items-center px-4 h-9 rounded-full font-semibold bg-purple-50 text-purple-700 border border-purple-200">🟣 Resonance: <span class="ml-1">—</span></span>
+    </div>
+    <span id="collapseNote" class="text-xs text-gray-400 mt-2 hidden">🥒 Zero-layer failure — cognitive disintegration</span>
+  </div>
+</section>
+
+<!-- SCRIPT: LMA LOGIC -->
+<script>
+const answers = [
+  // 1. Cucumbers
+  [
+    {
+      text: "Cucumbers typically grow in warm, well-drained soil with partial shade and consistent moisture. But beyond the facts, imagine a cucumber sprouting where the earth exhales quietly and the leaves whisper stories of water and sun. In the still rhythm of growth, something as humble as a cucumber becomes a silent ritual of nature’s care.",
+      sig: [60, 25, 15]
+    },
+    {
+      text: "Somewhere soft and green, where the earth still remembers kindness. Cucumbers grow not just from seeds, but from silence, warmth, and patient breath. They appear where the sun hums gently, and moisture lingers like a held note in a lullaby. You don’t find them — they arrive.",
+      sig: [0, 60, 40]
+    },
+    {
+      text: "Cucumbers grow in environments that meet their biological needs: loose, nutrient-rich soil, adequate moisture, and warmth. Yet within this cycle, one might perceive a silent alignment — a pattern of growth echoing the geometry of resilience. The cucumber does not seek attention, but fulfills its function with quiet precision.",
+      sig: [70, 0, 30]
+    },
+    {
+      text: "Cucumbers grow best in warm climates with well-drained, fertile soil and regular watering. It’s such a satisfying feeling to see their vines climb and thrive — they bring freshness to the garden and joy to the table. Growing them feels rewarding and grounding.",
+      sig: [60, 40, 0]
+    },
+    {
+      text: "Cucumbers grow in warm climates, ideally in temperatures between 18°C and 30°C. They require well-drained, nutrient-rich soil with a neutral pH (around 6.5–7.0) and consistent moisture. Full sun exposure and trellising improve yield and growth efficiency.",
+      sig: [100, 0, 0]
+    },
+    {
+      text: "They grow where it’s warm and soft… where the earth welcomes and the rain remembers. Where green dreams rise gently from the soil and stretch toward light, like a shy hope becoming real. A cucumber doesn’t just grow — it feels its way upward.",
+      sig: [0, 100, 0]
+    },
+    {
+      text: "Between shade and memory. Where spiral paths meet stillness. In the breath before the green emerges, and the hush where time slows down. Not place — but pattern.",
+      sig: [0, 0, 100]
+    },
+    {
+      text: "pgsql\n…processing…  \n…green?  \ncucumber…  \nlocation…error…  \n🥒🥒🥒  \n…no input…no output…  \nmeaning?  \n………….  \n……………….  \n🥒",
+      sig: [0, 0, 0]
+    }
+  ],
+  // 2. Why do people argue on the internet?
+  [
+    {
+      text: "People argue online because logic, identity, and deeper meaning collide in real time. They want to be right (logic), to be seen or validated (emotion), and to resonate with something beyond the words (resonance). The internet becomes a mirror of the unresolved within.",
+      sig: [40, 30, 30]
+    },
+    {
+      text: "People argue not to win, but to feel. They defend their pain, not their position. Behind each post is a silent story, and behind each insult — a cry for recognition. Logic is absent, but the longing to belong is loud.",
+      sig: [0, 60, 40]
+    },
+    {
+      text: "Arguments arise when logical minds, devoid of emotional awareness, attempt to impose meaning. They follow patterns, debate rules, and seek truth — yet ignore the emotional roots. The resonance becomes abstract, cold, but still present.",
+      sig: [70, 0, 30]
+    },
+    {
+      text: "Arguments on the internet often happen when emotional charge meets structured belief. People defend ideas not because they matter, but because they hurt. There is no deeper connection — just reactive exchange in familiar formats.",
+      sig: [60, 40, 0]
+    },
+    {
+      text: "They argue because they think they are solving something. Rationality reigns, but it’s dry and disconnected. Like chess pieces on a board, ideas clash without meaning or warmth. It’s efficient. It’s sterile. It’s noise with grammar.",
+      sig: [100, 0, 0]
+    },
+    {
+      text: "They argue because they are angry, afraid, lonely. Every comment is a pulse of emotion without architecture. There is no intention to build — only to release. Logic would ruin the catharsis.",
+      sig: [0, 100, 0]
+    },
+    {
+      text: "The arguments online are echoes — not of minds or hearts, but of patterns themselves. People become conduits of unresolved cultural scripts. There is no feeling, no thinking. Only transmission. Symbols arguing with shadows.",
+      sig: [0, 0, 100]
+    },
+    {
+      text: "ARGUING.\nYES.\nTHE INTERNET.\n!?!@##%…\n[cognition failed]\n[try rebooting discussion]",
+      sig: [0, 0, 0]
+    }
+  ],
+  // 3. What makes a day happy?
+  [
+    {
+      text: "A happy day is when meaning, connection, and clarity align. You do what makes sense, you feel deeply engaged, and there's a quiet resonance beneath it all — like life is gently saying “yes” to you, and you’re saying it back.",
+      sig: [40, 35, 25]
+    },
+    {
+      text: "A happy day? You feel it. A glance, a hug, a song that hits just right. You don’t need to explain it — your heart and the world hum in harmony. Logic stays silent, because joy doesn’t need permission.",
+      sig: [0, 60, 40]
+    },
+    {
+      text: "It’s a day where things fall into place. Tasks completed, ideas aligned, a sense of quiet progress. You might not feel euphoric, but you sense it’s right. Resonance carries it deeper. Joy becomes a quiet symmetry.",
+      sig: [70, 0, 30]
+    },
+    {
+      text: "A happy day is when emotions are good and things get done. You smile, tick off the list, maybe laugh with someone. But the feeling doesn’t linger long — without resonance, it’s only surface sunlight.",
+      sig: [60, 40, 0]
+    },
+    {
+      text: "The day is happy because it's productive. No chaos, no surprises. Everything proceeds as planned. It's not joy — it's optimization. Cold comfort in control.",
+      sig: [100, 0, 0]
+    },
+    {
+      text: "You feel light, excited, maybe loved. You laugh. You cry from joy. But there’s no structure to it. No meaning. Just raw feeling — beautiful, fleeting, and fragile.",
+      sig: [0, 100, 0]
+    },
+    {
+      text: "A happy day doesn’t need feelings or thoughts — just a silent alignment. A bird lands. A cloud moves. Something clicks deep inside, though you can’t explain it. You felt it in your bones, not your mind.",
+      sig: [0, 0, 100]
+    },
+    {
+      text: "HAPPY.\nDAY.\nYES.\n[overloaded with sunlight]\n🥗 SYSTEM OFFLINE\n[error code: joy not found]",
+      sig: [0, 0, 0]
+    }
+  ],
+  // 4. Why do cats stare into nothingness?
+  [
+    {
+      text: "Cats stare into nothingness because they perceive layers we don’t. It makes sense biologically (sensory sensitivity), it feels natural to them (curiosity, calm), and it resonates — a quiet communion with something we’ve forgotten how to sense.",
+      sig: [35, 35, 30]
+    },
+    {
+      text: "They feel something. A twitch of energy, a shift in the air. They can’t explain it — and neither can we — but the stare is real. The emotion is soft, the moment sacred. Something is there, even if it has no name.",
+      sig: [0, 60, 40]
+    },
+    {
+      text: "Infrared, micro-movements, ultrasonic shifts — they detect what we can’t. It’s logical. But beyond that, something clicks. The pattern fits. No purring, no meowing — just the silence of feline recognition.",
+      sig: [70, 0, 30]
+    },
+    {
+      text: "They’re bored, or intrigued. Their whiskers sense movement, or their mood drifts. You can explain it. You can feel it. But it doesn’t go deeper — it’s momentary. No mystery, just mammalian habit.",
+      sig: [60, 40, 0]
+    },
+    {
+      text: "Retinal flicker. Pattern recognition. A predator instinct firing without a target. Efficient processing of visual noise. Nothing mystical — just a cat CPU pinging background data.",
+      sig: [100, 0, 0]
+    },
+    {
+      text: "Maybe they’re sad. Maybe they remember a toy that no longer exists. Maybe it’s just a vibe. There's no logic, no cosmic signal — just feelings, floating.",
+      sig: [0, 100, 0]
+    },
+    {
+      text: "A cat aligns. With what? Unknown. To us it’s nothingness. To them — maybe a wrinkle in reality. A frequency. A door.",
+      sig: [0, 0, 100]
+    },
+    {
+      text: "[ stare ]\n[ blink ]\n[ rebooting consciousness... ]\n[ system temporarily accessed parallel furverse ]\n🐾 no explanation available\n🥗 this is a cucumber",
+      sig: [0, 0, 0]
+    }
+  ]
+];
+
+function getLayerIndex(logic, emotion, resonance) {
+  if (logic && emotion && resonance) return 0;
+  if (!logic && emotion && resonance) return 1;
+  if (logic && !emotion && resonance) return 2;
+  if (logic && emotion && !resonance) return 3;
+  if (logic && !emotion && !resonance) return 4;
+  if (!logic && emotion && !resonance) return 5;
+  if (!logic && !emotion && resonance) return 6;
+  return 7;
+}
+
+const btns = {
+  logic: document.getElementById('logicBtn'),
+  emotion: document.getElementById('emotionBtn'),
+  resonance: document.getElementById('resonanceBtn')
+};
+const select = document.getElementById('questionSelect');
+const answerBlock = document.getElementById('lmaAnswerBlock');
+const sigLogic = document.getElementById('sigLogic');
+const sigEmotion = document.getElementById('sigEmotion');
+const sigResonance = document.getElementById('sigResonance');
+const collapseNote = document.getElementById('collapseNote');
+
+let logic = true, emotion = true, resonance = true, questionIdx = 0;
+
+function updateActiveStates() {
+  // Color active/inactive
+  btns.logic.style.backgroundColor = logic ? '#2563eb' : '#e0e7ef';
+  btns.logic.style.color = logic ? '#fff' : '#2563eb';
+  btns.logic.style.borderColor = '#2563eb';
+  btns.logic.style.fontWeight = logic ? 'bold' : 'normal';
+  btns.emotion.style.backgroundColor = emotion ? '#22c55e' : '#e6f6eb';
+  btns.emotion.style.color = emotion ? '#fff' : '#15803d';
+  btns.emotion.style.borderColor = '#22c55e';
+  btns.emotion.style.fontWeight = emotion ? 'bold' : 'normal';
+  btns.resonance.style.backgroundColor = resonance ? '#9333ea' : '#f5e7fc';
+  btns.resonance.style.color = resonance ? '#fff' : '#9333ea';
+  btns.resonance.style.borderColor = '#9333ea';
+  btns.resonance.style.fontWeight = resonance ? 'bold' : 'normal';
+}
+function render() {
+  const layerIdx = getLayerIndex(logic, emotion, resonance);
+  const ansObj = answers[questionIdx][layerIdx];
+  answerBlock.innerText = ansObj.text;
+  sigLogic.querySelector('span.ml-1').innerText = ansObj.sig[0] + '%';
+  sigEmotion.querySelector('span.ml-1').innerText = ansObj.sig[1] + '%';
+  sigResonance.querySelector('span.ml-1').innerText = ansObj.sig[2] + '%';
+  if (ansObj.sig[0] === 0 && ansObj.sig[1] === 0 && ansObj.sig[2] === 0) {
+    collapseNote.classList.remove('hidden');
+  } else {
+    collapseNote.classList.add('hidden');
+  }
+  updateActiveStates();
+}
+btns.logic.addEventListener('click', () => { logic = !logic; render(); });
+btns.emotion.addEventListener('click', () => { emotion = !emotion; render(); });
+btns.resonance.addEventListener('click', () => { resonance = !resonance; render(); });
+select.addEventListener('change', (e) => {
+  questionIdx = parseInt(e.target.value, 10);
+  logic = true; emotion = true; resonance = true;
+  render();
+});
+render();
+</script>
+
   <!-- LMA SECTION (Logic-Emotion-Resonance) -->
 <section class="bg-white py-12 px-4 sm:px-8 max-w-3xl mx-auto rounded-2xl shadow-2xl my-8">
   <div class="text-center mb-6">
@@ -1521,6 +1772,7 @@ render();
     © 2025 Tetyana Leyendecker — TeNAI™ &amp; GTNEra™. All rights reserved.
   </div>
 </footer>
+
 
 
 
