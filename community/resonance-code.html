@@ -635,6 +635,232 @@
 <section id="prg-generator" class="max-w-3xl mx-auto mt-6 mb-20 px-4">
   <h3 class="text-2xl font-bold text-[#FF6600] mb-3">Generate your PRG</h3>
   <p class="text-gray-700 mb-5">
+    Answer the questions (1–5), pick your subtype per axis, and generate your <b>Para-Resonance Genome</b>.<br>
+    Everything runs locally in your browser — no data is sent anywhere.
+  </p>
+
+  <!-- Owner / Pseudonym -->
+  <div class="bg-[#FFF8F1] rounded-xl p-4 mb-6">
+    <label class="block text-sm font-semibold mb-1">Owner / Pseudonym (for signature)</label>
+    <input id="ownerField" type="text" placeholder="e.g., Tetyana Leyendecker or GTNEra"
+           class="w-full border border-[#FFE0CC] rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-[#FF6600]">
+    <p class="text-xs text-gray-500 mt-1">This value becomes part of your signature string.</p>
+  </div>
+
+  <!-- Likert Grid (как было) -->
+  <div class="grid md:grid-cols-2 gap-4 mb-6">
+    <!-- A: Architect -->
+    <div class="border border-[#FFE0CC] rounded-xl p-4 bg-white">
+      <div class="font-semibold text-[#FF6600] mb-1">A — Architect</div>
+      <p class="text-sm text-gray-600 mb-3">Origin & Intention / Systems Framing</p>
+      <label class="block text-sm">A1. Clarity of origin/intention</label>
+      <input id="A1" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm">A2. Design-orientation (turning insight into structure)</label>
+      <input id="A2" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm mt-2">Subtype</label>
+      <select id="As" class="w-full border rounded-lg px-2 py-2">
+        <option value="R">R = Responsive</option>
+        <option value="S">S = Strategic</option>
+        <option value="X">X = Experimental</option>
+      </select>
+    </div>
+    <!-- R, E, M, T — все по твоей текущей структуре (оставила как есть) -->
+    <div class="border border-[#FFE0CC] rounded-xl p-4 bg-white">
+      <div class="font-semibold text-[#FF6600] mb-1">R — Resonance Bridge</div>
+      <p class="text-sm text-gray-600 mb-3">Relational Logic / Pattern Listening</p>
+      <label class="block text-sm">R1. Bridge-building empathy</label>
+      <input id="R1" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm">R2. Pattern listening / alignment</label>
+      <input id="R2" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm mt-2">Subtype</label>
+      <select id="Rs" class="w-full border rounded-lg px-2 py-2">
+        <option value="B">B = Bridge</option>
+        <option value="N">N = Network</option>
+        <option value="S">S = Sensing</option>
+      </select>
+    </div>
+    <div class="border border-[#FFE0CC] rounded-xl p-4 bg-white">
+      <div class="font-semibold text-[#FF6600] mb-1">E — Ethical Core</div>
+      <p class="text-sm text-gray-600 mb-3">Integrity Field / Transparency</p>
+      <label class="block text-sm">E1. Transparency & traceability</label>
+      <input id="E1" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm">E2. Responsibility in reuse / attribution</label>
+      <input id="E2" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm mt-2">Subtype</label>
+      <select id="Es" class="w-full border rounded-lg px-2 py-2">
+        <option value="C">C = Core</option>
+        <option value="L">L = Law</option>
+        <option value="H">H = Harmony</option>
+      </select>
+    </div>
+    <div class="border border-[#FFE0CC] rounded-xl p-4 bg-white">
+      <div class="font-semibold text-[#FF6600] mb-1">M — Meta-Vision</div>
+      <p class="text-sm text-gray-600 mb-3">System Awareness / Long-Arc Framing</p>
+      <label class="block text-sm">M1. Meta-awareness & perspective</label>
+      <input id="M1" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm">M2. Cross-domain synthesis</label>
+      <input id="M2" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm mt-2">Subtype</label>
+      <select id="Ms" class="w-full border rounded-lg px-2 py-2">
+        <option value="V">V = Visionary</option>
+        <option value="S">S = Systems</option>
+        <option value="P">P = Pragmatic</option>
+      </select>
+    </div>
+    <div class="md:col-span-2 border border-[#FFE0CC] rounded-xl p-4 bg-white">
+      <div class="font-semibold text-[#FF6600] mb-1">T — Trigger / Resonance Point</div>
+      <p class="text-sm text-gray-600 mb-3">Activation / Rhythm Keeping</p>
+      <label class="block text-sm">T1. Activation courage (start/ship)</label>
+      <input id="T1" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm">T2. Rhythm & timing (keep coherence)</label>
+      <input id="T2" type="range" min="1" max="5" value="3" class="w-full mb-2">
+      <label class="block text-sm mt-2">Subtype</label>
+      <select id="Ts" class="w-full border rounded-lg px-2 py-2">
+        <option value="R">R = Resonant</option>
+        <option value="T">T = Trigger</option>
+        <option value="P">P = Pulse</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="flex flex-wrap gap-3 items-center">
+    <button id="generateBtn"
+            class="gtn-btn px-6 py-2">
+      <img src="../assets/images/logogtnbig.png" class="gtn-btn-logo" alt="">
+      Generate PRG
+    </button>
+    <a href="/classes/resonant-dialogue.html"
+       class="inline-block bg-white border border-[#FFE0CC] text-[#FF6600] font-semibold px-4 py-2 rounded-full hover:bg-[#FFF6ED]">
+      ↔ Go to Resonant Dialogue
+    </a>
+  </div>
+
+  <!-- Output -->
+  <div id="prgResult" class="hidden mt-8 bg-[#FFF6ED] border border-[#FFE0CC] rounded-xl p-5">
+    <div class="flex flex-col gap-1">
+      <div id="prgFullBlock" class="font-mono text-[#1E2A38] text-base whitespace-pre-line"></div>
+      <button id="copyAll"
+              class="inline-flex items-center px-4 py-1 mt-3 rounded-full bg-[#FF6600] text-white text-xs font-semibold hover:bg-[#e65600] self-start">
+        Copy all
+      </button>
+    </div>
+    <p class="text-xs text-gray-500 mt-4">
+      Signature is computed as <code>SHA256(owner | genome | timestamp | salt)</code>. Only a short hash is displayed: first 10 hex chars.
+    </p>
+  </div>
+
+  <p class="text-xs text-gray-500 mt-6">
+    Privacy: Your inputs stay in the browser. Nothing is uploaded.
+  </p>
+</section>
+
+<script>
+  // Utility
+  const $ = (id) => document.getElementById(id);
+
+  function axisScore(a,b){ return Number($(a).value) + Number($(b).value); }
+
+  function rankAxes(scores){
+    const arr = Object.entries(scores).sort(([,v1],[,v2]) => v2 - v1);
+    const order = ["A","R","E","M","T"];
+    arr.sort((a,b)=>{
+      if (a[1]===b[1]) return order.indexOf(a[0]) - order.indexOf(b[0]);
+      return b[1]-a[1];
+    });
+    const ranks = {};
+    arr.forEach(([k],i)=>{ ranks[k] = i+1; });
+    return ranks;
+  }
+
+  function pad2(n) { return n.toString().padStart(2, '0'); }
+
+  // Генерация "PRG-2025-11-04-0001"
+  let globalSerial = 1;
+  function makeCodeId() {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = pad2(now.getMonth()+1);
+    const dd = pad2(now.getDate());
+    // можно доработать счётчик/уникальность, если нужно
+    const serial = pad2(globalSerial++).padStart(4, '0');
+    return `PRG-${yyyy}-${mm}-${dd}-${serial}`;
+  }
+
+  async function sha256hex(str){
+    const enc = new TextEncoder().encode(str);
+    const buf = await crypto.subtle.digest('SHA-256', enc);
+    const arr = Array.from(new Uint8Array(buf));
+    return arr.map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function randomSalt(len=8){
+    const chars = "abcdef0123456789";
+    let s=""; for(let i=0;i<len;i++){ s+=chars[Math.floor(Math.random()*chars.length)]; }
+    return s;
+  }
+
+  function genomeString(ranks, subs){
+    // "A1R-R2B-E3C-M4V-T5R"
+    return `A${ranks.A}${subs.A}-R${ranks.R}${subs.R}-E${ranks.E}${subs.E}-M${ranks.M}${subs.M}-T${ranks.T}${subs.T}`;
+  }
+
+  document.getElementById('generateBtn').addEventListener('click', async () => {
+    const owner = $('ownerField').value.trim() || 'anonymous';
+    const scores = {
+      A: axisScore('A1','A2'),
+      R: axisScore('R1','R2'),
+      E: axisScore('E1','E2'),
+      M: axisScore('M1','M2'),
+      T: axisScore('T1','T2'),
+    };
+    const ranks = rankAxes(scores);
+    const subs = {
+      A: $('As').value,
+      R: $('Rs').value,
+      E: $('Es').value,
+      M: $('Ms').value,
+      T: $('Ts').value,
+    };
+
+    const genome = genomeString(ranks, subs);
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = pad2(now.getMonth()+1);
+    const dd = pad2(now.getDate());
+    const serial = pad2(globalSerial++).padStart(4, '0');
+    const codeId = `PRG-${yyyy}-${mm}-${dd}-${serial}`;
+    const ts = now.toISOString();
+    const salt = randomSalt(8);
+    const hashFull = await sha256hex(`${owner}|${genome}|${ts}|${salt}`);
+    const hash10 = hashFull.slice(0,10).toUpperCase();
+    const signature = `⟦PRG#${genome.replaceAll('-','·')}⟧ [${hash10}]`;
+
+    // Формируем эталонный блок: все три строки вместе для копирования
+    const outputBlock = `${codeId}\n${genome}\n${signature}`;
+    $('prgResult').classList.remove('hidden');
+    $('prgFullBlock').textContent = outputBlock;
+
+    // Copy all (весь блок)
+    $('copyAll').onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(outputBlock);
+        $('copyAll').textContent = 'Copied!';
+        setTimeout(()=>{$('copyAll').textContent='Copy all';},1200);
+      } catch(e){}
+    };
+  });
+</script>
+
+
+
+
+
+
+    
+<section id="prg-generator" class="max-w-3xl mx-auto mt-6 mb-20 px-4">
+  <h3 class="text-2xl font-bold text-[#FF6600] mb-3">Generate your PRG</h3>
+  <p class="text-gray-700 mb-5">
     Answer the questions (1–5), pick your subtype vibe per axis, and generate your <b>Para-Resonance Genome</b>.
     Everything runs locally in your browser — no data is sent anywhere.
   </p>
@@ -958,3 +1184,4 @@
     © 2025 Tetyana Leyendecker — TeNAI® &amp; GTNEra®. All rights reserved.
   </div>
 </footer>
+
