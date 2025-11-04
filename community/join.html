@@ -505,6 +505,170 @@
   <span class="mx-4 text-[#FF6600] text-2xl font-bold" style="letter-spacing:0.15em;">•</span>
   <div class="w-1/6 h-0.5 rounded-xl bg-gradient-to-l from-[#FF6600]/40 via-[#FF6600] to-[#FF6600]/40 shadow-lg"></div>
 </div>
+    <section id="prg-generator" class="max-w-3xl mx-auto mt-6 mb-20 px-4">
+  <h3 class="text-2xl font-bold text-[#FF6600] mb-3">Generate your PRG</h3>
+  <p class="text-gray-700 mb-5">
+    Answer the questions (1–5), pick your subtype vibe per axis, and generate your <b>Para-Resonance Genome</b>.
+    Everything runs locally in your browser — no data is sent anywhere.
+  </p>
+
+  <!-- Owner / Pseudonym -->
+  <div class="bg-[#FFF8F1] rounded-xl p-4 mb-6">
+    <label class="block text-sm font-semibold mb-1">Owner / Pseudonym (for your reference)</label>
+    <input id="ownerField" type="text" placeholder="e.g., Tetyana Leyendecker or GTNEra"
+           class="w-full border border-[#FFE0CC] rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-[#FF6600]">
+    <p class="text-xs text-gray-500 mt-1">This value does <b>not</b> appear in the final PRG code.</p>
+  </div>
+
+  <!-- Likert Grid (оставь полностью как у тебя!) -->
+
+  <div class="grid md:grid-cols-2 gap-4 mb-6">
+    <!-- ...все блоки осей A, R, E, M, T... -->
+    <!-- Весь твой существующий Likert Grid! -->
+  </div>
+
+  <!-- Actions -->
+  <div class="flex flex-wrap gap-3 items-center">
+    <button id="generateBtn"
+            class="gtn-btn px-6 py-2">
+      <img src="../assets/images/logogtnbig.png" class="gtn-btn-logo" alt="">
+      Generate PRG
+    </button>
+    <a href="/classes/resonant-dialogue.html"
+       class="inline-block bg-white border border-[#FFE0CC] text-[#FF6600] font-semibold px-4 py-2 rounded-full hover:bg-[#FFF6ED]">
+      ↔ Go to Resonant Dialogue
+    </a>
+  </div>
+
+  <!-- Output: с секцией для копирования всех трёх строк -->
+  <div id="prgResult" class="hidden mt-8 bg-[#FFF6ED] border border-[#FFE0CC] rounded-xl p-5">
+    <div class="text-sm text-gray-500 mb-1">PRG Code ID</div>
+    <div id="codeId" class="font-mono text-[#1E2A38] mb-2">—</div>
+
+    <div class="text-sm text-gray-500 mb-1">Genome</div>
+    <div id="genomeStr" class="font-mono text-lg text-[#1E2A38] mb-2">—</div>
+
+    <div class="text-sm text-gray-500 mb-1">Signature</div>
+    <div id="signature" class="font-mono text-[#FF6600] text-base break-all mb-2">—</div>
+
+    <p class="text-xs text-gray-500 mt-3">
+      <b>Copy these three lines as your official PRG Authorship Block:</b>
+    </p>
+
+    <!-- Copyable block -->
+    <pre id="prgCopyBlock" class="select-all font-mono bg-white rounded-md p-3 mt-2 mb-1 text-[#1E2A38] text-sm"></pre>
+    <button id="copySig"
+            class="inline-flex items-center px-3 py-1 rounded-full bg-[#FF6600] text-white text-xs font-semibold hover:bg-[#e65600]">
+      Copy All
+    </button>
+    <p class="text-xs text-gray-500 mt-4">
+      Signature is computed as <code>SHA256(genome | timestamp | salt)</code>. Only a short hash is displayed: first 10 hex chars.
+    </p>
+  </div>
+
+  <p class="text-xs text-gray-500 mt-6">
+    Privacy: Your inputs stay in the browser. Nothing is uploaded.
+  </p>
+</section>
+
+<script>
+  // === GTNEra PRG GENERATOR v2025 ===
+  const $ = (id) => document.getElementById(id);
+
+  function axisScore(a,b){ return Number($(a).value) + Number($(b).value); }
+
+  function rankAxes(scores){
+    const arr = Object.entries(scores)
+      .sort(([,v1],[,v2]) => v2 - v1);
+    const order = ["A","R","E","M","T"];
+    arr.sort((a,b)=>{
+      if (a[1]===b[1]) return order.indexOf(a[0]) - order.indexOf(b[0]);
+      return b[1]-a[1];
+    });
+    const ranks = {};
+    arr.forEach(([k],i)=>{ ranks[k] = i+1; });
+    return ranks; // 1..5
+  }
+
+  function serial4(){
+    const d = new Date();
+    return String(Math.floor((+d)%10000)).padStart(4,"0");
+  }
+
+  // Новый формат CodeID с датой (YYYY-MM-DD-serial)
+  function codeId() {
+    const d = new Date();
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    const serial = serial4();
+    return `PRG-${yyyy}-${mm}-${dd}-${serial}`;
+  }
+
+  async function sha256hex(str){
+    const enc = new TextEncoder().encode(str);
+    const buf = await crypto.subtle.digest('SHA-256', enc);
+    const arr = Array.from(new Uint8Array(buf));
+    return arr.map(b=>b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function randomSalt(len=8){
+    const chars = "abcdef0123456789";
+    let s=""; for(let i=0;i<len;i++){ s+=chars[Math.floor(Math.random()*chars.length)]; }
+    return s;
+  }
+
+  function genomeString(ranks, subs){
+    // Стиль Genome: A1R-R2B-E3C-M4V-T5R
+    return `A${ranks.A}${subs.A}-R${ranks.R}${subs.R}-E${ranks.E}${subs.E}-M${ranks.M}${subs.M}-T${ranks.T}${subs.T}`;
+  }
+
+  $('generateBtn').addEventListener('click', async () => {
+    // const owner = $('ownerField').value.trim() || 'anonymous'; // больше не нужен
+    const scores = {
+      A: axisScore('A1','A2'),
+      R: axisScore('R1','R2'),
+      E: axisScore('E1','E2'),
+      M: axisScore('M1','M2'),
+      T: axisScore('T1','T2'),
+    };
+    const ranks = rankAxes(scores);
+    const subs = {
+      A: $('As').value,
+      R: $('Rs').value,
+      E: $('Es').value,
+      M: $('Ms').value,
+      T: $('Ts').value,
+    };
+
+    const genome = genomeString(ranks, subs);
+    const ts = new Date().toISOString();
+    const salt = randomSalt(8);
+    const codeID = codeId();
+
+    const hashFull = await sha256hex(`${genome}|${ts}|${salt}`);
+    const hash10 = hashFull.slice(0,10).toUpperCase();
+
+    // Render standard explanations
+    $('prgResult').classList.remove('hidden');
+    $('codeId').textContent = codeID;
+    $('genomeStr').textContent = genome;
+    $('signature').textContent = `⟦PRG#${genome.replaceAll('-','·')}⟧ [${hash10}]`;
+
+    // Render copy block (3 строки)
+    const block = `${codeID}\n${genome}\n⟦PRG#${genome.replaceAll('-','·')}⟧ [${hash10}]`;
+    $('prgCopyBlock').textContent = block;
+
+    // Copy button
+    $('copySig').onclick = async () => {
+      try { await navigator.clipboard.writeText(block);
+            $('copySig').textContent = 'Copied!';
+            setTimeout(()=>{$('copySig').textContent='Copy All';},1200);
+      } catch(e){}
+    };
+  });
+</script>
+
 
 <!-- FOOTER -->
 <footer class="py-8 text-center text-xs text-gray-500 mt-8 border-t border-gray-200 bg-white">
@@ -557,3 +721,4 @@
     © 2025 Tetyana Leyendecker — TeNAI® &amp; GTNEra®. All rights reserved.
   </div>
 </footer>
+
