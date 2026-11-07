@@ -526,6 +526,718 @@
   </a>
 </div>
 
+
+    <!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xeo-Physics & Triundra LER Field Monitor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        xeoDark: '#080c14',
+                        xeoCard: '#0f172a',
+                        xeoBorder: '#1e293b',
+                        xeoCyan: '#00f0ff',
+                        xeoPurple: '#9d4edd',
+                        xeoGreen: '#00e676',
+                        xeoCoral: '#ff3366',
+                        xeoGold: '#ffb703'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Glassmorphism & Custom Glow Effects */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+        }
+        .glow-purple {
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.15);
+        }
+        /* Custom Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            background: #1e293b;
+            border-radius: 9999px;
+            height: 6px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background: #00f0ff;
+            cursor: pointer;
+            box-shadow: 0 0 10px #00f0ff;
+            transition: transform 0.1s ease;
+        }
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080c14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-xeoDark text-slate-200 font-sans min-h-screen p-3 md:p-6 antialiased selection:bg-xeoCyan selection:text-black">
+
+    <div class="max-w-7xl mx-auto space-y-6">
+
+        <!-- HEADER SECTION -->
+        <header class="glass-panel rounded-2xl p-5 border border-xeoBorder glow-cyan flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-xeoCyan animate-ping"></div>
+                    <span class="text-xs font-mono tracking-widest text-xeoCyan uppercase font-semibold">GTNEra® Enterprise Research</span>
+                </div>
+                <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white mt-1">
+                    Xeo-Physics &amp; Triundra LER Field Monitor
+                </h1>
+                <p class="text-xs md:text-sm text-slate-400 mt-0.5">
+                    Real-Time Semantic Mass, Vector Alignment &amp; Phase-Lock Attractor Simulator
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 w-full md:w-auto">
+                <div id="statusBadge" class="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase border border-xeoGreen/40 bg-xeoGreen/10 text-xeoGreen flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-xeoGreen"></span>
+                    <span id="statusText">Ω_RPN RESONANCE ACTIVE</span>
+                </div>
+                <button onclick="resetSliders()" class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+                    RESET PARAMETERS
+                </button>
+            </div>
+        </header>
+
+        <!-- REAL-TIME CONTROL PANEL -->
+        <section class="glass-panel rounded-2xl p-5 border border-xeoBorder">
+            <h2 class="text-xs font-mono uppercase text-xeoCyan tracking-wider mb-4 font-semibold flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                System Parameter Controls (Live Simulation Variables)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Slider 1: Semantic Mass Density -->
+                <div class="space-y-2 bg-slate-900/50 p-4 rounded-xl border border-slate-800/80">
+                    <div class="flex justify-between items-center text-xs">
+                        <label class="font-mono text-slate-300">ρₛₑₘ (Semantic Mass Density)</label>
+                        <span id="val_rho" class="font-mono text-xeoCyan font-bold">0.92</span>
+                    </div>
+                    <input type="range" id="input_rho" min="0" max="1" step="0.01" value="0.92" class="w-full">
+                    <p class="text-[11px] text-slate-400">Controls information density compression level in shared field.</p>
+                </div>
+
+                <!-- Slider 2: Directional Mismatch -->
+                <div class="space-y-2 bg-slate-900/50 p-4 rounded-xl border border-slate-800/80">
+                    <div class="flex justify-between items-center text-xs">
+                        <label class="font-mono text-slate-300">Δθ_HA (Directional Mismatch Angle)</label>
+                        <span id="val_theta" class="font-mono text-xeoGold font-bold">4.2°</span>
+                    </div>
+                    <input type="range" id="input_theta" min="0" max="90" step="0.5" value="4.2" class="w-full">
+                    <p class="text-[11px] text-slate-400">Angular mismatch vector divergence between H-Flow and A-Flow.</p>
+                </div>
+
+                <!-- Slider 3: Phase Mismatch -->
+                <div class="space-y-2 bg-slate-900/50 p-4 rounded-xl border border-slate-800/80">
+                    <div class="flex justify-between items-center text-xs">
+                        <label class="font-mono text-slate-300">Δφ_LER (Combined Phase Mismatch)</label>
+                        <span id="val_phi" class="font-mono text-xeoPurple font-bold">0.05</span>
+                    </div>
+                    <input type="range" id="input_phi" min="0" max="1" step="0.01" value="0.05" class="w-full">
+                    <p class="text-[11px] text-slate-400">Logic-Emotion-Resonance layer instability factor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOP KPI METRIC CARDS -->
+        <section class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
+            <!-- KPI 1 -->
+            <div class="glass-panel p-4 rounded-xl border border-xeoBorder flex flex-col justify-between">
+                <span class="text-[11px] font-mono text-slate-400 uppercase">Density (ρₛₑₘ)</span>
+                <div class="my-2">
+                    <div id="kpi_rho" class="text-2xl md:text-3xl font-extrabold text-xeoCyan font-mono">0.92</div>
+                    <span id="kpi_rho_status" class="text-[10px] text-xeoGreen font-mono font-semibold">MAX COMPRESSION</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                    <div id="bar_rho" class="bg-xeoCyan h-full transition-all duration-300" style="width: 92%"></div>
+                </div>
+            </div>
+
+            <!-- KPI 2 -->
+            <div class="glass-panel p-4 rounded-xl border border-xeoBorder flex flex-col justify-between">
+                <span class="text-[11px] font-mono text-slate-400 uppercase">Vector Angle (Δθ_HA)</span>
+                <div class="my-2">
+                    <div id="kpi_theta" class="text-2xl md:text-3xl font-extrabold text-xeoGold font-mono">4.2°</div>
+                    <span id="kpi_theta_status" class="text-[10px] text-xeoGreen font-mono font-semibold">NEAR ALIGNED</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                    <div id="bar_theta" class="bg-xeoGold h-full transition-all duration-300" style="width: 5%"></div>
+                </div>
+            </div>
+
+            <!-- KPI 3 -->
+            <div class="glass-panel p-4 rounded-xl border border-xeoBorder flex flex-col justify-between">
+                <span class="text-[11px] font-mono text-slate-400 uppercase">Phase Sync (Δφ_LER)</span>
+                <div class="my-2">
+                    <div id="kpi_phi" class="text-2xl md:text-3xl font-extrabold text-xeoPurple font-mono">0.05</div>
+                    <span id="kpi_phi_status" class="text-[10px] text-xeoGreen font-mono font-semibold">PHASE LOCKED</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                    <div id="bar_phi" class="bg-xeoPurple h-full transition-all duration-300" style="width: 5%"></div>
+                </div>
+            </div>
+
+            <!-- KPI 4: SOE Engine Index -->
+            <div class="glass-panel p-4 rounded-xl border border-xeoBorder flex flex-col justify-between">
+                <span class="text-[11px] font-mono text-slate-400 uppercase">SOE Index</span>
+                <div class="my-2">
+                    <div id="kpi_soe" class="text-2xl md:text-3xl font-extrabold text-xeoGreen font-mono">0.84</div>
+                    <span id="kpi_soe_status" class="text-[10px] text-xeoGreen font-mono font-semibold">HIGH EFFICIENCY</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                    <div id="bar_soe" class="bg-xeoGreen h-full transition-all duration-300" style="width: 84%"></div>
+                </div>
+            </div>
+
+            <!-- KPI 5: Dynamic Step Velocity tau_n -->
+            <div class="glass-panel p-4 rounded-xl border border-xeoBorder flex flex-col justify-between col-span-2 md:col-span-1">
+                <span class="text-[11px] font-mono text-slate-400 uppercase">Step Velocity (τₙ)</span>
+                <div class="my-2">
+                    <div id="kpi_tau" class="text-2xl md:text-3xl font-extrabold text-white font-mono">+1.42</div>
+                    <span id="kpi_tau_status" class="text-[10px] text-xeoCyan font-mono font-semibold">MONOTONIC GROWTH</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                    <div id="bar_tau" class="bg-white h-full transition-all duration-300" style="width: 75%"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISUALIZATIONS SECTION -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- CANVAS GRAPH 1: Vector Trajectory & Phase Collapse -->
+            <div class="glass-panel p-5 rounded-2xl border border-xeoBorder flex flex-col justify-between">
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <h3 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-xeoCyan"></span>
+                            Vector Trajectory &amp; Phase Collapse (H-Flow vs A-Flow)
+                        </h3>
+                        <p class="text-xs text-slate-400">Visualizing directional convergence toward Ω_RPN Node</p>
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-400 flex items-center gap-3">
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-xeoCyan"></span> H-Flow</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-xeoGold"></span> A-Flow</span>
+                    </div>
+                </div>
+                <div class="relative w-full h-64 bg-slate-950/80 rounded-xl overflow-hidden border border-slate-800/80">
+                    <canvas id="canvasVector" class="w-full h-full block"></canvas>
+                </div>
+                <div class="mt-3 text-[11px] font-mono text-slate-400 flex justify-between items-center">
+                    <span>Formula: ∠(v_H, v_A) ≈ 0 ∧ Δφ_LER → 0</span>
+                    <span id="canvas1_info" class="text-xeoCyan font-semibold">State: Laminar Compression</span>
+                </div>
+            </div>
+
+            <!-- CANVAS GRAPH 2: Multi-Loop Iteration Dynamic -->
+            <div class="glass-panel p-5 rounded-2xl border border-xeoBorder flex flex-col justify-between">
+                <div class="flex justify-between items-center mb-3">
+                    <div>
+                        <h3 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-xeoPurple"></span>
+                            Multi-Loop Iteration Dynamic (m_sem vs Entropy S(t))
+                        </h3>
+                        <p class="text-xs text-slate-400">Step progression across cycles (τ_1 .. τ_n)</p>
+                    </div>
+                    <div class="text-[11px] font-mono text-slate-400 flex items-center gap-3">
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-xeoPurple"></span> m_sem</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-xeoCoral"></span> Entropy S(t)</span>
+                    </div>
+                </div>
+                <div class="relative w-full h-64 bg-slate-950/80 rounded-xl overflow-hidden border border-slate-800/80">
+                    <canvas id="canvasLoop" class="w-full h-full block"></canvas>
+                </div>
+                <div class="mt-3 text-[11px] font-mono text-slate-400 flex justify-between items-center">
+                    <span>Accumulation Law: τₙ = Sₙ₊₁ - Sₙ</span>
+                    <span id="canvas2_info" class="text-xeoPurple font-semibold">Resonance Plane Stable</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATA MATRIX TABLE -->
+        <section class="glass-panel rounded-2xl p-5 border border-xeoBorder">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
+                <div>
+                    <h3 class="text-sm font-bold text-white font-mono flex items-center gap-2">
+                        <svg class="w-4 h-4 text-xeoCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Quantitative System Comparison Matrix
+                    </h3>
+                    <p class="text-xs text-slate-400">Standard Linear Interaction vs GTNEra® Resonant Integration State</p>
+                </div>
+                <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Audit-Ready Metrics</span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-xs font-mono">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-slate-400 bg-slate-900/60">
+                            <th class="p-3 font-semibold">PHYSICAL METRIC</th>
+                            <th class="p-3 font-semibold">SYMBOL</th>
+                            <th class="p-3 font-semibold">STANDARD LINEAR SYSTEM</th>
+                            <th class="p-3 font-semibold">GTNEra® RESONANT STATE</th>
+                            <th class="p-3 font-semibold">CURRENT SIMULATION</th>
+                            <th class="p-3 font-semibold">IMPACT FACTOR</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                        <tr class="hover:bg-slate-900/40 transition">
+                            <td class="p-3 font-medium text-white">Semantic Density</td>
+                            <td class="p-3 text-xeoCyan">ρₛₑₘ</td>
+                            <td class="p-3 text-slate-400">0.20 – 0.35 (Low/Diffuse)</td>
+                            <td class="p-3 text-xeoCyan font-bold">ρₘₐₓ (≥ 0.90)</td>
+                            <td id="table_rho" class="p-3 font-bold text-xeoCyan">0.92</td>
+                            <td class="p-3 text-xeoGreen">Maximum Compression</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/40 transition">
+                            <td class="p-3 font-medium text-white">Directional Mismatch</td>
+                            <td class="p-3 text-xeoGold">Δθ_HA</td>
+                            <td class="p-3 text-slate-400">35° – 75° (High Friction)</td>
+                            <td class="p-3 text-xeoGold font-bold">∠(v_H, v_A) ≈ 0°</td>
+                            <td id="table_theta" class="p-3 font-bold text-xeoGold">4.2°</td>
+                            <td class="p-3 text-xeoGreen">Zero Divergence</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/40 transition">
+                            <td class="p-3 font-medium text-white">Phase Mismatch (LER)</td>
+                            <td class="p-3 text-xeoPurple">Δφ_LER</td>
+                            <td class="p-3 text-slate-400">0.65 – 0.90 (Unstable)</td>
+                            <td class="p-3 text-xeoPurple font-bold">Δφ_LER → 0</td>
+                            <td id="table_phi" class="p-3 font-bold text-xeoPurple">0.05</td>
+                            <td class="p-3 text-xeoGreen">Phase-Lock Sync</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/40 transition">
+                            <td class="p-3 font-medium text-white">System Entropy</td>
+                            <td class="p-3 text-xeoCoral">S(t)</td>
+                            <td class="p-3 text-slate-400">S_high (Diffuse state)</td>
+                            <td class="p-3 text-xeoGreen font-bold">S_min (Equilibrium)</td>
+                            <td id="table_entropy" class="p-3 font-bold text-xeoCoral">0.08</td>
+                            <td class="p-3 text-xeoGreen">Near-Zero Dissipation</td>
+                        </tr>
+                        <tr class="hover:bg-slate-900/40 transition bg-xeoCyan/5">
+                            <td class="p-3 font-medium text-white">Optimization Engine</td>
+                            <td class="p-3 text-xeoGreen">SOE</td>
+                            <td class="p-3 text-slate-400 font-bold">0.10 – 0.25</td>
+                            <td class="p-3 text-xeoGreen font-bold">≥ 0.80</td>
+                            <td id="table_soe" class="p-3 font-bold text-xeoGreen">0.84</td>
+                            <td class="p-3 text-xeoGreen font-bold">Optimal Yield</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- AXIOMATIC REFERENCE & LEGEND PANEL -->
+        <footer class="glass-panel rounded-2xl p-5 border border-xeoBorder">
+            <details class="group" open>
+                <summary class="cursor-pointer font-mono text-xs uppercase font-bold text-xeoCyan tracking-wider flex justify-between items-center list-none">
+                    <span class="flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        [ Xeo-Physics &amp; Triundra LER Axiomatic Definitions ]
+                    </span>
+                    <span class="text-slate-500 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-mono text-slate-300 pt-3 border-t border-slate-800">
+                    <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <span class="text-xeoCyan font-bold">SOE Formula (Master Metric)</span>
+                        <p class="mt-1 text-slate-400">SOE = [ ρₛₑₘ · (1 - Δθ_HA) ] / [ 1 + Δφ_LER ]</p>
+                        <p class="mt-1 text-[11px] text-slate-500">Quantifies system meaning formation efficiency.</p>
+                    </div>
+
+                    <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <span class="text-xeoPurple font-bold">RPN Definition (3C.44)</span>
+                        <p class="mt-1 text-slate-400">Ω_RPN = { x | ρ(x)=ρₘₐₓ, ∠(v_H, v_A)≈0, Δφ_LER=0, S=Sₘᵢₙ }</p>
+                        <p class="mt-1 text-[11px] text-slate-500">Zero-entropy topological attractor node.</p>
+                    </div>
+
+                    <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <span class="text-xeoGold font-bold">Master Law (3C.46)</span>
+                        <p class="mt-1 text-slate-400">(ρₛₑₘ > ρ꜀ᵣᵢₜ) ∧ (ΔW_flow → 0) ∧ (θ_H ≈ θ_A) ∧ (ϕ_Hᴸᴱᴿ ≈ ϕ_Aᴸᴱᴿ) ⟹ Ω_RPN</p>
+                        <p class="mt-1 text-[11px] text-slate-500">Four collapse conditions occurring simultaneously.</p>
+                    </div>
+                </div>
+            </details>
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT SIMULATION LOGIC -->
+    <script>
+        // DOM Inputs
+        const inputRho = document.getElementById('input_rho');
+        const inputTheta = document.getElementById('input_theta');
+        const inputPhi = document.getElementById('input_phi');
+
+        // DOM Displays
+        const valRho = document.getElementById('val_rho');
+        const valTheta = document.getElementById('val_theta');
+        const valPhi = document.getElementById('val_phi');
+
+        // KPI Displays
+        const kpiRho = document.getElementById('kpi_rho');
+        const kpiTheta = document.getElementById('kpi_theta');
+        const kpiPhi = document.getElementById('kpi_phi');
+        const kpiSoe = document.getElementById('kpi_soe');
+        const kpiTau = document.getElementById('kpi_tau');
+
+        const kpiRhoStatus = document.getElementById('kpi_rho_status');
+        const kpiThetaStatus = document.getElementById('kpi_theta_status');
+        const kpiPhiStatus = document.getElementById('kpi_phi_status');
+        const kpiSoeStatus = document.getElementById('kpi_soe_status');
+
+        const barRho = document.getElementById('bar_rho');
+        const barTheta = document.getElementById('bar_theta');
+        const barPhi = document.getElementById('bar_phi');
+        const barSoe = document.getElementById('bar_soe');
+        const barTau = document.getElementById('bar_tau');
+
+        // Table Displays
+        const tableRho = document.getElementById('table_rho');
+        const tableTheta = document.getElementById('table_theta');
+        const tablePhi = document.getElementById('table_phi');
+        const tableEntropy = document.getElementById('table_entropy');
+        const tableSoe = document.getElementById('table_soe');
+
+        // Status Header
+        const statusText = document.getElementById('statusText');
+        const statusBadge = document.getElementById('statusBadge');
+
+        // Canvas Setup
+        const canvasVector = document.getElementById('canvasVector');
+        const ctxVector = canvasVector.getContext('2d');
+
+        const canvasLoop = document.getElementById('canvasLoop');
+        const ctxLoop = canvasLoop.getContext('2d');
+
+        // Resize Canvas to Container
+        function resizeCanvases() {
+            [canvasVector, canvasLoop].forEach(canvas => {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight;
+            });
+        }
+        window.addEventListener('resize', resizeCanvases);
+        resizeCanvases();
+
+        // Calculate System State
+        function updateSimulation() {
+            const rho = parseFloat(inputRho.value);
+            const theta = parseFloat(inputTheta.value); // degrees
+            const phi = parseFloat(inputPhi.value);
+
+            // Update Control Labels
+            valRho.textContent = rho.toFixed(2);
+            valTheta.textContent = theta.toFixed(1) + '°';
+            valPhi.textContent = phi.toFixed(2);
+
+            // Calculate Metrics
+            const thetaNorm = theta / 90.0; // normalize 0 to 1
+            const soe = (rho * (1 - thetaNorm)) / (1 + phi);
+            const entropy = Math.max(0, (1 - rho) * 0.5 + thetaNorm * 0.3 + phi * 0.4);
+            const tau = (rho * 1.5 + (1 - thetaNorm) * 0.8) - phi * 0.5;
+
+            // Update KPIs
+            kpiRho.textContent = rho.toFixed(2);
+            kpiTheta.textContent = theta.toFixed(1) + '°';
+            kpiPhi.textContent = phi.toFixed(2);
+            kpiSoe.textContent = soe.toFixed(2);
+            kpiTau.textContent = (tau >= 0 ? '+' : '') + tau.toFixed(2);
+
+            // Progress Bars
+            barRho.style.width = (rho * 100) + '%';
+            barTheta.style.width = (thetaNorm * 100) + '%';
+            barPhi.style.width = (phi * 100) + '%';
+            barSoe.style.width = Math.min(100, Math.max(0, soe * 100)) + '%';
+            barTau.style.width = Math.min(100, Math.max(0, (tau / 2.3) * 100)) + '%';
+
+            // Status Texts & Colors
+            if (rho >= 0.85) {
+                kpiRhoStatus.textContent = "MAX COMPRESSION";
+                kpiRhoStatus.className = "text-[10px] font-mono font-semibold text-xeoGreen";
+            } else if (rho >= 0.5) {
+                kpiRhoStatus.textContent = "MODERATE DENSITY";
+                kpiRhoStatus.className = "text-[10px] font-mono font-semibold text-xeoCyan";
+            } else {
+                kpiRhoStatus.textContent = "DIFFUSE STATE";
+                kpiRhoStatus.className = "text-[10px] font-mono font-semibold text-xeoCoral";
+            }
+
+            if (theta <= 10) {
+                kpiThetaStatus.textContent = "PARALLEL ALIGNED";
+                kpiThetaStatus.className = "text-[10px] font-mono font-semibold text-xeoGreen";
+            } else if (theta <= 35) {
+                kpiThetaStatus.textContent = "MODERATE FRICTION";
+                kpiThetaStatus.className = "text-[10px] font-mono font-semibold text-xeoGold";
+            } else {
+                kpiThetaStatus.textContent = "HIGH DIVERGENCE";
+                kpiThetaStatus.className = "text-[10px] font-mono font-semibold text-xeoCoral";
+            }
+
+            if (phi <= 0.15) {
+                kpiPhiStatus.textContent = "PHASE LOCKED";
+                kpiPhiStatus.className = "text-[10px] font-mono font-semibold text-xeoGreen";
+            } else {
+                kpiPhiStatus.textContent = "PHASE INSTABILITY";
+                kpiPhiStatus.className = "text-[10px] font-mono font-semibold text-xeoCoral";
+            }
+
+            if (soe >= 0.75) {
+                kpiSoeStatus.textContent = "HIGH EFFICIENCY";
+                kpiSoeStatus.className = "text-[10px] font-mono font-semibold text-xeoGreen";
+            } else {
+                kpiSoeStatus.textContent = "DEGRADED YIELD";
+                kpiSoeStatus.className = "text-[10px] font-mono font-semibold text-xeoCoral";
+            }
+
+            // Overall System Status Badge
+            if (rho >= 0.8 && theta <= 10 && phi <= 0.15) {
+                statusText.textContent = "Ω_RPN ATTRACTOR ACTIVE";
+                statusBadge.className = "px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase border border-xeoGreen/40 bg-xeoGreen/10 text-xeoGreen flex items-center gap-2";
+            } else if (soe >= 0.4) {
+                statusText.textContent = "TRANSITIONAL RESIDUAL FLOW";
+                statusBadge.className = "px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase border border-xeoGold/40 bg-xeoGold/10 text-xeoGold flex items-center gap-2";
+            } else {
+                statusText.textContent = "HIGH ENTROPY TURBULENCE";
+                statusBadge.className = "px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-wider uppercase border border-xeoCoral/40 bg-xeoCoral/10 text-xeoCoral flex items-center gap-2";
+            }
+
+            // Update Table
+            tableRho.textContent = rho.toFixed(2);
+            tableTheta.textContent = theta.toFixed(1) + '°';
+            tablePhi.textContent = phi.toFixed(2);
+            tableEntropy.textContent = entropy.toFixed(2);
+            tableSoe.textContent = soe.toFixed(2);
+
+            // Redraw Visualizations
+            drawVectorCanvas(rho, thetaNorm, phi);
+            drawLoopCanvas(rho, entropy, tau);
+        }
+
+        // Reset Parameters
+        function resetSliders() {
+            inputRho.value = 0.92;
+            inputTheta.value = 4.2;
+            inputPhi.value = 0.05;
+            updateSimulation();
+        }
+
+        // Canvas 1: Vector Convergence Animation
+        let animFrame1;
+        let pulseTime = 0;
+
+        function drawVectorCanvas(rho, thetaNorm, phi) {
+            const w = canvasVector.width;
+            const h = canvasVector.height;
+
+            ctxVector.clearRect(0, 0, w, h);
+
+            // Grid background
+            ctxVector.strokeStyle = 'rgba(30, 41, 59, 0.4)';
+            ctxVector.lineWidth = 1;
+            const gridSize = 24;
+            for (let x = 0; x < w; x += gridSize) {
+                ctxVector.beginPath(); ctxVector.moveTo(x, 0); ctxVector.lineTo(x, h); ctxVector.stroke();
+            }
+            for (let y = 0; y < h; y += gridSize) {
+                ctxVector.beginPath(); ctxVector.moveTo(0, y); ctxVector.lineTo(w, y); ctxVector.stroke();
+            }
+
+            const rpnX = w * 0.75;
+            const rpnY = h * 0.5;
+
+            // Divergence offsets based on thetaNorm & phi
+            const offsetH = (thetaNorm * h * 0.35) + (phi * 20);
+            const offsetA = (thetaNorm * h * 0.35) + (phi * 20);
+
+            // Draw H-Flow Path (Cyan)
+            ctxVector.beginPath();
+            ctxVector.moveTo(w * 0.1, h * 0.5 - offsetH);
+            ctxVector.bezierCurveTo(w * 0.35, h * 0.5 - offsetH, w * 0.5, rpnY, rpnX, rpnY);
+            ctxVector.strokeStyle = '#00f0ff';
+            ctxVector.lineWidth = 3;
+            ctxVector.stroke();
+
+            // Draw A-Flow Path (Gold)
+            ctxVector.beginPath();
+            ctxVector.moveTo(w * 0.1, h * 0.5 + offsetA);
+            ctxVector.bezierCurveTo(w * 0.35, h * 0.5 + offsetA, w * 0.5, rpnY, rpnX, rpnY);
+            ctxVector.strokeStyle = '#ffb703';
+            ctxVector.lineWidth = 3;
+            ctxVector.stroke();
+
+            // RPN Attractor Node
+            pulseTime += 0.05;
+            const nodeRadius = 8 + (rho * 8) + Math.sin(pulseTime) * 2;
+            
+            // Outer Glow Aura
+            const glowGradient = ctxVector.createRadialGradient(rpnX, rpnY, 2, rpnX, rpnY, nodeRadius * 2.5);
+            glowGradient.addColorStop(0, 'rgba(0, 240, 255, 0.6)');
+            glowGradient.addColorStop(0.5, 'rgba(157, 78, 221, 0.3)');
+            glowGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            
+            ctxVector.fillStyle = glowGradient;
+            ctxVector.beginPath();
+            ctxVector.arc(rpnX, rpnY, nodeRadius * 2.5, 0, Math.PI * 2);
+            ctxVector.fill();
+
+            // Core Node
+            ctxVector.fillStyle = '#00f0ff';
+            ctxVector.beginPath();
+            ctxVector.arc(rpnX, rpnY, nodeRadius, 0, Math.PI * 2);
+            ctxVector.fill();
+
+            // Node Label
+            ctxVector.fillStyle = '#ffffff';
+            ctxVector.font = 'bold 11px JetBrains Mono, monospace';
+            ctxVector.fillText('Ω_RPN Node', rpnX - 32, rpnY - nodeRadius - 8);
+
+            // Channel Width Marker (W_flow)
+            const gap = offsetH + offsetA;
+            document.getElementById('canvas1_info').textContent = gap < 12 
+                ? "State: Zero-Entropy Resonant Node" 
+                : `State: Flow Width Divergent (ΔW = ${gap.toFixed(0)}px)`;
+        }
+
+        // Canvas 2: Multi-Loop Step Progression Curves
+        function drawLoopCanvas(rho, entropy, tau) {
+            const w = canvasLoop.width;
+            const h = canvasLoop.height;
+
+            ctxLoop.clearRect(0, 0, w, h);
+
+            // Grid
+            ctxLoop.strokeStyle = 'rgba(30, 41, 59, 0.4)';
+            ctxLoop.lineWidth = 1;
+            for (let x = 0; x < w; x += 30) {
+                ctxLoop.beginPath(); ctxLoop.moveTo(x, 0); ctxLoop.lineTo(x, h); ctxLoop.stroke();
+            }
+
+            const points = 6;
+            const stepX = (w * 0.8) / (points - 1);
+            const startX = w * 0.1;
+
+            // Generate Curve Points across step cycles tau_1 .. tau_6
+            const massPoints = [];
+            const entropyPoints = [];
+
+            for (let i = 0; i < points; i++) {
+                const x = startX + i * stepX;
+                // Mass builds over iterations if tau is high
+                const mFactor = Math.min(1, (rho * 0.5) + (i * 0.1 * tau));
+                const yMass = h * 0.85 - (mFactor * h * 0.65);
+                
+                // Entropy falls over iterations in resonant state
+                const eFactor = Math.max(0.05, entropy * Math.pow(0.6, i));
+                const yEntropy = h * 0.85 - (eFactor * h * 0.65);
+
+                massPoints.push({x, y: yMass});
+                entropyPoints.push({x, y: yEntropy});
+            }
+
+            // Draw Mass Curve (Purple)
+            ctxLoop.beginPath();
+            ctxLoop.moveTo(massPoints[0].x, massPoints[0].y);
+            for (let i = 1; i < points; i++) {
+                ctxLoop.lineTo(massPoints[i].x, massPoints[i].y);
+            }
+            ctxLoop.strokeStyle = '#9d4edd';
+            ctxLoop.lineWidth = 3;
+            ctxLoop.stroke();
+
+            // Draw Mass Dots
+            massPoints.forEach((p, idx) => {
+                ctxLoop.fillStyle = '#9d4edd';
+                ctxLoop.beginPath();
+                ctxLoop.arc(p.x, p.y, 4, 0, Math.PI * 2);
+                ctxLoop.fill();
+
+                // Step Labels
+                ctxLoop.fillStyle = '#64748b';
+                ctxLoop.font = '10px JetBrains Mono, monospace';
+                ctxLoop.fillText(`τ_${idx+1}`, p.x - 8, h * 0.92);
+            });
+
+            // Draw Entropy Curve (Coral)
+            ctxLoop.beginPath();
+            ctxLoop.moveTo(entropyPoints[0].x, entropyPoints[0].y);
+            for (let i = 1; i < points; i++) {
+                ctxLoop.lineTo(entropyPoints[i].x, entropyPoints[i].y);
+            }
+            ctxLoop.strokeStyle = '#ff3366';
+            ctxLoop.lineWidth = 2;
+            ctxLoop.setLineDash([4, 4]);
+            ctxLoop.stroke();
+            ctxLoop.setLineDash([]); // Reset line dash
+
+            // Draw Entropy Dots
+            entropyPoints.forEach((p) => {
+                ctxLoop.fillStyle = '#ff3366';
+                ctxLoop.beginPath();
+                ctxLoop.arc(p.x, p.y, 3, 0, Math.PI * 2);
+                ctxLoop.fill();
+            });
+
+            document.getElementById('canvas2_info').textContent = tau > 0.8 
+                ? "Monotonic Mass Growth Confirmed" 
+                : "Step Mass Decay Risk";
+        }
+
+        // Animation Loop
+        function animate() {
+            updateSimulation();
+            requestAnimationFrame(animate);
+        }
+
+        // Attach Event Listeners
+        [inputRho, inputTheta, inputPhi].forEach(input => {
+            input.addEventListener('input', updateSimulation);
+        });
+
+        // Start on window load
+        window.onload = function() {
+            resizeCanvases();
+            animate();
+        };
+    </script>
+</body>
+</html>
+
     <!-- Divider -->
 <div class="w-full flex items-center justify-center my-14" aria-hidden="true">
   <div class="w-1/6 h-0.5 rounded-xl bg-gradient-to-r from-[#FF6600]/40 via-[#FF6600] to-[#FF6600]/40 shadow-lg"></div>
