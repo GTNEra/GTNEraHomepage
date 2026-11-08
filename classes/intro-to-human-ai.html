@@ -4108,6 +4108,1691 @@
  PART 3 — Triundral Measurement Architecture
 ============================================================ -->
 
+  
+<!-- =========================================================
+ GTNEra® RESEARCH BLOCK 3.1
+ ECONOMIC IMPACT & VALUE ANALYSIS
+ Standalone HTML / CSS / JavaScript
+ Insert AFTER Architecture Comparison (Block 3)
+ and BEFORE Scientific Foundations (Block 4)
+
+ Research dimensions remain independent:
+ Q_res | Q_ret | M_acc | Δz | τ = U/K
+
+ Financial calculations are an applied layer,
+ not a sixth fundamental research dimension.
+========================================================== -->
+
+<section
+  id="gtn-economic-31"
+  class="gtn31"
+  aria-labelledby="gtn31-title"
+>
+
+<style>
+#gtn-economic-31,
+#gtn-economic-31 * {
+  box-sizing: border-box;
+}
+
+#gtn-economic-31 {
+  --g31-ink: #1E2A38;
+  --g31-muted: #647184;
+  --g31-orange: #FF6600;
+  --g31-blue: #2563B8;
+  --g31-purple: #8A65BA;
+  --g31-green: #27866A;
+  --g31-line: #E4E7ED;
+
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 16px;
+  color: var(--g31-ink);
+  font-family: inherit;
+  scroll-margin-top: 110px;
+}
+
+#gtn-economic-31 .g31-shell {
+  background: #FFFFFF;
+  border: 1px solid var(--g31-line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 44px rgba(30,42,56,.06);
+}
+
+#gtn-economic-31 .g31-header {
+  padding: clamp(24px,5vw,42px);
+  border-top: 5px solid var(--g31-orange);
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(138,101,186,.12),
+      transparent 55%
+    ),
+    linear-gradient(
+      130deg,#FFF8F2,#FFFFFF 55%,#F7F3FC
+    );
+}
+
+#gtn-economic-31 .g31-kicker {
+  color: #B65319;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+#gtn-economic-31 h2 {
+  font-size: clamp(27px,4.5vw,40px);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  font-weight: 800;
+  margin: 0 0 17px;
+  color: var(--g31-ink);
+}
+
+#gtn-economic-31 h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 15px;
+  color: var(--g31-ink);
+}
+
+#gtn-economic-31 p {
+  line-height: 1.75;
+}
+
+#gtn-economic-31 .g31-lead {
+  color: var(--g31-muted);
+  font-size: 15px;
+  max-width: 780px;
+  margin: 0 0 14px;
+}
+
+#gtn-economic-31 .g31-body {
+  padding: clamp(18px,4vw,34px);
+}
+
+#gtn-economic-31 .g31-scenarios {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+#gtn-economic-31 button {
+  font: inherit;
+  cursor: pointer;
+}
+
+#gtn-economic-31 .g31-preset {
+  min-height: 83px;
+  text-align: left;
+  padding: 14px;
+  border: 1px solid var(--g31-line);
+  border-radius: 13px;
+  background: #FAFAFC;
+  color: var(--g31-ink);
+  transition:
+    border-color .2s,
+    background .2s,
+    transform .2s;
+}
+
+#gtn-economic-31 .g31-preset:hover {
+  transform: translateY(-2px);
+}
+
+#gtn-economic-31 .g31-preset strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+#gtn-economic-31 .g31-preset span {
+  display: block;
+  font-size: 11px;
+  color: var(--g31-muted);
+  margin-top: 5px;
+  line-height: 1.45;
+}
+
+#gtn-economic-31 .g31-preset.active {
+  background: #FFF4E9;
+  border-color: var(--g31-orange);
+  box-shadow: inset 0 0 0 1px var(--g31-orange);
+}
+
+#gtn-economic-31 .g31-scenario-note {
+  padding: 15px 18px;
+  border-left: 3px solid var(--g31-orange);
+  border-radius: 0 12px 12px 0;
+  background: #FFF8F2;
+  color: #5D6573;
+  font-size: 13px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+#gtn-economic-31 .g31-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 15px;
+}
+
+#gtn-economic-31 .g31-card {
+  padding: 20px;
+  border: 1px solid var(--g31-line);
+  border-radius: 16px;
+  background: #FBFBFD;
+  min-width: 0;
+}
+
+#gtn-economic-31 .g31-current {
+  border-top: 3px solid var(--g31-blue);
+}
+
+#gtn-economic-31 .g31-alternative {
+  border-top: 3px solid var(--g31-purple);
+}
+
+#gtn-economic-31 .g31-shared {
+  background: #FFF8F1;
+  border-color: #F1DFCF;
+  margin-bottom: 15px;
+}
+
+#gtn-economic-31 .g31-fields {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 13px;
+}
+
+#gtn-economic-31 .g31-field {
+  min-width: 0;
+}
+
+#gtn-economic-31 label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #596577;
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+#gtn-economic-31 input,
+#gtn-economic-31 select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #D7DCE5;
+  border-radius: 9px;
+  background: #FFFFFF;
+  color: var(--g31-ink);
+  font: inherit;
+  font-size: 15px;
+}
+
+#gtn-economic-31 input:focus-visible,
+#gtn-economic-31 select:focus-visible,
+#gtn-economic-31 button:focus-visible,
+#gtn-economic-31 a:focus-visible {
+  outline: 3px solid rgba(138,101,186,.45);
+  outline-offset: 2px;
+}
+
+#gtn-economic-31 .g31-help {
+  display: block;
+  color: #7A8491;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+#gtn-economic-31 .g31-results {
+  margin-top: 25px;
+  padding: 23px;
+  background: linear-gradient(
+    140deg,#FFFFFF,#F8F5FC
+  );
+  border: 1px solid #E5DDED;
+  border-radius: 18px;
+}
+
+#gtn-economic-31 .g31-results-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+}
+
+#gtn-economic-31 .g31-stat {
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--g31-line);
+  border-radius: 13px;
+  min-width: 0;
+}
+
+#gtn-economic-31 .g31-stat small {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--g31-muted);
+  margin-bottom: 7px;
+}
+
+#gtn-economic-31 .g31-stat strong {
+  display: block;
+  font-size: clamp(19px,3vw,27px);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+#gtn-economic-31 .g31-highlight {
+  padding: 23px;
+  margin: 16px 0;
+  border: 1px solid #CDE7D6;
+  border-radius: 15px;
+  background: #F0F8F3;
+}
+
+#gtn-economic-31 .g31-highlight.negative {
+  background: #FFF3EF;
+  border-color: #EED0C5;
+}
+
+#gtn-economic-31 .g31-highlight small {
+  display: block;
+  color: #52665C;
+  font-weight: 800;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+#gtn-economic-31 .g31-highlight strong {
+  display: block;
+  font-size: clamp(28px,5vw,42px);
+  font-weight: 850;
+  color: #20734F;
+  overflow-wrap: anywhere;
+}
+
+#gtn-economic-31 .g31-highlight.negative strong {
+  color: #B34D2A;
+}
+
+#gtn-economic-31 .g31-bar-row {
+  margin: 16px 0;
+}
+
+#gtn-economic-31 .g31-bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 750;
+  margin-bottom: 7px;
+}
+
+#gtn-economic-31 .g31-track {
+  height: 15px;
+  background: #E9EBF0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+#gtn-economic-31 .g31-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 99px;
+  transition: width .2s ease;
+}
+
+#gtn-economic-31 .g31-fill.blue {
+  background: var(--g31-blue);
+}
+
+#gtn-economic-31 .g31-fill.purple {
+  background: var(--g31-purple);
+}
+
+#gtn-economic-31 .g31-break-even {
+  margin-top: 23px;
+  padding: 20px;
+  border: 1px solid #E2E5EC;
+  border-radius: 15px;
+  background: #FFFFFF;
+}
+
+#gtn-economic-31 .g31-break-even strong {
+  display: block;
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--g31-orange);
+  margin: 8px 0;
+}
+
+#gtn-economic-31 .g31-break-even p {
+  color: var(--g31-muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+#gtn-economic-31 .g31-interpretation {
+  margin-top: 20px;
+  padding: 17px;
+  border-radius: 13px;
+  background: #F2F0F8;
+  color: #4E5266;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+#gtn-economic-31 .g31-method {
+  padding: 19px;
+  margin-top: 20px;
+  border-radius: 14px;
+  background: #F5F6F9;
+  font-size: 12px;
+  color: #586476;
+  line-height: 1.8;
+}
+
+#gtn-economic-31 .g31-method code {
+  display: block;
+  margin: 7px 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#gtn-economic-31 .g31-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#gtn-economic-31 .g31-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 17px;
+  border: 1px solid #D9DDE5;
+  border-radius: 11px;
+  background: #FFFFFF;
+  color: var(--g31-ink);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+#gtn-economic-31 .g31-action.primary {
+  background: var(--g31-orange);
+  color: #FFFFFF;
+  border-color: var(--g31-orange);
+}
+
+#gtn-economic-31 .g31-disclaimer {
+  padding: 17px;
+  margin-top: 20px;
+  border-left: 3px solid var(--g31-purple);
+  background: #F8F5FC;
+  font-size: 12px;
+  color: #5F6877;
+  line-height: 1.75;
+}
+
+#gtn-economic-31 .g31-error {
+  color: #B34D2A;
+  font-size: 12px;
+  min-height: 18px;
+  margin-top: 10px;
+}
+
+@media (max-width:650px) {
+  #gtn-economic-31 .g31-scenarios,
+  #gtn-economic-31 .g31-grid,
+  #gtn-economic-31 .g31-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #gtn-economic-31 .g31-preset {
+    min-height: auto;
+  }
+
+  #gtn-economic-31 .g31-card,
+  #gtn-economic-31 .g31-results {
+    padding: 17px;
+  }
+
+  #gtn-economic-31 .g31-actions {
+    flex-direction: column;
+  }
+
+  #gtn-economic-31 .g31-action {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  #gtn-economic-31 .g31-fill,
+  #gtn-economic-31 .g31-preset {
+    transition: none;
+  }
+}
+</style>
+
+<div class="g31-shell">
+
+  <!-- RESEARCH HEADER -->
+
+  <header class="g31-header">
+
+    <p class="g31-kicker">
+      GTNEra® · Research 03.1 · Applied Economics
+    </p>
+
+    <h2 id="gtn31-title">
+      From System Development
+      <span style="color:#FF6600">
+        to Economic Value.
+      </span>
+    </h2>
+
+    <p class="g31-lead">
+      A technically advanced Human–AI architecture
+      is not necessarily the most economical one.
+      Higher performance may come with greater
+      operational costs, human intervention or
+      expensive rework.
+    </p>
+
+    <p class="g31-lead">
+      This interactive economic layer compares
+      two workflow configurations under explicit
+      assumptions. Explore when additional AI
+      expenditure becomes worthwhile — and when
+      apparent improvement fails to pay for itself.
+    </p>
+
+    <p class="g31-lead">
+      The financial analysis complements the five
+      GTNEra® research dimensions without replacing
+      or redefining them.
+    </p>
+
+  </header>
+
+  <div class="g31-body">
+
+    <!-- SCENARIO SELECTOR -->
+
+    <h3>01 · Select a Research Scenario</h3>
+
+    <div class="g31-scenarios">
+
+      <button
+        type="button"
+        class="g31-preset active"
+        data-scenario="hidden"
+        aria-pressed="true"
+      >
+        <strong>A · Hidden Cost</strong>
+        <span>More automation, higher total cost</span>
+      </button>
+
+      <button
+        type="button"
+        class="g31-preset"
+        data-scenario="rework"
+        aria-pressed="false"
+      >
+        <strong>B · Rework Reduction</strong>
+        <span>Higher AI cost, less repeated work</span>
+      </button>
+
+      <button
+        type="button"
+        class="g31-preset"
+        data-scenario="tradeoff"
+        aria-pressed="false"
+      >
+        <strong>C · Development Trade-off</strong>
+        <span>Operational improvement, weak ROI</span>
+      </button>
+
+    </div>
+
+    <div
+      id="g31-scenario-note"
+      class="g31-scenario-note"
+    >
+      Scenario A explores a workflow where AI
+      automation reduces direct human effort,
+      but additional operating costs and rework
+      eliminate the expected savings.
+    </div>
+
+    <!-- SHARED ASSUMPTIONS -->
+
+    <div class="g31-card g31-shared">
+
+      <h3>02 · Shared Assumptions</h3>
+
+      <div class="g31-fields">
+
+        <div class="g31-field">
+          <label for="g31-tasks">
+            Tasks per month
+          </label>
+          <input
+            id="g31-tasks"
+            type="number"
+            min="1"
+            step="1"
+            value="1000"
+          />
+        </div>
+
+        <div class="g31-field">
+          <label for="g31-rate">
+            Human labour cost (€/hour)
+          </label>
+          <input
+            id="g31-rate"
+            type="number"
+            min="0"
+            step="0.5"
+            value="40"
+          />
+        </div>
+
+        <div class="g31-field">
+          <label for="g31-setup">
+            One-time implementation (€)
+          </label>
+          <input
+            id="g31-setup"
+            type="number"
+            min="0"
+            step="100"
+            value="5000"
+          />
+        </div>
+
+        <div class="g31-field">
+          <label for="g31-quality">
+            Equivalent output quality?
+          </label>
+          <select id="g31-quality">
+            <option value="unverified">
+              Not yet verified
+            </option>
+            <option value="verified">
+              Externally verified
+            </option>
+          </select>
+        </div>
+
+      </div>
+
+      <p class="g31-help" style="margin-top:12px">
+        Both workflows use the same monthly task
+        volume. Quality equivalence is a
+        user-declared condition; this simulator
+        does not verify it.
+      </p>
+
+    </div>
+
+    <!-- WORKFLOW INPUTS -->
+
+    <div class="g31-grid">
+
+      <div class="g31-card g31-current">
+
+        <h3>03 · Current Workflow</h3>
+
+        <div class="g31-fields">
+
+          <div class="g31-field">
+            <label for="g31-a-time">
+              Human minutes/task
+            </label>
+            <input id="g31-a-time"
+              type="number" min="0"
+              step=".5" value="12"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-a-ai">
+              AI cost €/task
+            </label>
+            <input id="g31-a-ai"
+              type="number" min="0"
+              step=".01" value=".30"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-a-rework">
+              Rework rate %
+            </label>
+            <input id="g31-a-rework"
+              type="number" min="0"
+              max="100" step="1" value="20"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-a-fix">
+              Minutes/reworked task
+            </label>
+            <input id="g31-a-fix"
+              type="number" min="0"
+              step=".5" value="10"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-a-fixed">
+              Other monthly costs €
+            </label>
+            <input id="g31-a-fixed"
+              type="number" min="0"
+              step="10" value="200"/>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="g31-card g31-alternative">
+
+        <h3>04 · Alternative Workflow</h3>
+
+        <div class="g31-fields">
+
+          <div class="g31-field">
+            <label for="g31-b-time">
+              Human minutes/task
+            </label>
+            <input id="g31-b-time"
+              type="number" min="0"
+              step=".5" value="8"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-b-ai">
+              AI cost €/task
+            </label>
+            <input id="g31-b-ai"
+              type="number" min="0"
+              step=".01" value=".80"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-b-rework">
+              Rework rate %
+            </label>
+            <input id="g31-b-rework"
+              type="number" min="0"
+              max="100" step="1" value="8"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-b-fix">
+              Minutes/reworked task
+            </label>
+            <input id="g31-b-fix"
+              type="number" min="0"
+              step=".5" value="8"/>
+          </div>
+
+          <div class="g31-field">
+            <label for="g31-b-fixed">
+              Other monthly costs €
+            </label>
+            <input id="g31-b-fixed"
+              type="number" min="0"
+              step="10" value="400"/>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ECONOMIC RESULTS -->
+
+    <div class="g31-results" aria-live="polite">
+
+      <h3>05 · Economic Results</h3>
+
+      <p class="g31-lead">
+        Calculated outcomes under the selected
+        assumptions. Values are illustrative
+        rather than empirical performance claims.
+      </p>
+
+      <div class="g31-results-grid">
+
+        <div class="g31-stat">
+          <small>Current monthly cost</small>
+          <strong id="g31-cost-a">—</strong>
+        </div>
+
+        <div class="g31-stat">
+          <small>Alternative monthly cost</small>
+          <strong id="g31-cost-b">—</strong>
+        </div>
+
+        <div class="g31-stat">
+          <small>Current rework cost/month</small>
+          <strong id="g31-rework-a">—</strong>
+        </div>
+
+        <div class="g31-stat">
+          <small>Alternative rework cost/month</small>
+          <strong id="g31-rework-b">—</strong>
+        </div>
+
+        <div class="g31-stat">
+          <small>Monthly operating savings</small>
+          <strong id="g31-saving">—</strong>
+        </div>
+
+        <div class="g31-stat">
+          <small>First-year ROI</small>
+          <strong id="g31-roi">—</strong>
+        </div>
+
+        <div class="g31-stat">
+          <small>Payback period</small>
+          <strong id="g31-payback">—</strong>
+        </div>
+
+        <div class="g31-stat">
+          <small>Alternative cost per task</small>
+          <strong id="g31-unit">—</strong>
+        </div>
+
+      </div>
+
+      <!-- MAIN ECONOMIC RESULT -->
+
+      <div id="g31-net-box" class="g31-highlight">
+
+        <small>
+          POTENTIAL FIRST-YEAR NET SAVINGS
+        </small>
+
+        <strong id="g31-net">—</strong>
+
+        <p style="font-size:12px;margin:8px 0 0">
+          Annual operating cost difference
+          minus one-time implementation cost.
+        </p>
+
+      </div>
+
+      <!-- COST COMPARISON BARS -->
+
+      <div class="g31-bar-row">
+
+        <div class="g31-bar-label">
+          <span>Current monthly cost</span>
+          <span id="g31-label-a">—</span>
+        </div>
+
+        <div class="g31-track">
+          <div
+            id="g31-bar-a"
+            class="g31-fill blue"
+          ></div>
+        </div>
+
+      </div>
+
+      <div class="g31-bar-row">
+
+        <div class="g31-bar-label">
+          <span>Alternative monthly cost</span>
+          <span id="g31-label-b">—</span>
+        </div>
+
+        <div class="g31-track">
+          <div
+            id="g31-bar-b"
+            class="g31-fill purple"
+          ></div>
+        </div>
+
+      </div>
+
+      <!-- BREAK-EVEN -->
+
+      <div class="g31-break-even">
+
+        <h3>06 · Break-even Analysis</h3>
+
+        <p>
+          Minimum monthly task volume needed
+          for first-year operating savings
+          to recover implementation costs,
+          assuming all other inputs remain fixed.
+        </p>
+
+        <strong id="g31-break-even">—</strong>
+
+        <p id="g31-break-even-note">
+          The threshold is recalculated
+          as assumptions change.
+        </p>
+
+      </div>
+
+      <!-- DYNAMIC INTERPRETATION -->
+
+      <div
+        id="g31-interpretation"
+        class="g31-interpretation"
+      ></div>
+
+      <!-- METHODOLOGY -->
+
+      <div class="g31-method">
+
+        <strong>
+          Research Method & Calculation Logic
+        </strong>
+
+        <code>
+          Human base cost =
+          tasks × minutes/task ÷ 60 × hourly rate
+        </code>
+
+        <code>
+          Rework cost =
+          tasks × rework rate ×
+          repair minutes ÷ 60 × hourly rate
+        </code>
+
+        <code>
+          Total monthly cost =
+          human base cost + AI cost +
+          rework cost + other monthly costs
+        </code>
+
+        <code>
+          First-year net savings =
+          12 × monthly operating savings
+          − implementation cost
+        </code>
+
+        <code>
+          First-year ROI =
+          net savings ÷ implementation cost × 100%
+        </code>
+
+        <code>
+          Break-even task volume =
+          (implementation / 12 +
+          alternative fixed costs −
+          current fixed costs) /
+          savings per task before fixed costs
+        </code>
+
+        <p>
+          Payback is calculated as implementation
+          cost divided by positive monthly
+          operating savings. ROI is undefined
+          when implementation cost is zero.
+        </p>
+
+      </div>
+
+      <!-- ACTIONS -->
+
+      <div class="g31-actions">
+
+        <button
+          id="g31-reset"
+          type="button"
+          class="g31-action"
+        >
+          Reset Scenario
+        </button>
+
+        <button
+          id="g31-export"
+          type="button"
+          class="g31-action primary"
+        >
+          Export Scenario CSV
+        </button>
+
+        <a
+          href="#gtn-research-foundation"
+          class="g31-action"
+        >
+          Scientific Foundations ↗
+        </a>
+
+      </div>
+
+      <div
+        id="g31-error"
+        class="g31-error"
+        role="status"
+      ></div>
+
+      <!-- TRANSPARENCY -->
+
+      <div class="g31-disclaimer">
+
+        <strong>Research transparency.</strong>
+
+        This simulator provides illustrative
+        financial scenarios, not verified
+        savings or evidence that one
+        Human–AI architecture is inherently
+        superior.
+
+        Equivalent output quality must be
+        established independently.
+
+        Economic results are separate from
+        Q_res, Q_ret, M_acc, Δz and τ = U/K.
+
+        Financial ROI is not identical to
+        τ-efficiency.
+
+        The model excludes unentered costs,
+        taxes, discounting, residual quality
+        failures and risk exposure.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const root = document.getElementById(
+    "gtn-economic-31"
+  );
+
+  if (!root || root.dataset.initialized === "true") {
+    return;
+  }
+
+  root.dataset.initialized = "true";
+
+  const $ = id => root.querySelector("#" + id);
+
+  const inputIds = [
+    "g31-tasks",
+    "g31-rate",
+    "g31-setup",
+    "g31-a-time",
+    "g31-a-ai",
+    "g31-a-rework",
+    "g31-a-fix",
+    "g31-a-fixed",
+    "g31-b-time",
+    "g31-b-ai",
+    "g31-b-rework",
+    "g31-b-fix",
+    "g31-b-fixed"
+  ];
+
+  const money = new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 2
+  });
+
+  const number = new Intl.NumberFormat("de-DE", {
+    maximumFractionDigits: 1
+  });
+
+  const scenarios = {
+
+    hidden: {
+      description:
+        "Scenario A · Hidden Cost: automation " +
+        "reduces direct human time, but higher " +
+        "AI expenditure and repeated work " +
+        "can eliminate the expected savings.",
+      tasks:1000,
+      rate:40,
+      setup:5000,
+      a:[12,.30,20,10,200],
+      b:[9,3.50,25,12,700]
+    },
+
+    rework: {
+      description:
+        "Scenario B · Rework Reduction: " +
+        "additional AI expenditure may be " +
+        "economically justified when human " +
+        "intervention and repeated work fall " +
+        "sufficiently.",
+      tasks:1000,
+      rate:40,
+      setup:5000,
+      a:[12,.30,20,10,200],
+      b:[8,.80,8,8,400]
+    },
+
+    tradeoff: {
+      description:
+        "Scenario C · Development Trade-off: " +
+        "the alternative process requires " +
+        "less direct human effort and rework, " +
+        "but additional operating and " +
+        "implementation costs can weaken ROI.",
+      tasks:1000,
+      rate:40,
+      setup:30000,
+      a:[12,.30,20,10,200],
+      b:[9,1.50,10,8,700]
+    }
+
+  };
+
+  let activeScenario = "hidden";
+  let latest = null;
+
+  function setText(id, value) {
+    $(id).textContent = value;
+  }
+
+  function read(id) {
+
+    const el = $(id);
+    const raw = el.value.trim();
+
+    if (raw === "") {
+      throw new Error(
+        "Please complete all numeric fields."
+      );
+    }
+
+    const value = Number(raw);
+
+    if (!Number.isFinite(value) || value < 0) {
+      throw new Error(
+        "All inputs must be valid non-negative numbers."
+      );
+    }
+
+    if (
+      id.endsWith("-rework") &&
+      value > 100
+    ) {
+      throw new Error(
+        "Rework rates must be between 0% and 100%."
+      );
+    }
+
+    if (
+      id === "g31-tasks" &&
+      (!Number.isInteger(value) || value < 1)
+    ) {
+      throw new Error(
+        "Monthly task volume must be a positive integer."
+      );
+    }
+
+    return value;
+  }
+
+  function workflow(prefix, tasks, hourly) {
+
+    const minutes = read(prefix + "-time");
+    const ai = read(prefix + "-ai");
+    const reworkRate =
+      read(prefix + "-rework") / 100;
+    const repairMinutes = read(prefix + "-fix");
+    const fixed = read(prefix + "-fixed");
+
+    const baseHumanCost =
+      tasks * minutes / 60 * hourly;
+
+    const aiCost = tasks * ai;
+
+    const reworkCost =
+      tasks * reworkRate *
+      repairMinutes / 60 * hourly;
+
+    const variablePerTask =
+      minutes / 60 * hourly +
+      ai +
+      reworkRate * repairMinutes / 60 * hourly;
+
+    const total =
+      baseHumanCost +
+      aiCost +
+      reworkCost +
+      fixed;
+
+    return {
+      minutes,
+      ai,
+      reworkRate,
+      repairMinutes,
+      fixed,
+      baseHumanCost,
+      aiCost,
+      reworkCost,
+      variablePerTask,
+      total,
+      costPerTask:total / tasks
+    };
+  }
+
+  function calculate() {
+
+    const tasks = read("g31-tasks");
+    const hourly = read("g31-rate");
+    const setup = read("g31-setup");
+
+    const current = workflow(
+      "g31-a",tasks,hourly
+    );
+
+    const alternative = workflow(
+      "g31-b",tasks,hourly
+    );
+
+    const monthlySaving =
+      current.total - alternative.total;
+
+    const annualOperatingSaving =
+      monthlySaving * 12;
+
+    const annualNet =
+      annualOperatingSaving - setup;
+
+    const roi = setup > 0
+      ? annualNet / setup * 100
+      : null;
+
+    const payback =
+      monthlySaving > 0
+        ? setup / monthlySaving
+        : null;
+
+    const variableSavingPerTask =
+      current.variablePerTask -
+      alternative.variablePerTask;
+
+    const fixedDifference =
+      alternative.fixed - current.fixed;
+
+    const requiredMonthlySaving =
+      setup / 12;
+
+    const breakEvenNumerator =
+      requiredMonthlySaving + fixedDifference;
+
+    let breakEven = null;
+    let breakEvenStatus = "";
+
+    if (variableSavingPerTask > 0) {
+
+      breakEven = Math.max(
+        0,
+        Math.ceil(
+          Math.max(0,breakEvenNumerator) /
+          variableSavingPerTask
+        )
+      );
+
+      breakEvenStatus =
+        "Minimum modeled monthly task volume " +
+        "for non-negative first-year net savings.";
+
+    } else if (breakEvenNumerator <= 0) {
+
+      breakEven = 0;
+
+      breakEvenStatus =
+        "The modeled fixed-cost advantage " +
+        "already covers first-year implementation " +
+        "cost at zero task volume. Increasing " +
+        "volume may reduce that advantage.";
+
+    } else {
+
+      breakEvenStatus =
+        "No break-even volume exists under " +
+        "these assumptions: the alternative " +
+        "has no positive variable saving " +
+        "per task and fixed costs do not " +
+        "cover implementation.";
+
+    }
+
+    return {
+      tasks,
+      hourly,
+      setup,
+      current,
+      alternative,
+      monthlySaving,
+      annualOperatingSaving,
+      annualNet,
+      roi,
+      payback,
+      variableSavingPerTask,
+      fixedDifference,
+      breakEven,
+      breakEvenStatus
+    };
+  }
+
+  function render() {
+
+    const error = $("g31-error");
+
+    try {
+
+      const r = calculate();
+      latest = r;
+
+      error.textContent = "";
+
+      setText(
+        "g31-cost-a",
+        money.format(r.current.total)
+      );
+
+      setText(
+        "g31-cost-b",
+        money.format(r.alternative.total)
+      );
+
+      setText(
+        "g31-rework-a",
+        money.format(r.current.reworkCost)
+      );
+
+      setText(
+        "g31-rework-b",
+        money.format(r.alternative.reworkCost)
+      );
+
+      setText(
+        "g31-saving",
+        money.format(r.monthlySaving)
+      );
+
+      setText(
+        "g31-net",
+        money.format(r.annualNet)
+      );
+
+      setText(
+        "g31-unit",
+        money.format(r.alternative.costPerTask)
+      );
+
+      setText(
+        "g31-roi",
+        r.roi === null
+          ? "N/A"
+          : number.format(r.roi) + "%"
+      );
+
+      let paybackText = "No payback";
+
+      if (r.setup === 0 && r.monthlySaving > 0) {
+        paybackText = "Immediate";
+      } else if (r.payback !== null) {
+        paybackText =
+          number.format(r.payback) + " months";
+      }
+
+      setText("g31-payback",paybackText);
+
+      const netBox = $("g31-net-box");
+
+      netBox.classList.toggle(
+        "negative",
+        r.annualNet < 0
+      );
+
+      const maxCost = Math.max(
+        r.current.total,
+        r.alternative.total,
+        .01
+      );
+
+      $("g31-bar-a").style.width =
+        (r.current.total / maxCost * 100) + "%";
+
+      $("g31-bar-b").style.width =
+        (r.alternative.total / maxCost * 100) + "%";
+
+      setText(
+        "g31-label-a",
+        money.format(r.current.total)
+      );
+
+      setText(
+        "g31-label-b",
+        money.format(r.alternative.total)
+      );
+
+      if (r.breakEven === null) {
+
+        setText(
+          "g31-break-even",
+          "Not achievable"
+        );
+
+      } else {
+
+        setText(
+          "g31-break-even",
+          number.format(r.breakEven) +
+          " tasks/month"
+        );
+
+      }
+
+      setText(
+        "g31-break-even-note",
+        r.breakEvenStatus
+      );
+
+      const quality =
+        $("g31-quality").value;
+
+      let interpretation = "";
+
+      if (r.monthlySaving > 0) {
+
+        interpretation =
+          "Under the entered assumptions, " +
+          "the alternative workflow has lower " +
+          "monthly operating costs by " +
+          money.format(r.monthlySaving) + ". ";
+
+      } else if (r.monthlySaving < 0) {
+
+        interpretation =
+          "Under the entered assumptions, " +
+          "the alternative workflow costs " +
+          money.format(-r.monthlySaving) +
+          " more per month. ";
+
+      } else {
+
+        interpretation =
+          "Both workflows have equal modeled " +
+          "monthly operating costs. ";
+
+      }
+
+      if (r.annualNet > 0) {
+
+        interpretation +=
+          "The modeled first-year net financial " +
+          "difference is positive after " +
+          "implementation costs. ";
+
+      } else if (r.annualNet < 0) {
+
+        interpretation +=
+          "The modeled first-year net financial " +
+          "difference is negative after " +
+          "implementation costs. ";
+
+      } else {
+
+        interpretation +=
+          "The modeled first-year net financial " +
+          "difference is zero. ";
+
+      }
+
+      if (quality === "unverified") {
+
+        interpretation +=
+          "Output quality equivalence remains " +
+          "unverified, so this is a cost scenario, " +
+          "not a demonstrated like-for-like " +
+          "business improvement.";
+
+      } else {
+
+        interpretation +=
+          "Quality equivalence has been declared " +
+          "externally verified by the user; " +
+          "the simulator has not checked " +
+          "the supporting evidence.";
+
+      }
+
+      setText(
+        "g31-interpretation",
+        interpretation
+      );
+
+    } catch (err) {
+
+      latest = null;
+      error.textContent = err.message;
+
+      [
+        "g31-cost-a",
+        "g31-cost-b",
+        "g31-rework-a",
+        "g31-rework-b",
+        "g31-saving",
+        "g31-roi",
+        "g31-payback",
+        "g31-unit",
+        "g31-net",
+        "g31-label-a",
+        "g31-label-b",
+        "g31-break-even",
+        "g31-break-even-note",
+        "g31-interpretation"
+      ].forEach(id => setText(id,"—"));
+
+      $("g31-bar-a").style.width = "0%";
+      $("g31-bar-b").style.width = "0%";
+
+    }
+  }
+
+  function setScenario(name) {
+
+    const s = scenarios[name];
+    if (!s) return;
+
+    activeScenario = name;
+
+    $("g31-tasks").value = s.tasks;
+    $("g31-rate").value = s.rate;
+    $("g31-setup").value = s.setup;
+
+    const suffixes = [
+      "time","ai","rework","fix","fixed"
+    ];
+
+    suffixes.forEach((suffix,index) => {
+
+      $("g31-a-" + suffix).value = s.a[index];
+      $("g31-b-" + suffix).value = s.b[index];
+
+    });
+
+    $("g31-quality").value = "unverified";
+
+    setText(
+      "g31-scenario-note",
+      s.description
+    );
+
+    root.querySelectorAll(
+      ".g31-preset"
+    ).forEach(button => {
+
+      const active =
+        button.dataset.scenario === name;
+
+      button.classList.toggle(
+        "active",active
+      );
+
+      button.setAttribute(
+        "aria-pressed",
+        String(active)
+      );
+
+    });
+
+    render();
+  }
+
+  // Preset selection
+  root.querySelectorAll(
+    ".g31-preset"
+  ).forEach(button => {
+
+    button.addEventListener(
+      "click",
+      function () {
+        setScenario(
+          button.dataset.scenario
+        );
+      }
+    );
+
+  });
+
+  // Live updates
+  inputIds.forEach(id => {
+
+    $(id).addEventListener(
+      "input",render
+    );
+
+  });
+
+  $("g31-quality").addEventListener(
+    "change",render
+  );
+
+  // Reset current preset
+  $("g31-reset").addEventListener(
+    "click",
+    function () {
+      setScenario(activeScenario);
+    }
+  );
+
+  // Export scenario and calculations
+  $("g31-export").addEventListener(
+    "click",
+    function () {
+
+      if (!latest) {
+        $("g31-error").textContent =
+          "Correct the inputs before exporting.";
+        return;
+      }
+
+      const r = latest;
+
+      const rows = [
+        ["GTNEra Economic Impact","Research 03.1"],
+        ["Model version","1.0"],
+        ["Scenario",activeScenario],
+        ["Export date",new Date().toISOString()],
+        ["Validation","Illustrative only"],
+        ["Quality status",$("g31-quality").value],
+        ["Field","Value"]
+      ];
+
+      inputIds.forEach(id => {
+        rows.push([
+          id,
+          $(id).value
+        ]);
+      });
+
+      rows.push(
+        ["Current monthly cost",r.current.total],
+        ["Alternative monthly cost",r.alternative.total],
+        ["Current monthly rework",r.current.reworkCost],
+        ["Alternative monthly rework",r.alternative.reworkCost],
+        ["Monthly operating savings",r.monthlySaving],
+        ["Annual operating savings",r.annualOperatingSaving],
+        ["Implementation cost",r.setup],
+        ["First-year net savings",r.annualNet],
+        ["First-year ROI",r.roi === null ? "N/A" : r.roi],
+        ["Payback months",r.payback === null ? "N/A" : r.payback],
+        ["Break-even tasks/month",r.breakEven === null ? "N/A" : r.breakEven],
+        ["Quality equivalence", $("g31-quality").value],
+        ["Research status","Scenario model, not empirical validation"]
+      );
+
+      const csv = rows.map(row =>
+        row.map(value =>
+          '"' + String(value)
+            .replace(/"/g,'""') + '"'
+        ).join(",")
+      ).join("\r\n");
+
+      const blob = new Blob(
+        ["\uFEFF" + csv],
+        {type:"text/csv;charset=utf-8;"}
+      );
+
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+
+      link.href = url;
+      link.download =
+        "GTNEra_Economic_Research_31.csv";
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(
+        () => URL.revokeObjectURL(url),
+        1000
+      );
+
+    }
+  );
+
+  // Initial scenario
+  setScenario("hidden");
+
+})();
+</script>
+
+</section>
+
+<!-- END GTNEra® RESEARCH BLOCK 3.1 -->
+
+
 <section id="gtn-research-foundation"
   aria-label="GTNEra Scientific Foundation and References">
 
