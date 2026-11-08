@@ -509,22 +509,32 @@
  EMBED BLOCK · NO HEADER · NO FOOTER
 =========================================== -->
 
-<section
-  id="gtnera-unified-research"
-  aria-label="GTNEra Xeo-Physics and Triundra Research"
->
+
+<!-- ==========================================================
+ GTNEra® UNIFIED RESEARCH MONITOR
+ PART 1 — RESEARCH INTRODUCTION · 2026 REVISION
+
+ Replace the existing PART 1 only.
+ Keep PARTS 2, 3 and 4 unchanged for now.
+ The shared section closes after PART 4.
+========================================================== -->
+
+<section id="gtnera-unified-research"
+  aria-label="GTNEra Xeo-Physics and Triundral research environment">
 
 <style>
 #gtnera-unified-research {
   --gtn-ink: #1E2A38;
   --gtn-orange: #FF6600;
+  --gtn-blue: #2563B8;
+  --gtn-lilac: #8A65BA;
+  --gtn-green: #27866A;
   --gtn-line: #E5EAF0;
 
   width: 100%;
   max-width: 1280px;
   margin: 40px auto 64px;
   padding: 0 12px;
-
   font-family: Inter, system-ui, sans-serif;
   color: var(--gtn-ink);
   box-sizing: border-box;
@@ -536,9 +546,7 @@
   box-sizing: border-box;
 }
 
-/* Same outer alignment as following monitors */
 #gtnera-unified-research .gtn-journey {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto 24px;
   padding: 0 16px;
@@ -547,110 +555,113 @@
 #gtnera-unified-research .gtn-intro-card {
   position: relative;
   overflow: hidden;
-
+  border: 1px solid var(--gtn-line);
   background: linear-gradient(
     125deg,
     #FFFFFF 0%,
     #FCFCFE 58%,
     #FFF4EC 100%
   );
-
-  border: 1px solid var(--gtn-line);
   border-radius: 24px;
   padding: clamp(24px, 4vw, 42px);
-
   box-shadow: 0 16px 44px rgba(30,42,56,.045);
 }
 
-/* Subtle orange accent */
 #gtnera-unified-research .gtn-intro-card::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(
-    180deg,
-    #FF6600,
-    #FFB07A
-  );
+  background: linear-gradient(#FF6600, #FFB07A);
 }
 
 #gtnera-unified-research .gtn-kicker {
   color: #D95500;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: .15em;
+  letter-spacing: .14em;
   text-transform: uppercase;
 }
 
 #gtnera-unified-research .gtn-intro-card h2 {
-  max-width: 820px;
-  margin: 12px 0 15px;
-
-  font-size: clamp(25px, 3.2vw, 38px);
-  line-height: 1.16;
+  max-width: 900px;
+  margin: 12px 0 16px;
+  font-size: clamp(26px, 3.3vw, 40px);
+  line-height: 1.14;
   letter-spacing: -.025em;
   font-weight: 800;
   color: var(--gtn-ink);
 }
 
-#gtnera-unified-research .gtn-intro-card p {
-  max-width: 850px;
+#gtnera-unified-research .gtn-lead {
+  max-width: 910px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #536276;
   margin: 0;
+}
 
+#gtnera-unified-research .gtn-thesis {
+  margin: 20px 0 0;
+  padding: 15px 18px;
+  border-left: 3px solid var(--gtn-lilac);
+  background: #F8F5FC;
+  border-radius: 0 12px 12px 0;
+  color: #3F3552;
+  font-weight: 750;
   font-size: 14px;
-  line-height: 1.8;
-  color: #5D6B7C;
+  line-height: 1.6;
 }
 
 #gtnera-unified-research .gtn-stage-label {
-  margin-top: 28px;
-  margin-bottom: 12px;
-
-  color: #8490A0;
-  font-size: 10px;
+  margin: 27px 0 12px;
+  color: #687789;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: .13em;
+  letter-spacing: .11em;
   text-transform: uppercase;
 }
 
-/* Three-stage architecture */
 #gtnera-unified-research .gtn-stages {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  width: 100%;
 }
 
 #gtnera-unified-research .gtn-stage {
   min-width: 0;
-  padding: 16px 18px;
-
-  background: rgba(255,255,255,.88);
+  padding: 18px;
+  background: #FFFFFF;
   border: 1px solid #E6EAF0;
-  border-radius: 14px;
-
+  border-radius: 15px;
   display: flex;
-  align-items: center;
-  gap: 13px;
+  gap: 12px;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color .18s,
+    transform .18s,
+    box-shadow .18s;
+}
+
+#gtnera-unified-research .gtn-stage:hover,
+#gtnera-unified-research .gtn-stage:focus-visible {
+  border-color: #FF6600;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(30,42,56,.07);
+  outline: none;
 }
 
 #gtnera-unified-research .gtn-stage-number {
   flex: 0 0 auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 35px;
-  height: 35px;
-
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
   border-radius: 11px;
   background: #FFF0E5;
-  color: #FF6600;
-
+  color: #D95500;
   font-size: 12px;
   font-weight: 800;
 }
@@ -661,21 +672,110 @@
 
 #gtnera-unified-research .gtn-stage-title {
   display: block;
-  color: #1E2A38;
-  font-size: 12px;
+  color: var(--gtn-ink);
+  font-size: 13px;
   font-weight: 800;
   line-height: 1.4;
 }
 
 #gtnera-unified-research .gtn-stage-subtitle {
   display: block;
-  margin-top: 3px;
-  color: #8390A0;
+  margin-top: 5px;
+  color: #687789;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+#gtnera-unified-research .gtn-dimensions {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+#gtnera-unified-research .gtn-dimension {
+  min-width: 0;
+  background: #FFFFFF;
+  border: 1px solid var(--gtn-line);
+  border-radius: 12px;
+  padding: 13px 10px 12px;
+  border-top: 4px solid var(--dim-color);
+}
+
+#gtnera-unified-research .gtn-dimension strong {
+  display: block;
+  font-size: 12px;
+  color: var(--gtn-ink);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+#gtnera-unified-research .gtn-dimension small {
+  display: block;
+  margin-top: 5px;
   font-size: 10px;
+  line-height: 1.45;
+  color: #66758A;
+}
+
+#gtnera-unified-research .gtn-note {
+  margin: 10px 0 0;
+  color: #66758A;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+#gtnera-unified-research .gtn-resources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+#gtnera-unified-research .gtn-resource {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 1px solid #D7DDE7;
+  border-radius: 11px;
+  background: #FFFFFF;
+  color: #1E2A38;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
   line-height: 1.4;
 }
 
-/* Alignment for existing subsequent monitors */
+#gtnera-unified-research .gtn-resource:hover,
+#gtnera-unified-research .gtn-resource:focus-visible {
+  border-color: #FF6600;
+  color: #C65000;
+  outline: 2px solid transparent;
+}
+
+#gtnera-unified-research details.gtn-method {
+  margin-top: 18px;
+  border: 1px solid #E3E7EE;
+  border-radius: 13px;
+  background: #FFFFFF;
+  padding: 14px 17px;
+}
+
+#gtnera-unified-research .gtn-method summary {
+  cursor: pointer;
+  color: #344358;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#gtnera-unified-research .gtn-method p {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #5E6D80;
+}
+
+/* Preserve alignment with existing monitors */
 #gtnera-unified-research #gtn-xeo-monitor,
 #gtnera-unified-research #gtn-architecture-monitor,
 #gtnera-unified-research #gtn-research-foundation {
@@ -685,17 +785,18 @@
   margin-right: auto;
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 850px) {
   #gtnera-unified-research .gtn-stages {
     grid-template-columns: 1fr;
   }
 
-  #gtnera-unified-research .gtn-stage {
-    padding: 13px 15px;
+  #gtnera-unified-research .gtn-dimensions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
+/* Mobile */
 @media (max-width: 520px) {
   #gtnera-unified-research {
     padding: 0;
@@ -710,107 +811,218 @@
     border-radius: 18px;
   }
 
-  #gtnera-unified-research .gtn-intro-card h2 {
-    font-size: 26px;
+  #gtnera-unified-research .gtn-dimensions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #gtnera-unified-research .gtn-resources {
+    flex-direction: column;
+  }
+
+  #gtnera-unified-research .gtn-resource {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #gtnera-unified-research .gtn-stage {
+    transition: none;
   }
 }
 </style>
 
-<!-- ==========================================
- INTRODUCTION
-=========================================== -->
-
+<!-- RESEARCH INTRODUCTION -->
 <div class="gtn-journey">
-
   <div class="gtn-intro-card">
 
     <div class="gtn-kicker">
-      GTNEra® · Xeo-Physics · Triundra LER
+      GTNEra® · Xeo-Physics · Triundra LER · Triundral Loop-Spiral
     </div>
 
     <h2>
-      From Local Resonance
-      to System Development
+      From Local Resonance to Measurable System Development
     </h2>
 
-    <p>
-      An interactive research environment exploring
-      the transition from local Human–AI interaction
-      toward developmental state change.
+    <p class="gtn-lead">
+      An interactive research environment for examining how
+      Human–AI and Agent-to-Agent interactions may generate
+      useful semantic outcomes — and whether those outcomes
+      survive, accumulate, contribute to developmental state
+      change, and justify their total resource cost.
 
-      Examine semantic density, flow alignment,
-      architecture-specific retention,
-      systemic friction and modeled
-      transition efficiency.
+      Explore the proposed Xeo-Physics framework through
+      adjustable demonstration models, architectural
+      comparisons, and explicit measurement assumptions.
     </p>
 
+    <div class="gtn-thesis">
+      A completed interaction is not proof of resonance.
+      Resonance is not proof of retention.
+      More loops are not necessarily more development.
+    </div>
+
+    <!-- MONITOR NAVIGATION -->
     <div class="gtn-stage-label">
-      Research sequence
+      Explore the research monitors
     </div>
 
-    <div class="gtn-stages">
+    <nav class="gtn-stages"
+      aria-label="Research monitor navigation">
 
-      <div class="gtn-stage">
-
+      <a class="gtn-stage" href="#gtn-xeo-monitor">
         <span class="gtn-stage-number">01</span>
-
-        <div class="gtn-stage-text">
+        <span class="gtn-stage-text">
           <span class="gtn-stage-title">
-            Local Field Monitor
+            Xeo-Physics Field Monitor
           </span>
-
           <span class="gtn-stage-subtitle">
-            Human Flow · AI Flow · ΩRPN
+            H-Flow · A-Flow · semantic density ·
+            LER mismatch · proposed ΩRPN conditions
           </span>
-        </div>
+        </span>
+      </a>
 
-      </div>
-
-      <div class="gtn-stage">
-
+      <a class="gtn-stage"
+        href="#gtn-architecture-monitor">
         <span class="gtn-stage-number">02</span>
-
-        <div class="gtn-stage-text">
+        <span class="gtn-stage-text">
           <span class="gtn-stage-title">
-            Architecture Comparison
+            Architecture &amp; Development
           </span>
-
           <span class="gtn-stage-subtitle">
-            HITL · AI–AI · Triundral
+            Flat HITL · Agent-to-Agent ·
+            Triundral Loop-Spiral · modeled cycle outcomes
           </span>
-        </div>
+        </span>
+      </a>
 
+      <a class="gtn-stage"
+        href="#gtn-research-foundation">
+        <span class="gtn-stage-number">03</span>
+        <span class="gtn-stage-text">
+          <span class="gtn-stage-title">
+            Methods, Equations &amp; Sources
+          </span>
+          <span class="gtn-stage-subtitle">
+            Model definitions · assumptions ·
+            measurement boundaries · references
+          </span>
+        </span>
+      </a>
+
+    </nav>
+
+    <!-- FIVE MEASUREMENT DIMENSIONS -->
+    <div class="gtn-stage-label">
+      Five distinct measurement dimensions
+    </div>
+
+    <div class="gtn-dimensions"
+      aria-label="Five independently evaluated dimensions">
+
+      <div class="gtn-dimension"
+        style="--dim-color:#8A65BA">
+        <strong>01 · Resonance</strong>
+        <small>
+          What was generated? ·
+          Q<sub>res</sub>
+        </small>
       </div>
 
-      <div class="gtn-stage">
+      <div class="gtn-dimension"
+        style="--dim-color:#2563B8">
+        <strong>02 · Retention</strong>
+        <small>
+          What survived? ·
+          Q<sub>ret</sub>
+        </small>
+      </div>
 
-        <span class="gtn-stage-number">03</span>
+      <div class="gtn-dimension"
+        style="--dim-color:#27866A">
+        <strong>03 · Accumulation</strong>
+        <small>
+          What was integrated? ·
+          M<sub>acc</sub>
+        </small>
+      </div>
 
-        <div class="gtn-stage-text">
-          <span class="gtn-stage-title">
-            Development &amp; τ
-          </span>
+      <div class="gtn-dimension"
+        style="--dim-color:#D65B00">
+        <strong>04 · Development</strong>
+        <small>
+          What changed? · Δz
+        </small>
+      </div>
 
-          <span class="gtn-stage-subtitle">
-            State Change · Transition Efficiency
-          </span>
-        </div>
-
+      <div class="gtn-dimension"
+        style="--dim-color:#8A65BA">
+        <strong>05 · Efficiency</strong>
+        <small>
+          Useful outcome / total cost · τ = U/K
+        </small>
       </div>
 
     </div>
+
+    <p class="gtn-note">
+      These are distinct evaluative dimensions,
+      not five automatically completed stages.
+      Efficiency is not identical to developmental displacement.
+    </p>
+
+    <!-- RELATED RESEARCH -->
+    <div class="gtn-resources">
+
+      <a class="gtn-resource"
+        href="https://gtnera.ai/classes/resonant-dialogue.html"
+        target="_blank"
+        rel="noopener noreferrer">
+        ◈ Explore Triundra LER Interactive Demo ↗
+      </a>
+
+      <a class="gtn-resource"
+        href="#gtn-research-foundation">
+        Read the model assumptions ↓
+      </a>
+
+    </div>
+
+    <!-- TRANSPARENCY -->
+    <details class="gtn-method">
+      <summary>
+        Transparency note · What does this research interface demonstrate?
+      </summary>
+
+      <p>
+        The monitors illustrate proposed theoretical relationships
+        using user-adjustable inputs and model-specific assumptions.
+
+        Unless independently validated data are explicitly supplied,
+        displayed values are simulated or illustrative rather than
+        empirical measurements.
+
+        ΩRPN formation, retention, developmental displacement
+        and τ-efficiency must not be inferred from a single
+        alignment score.
+
+        The following modules expose the parameters and
+        calculation methods used for their demonstrations;
+        their equations and scenarios are being aligned
+        with the updated Triundral measurement framework.
+      </p>
+    </details>
 
   </div>
-
 </div>
 
-<!-- ==========================================
- GTNEra® UNIFIED RESEARCH MONITOR
- PART 2 — XEO-PHYSICS FIELD MONITOR
+<!-- ==========================================================
+ END OF PART 1
+ PART 2 — XEO-PHYSICS FIELD MONITOR STARTS BELOW.
 =========================================== -->
 
 <section id="gtn-xeo-monitor"
-  aria-label="GTNEra Xeo-Physics Research Monitor">
+  aria-label="GTNEra Xeo-Physics Field Monitor">
 
 <style>
 #gtn-xeo-monitor {
@@ -819,28 +1031,33 @@
   --blue: #2563B8;
   --lilac: #8A65BA;
   --green: #27866A;
-  --line: #E6E9EF;
-  font-family: Inter, system-ui, sans-serif;
-  color: var(--ink);
+  --line: #E5EAF0;
+  --muted: #687789;
+
   max-width: 1200px;
+  width: 100%;
   margin: 24px auto;
   padding: 0 16px;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--ink);
   box-sizing: border-box;
 }
 
-#gtn-xeo-monitor * {
+#gtn-xeo-monitor *,
+#gtn-xeo-monitor *::before,
+#gtn-xeo-monitor *::after {
   box-sizing: border-box;
 }
 
-#gtn-xeo-monitor .shell {
-  background: linear-gradient(145deg, #fff, #F9FAFD);
+#gtn-xeo-monitor .xeo-shell {
+  background: linear-gradient(145deg,#fff,#F9FAFD);
   border: 1px solid var(--line);
   border-radius: 24px;
-  box-shadow: 0 16px 44px #1e2a3810;
+  box-shadow: 0 16px 44px rgba(30,42,56,.045);
   overflow: hidden;
 }
 
-#gtn-xeo-monitor .head {
+#gtn-xeo-monitor .xeo-head {
   padding: 28px 30px;
   border-bottom: 1px solid var(--line);
   display: flex;
@@ -850,27 +1067,39 @@
   flex-wrap: wrap;
 }
 
-#gtn-xeo-monitor .eyebrow {
+#gtn-xeo-monitor .xeo-kicker {
+  color: #D95500;
   font-size: 11px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--orange);
   font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
 #gtn-xeo-monitor h2 {
-  font-size: clamp(24px, 3vw, 34px);
   margin: 8px 0;
-  color: var(--ink);
+  font-size: clamp(24px,3vw,34px);
   line-height: 1.2;
   font-weight: 800;
 }
 
-#gtn-xeo-monitor .sub {
+#gtn-xeo-monitor .xeo-sub {
+  max-width: 740px;
   color: #637082;
   font-size: 13px;
-  line-height: 1.6;
-  max-width: 660px;
+  line-height: 1.7;
+}
+
+#gtn-xeo-monitor .xeo-body {
+  padding: 26px 30px 30px;
+}
+
+#gtn-xeo-monitor .xeo-section-label {
+  margin: 0 0 14px;
+  color: #697687;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .11em;
+  text-transform: uppercase;
 }
 
 #gtn-xeo-monitor button {
@@ -878,58 +1107,47 @@
   font: inherit;
 }
 
-#gtn-xeo-monitor .reset {
-  border: 1px solid #E4E7ED;
-  background: white;
+#gtn-xeo-monitor .xeo-reset {
+  padding: 11px 15px;
+  background: #fff;
   color: var(--ink);
-  border-radius: 12px;
-  padding: 11px 16px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 750;
 }
 
-#gtn-xeo-monitor .reset:hover {
+#gtn-xeo-monitor .xeo-reset:hover {
   border-color: var(--orange);
-  color: var(--orange);
+  color: #D95500;
 }
 
-#gtn-xeo-monitor .body {
-  padding: 24px 30px 30px;
-}
-
-#gtn-xeo-monitor .kicker {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #6B7483;
-  margin: 0 0 14px;
-}
-
-#gtn-xeo-monitor .controls {
+#gtn-xeo-monitor .xeo-controls {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 12px;
 }
 
-#gtn-xeo-monitor .control {
+#gtn-xeo-monitor .xeo-control {
+  min-width: 0;
+  padding: 18px;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 17px;
 }
 
-#gtn-xeo-monitor .control label {
+#gtn-xeo-monitor .xeo-control label {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
   align-items: center;
+  gap: 10px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 750;
 }
 
-#gtn-xeo-monitor .control output {
-  font-size: 15px;
+#gtn-xeo-monitor .xeo-control output {
+  font-size: 16px;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
 
@@ -940,73 +1158,71 @@
   cursor: pointer;
 }
 
-#gtn-xeo-monitor .hint {
+#gtn-xeo-monitor .xeo-hint {
+  color: #758294;
   font-size: 11px;
-  color: #77818F;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-#gtn-xeo-monitor .metrics {
+#gtn-xeo-monitor .xeo-metrics {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4,minmax(0,1fr));
   gap: 12px;
-  margin-top: 18px;
+  margin: 18px 0;
 }
 
-#gtn-xeo-monitor .metric {
+#gtn-xeo-monitor .xeo-metric {
+  min-width: 0;
+  padding: 17px;
+  background: #fff;
   border: 1px solid var(--line);
-  background: white;
-  border-radius: 16px;
-  padding: 18px;
-  min-height: 125px;
+  border-radius: 15px;
 }
 
-#gtn-xeo-monitor .metric .name {
+#gtn-xeo-monitor .xeo-metric-label {
+  color: #687789;
   font-size: 11px;
-  color: #687485;
-  font-weight: 700;
+  font-weight: 750;
 }
 
-#gtn-xeo-monitor .metric .value {
-  font-size: 29px;
+#gtn-xeo-monitor .xeo-metric-value {
+  margin: 8px 0 5px;
+  font-size: clamp(22px,2.6vw,29px);
   font-weight: 800;
-  letter-spacing: -.04em;
-  margin: 8px 0 4px;
   font-variant-numeric: tabular-nums;
 }
 
-#gtn-xeo-monitor .metric .desc {
-  font-size: 11px;
-  color: #7B8796;
-  line-height: 1.4;
+#gtn-xeo-monitor .xeo-metric-note {
+  color: #758294;
+  font-size: 10px;
+  line-height: 1.5;
 }
 
-#gtn-xeo-monitor .visuals {
+#gtn-xeo-monitor .xeo-visuals {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.15fr 1fr;
   gap: 16px;
-  margin-top: 18px;
 }
 
-#gtn-xeo-monitor .panel {
+#gtn-xeo-monitor .xeo-panel {
+  min-width: 0;
+  padding: 20px;
   border: 1px solid var(--line);
   background: #fff;
   border-radius: 18px;
-  padding: 20px;
-  min-width: 0;
 }
 
 #gtn-xeo-monitor h3 {
+  margin: 0 0 7px;
   font-size: 15px;
   font-weight: 800;
-  margin: 0 0 5px;
 }
 
-#gtn-xeo-monitor .panel p {
+#gtn-xeo-monitor .xeo-panel p {
+  margin: 0 0 14px;
+  color: #758294;
   font-size: 12px;
-  color: #758093;
-  line-height: 1.5;
-  margin: 0 0 16px;
+  line-height: 1.6;
 }
 
 #gtn-xeo-monitor svg {
@@ -1015,633 +1231,762 @@
   height: auto;
 }
 
-#gtn-xeo-monitor .legend {
+#gtn-xeo-monitor .xeo-legend {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  gap: 14px;
+  margin-top: 12px;
+  color: #687789;
   font-size: 11px;
-  color: #687485;
 }
 
-#gtn-xeo-monitor .dot {
+#gtn-xeo-monitor .xeo-dot {
   display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 9px;
+  height: 9px;
   margin-right: 5px;
+  border-radius: 50%;
 }
 
-#gtn-xeo-monitor .transition {
+#gtn-xeo-monitor .xeo-condition-panel {
   margin-top: 18px;
-  border-radius: 18px;
-  border: 1px solid #E5DDF1;
-  background: linear-gradient(110deg, #FCFAFF, #fff);
   padding: 20px;
+  background: linear-gradient(110deg,#FAF8FE,#fff);
+  border: 1px solid #E4DCF0;
+  border-radius: 18px;
+}
+
+#gtn-xeo-monitor .xeo-formula {
+  margin: 14px 0;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #EAE4F3;
+  border-radius: 12px;
+  color: #694D91;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+#gtn-xeo-monitor .xeo-condition-grid {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 16px;
-  align-items: center;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 9px;
+  margin-top: 14px;
 }
 
-#gtn-xeo-monitor .formula {
-  font-size: 20px;
-  color: var(--lilac);
+#gtn-xeo-monitor .xeo-condition {
+  padding: 13px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+#gtn-xeo-monitor .xeo-condition strong {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+#gtn-xeo-monitor .xeo-condition span {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
   font-weight: 800;
-  white-space: nowrap;
 }
 
-#gtn-xeo-monitor .foot {
-  margin-top: 18px;
-  padding: 14px 16px;
-  border-left: 3px solid var(--orange);
-  background: #FFF8F3;
-  border-radius: 0 12px 12px 0;
+#gtn-xeo-monitor .xeo-pass {
+  color: #27866A;
+}
+
+#gtn-xeo-monitor .xeo-fail {
+  color: #B45309;
+}
+
+#gtn-xeo-monitor .xeo-status {
+  margin-top: 15px;
+  padding: 13px 15px;
+  border-radius: 11px;
+  background: #F3F0F8;
+  color: #55426F;
   font-size: 12px;
-  color: #5C6470;
   line-height: 1.6;
 }
 
-#gtn-xeo-monitor .tablewrap {
-  overflow-x: auto;
+#gtn-xeo-monitor .xeo-tablewrap {
   margin-top: 18px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  overflow-x: auto;
   background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 15px;
 }
 
 #gtn-xeo-monitor table {
   width: 100%;
+  min-width: 650px;
   border-collapse: collapse;
-  text-align: left;
   font-size: 12px;
-  min-width: 590px;
+  text-align: left;
 }
 
 #gtn-xeo-monitor th {
-  background: #F5F6F9;
-  color: #596579;
-  text-transform: uppercase;
+  background: #F5F7FA;
+  color: #58677A;
   font-size: 10px;
-  letter-spacing: .05em;
+  text-transform: uppercase;
+  letter-spacing: .04em;
 }
 
 #gtn-xeo-monitor th,
 #gtn-xeo-monitor td {
-  padding: 13px 16px;
+  padding: 12px 14px;
   border-bottom: 1px solid #EDF0F4;
+  vertical-align: top;
 }
 
 #gtn-xeo-monitor tr:last-child td {
   border-bottom: 0;
 }
 
-#gtn-xeo-monitor .tag {
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--orange);
-  background: #FFF1E7;
-  padding: 5px 8px;
-  border-radius: 7px;
-  display: inline-block;
+#gtn-xeo-monitor .xeo-disclosure {
+  margin-top: 18px;
+  padding: 16px;
+  background: #FFF8F3;
+  border-left: 3px solid var(--orange);
+  border-radius: 0 12px 12px 0;
+  color: #5E6876;
+  font-size: 12px;
+  line-height: 1.75;
 }
 
-#gtn-xeo-monitor .blue { color: var(--blue); }
-#gtn-xeo-monitor .orange { color: var(--orange); }
-#gtn-xeo-monitor .lilac { color: var(--lilac); }
-#gtn-xeo-monitor .green { color: var(--green); }
+#gtn-xeo-monitor .xeo-link {
+  color: #C65300;
+  font-weight: 750;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
-@media (max-width: 850px) {
-  #gtn-xeo-monitor .controls {
+#gtn-xeo-monitor .xeo-blue {color:var(--blue);}
+#gtn-xeo-monitor .xeo-orange {color:var(--orange);}
+#gtn-xeo-monitor .xeo-lilac {color:var(--lilac);}
+#gtn-xeo-monitor .xeo-green {color:var(--green);}
+
+@media(max-width:850px) {
+  #gtn-xeo-monitor .xeo-visuals {
     grid-template-columns: 1fr;
   }
-
-  #gtn-xeo-monitor .metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  #gtn-xeo-monitor .visuals {
-    grid-template-columns: 1fr;
+  #gtn-xeo-monitor .xeo-metrics,
+  #gtn-xeo-monitor .xeo-condition-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 }
 
-@media (max-width: 520px) {
-  #gtn-xeo-monitor .head,
-  #gtn-xeo-monitor .body {
+@media(max-width:520px) {
+  #gtn-xeo-monitor .xeo-head,
+  #gtn-xeo-monitor .xeo-body {
     padding: 18px;
   }
-
-  #gtn-xeo-monitor .metric .value {
-    font-size: 24px;
-  }
-
-  #gtn-xeo-monitor .transition {
+  #gtn-xeo-monitor .xeo-controls {
     grid-template-columns: 1fr;
   }
-
-  #gtn-xeo-monitor .formula {
-    white-space: normal;
+  #gtn-xeo-monitor .xeo-formula {
+    font-size: 12px;
   }
 }
 </style>
 
-<div class="shell">
+<div class="xeo-shell">
 
-  <!-- MONITOR HEADER -->
-  <div class="head">
+  <!-- HEADER -->
+  <div class="xeo-head">
     <div>
-      <div class="eyebrow">
-        GTNEra® · Xeo-Physics · Interactive Research Demo
+      <div class="xeo-kicker">
+        GTNEra® · Xeo-Physics · Interactive Research Model
       </div>
 
-      <h2>Resonance &amp; Transition Monitor</h2>
+      <h2>Semantic Flow &amp; Resonance Conditions</h2>
 
-      <div class="sub">
-        Explore local semantic density, Human–AI
-        directional alignment, and LER phase mismatch.
+      <div class="xeo-sub">
+        Investigate the proposed conditions of local
+        Human–AI semantic-flow convergence.
 
-        See how the demonstration model responds —
-        without confusing local resonance with
-        developmental evolution.
+        Adjust semantic density, directional mismatch,
+        LER phase mismatch and flow-width change.
+
+        Observe how the illustrative model evaluates
+        the selected conditions without treating
+        alignment as proof of resonance or development.
       </div>
     </div>
 
-    <button type="button" class="reset" data-reset>
+    <button class="xeo-reset" type="button" data-reset>
       ↺ Reset parameters
     </button>
   </div>
 
-  <div class="body">
+  <div class="xeo-body">
 
-    <!-- 01 / PARAMETERS -->
-    <div class="kicker">
-      01 / Local interaction parameters
+    <!-- INPUTS -->
+    <div class="xeo-section-label">
+      01 / Adjustable research parameters
     </div>
 
-    <div class="controls">
+    <div class="xeo-controls">
 
-      <div class="control">
-        <label for="gtn-local-rho">
-          <span>
-            ρ<sub>sem</sub> · Semantic density
-          </span>
+      <div class="xeo-control">
+        <label for="xeo-rho">
+          <span>ρ<sub>sem</sub> · Semantic density</span>
           <output data-rho>0.92</output>
         </label>
 
-        <input
-          id="gtn-local-rho"
-          data-input="rho"
+        <input id="xeo-rho"
           type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value="0.92"
-        >
+          data-input="rho"
+          min="0" max="1" step="0.01"
+          value="0.92">
 
-        <div class="hint">
-          Normalized density input · 0–1
+        <div class="xeo-hint">
+          Normalized illustrative semantic-density
+          input. This is not token volume.
         </div>
       </div>
 
-      <div class="control">
-        <label for="gtn-local-theta">
-          <span>
-            Δθ<sub>HA</sub> · Flow mismatch
-          </span>
-          <output data-theta>4.2°</output>
+      <div class="xeo-control">
+        <label for="xeo-theta">
+          <span>Δθ<sub>HA</sub> · Directional mismatch</span>
+          <output data-theta>4.0°</output>
         </label>
 
-        <input
-          id="gtn-local-theta"
-          data-input="theta"
+        <input id="xeo-theta"
           type="range"
-          min="0"
-          max="90"
-          step="0.5"
-          value="4.2"
-        >
+          data-input="theta"
+          min="0" max="90" step="0.5"
+          value="4">
 
-        <div class="hint">
-          Angular difference between Human and AI flows
+        <div class="xeo-hint">
+          Illustrative angular mismatch between
+          Human Flow and AI Flow.
         </div>
       </div>
 
-      <div class="control">
-        <label for="gtn-local-phi">
-          <span>
-            Δφ<sub>LER</sub> · Phase mismatch
-          </span>
+      <div class="xeo-control">
+        <label for="xeo-phi">
+          <span>Δφ<sub>LER</sub> · LER phase mismatch</span>
           <output data-phi>0.05</output>
         </label>
 
-        <input
-          id="gtn-local-phi"
-          data-input="phi"
+        <input id="xeo-phi"
           type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value="0.05"
-        >
+          data-input="phi"
+          min="0" max="1" step="0.01"
+          value="0.05">
 
-        <div class="hint">
-          Normalized LER phase mismatch · 0–1
+        <div class="xeo-hint">
+          Normalized mismatch parameter associated
+          with Logic, Emotion and Resonance.
+        </div>
+      </div>
+
+      <div class="xeo-control">
+        <label for="xeo-width">
+          <span>|ΔW<sub>flow</sub>| · Flow-width change</span>
+          <output data-width>0.04</output>
+        </label>
+
+        <input id="xeo-width"
+          type="range"
+          data-input="width"
+          min="0" max="1" step="0.01"
+          value="0.04">
+
+        <div class="xeo-hint">
+          Normalized magnitude of flow-width change.
+          Near-zero change is evaluated separately
+          from semantic density and alignment.
         </div>
       </div>
 
     </div>
 
-    <!-- 02 / KPI METRICS -->
-    <div class="metrics">
+    <!-- LIVE METRICS -->
+    <div class="xeo-section-label" style="margin-top:25px">
+      02 / Calculated indicators
+    </div>
 
-      <div class="metric">
-        <div class="name">
-          Semantic density · ρ<sub>sem</sub>
+    <div class="xeo-metrics">
+
+      <div class="xeo-metric">
+        <div class="xeo-metric-label">
+          Semantic density
         </div>
-        <div class="value blue" data-mrho>0.92</div>
-        <div class="desc">
-          Illustrative density input
+        <div class="xeo-metric-value xeo-blue"
+          data-mrho>0.92</div>
+        <div class="xeo-metric-note">
+          User-controlled normalized input
         </div>
       </div>
 
-      <div class="metric">
-        <div class="name">
-          Directional mismatch · Δθ
+      <div class="xeo-metric">
+        <div class="xeo-metric-label">
+          Directional agreement
         </div>
-        <div class="value orange" data-mtheta>4.2°</div>
-        <div class="desc">
-          Lower means closer alignment
-        </div>
-      </div>
-
-      <div class="metric">
-        <div class="name">
-          LER phase mismatch · Δφ
-        </div>
-        <div class="value lilac" data-mphi>0.05</div>
-        <div class="desc">
-          Lower means closer phase alignment
+        <div class="xeo-metric-value xeo-orange"
+          data-direction>0.96</div>
+        <div class="xeo-metric-note">
+          A<sub>dir</sub> = 1 − Δθ / 90°
         </div>
       </div>
 
-      <div class="metric">
-        <div class="name">
-          Local alignment proxy · A*
+      <div class="xeo-metric">
+        <div class="xeo-metric-label">
+          LER agreement proxy
         </div>
-        <div class="value green" data-align>0.84</div>
-        <div class="desc">
-          Illustrative normalized proxy,
-          not validated SOE
+        <div class="xeo-metric-value xeo-green"
+          data-ler>0.95</div>
+        <div class="xeo-metric-note">
+          A<sub>LER</sub> = 1 − Δφ<sub>LER</sub>
+        </div>
+      </div>
+
+      <div class="xeo-metric">
+        <div class="xeo-metric-label">
+          Composite alignment proxy
+        </div>
+        <div class="xeo-metric-value xeo-lilac"
+          data-proxy>0.84</div>
+        <div class="xeo-metric-note">
+          Illustrative A*, not resonance yield
         </div>
       </div>
 
     </div>
 
-    <!-- 03 / VISUALIZATIONS -->
-    <div class="visuals">
+    <!-- VISUALIZATIONS -->
+    <div class="xeo-visuals">
 
-      <!-- HUMAN / AI CONVERGENCE -->
-      <div class="panel">
+      <div class="xeo-panel">
 
-        <h3>Human–AI Flow Convergence</h3>
+        <h3>H-Flow / A-Flow Interaction</h3>
 
         <p>
-          Blue = Human Flow · Orange = AI Flow ·
-          Lilac = Resonant integration region
+          The lilac region marks a proposed local
+          convergence region. Its presence in the
+          diagram does not establish ΩRPN formation.
         </p>
 
-        <svg
-          viewBox="0 0 520 270"
+        <svg viewBox="0 0 520 285"
           role="img"
-          aria-label="Human and AI flow convergence"
-        >
+          aria-label="Illustrative Human and AI flow geometry">
 
-          <g stroke="#EAEFF5" stroke-width="1">
+          <defs>
+            <radialGradient id="xeo-resonance-glow">
+              <stop offset="0%"
+                stop-color="#8A65BA"
+                stop-opacity=".30"/>
+              <stop offset="100%"
+                stop-color="#8A65BA"
+                stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <g stroke="#EBEFF5" stroke-width="1">
             <path d="
-              M0 54H520
-              M0 108H520
-              M0 162H520
-              M0 216H520
-              M104 0V270
-              M208 0V270
-              M312 0V270
-              M416 0V270
-            "/>
+              M0 55H520 M0 110H520
+              M0 165H520 M0 220H520
+              M104 0V285 M208 0V285
+              M312 0V285 M416 0V285"/>
           </g>
 
-          <circle
-            cx="260" cy="135" r="43"
-            fill="#8A65BA" opacity=".08"
-          />
+          <circle cx="260" cy="142"
+            r="78"
+            fill="url(#xeo-resonance-glow)"
+            data-glow/>
 
-          <circle
-            cx="260" cy="135" r="23"
-            fill="#8A65BA" opacity=".12"
-          />
+          <circle cx="260" cy="142"
+            r="30"
+            fill="#8A65BA"
+            fill-opacity=".07"
+            stroke="#8A65BA"
+            stroke-opacity=".45"
+            stroke-dasharray="5 5"
+            data-region/>
 
-          <path
-            data-human
-            d="M36 222 Q150 222 260 135"
+          <path data-human
+            d="M35 236 Q145 236 242 151"
+            fill="none"
             stroke="#2563B8"
             stroke-width="5"
-            fill="none"
-            stroke-linecap="round"
-          />
+            stroke-linecap="round"/>
 
-          <path
-            data-ai
-            d="M484 48 Q370 48 260 135"
+          <path data-ai
+            d="M485 48 Q375 48 278 133"
+            fill="none"
             stroke="#FF6600"
             stroke-width="5"
-            fill="none"
-            stroke-linecap="round"
-          />
+            stroke-linecap="round"/>
 
-          <circle
-            cx="260" cy="135" r="9"
+          <circle cx="260" cy="142"
+            r="6"
             fill="#8A65BA"
-          />
+            data-center/>
 
-          <circle
-            cx="260" cy="135" r="3"
-            fill="#FFFFFF"
-          />
-
-          <text
-            x="36" y="246"
-            font-size="12"
+          <text x="30" y="263"
             fill="#2563B8"
-            font-weight="700"
-          >H-Flow</text>
+            font-size="13"
+            font-weight="700">H-Flow</text>
 
-          <text
-            x="432" y="35"
-            font-size="12"
+          <text x="432" y="34"
             fill="#FF6600"
-            font-weight="700"
-          >A-Flow</text>
+            font-size="13"
+            font-weight="700">A-Flow</text>
 
-          <text
-            x="278" y="130"
-            font-size="12"
+          <text x="278" y="133"
             fill="#8A65BA"
-            font-weight="700"
-          >ΩRPN</text>
+            font-size="12"
+            font-weight="700">ΩRPN?</text>
 
-          <text
-            x="278" y="146"
-            font-size="10"
+          <text x="278" y="151"
             fill="#788395"
-          >local integration</text>
+            font-size="10">
+            candidate region
+          </text>
 
+          <text x="260" y="279"
+            text-anchor="middle"
+            fill="#758294"
+            font-size="10">
+            Schematic geometry · not physical coordinates
+          </text>
         </svg>
 
-        <div class="legend">
+        <div class="xeo-legend">
           <span>
-            <i class="dot"
-              style="background:#2563B8"></i>Human
+            <i class="xeo-dot"
+              style="background:#2563B8"></i>
+            Human Flow
           </span>
-
           <span>
-            <i class="dot"
-              style="background:#FF6600"></i>AI
+            <i class="xeo-dot"
+              style="background:#FF6600"></i>
+            AI Flow
           </span>
-
           <span>
-            <i class="dot"
-              style="background:#8A65BA"></i>Resonance
+            <i class="xeo-dot"
+              style="background:#8A65BA"></i>
+            Candidate convergence region
           </span>
         </div>
 
       </div>
 
-      <!-- LOCAL ALIGNMENT RESPONSE -->
-      <div class="panel">
+      <div class="xeo-panel">
 
-        <h3>Local Alignment Response</h3>
+        <h3>Local Parameter Response</h3>
 
         <p>
-          Illustrative response surface calculated
-          from the three controls.
-          This is not a measured time series.
+          Normalized inputs and derived proxies.
+          The bars are not a measured time series
+          or an empirical resonance spectrum.
         </p>
 
-        <svg
-          viewBox="0 0 420 270"
+        <svg viewBox="0 0 440 285"
           role="img"
-          aria-label="Local alignment response"
-        >
+          aria-label="Illustrative parameter response bars">
 
-          <g stroke="#EAEFF5">
+          <g stroke="#EBEFF5">
             <path d="
-              M35 42H397
-              M35 93H397
-              M35 144H397
-              M35 195H397
-              M35 246H397
-            "/>
+              M35 35H420 M35 85H420
+              M35 135H420 M35 185H420
+              M35 235H420"/>
           </g>
 
-          <text x="12" y="47"
-            font-size="11" fill="#8591A0">1.0</text>
-
-          <text x="12" y="250"
-            font-size="11" fill="#8591A0">0</text>
-
-          <rect x="72" y="42"
-            width="75" height="204" rx="8"
-            fill="#EFF3F8"/>
-
-          <rect x="175" y="42"
-            width="75" height="204" rx="8"
-            fill="#EFF3F8"/>
-
-          <rect x="278" y="42"
-            width="75" height="204" rx="8"
-            fill="#EFF3F8"/>
-
-          <rect data-bar-density
-            x="72" y="58"
-            width="75" height="188" rx="8"
-            fill="#2563B8"/>
-
-          <rect data-bar-match
-            x="175" y="51"
-            width="75" height="195" rx="8"
-            fill="#FF6600"/>
-
-          <rect data-bar-align
-            x="278" y="75"
-            width="75" height="171" rx="8"
-            fill="#8A65BA"/>
-
-          <text x="109" y="264"
-            text-anchor="middle"
+          <text x="7" y="40"
             font-size="11"
-            fill="#667386">Density</text>
+            fill="#8290A0">1.0</text>
 
-          <text x="212" y="264"
-            text-anchor="middle"
+          <text x="15" y="240"
             font-size="11"
-            fill="#667386">Alignment</text>
+            fill="#8290A0">0</text>
 
-          <text x="315" y="264"
+          <rect x="54" y="35"
+            width="65" height="200"
+            rx="7" fill="#F0F3F8"/>
+          <rect x="149" y="35"
+            width="65" height="200"
+            rx="7" fill="#F0F3F8"/>
+          <rect x="244" y="35"
+            width="65" height="200"
+            rx="7" fill="#F0F3F8"/>
+          <rect x="339" y="35"
+            width="65" height="200"
+            rx="7" fill="#F0F3F8"/>
+
+          <rect data-bar="rho"
+            x="54" y="51"
+            width="65" height="184"
+            rx="7" fill="#2563B8"/>
+
+          <rect data-bar="direction"
+            x="149" y="44"
+            width="65" height="191"
+            rx="7" fill="#FF6600"/>
+
+          <rect data-bar="ler"
+            x="244" y="45"
+            width="65" height="190"
+            rx="7" fill="#27866A"/>
+
+          <rect data-bar="proxy"
+            x="339" y="67"
+            width="65" height="168"
+            rx="7" fill="#8A65BA"/>
+
+          <g font-size="11"
+            fill="#667386"
+            text-anchor="middle">
+            <text x="86" y="254">Density</text>
+            <text x="181" y="254">Direction</text>
+            <text x="276" y="254">LER</text>
+            <text x="371" y="254">A*</text>
+          </g>
+
+          <text x="220" y="278"
             text-anchor="middle"
-            font-size="11"
-            fill="#667386">A*</text>
-
+            fill="#8290A0"
+            font-size="10">
+            Illustrative normalized values · 0–1
+          </text>
         </svg>
 
-        <div class="legend">
-          A* = ρ<sub>sem</sub> ×
-          (1 − Δθ / 90°) /
-          (1 + Δφ<sub>LER</sub>)
+        <div class="xeo-legend">
+          A* = ρ<sub>sem</sub>
+          × (1 − Δθ/90°)
+          × (1 − Δφ<sub>LER</sub>)
         </div>
 
       </div>
 
     </div>
 
-    <!-- 04 / DEVELOPMENTAL TRANSITION -->
-    <div class="transition">
+    <!-- OMEGA RPN CONDITIONS -->
+    <div class="xeo-condition-panel">
 
-      <div>
-        <div class="kicker"
-          style="margin-bottom:7px;color:#8A65BA">
-          02 / Developmental transition · separate layer
-        </div>
-
-        <h3>
-          Resonance is not equivalent to evolution.
-        </h3>
-
-        <p style="
-          margin:7px 0 0;
-          font-size:12px;
-          color:#687485;
-          line-height:1.6;
-        ">
-          A local alignment score cannot determine
-          developmental displacement.
-
-          State integrity, retained semantic structure,
-          and systemic friction require independent
-          measurements before τ can be calculated.
-        </p>
+      <div class="xeo-section-label"
+        style="color:#8A65BA">
+        03 / Proposed ΩRPN formation conditions
       </div>
 
-      <div class="formula">
-        Δz<sub>n</sub> =
-        z<sub>n+1</sub> − z<sub>n</sub>
+      <h3>Four conditions. No automatic resonance claim.</h3>
+
+      <p style="font-size:12px;color:#687789;line-height:1.7">
+        The expression below represents a proposed
+        conjunction of conditions in the Xeo-Physics
+        framework. The numerical thresholds used
+        by this interface are illustrative settings,
+        not empirically established constants.
+      </p>
+
+      <div class="xeo-formula">
+        (ρ<sub>sem</sub> &gt; ρ<sub>crit</sub>)
+        ∧ (|ΔW<sub>flow</sub>| → 0)
+        ∧ (θ<sub>H</sub> ≈ θ<sub>A</sub>)
+        ∧ (φ<sub>H</sub><sup>LER</sup>
+        ≈ φ<sub>A</sub><sup>LER</sup>)
+        ⇒ ΩRPN
+      </div>
+
+      <div class="xeo-condition-grid">
+
+        <div class="xeo-condition">
+          <strong>Semantic density</strong>
+          <span data-check="density">Evaluating</span>
+        </div>
+
+        <div class="xeo-condition">
+          <strong>Flow-width stability</strong>
+          <span data-check="width">Evaluating</span>
+        </div>
+
+        <div class="xeo-condition">
+          <strong>Directional alignment</strong>
+          <span data-check="direction">Evaluating</span>
+        </div>
+
+        <div class="xeo-condition">
+          <strong>LER phase alignment</strong>
+          <span data-check="ler">Evaluating</span>
+        </div>
+
+      </div>
+
+      <div class="xeo-status"
+        data-condition-status
+        role="status"
+        aria-live="polite">
+        Evaluating illustrative conditions...
       </div>
 
     </div>
 
-    <!-- 05 / RESEARCH MEASUREMENT TABLE -->
-    <div class="tablewrap">
+    <!-- TRANSPARENT MODEL -->
+    <div class="xeo-section-label"
+      style="margin-top:25px">
+      04 / Transparent calculation protocol
+    </div>
 
+    <div class="xeo-tablewrap">
       <table>
-
         <thead>
           <tr>
-            <th>Research variable</th>
+            <th>Quantity</th>
             <th>Symbol</th>
-            <th>Current demo</th>
-            <th>Interpretation</th>
+            <th>Demo value</th>
+            <th>Definition / boundary</th>
           </tr>
         </thead>
 
         <tbody>
-
           <tr>
             <td>Semantic density</td>
-            <td class="blue">
-              ρ<sub>sem</sub>
-            </td>
-            <td data-trho>0.92</td>
-            <td>Normalized input</td>
+            <td>ρ<sub>sem</sub></td>
+            <td data-table="rho">0.92</td>
+            <td>Normalized illustrative input</td>
           </tr>
 
           <tr>
             <td>Directional mismatch</td>
-            <td class="orange">
-              Δθ<sub>HA</sub>
-            </td>
-            <td data-ttheta>4.2°</td>
-            <td>Angle between flows</td>
+            <td>Δθ<sub>HA</sub></td>
+            <td data-table="theta">4.0°</td>
+            <td>Angular proxy, 0–90°</td>
           </tr>
 
           <tr>
-            <td>LER phase mismatch</td>
-            <td class="lilac">
-              Δφ<sub>LER</sub>
-            </td>
-            <td data-tphi>0.05</td>
-            <td>Normalized phase input</td>
+            <td>LER mismatch</td>
+            <td>Δφ<sub>LER</sub></td>
+            <td data-table="phi">0.05</td>
+            <td>Normalized illustrative input</td>
           </tr>
 
           <tr>
-            <td>Local alignment proxy</td>
-            <td class="green">A*</td>
-            <td data-talign>0.84</td>
-            <td>Calculated illustrative proxy</td>
-          </tr>
-
-          <tr>
-            <td>Developmental displacement</td>
-            <td>Δz<sub>n</sub></td>
+            <td>Flow-width change magnitude</td>
+            <td>|ΔW<sub>flow</sub>|</td>
+            <td data-table="width">0.04</td>
             <td>
-              <span class="tag">Not measured</span>
+              Normalized change magnitude;
+              does not establish compression direction
             </td>
-            <td>Requires two evaluated states</td>
           </tr>
 
           <tr>
-            <td>Transition efficiency</td>
-            <td>τ<sub>n</sub></td>
+            <td>Composite alignment proxy</td>
+            <td>A*</td>
+            <td data-table="proxy">0.84</td>
             <td>
-              <span class="tag">Not measured</span>
-            </td>
-            <td>
-              Requires defined friction and
-              transition protocol
+              Calculated illustrative score;
+              not Q<sub>res</sub> or SOE
             </td>
           </tr>
 
+          <tr>
+            <td>Resonance yield</td>
+            <td>Q<sub>res</sub></td>
+            <td>Not calculated</td>
+            <td>
+              Requires an operationally specified
+              resonance-yield model
+            </td>
+          </tr>
+
+          <tr>
+            <td>Retention / accumulation</td>
+            <td>
+              Q<sub>ret</sub>, M<sub>acc</sub>
+            </td>
+            <td>Not calculated</td>
+            <td>
+              Requires observations across cycles
+            </td>
+          </tr>
+
+          <tr>
+            <td>Development</td>
+            <td>Δz</td>
+            <td>Not calculated</td>
+            <td>
+              Requires evaluated state transition
+            </td>
+          </tr>
+
+          <tr>
+            <td>Efficiency</td>
+            <td>τ = U/K</td>
+            <td>Not calculated</td>
+            <td>
+              Requires independently defined useful
+              outcome and total resource cost
+            </td>
+          </tr>
         </tbody>
       </table>
-
     </div>
 
-    <!-- SCIENTIFIC DISCLOSURE -->
-    <div class="foot">
-      <strong>Research demo — not a live measurement.</strong>
+    <!-- DISCLOSURE -->
+    <div class="xeo-disclosure">
 
-      Values are user-controlled illustrative inputs.
-      A* is a visualization-only proxy, not an
-      empirically validated Xeo-Physics law or
-      enterprise benchmark.
+      <strong>Research model · Methodological transparency</strong>
 
-      The Δz and τ definitions remain distinct
-      by design.
+      <p>
+        This monitor uses four user-adjustable inputs
+        and an illustrative composite alignment proxy.
+        It evaluates whether those inputs satisfy a
+        declared set of numerical conditions.
+      </p>
 
-      © GTNEra® · Tetyana Leyendecker.
+      <p>
+        Default demonstration thresholds:
+        ρ<sub>crit</sub> = 0.70;
+        |ΔW<sub>flow</sub>| ≤ 0.10;
+        Δθ<sub>HA</sub> ≤ 12°;
+        Δφ<sub>LER</sub> ≤ 0.15.
+      </p>
+
+      <p>
+        These thresholds are demonstration assumptions,
+        not universal Xeo-Physics constants.
+        Passing the conditions is not experimental
+        confirmation of ΩRPN formation.
+        The monitor does not independently measure
+        semantic mass, SOE, resonance yield,
+        retention, development or efficiency.
+      </p>
+
+      <p>
+        For the separate Logic–Emotion–Resonance
+        interactive concept, visit
+        <a class="xeo-link"
+          href="https://gtnera.ai/classes/resonant-dialogue.html"
+          target="_blank"
+          rel="noopener noreferrer">
+          Triundra LER Interactive Demo
+        </a>.
+      </p>
+
+      <p>
+        © GTNEra® · Xeo-Physics ·
+        Tetyana Leyendecker
+      </p>
+
     </div>
 
   </div>
 </div>
 
-<!-- ==========================================
- INTERACTIVE CALCULATIONS
-=========================================== -->
-
 <script>
 (function () {
+  "use strict";
 
-  const root = document.getElementById(
-    'gtn-xeo-monitor'
-  );
-
+  const root = document.getElementById("gtn-xeo-monitor");
   if (!root) return;
 
   const $ = selector => root.querySelector(selector);
@@ -1649,350 +1994,573 @@
   const inputs = {
     rho: $('[data-input="rho"]'),
     theta: $('[data-input="theta"]'),
-    phi: $('[data-input="phi"]')
+    phi: $('[data-input="phi"]'),
+    width: $('[data-input="width"]')
   };
 
-  function put(selector, value) {
-    const element = $(selector);
+  /*
+   * DEMONSTRATION PARAMETERS
+   *
+   * These thresholds are illustrative.
+   * They are NOT validated physical constants.
+   *
+   * Changing these values changes the displayed
+   * condition assessment.
+   */
+  const thresholds = Object.freeze({
+    rhoCritical: 0.70,
+    widthTolerance: 0.10,
+    thetaTolerance: 12,
+    phiTolerance: 0.15
+  });
 
-    if (element) {
-      element.textContent = value;
-    }
+  const defaults = Object.freeze({
+    rho: 0.92,
+    theta: 4,
+    phi: 0.05,
+    width: 0.04
+  });
+
+  function clamp(value, min = 0, max = 1) {
+    return Math.max(min, Math.min(max, value));
   }
 
-  function updateBar(selector, value) {
-    const element = $(selector);
+  function setText(selector, value) {
+    const el = $(selector);
+    if (el) el.textContent = value;
+  }
 
-    if (!element) return;
+  function setBar(name, value) {
+    const bar = $('[data-bar="' + name + '"]');
+    if (!bar) return;
 
-    const normalized = Math.max(
-      0,
-      Math.min(1, value)
+    const height = 200 * clamp(value);
+    bar.setAttribute("y", (235 - height).toFixed(2));
+    bar.setAttribute("height", height.toFixed(2));
+  }
+
+  function setCondition(name, passed) {
+    const el = $('[data-check="' + name + '"]');
+    if (!el) return;
+
+    el.textContent = passed
+      ? "✓ Within demo threshold"
+      : "○ Outside demo threshold";
+
+    el.classList.toggle("xeo-pass", passed);
+    el.classList.toggle("xeo-fail", !passed);
+  }
+
+  function updateFlowGeometry(theta, phi, width) {
+    const human = $("[data-human]");
+    const ai = $("[data-ai]");
+    const region = $("[data-region]");
+    const glow = $("[data-glow]");
+
+    /*
+     * Schematic geometry only.
+     * Visual displacement is not a physical
+     * trajectory or numerical flow solution.
+     */
+    const divergence =
+      8 + (theta / 90) * 65 + phi * 30;
+
+    const humanX = 260 - divergence;
+    const humanY = 142 + divergence * 0.28;
+    const aiX = 260 + divergence;
+    const aiY = 142 - divergence * 0.28;
+
+    human.setAttribute(
+      "d",
+      `M35 236 Q145 236 ${humanX} ${humanY}`
     );
 
-    const height = 204 * normalized;
-
-    element.setAttribute(
-      'y',
-      (246 - height).toFixed(1)
+    ai.setAttribute(
+      "d",
+      `M485 48 Q375 48 ${aiX} ${aiY}`
     );
 
-    element.setAttribute(
-      'height',
-      height.toFixed(1)
+    const radius = 23 + width * 36;
+    region.setAttribute("r", radius.toFixed(1));
+
+    /*
+     * The region remains a candidate area.
+     * Opacity does not mean resonance was measured.
+     */
+    const visualAgreement =
+      clamp(1 - theta / 90) *
+      clamp(1 - phi);
+
+    glow.setAttribute(
+      "opacity",
+      (0.20 + visualAgreement * 0.65).toFixed(2)
     );
   }
 
   function update() {
+    const rho = clamp(Number(inputs.rho.value));
+    const theta = clamp(
+      Number(inputs.theta.value), 0, 90
+    );
+    const phi = clamp(Number(inputs.phi.value));
+    const width = clamp(Number(inputs.width.value));
 
-    const rho = Number(inputs.rho.value);
-    const theta = Number(inputs.theta.value);
-    const phi = Number(inputs.phi.value);
-
-    // Normalized directional alignment
-    const directionalMatch = 1 - theta / 90;
-
-    // Illustrative local alignment proxy
-    const alignment =
-      rho * directionalMatch / (1 + phi);
+    /*
+     * Illustrative proxy calculations:
+     *
+     * A_dir = 1 - theta/90
+     * A_LER = 1 - phi
+     * A* = rho * A_dir * A_LER
+     *
+     * A* is not a validated resonance equation.
+     */
+    const direction = clamp(1 - theta / 90);
+    const ler = clamp(1 - phi);
+    const proxy = rho * direction * ler;
 
     const rhoText = rho.toFixed(2);
-    const thetaText = theta.toFixed(1) + '°';
+    const thetaText = theta.toFixed(1) + "°";
     const phiText = phi.toFixed(2);
-    const alignmentText = alignment.toFixed(2);
+    const widthText = width.toFixed(2);
+    const proxyText = proxy.toFixed(2);
 
-    const outputs = [
-      ['[data-rho]', rhoText],
-      ['[data-mrho]', rhoText],
-      ['[data-trho]', rhoText],
+    setText("[data-rho]", rhoText);
+    setText("[data-theta]", thetaText);
+    setText("[data-phi]", phiText);
+    setText("[data-width]", widthText);
 
-      ['[data-theta]', thetaText],
-      ['[data-mtheta]', thetaText],
-      ['[data-ttheta]', thetaText],
+    setText("[data-mrho]", rhoText);
+    setText("[data-direction]", direction.toFixed(2));
+    setText("[data-ler]", ler.toFixed(2));
+    setText("[data-proxy]", proxyText);
 
-      ['[data-phi]', phiText],
-      ['[data-mphi]', phiText],
-      ['[data-tphi]', phiText],
+    setText('[data-table="rho"]', rhoText);
+    setText('[data-table="theta"]', thetaText);
+    setText('[data-table="phi"]', phiText);
+    setText('[data-table="width"]', widthText);
+    setText('[data-table="proxy"]', proxyText);
 
-      ['[data-align]', alignmentText],
-      ['[data-talign]', alignmentText]
-    ];
+    setBar("rho", rho);
+    setBar("direction", direction);
+    setBar("ler", ler);
+    setBar("proxy", proxy);
 
-    outputs.forEach(([selector, value]) => {
-      put(selector, value);
+    const checks = {
+      density: rho > thresholds.rhoCritical,
+      width: width <= thresholds.widthTolerance,
+      direction: theta <= thresholds.thetaTolerance,
+      ler: phi <= thresholds.phiTolerance
+    };
+
+    Object.entries(checks).forEach(([name, passed]) => {
+      setCondition(name, passed);
     });
 
-    // Update all three graph bars
-    updateBar('[data-bar-density]', rho);
-    updateBar('[data-bar-match]', directionalMatch);
-    updateBar('[data-bar-align]', alignment);
+    const count = Object.values(checks)
+      .filter(Boolean).length;
 
-    // Illustrative displacement of flow endpoints
-    const offset =
-      theta / 90 * 65 + phi * 30;
+    const allPass = count === 4;
 
-    $('[data-human]').setAttribute(
-      'd',
-      `M36 222 Q150 222
-       ${260 - offset}
-       ${135 + offset * 0.45}`
+    setText(
+      "[data-condition-status]",
+      allPass
+        ? "4/4 illustrative conditions satisfied. " +
+          "This identifies a candidate configuration " +
+          "under the declared thresholds — not an " +
+          "observed or validated ΩRPN event."
+        : count + "/4 illustrative conditions satisfied. " +
+          "The selected inputs do not jointly meet " +
+          "the declared candidate configuration."
     );
 
-    $('[data-ai]').setAttribute(
-      'd',
-      `M484 48 Q370 48
-       ${260 + offset}
-       ${135 - offset * 0.45}`
-    );
-
+    updateFlowGeometry(theta, phi, width);
   }
 
-  // Update when sliders move
   Object.values(inputs).forEach(input => {
-    input.addEventListener('input', update);
+    input.addEventListener("input", update);
   });
 
-  // Reset all parameters
-  $('[data-reset]').addEventListener(
-    'click',
-    function () {
+  const reset = $("[data-reset]");
 
-      inputs.rho.value = 0.92;
-      inputs.theta.value = 4.2;
-      inputs.phi.value = 0.05;
+  if (reset) {
+    reset.addEventListener("click", () => {
+      Object.entries(defaults).forEach(([name, value]) => {
+        inputs[name].value = value;
+      });
 
       update();
-    }
-  );
+    });
+  }
 
-  // Initial calculation
   update();
-
 })();
 </script>
 
 </section>
 
 <!-- END OF PART 2 -->
-<!-- PART 3 CONTINUES BELOW -->
+<!-- PART 3 — ARCHITECTURE MONITOR CONTINUES BELOW -->
 
+
+<!-- ============================================================
+ GTNEra® UNIFIED RESEARCH MONITOR
+ PART 3 — TRIUNDRAL MEASUREMENT ARCHITECTURE
+ Research Simulation · November 2026
+
+ REPLACE THE ENTIRE ORIGINAL PART 3 WITH THIS BLOCK.
+
+ Keep PART 1, PART 2 and PART 4 in place.
+ No external JavaScript libraries required.
+
+ IMPORTANT:
+ This is a transparent illustrative simulation.
+ The numerical model is NOT an empirical validation
+ of Xeo-Physics or Triundral performance.
+============================================================ -->
 
 <section id="gtn-architecture-monitor"
-  aria-label="GTNEra Triundral Architecture Comparison">
+  aria-label="GTNEra Triundral Measurement Architecture">
 
 <style>
 #gtn-architecture-monitor {
-  --ink:#1E2A38;
-  --muted:#68778A;
-  --orange:#FF6600;
-  --blue:#2867B2;
-  --purple:#8A65BA;
-  --green:#28816A;
-  --line:#E5EAF0;
-  --bg:#F7F9FC;
-  --hitl:#718096;
-  --aiai:#E99B43;
-  --tri:#8A65BA;
+  --am-ink:#1E2A38;
+  --am-muted:#687789;
+  --am-line:#E5EAF0;
+  --am-orange:#FF6600;
+  --am-blue:#2563B8;
+  --am-purple:#8A65BA;
+  --am-green:#27866A;
+  --am-hitl:#718096;
+  --am-aiai:#E99B43;
+  --am-tri:#8A65BA;
+
+  width:100%;
   max-width:1200px;
   margin:28px auto;
   padding:0 16px;
   font-family:Inter,system-ui,sans-serif;
-  color:var(--ink);
+  color:var(--am-ink);
   box-sizing:border-box;
 }
-#gtn-architecture-monitor * {
+
+#gtn-architecture-monitor *,
+#gtn-architecture-monitor *::before,
+#gtn-architecture-monitor *::after {
   box-sizing:border-box;
 }
+
 #gtn-architecture-monitor .am-shell {
   background:#fff;
-  border:1px solid var(--line);
-  border-radius:26px;
+  border:1px solid var(--am-line);
+  border-radius:24px;
   overflow:hidden;
-  box-shadow:0 18px 55px #1E2A3810;
+  box-shadow:0 16px 44px rgba(30,42,56,.05);
 }
+
 #gtn-architecture-monitor .am-head {
-  background:linear-gradient(115deg,#1E2A38,#34465B);
-  color:#fff;
-  padding:34px clamp(20px,4vw,42px);
+  padding:30px;
+  background:linear-gradient(120deg,#fff,#FCFAFF,#FFF5EE);
+  border-bottom:1px solid var(--am-line);
 }
+
 #gtn-architecture-monitor .am-kicker {
-  color:#FFAD77;
+  color:#D95500;
   font-size:11px;
   font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.16em;
-}
-#gtn-architecture-monitor h2 {
-  font-size:clamp(26px,3.4vw,39px);
-  line-height:1.14;
-  margin:12px 0;
-  font-weight:800;
-  color:inherit;
-}
-#gtn-architecture-monitor .am-head p {
-  max-width:800px;
-  font-size:14px;
-  line-height:1.75;
-  color:#D6DFE9;
-  margin:0;
-}
-#gtn-architecture-monitor .am-content {
-  padding:clamp(18px,3vw,32px);
-}
-#gtn-architecture-monitor .am-label {
-  font-size:11px;
   letter-spacing:.13em;
   text-transform:uppercase;
-  font-weight:800;
-  color:#788496;
-  margin-bottom:13px;
 }
+
+#gtn-architecture-monitor h2 {
+  font-size:clamp(25px,3vw,36px);
+  font-weight:800;
+  line-height:1.2;
+  margin:10px 0 12px;
+}
+
+#gtn-architecture-monitor .am-head p {
+  max-width:850px;
+  color:#607085;
+  font-size:13px;
+  line-height:1.8;
+  margin:0;
+}
+
+#gtn-architecture-monitor .am-content {
+  padding:26px 30px 30px;
+}
+
+#gtn-architecture-monitor .am-label {
+  margin:26px 0 13px;
+  color:#697687;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+#gtn-architecture-monitor .am-label:first-child {
+  margin-top:0;
+}
+
 #gtn-architecture-monitor .am-architectures {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:12px;
 }
-#gtn-architecture-monitor .am-arch {
-  appearance:none;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:#fff;
-  padding:20px;
-  text-align:left;
+
+#gtn-architecture-monitor button {
   cursor:pointer;
-  transition:border-color .2s,background .2s,
-             transform .2s;
   font:inherit;
-  color:inherit;
 }
-#gtn-architecture-monitor .am-arch:hover {
-  transform:translateY(-2px);
+
+#gtn-architecture-monitor .am-arch {
+  text-align:left;
+  background:#fff;
+  border:1px solid var(--am-line);
+  border-top:4px solid var(--arch-color);
+  border-radius:15px;
+  padding:17px;
+  color:var(--am-ink);
+  transition:border-color .2s,box-shadow .2s;
 }
+
 #gtn-architecture-monitor .am-arch[aria-pressed="true"] {
-  border-color:var(--purple);
-  background:#F9F5FF;
-  box-shadow:inset 0 0 0 1px #8A65BA30;
+  border-color:var(--arch-color);
+  box-shadow:0 0 0 2px var(--arch-color);
 }
+
+#gtn-architecture-monitor .am-arch:focus-visible {
+  outline:3px solid #2563B8;
+  outline-offset:3px;
+}
+
 #gtn-architecture-monitor .am-arch-num {
-  font-size:11px;
+  display:block;
+  color:#7A8798;
+  font-size:10px;
   font-weight:800;
-  color:var(--orange);
+  margin-bottom:9px;
 }
+
 #gtn-architecture-monitor .am-arch strong {
   display:block;
-  font-size:16px;
-  margin:8px 0;
+  font-size:14px;
+  margin-bottom:8px;
 }
+
 #gtn-architecture-monitor .am-arch small {
   display:block;
-  font-size:12px;
-  color:var(--muted);
+  color:#687789;
+  font-size:11px;
   line-height:1.6;
 }
+
 #gtn-architecture-monitor .am-controls {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:12px;
-  margin-top:23px;
 }
+
 #gtn-architecture-monitor .am-control {
-  background:var(--bg);
-  border:1px solid var(--line);
-  padding:17px;
-  border-radius:16px;
+  padding:16px;
+  background:#FAFBFD;
+  border:1px solid var(--am-line);
+  border-radius:14px;
+  min-width:0;
 }
+
 #gtn-architecture-monitor .am-control label {
   display:flex;
-  align-items:center;
   justify-content:space-between;
   gap:8px;
   font-size:12px;
   font-weight:750;
 }
+
 #gtn-architecture-monitor .am-control output {
-  color:var(--orange);
-  font-size:15px;
+  color:#C65300;
   font-weight:800;
   font-variant-numeric:tabular-nums;
 }
-#gtn-architecture-monitor input[type="range"] {
+
+#gtn-architecture-monitor .am-control input {
   width:100%;
-  accent-color:var(--orange);
-  cursor:pointer;
-  margin:16px 0 8px;
+  margin:15px 0 9px;
+  accent-color:var(--am-orange);
 }
-#gtn-architecture-monitor .am-hint {
-  color:#788596;
-  font-size:11px;
+
+#gtn-architecture-monitor .am-control small {
+  display:block;
+  color:#758294;
+  font-size:10px;
   line-height:1.5;
 }
+
+#gtn-architecture-monitor .am-assumptions {
+  margin-top:14px;
+  padding:16px;
+  border:1px solid #E4DDF0;
+  border-radius:14px;
+  background:#FCFAFF;
+}
+
+#gtn-architecture-monitor .am-assumptions summary {
+  cursor:pointer;
+  font-size:12px;
+  font-weight:800;
+  color:#65498C;
+}
+
+#gtn-architecture-monitor .am-assumptions p {
+  color:#687789;
+  font-size:11px;
+  line-height:1.7;
+}
+
+#gtn-architecture-monitor .am-assumption-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  margin-top:15px;
+}
+
+#gtn-architecture-monitor .am-assumption {
+  background:#fff;
+  border:1px solid var(--am-line);
+  border-radius:10px;
+  padding:12px;
+}
+
+#gtn-architecture-monitor .am-assumption label {
+  display:block;
+  font-size:11px;
+  font-weight:750;
+}
+
+#gtn-architecture-monitor .am-assumption input {
+  display:block;
+  width:100%;
+  margin-top:8px;
+  padding:9px;
+  border:1px solid #CCD5E1;
+  border-radius:8px;
+  font-size:13px;
+  color:#1E2A38;
+  background:#fff;
+}
+
+#gtn-architecture-monitor .am-five {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:9px;
+}
+
+#gtn-architecture-monitor .am-five-card {
+  min-width:0;
+  padding:15px 11px;
+  border:1px solid var(--am-line);
+  border-top:4px solid var(--dim-color);
+  border-radius:13px;
+  background:#fff;
+}
+
+#gtn-architecture-monitor .am-five-card .am-five-name {
+  font-size:11px;
+  font-weight:800;
+  color:#526175;
+}
+
+#gtn-architecture-monitor .am-five-card .am-five-value {
+  font-size:clamp(19px,2.2vw,26px);
+  font-weight:800;
+  margin:10px 0 5px;
+  font-variant-numeric:tabular-nums;
+  overflow-wrap:anywhere;
+}
+
+#gtn-architecture-monitor .am-five-card small {
+  display:block;
+  font-size:10px;
+  line-height:1.5;
+  color:#788596;
+}
+
 #gtn-architecture-monitor .am-kpis {
   display:grid;
   grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:12px;
-  margin-top:20px;
+  gap:10px;
+  margin-top:12px;
 }
+
 #gtn-architecture-monitor .am-kpi {
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:18px;
-  background:#fff;
+  padding:15px;
+  border-radius:13px;
+  background:#F7F9FC;
+  border:1px solid var(--am-line);
 }
+
 #gtn-architecture-monitor .am-kpi-label {
   font-size:11px;
-  color:#6F7D8D;
+  color:#647387;
   font-weight:700;
 }
+
 #gtn-architecture-monitor .am-kpi-value {
-  font-size:clamp(23px,2.5vw,32px);
-  font-weight:850;
-  letter-spacing:-.04em;
-  margin:9px 0 4px;
+  margin:8px 0;
+  font-size:23px;
+  font-weight:800;
   font-variant-numeric:tabular-nums;
 }
-#gtn-architecture-monitor .am-kpi-note {
-  font-size:11px;
-  color:#8490A0;
-  line-height:1.4;
+
+#gtn-architecture-monitor .am-kpi small {
+  color:#778596;
+  font-size:10px;
+  line-height:1.5;
 }
+
 #gtn-architecture-monitor .am-graphs {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:22px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
 }
+
 #gtn-architecture-monitor .am-panel {
-  border:1px solid var(--line);
-  border-radius:19px;
   padding:20px;
-  min-width:0;
+  border:1px solid var(--am-line);
+  border-radius:17px;
   background:#fff;
+  min-width:0;
 }
+
 #gtn-architecture-monitor .am-panel h3 {
-  margin:0 0 7px;
-  font-size:16px;
+  font-size:15px;
   font-weight:800;
-  color:var(--ink);
+  margin:0 0 8px;
 }
+
 #gtn-architecture-monitor .am-panel p {
-  margin:0 0 15px;
-  font-size:12px;
-  color:var(--muted);
+  font-size:11px;
+  color:#728094;
   line-height:1.6;
+  margin:0 0 12px;
 }
-#gtn-architecture-monitor svg {
+
+#gtn-architecture-monitor .am-panel svg {
+  display:block;
   width:100%;
   height:auto;
-  display:block;
 }
+
 #gtn-architecture-monitor .am-legend {
   display:flex;
   flex-wrap:wrap;
-  gap:14px;
-  margin-top:13px;
-  font-size:11px;
-  color:#657285;
+  gap:12px;
+  font-size:10px;
+  color:#647387;
+  margin-top:10px;
 }
+
 #gtn-architecture-monitor .am-swatch {
   display:inline-block;
   width:9px;
@@ -2000,131 +2568,171 @@
   border-radius:50%;
   margin-right:5px;
 }
+
 #gtn-architecture-monitor .am-full {
   grid-column:1/-1;
 }
+
 #gtn-architecture-monitor .am-matrix-wrap {
   overflow-x:auto;
-  border:1px solid var(--line);
-  border-radius:17px;
-  margin-top:22px;
+  border:1px solid var(--am-line);
+  border-radius:15px;
 }
+
 #gtn-architecture-monitor table {
   width:100%;
   min-width:650px;
   border-collapse:collapse;
+  text-align:left;
   font-size:12px;
 }
+
+#gtn-architecture-monitor th {
+  background:#F5F7FA;
+  font-size:10px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#617084;
+}
+
 #gtn-architecture-monitor th,
 #gtn-architecture-monitor td {
-  text-align:left;
-  padding:14px 16px;
+  padding:12px 14px;
   border-bottom:1px solid #EDF0F4;
 }
-#gtn-architecture-monitor th {
-  background:#F4F6F9;
-  color:#59687B;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
+
 #gtn-architecture-monitor tr:last-child td {
-  border-bottom:none;
+  border-bottom:0;
 }
+
 #gtn-architecture-monitor .am-selected {
-  background:#F8F3FF;
-  color:#7850AB;
+  background:#F7F2FC;
   font-weight:800;
 }
+
 #gtn-architecture-monitor .am-method {
-  margin-top:20px;
-  background:#F8FAFC;
-  border-left:3px solid var(--orange);
-  padding:18px 20px;
-  border-radius:0 14px 14px 0;
-  color:#5E6A7A;
+  margin-top:19px;
+  padding:20px;
+  background:#F8F6FC;
+  border:1px solid #E4DDF0;
+  border-radius:16px;
   font-size:12px;
-  line-height:1.75;
+  color:#536176;
+  line-height:1.8;
 }
+
+#gtn-architecture-monitor .am-method strong {
+  color:#45345E;
+}
+
 #gtn-architecture-monitor .am-method code {
-  background:#E9EDF4;
-  padding:2px 5px;
-  border-radius:4px;
-  color:#39475A;
+  display:block;
+  padding:9px 12px;
+  margin:9px 0;
+  border:1px solid #E4DDF0;
+  border-radius:8px;
+  background:#fff;
+  font-family:ui-monospace,monospace;
   font-size:11px;
+  white-space:normal;
+  overflow-wrap:anywhere;
 }
+
 #gtn-architecture-monitor .am-toolbar {
   display:flex;
-  flex-wrap:wrap;
-  gap:10px;
   align-items:center;
   justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
   margin-top:20px;
 }
+
 #gtn-architecture-monitor .am-btn {
-  border:1px solid var(--line);
-  background:white;
-  padding:11px 16px;
-  border-radius:11px;
-  font:inherit;
+  border:1px solid #D9E0E9;
+  background:#fff;
+  border-radius:10px;
+  padding:11px 15px;
+  color:#1E2A38;
   font-size:12px;
   font-weight:800;
-  cursor:pointer;
-  color:var(--ink);
 }
+
 #gtn-architecture-monitor .am-btn-primary {
-  background:var(--ink);
-  color:white;
-  border-color:var(--ink);
+  background:#FF6600;
+  border-color:#FF6600;
+  color:#fff;
 }
+
 #gtn-architecture-monitor .am-status {
+  color:#697789;
   font-size:11px;
-  color:#798597;
+  line-height:1.6;
 }
-@media(max-width:850px) {
+
+@media(max-width:900px) {
   #gtn-architecture-monitor .am-architectures,
-  #gtn-architecture-monitor .am-controls {
-    grid-template-columns:1fr;
-  }
-  #gtn-architecture-monitor .am-kpis {
+  #gtn-architecture-monitor .am-controls,
+  #gtn-architecture-monitor .am-assumption-grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
+
+  #gtn-architecture-monitor .am-five {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:650px) {
+  #gtn-architecture-monitor .am-head,
+  #gtn-architecture-monitor .am-content {
+    padding:18px;
+  }
+
+  #gtn-architecture-monitor .am-architectures,
+  #gtn-architecture-monitor .am-controls,
+  #gtn-architecture-monitor .am-assumption-grid,
   #gtn-architecture-monitor .am-graphs {
     grid-template-columns:1fr;
   }
-}
-@media(max-width:480px) {
-  #gtn-architecture-monitor .am-kpi-value {
-    font-size:24px;
-  }
-  #gtn-architecture-monitor .am-content {
-    padding:16px;
+
+  #gtn-architecture-monitor .am-five,
+  #gtn-architecture-monitor .am-kpis {
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
 </style>
 
 <div class="am-shell">
 
+  <!-- HEADER -->
   <header class="am-head">
     <div class="am-kicker">
-      GTNEra® · Triundra LER · Research Simulation
+      GTNEra® · Xeo-Physics · Triundral Research Simulation
     </div>
+
     <h2>
-      Architecture, Development &amp; Dynamic τ
+      From Resonance to Development:
+      The Five-Dimension Monitor
     </h2>
+
     <p>
-      Compare three interaction architectures across
-      repeated cycles. Explore retained semantic state,
-      developmental displacement and transition cost
-      using a transparent illustrative model.
+      Compare Human-in-the-Loop, Agent-to-Agent and
+      Triundral Loop-Spiral architectures across
+      repeated interaction cycles.
+
+      Examine resonance yield, retention,
+      accumulation, developmental displacement
+      and resource efficiency as distinct quantities.
+
+      All model coefficients are adjustable.
+      No architecture is guaranteed to outperform another.
     </p>
   </header>
 
   <div class="am-content">
 
-    <!-- 01 ARCHITECTURE SELECTOR -->
+    <!-- 01 ARCHITECTURES -->
     <div class="am-label">
-      01 / Select interaction architecture
+      01 / Choose an interaction architecture
     </div>
 
     <div class="am-architectures"
@@ -2134,168 +2742,337 @@
       <button class="am-arch"
         type="button"
         data-architecture="hitl"
+        style="--arch-color:#718096"
         aria-pressed="false">
         <span class="am-arch-num">MODEL 01</span>
         <strong>Human-in-the-Loop</strong>
         <small>
-          Human oversight with discrete AI outputs.
-          State retention depends on explicit transfer
-          between interaction cycles.
+          Discrete human oversight and AI execution.
+          Retention and handoff behavior depend on
+          the selected scenario assumptions.
         </small>
       </button>
 
       <button class="am-arch"
         type="button"
         data-architecture="aiai"
+        style="--arch-color:#E99B43"
         aria-pressed="false">
         <span class="am-arch-num">MODEL 02</span>
-        <strong>AI–AI Loop</strong>
+        <strong>Agent-to-Agent Loop</strong>
         <small>
-          Automated agent-to-agent iterations.
-          Fast internal cycling with possible
-          semantic drift and recovery overhead.
+          Automated multi-agent cycling.
+          Useful output, context preservation and
+          recovery costs are modeled separately.
         </small>
       </button>
 
       <button class="am-arch"
         type="button"
         data-architecture="tri"
+        style="--arch-color:#8A65BA"
         aria-pressed="true">
         <span class="am-arch-num">MODEL 03</span>
         <strong>Triundral Loop-Spiral</strong>
         <small>
-          Human and AI flows connected through
-          a proposed resonance-mediated process
-          with retained developmental structure.
+          Proposed resonance-mediated architecture
+          with explicit retention, accumulation,
+          development and efficiency evaluation.
         </small>
       </button>
 
     </div>
 
-    <!-- 02 PARAMETERS -->
-    <div class="am-label" style="margin-top:26px">
-      02 / Simulation parameters
+    <!-- 02 COMMON INPUTS -->
+    <div class="am-label">
+      02 / Shared simulation conditions
     </div>
 
     <div class="am-controls">
 
       <div class="am-control">
+        <label for="am-cycles">
+          <span>Interaction cycles</span>
+          <output data-out="cycles">12</output>
+        </label>
+        <input id="am-cycles"
+          data-param="cycles"
+          type="range"
+          min="2" max="30"
+          step="1" value="12">
+        <small>
+          Equal number of cycles for all architectures
+        </small>
+      </div>
+
+      <div class="am-control">
         <label for="am-friction">
-          <span>Systemic friction</span>
-          <output data-friction-out>0.30</output>
+          <span>Systemic friction · F</span>
+          <output data-out="friction">0.30</output>
         </label>
         <input id="am-friction"
           data-param="friction"
           type="range"
           min="0" max="1"
           step="0.01" value="0.30">
-        <div class="am-hint">
-          Normalized overhead and recovery pressure
-        </div>
+        <small>
+          Shared baseline friction pressure, 0–1
+        </small>
       </div>
 
       <div class="am-control">
-        <label for="am-retention">
-          <span>State retention</span>
-          <output data-retention-out>0.72</output>
+        <label for="am-complexity">
+          <span>Task complexity</span>
+          <output data-out="complexity">0.50</output>
         </label>
-        <input id="am-retention"
-          data-param="retention"
+        <input id="am-complexity"
+          data-param="complexity"
           type="range"
           min="0" max="1"
-          step="0.01" value="0.72">
-        <div class="am-hint">
-          Share of useful state retained per cycle
-        </div>
-      </div>
-
-      <div class="am-control">
-        <label for="am-cycles">
-          <span>Interaction cycles</span>
-          <output data-cycles-out>12</output>
-        </label>
-        <input id="am-cycles"
-          data-param="cycles"
-          type="range"
-          min="4" max="24"
-          step="1" value="12">
-        <div class="am-hint">
-          Number of modeled state transitions
-        </div>
+          step="0.01" value="0.50">
+        <small>
+          Shared scenario difficulty and correction burden
+        </small>
       </div>
 
     </div>
 
-    <!-- 03 LIVE KPIs -->
+    <!-- EDITABLE ASSUMPTIONS -->
+    <details class="am-assumptions" open>
+      <summary>
+        Transparent architecture assumptions ·
+        Edit all coefficients
+      </summary>
+
+      <p>
+        These values define the simulated scenario.
+        They are not measured architecture properties.
+        Every architecture uses the same equations,
+        with different editable inputs.
+
+        Resonance yield below is a demonstration
+        input, not an inferred ΩRPN measurement.
+      </p>
+
+      <div class="am-assumption-grid">
+
+        <div class="am-assumption">
+          <label for="am-yield">
+            Qres · Nominal resonance yield per cycle
+          </label>
+          <input id="am-yield"
+            type="number" data-coeff="yield"
+            min="0" max="5" step="0.01">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-retention">
+            a_ret · Outcome retention fraction
+          </label>
+          <input id="am-retention"
+            type="number" data-coeff="retention"
+            min="0" max="1" step="0.01">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-lambda">
+            λ · Accumulated-state persistence
+          </label>
+          <input id="am-lambda"
+            type="number" data-coeff="lambda"
+            min="0" max="1" step="0.01">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-loss">
+            D · Baseline semantic loss per cycle
+          </label>
+          <input id="am-loss"
+            type="number" data-coeff="loss"
+            min="0" max="5" step="0.01">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-cost">
+            K_base · Base resource cost per cycle
+          </label>
+          <input id="am-cost"
+            type="number" data-coeff="cost"
+            min="0.01" max="10" step="0.01">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-friction-factor">
+            Friction multiplier
+          </label>
+          <input id="am-friction-factor"
+            type="number" data-coeff="frictionFactor"
+            min="0" max="5" step="0.05">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-human-cost">
+            K_human · Human resource cost per cycle
+          </label>
+          <input id="am-human-cost"
+            type="number" data-coeff="humanCost"
+            min="0" max="10" step="0.01">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-other-cost">
+            K_other · Other resource cost per cycle
+          </label>
+          <input id="am-other-cost"
+            type="number" data-coeff="otherCost"
+            min="0" max="10" step="0.01">
+        </div>
+
+        <div class="am-assumption">
+          <label for="am-usefulness">
+            u · Useful-outcome conversion factor
+          </label>
+          <input id="am-usefulness"
+            type="number" data-coeff="usefulness"
+            min="0" max="1" step="0.01">
+        </div>
+
+      </div>
+    </details>
+
+    <!-- 03 FIVE DIMENSIONS -->
+    <div class="am-label">
+      03 / Five distinct measurement dimensions
+    </div>
+
+    <div class="am-five">
+
+      <div class="am-five-card"
+        style="--dim-color:#8A65BA">
+        <div class="am-five-name">
+          01 · Resonance
+        </div>
+        <div class="am-five-value"
+          style="color:#8A65BA"
+          data-kpi="qres">—</div>
+        <small>
+          ΣQ<sub>res</sub> · modeled yield
+        </small>
+      </div>
+
+      <div class="am-five-card"
+        style="--dim-color:#2563B8">
+        <div class="am-five-name">
+          02 · Retention
+        </div>
+        <div class="am-five-value"
+          style="color:#2563B8"
+          data-kpi="qret">—</div>
+        <small>
+          ΣQ<sub>ret</sub> · retained outcomes
+        </small>
+      </div>
+
+      <div class="am-five-card"
+        style="--dim-color:#27866A">
+        <div class="am-five-name">
+          03 · Accumulation
+        </div>
+        <div class="am-five-value"
+          style="color:#27866A"
+          data-kpi="mass">—</div>
+        <small>
+          M<sub>acc,N</sub> · final accumulated state
+        </small>
+      </div>
+
+      <div class="am-five-card"
+        style="--dim-color:#D95500">
+        <div class="am-five-name">
+          04 · Development
+        </div>
+        <div class="am-five-value"
+          style="color:#D95500"
+          data-kpi="dz">—</div>
+        <small>
+          z<sub>N</sub> − z<sub>0</sub>
+        </small>
+      </div>
+
+      <div class="am-five-card"
+        style="--dim-color:#8A65BA">
+        <div class="am-five-name">
+          05 · Efficiency
+        </div>
+        <div class="am-five-value"
+          style="color:#8A65BA"
+          data-kpi="tau">—</div>
+        <small>
+          τ = ΣU / ΣK
+        </small>
+      </div>
+
+    </div>
+
+    <!-- SECONDARY KPIs -->
     <div class="am-kpis">
 
       <div class="am-kpi">
         <div class="am-kpi-label">
-          Final developmental state · z
+          Final state · z<sub>N</sub>
         </div>
         <div class="am-kpi-value"
-          style="color:#2867B2"
           data-kpi="z">—</div>
-        <div class="am-kpi-note">
-          Normalized cumulative state
-        </div>
+        <small>Evaluated developmental coordinate</small>
       </div>
 
       <div class="am-kpi">
         <div class="am-kpi-label">
-          Net displacement · Δz
+          Useful outcome · ΣU
         </div>
         <div class="am-kpi-value"
-          style="color:#8A65BA"
-          data-kpi="dz">—</div>
-        <div class="am-kpi-note">
-          Final state minus initial state
-        </div>
+          data-kpi="useful">—</div>
+        <small>Independently modeled useful output</small>
       </div>
 
       <div class="am-kpi">
         <div class="am-kpi-label">
-          Mean transition efficiency · τ*
+          Resource cost · ΣK
         </div>
         <div class="am-kpi-value"
-          style="color:#FF6600"
-          data-kpi="tau">—</div>
-        <div class="am-kpi-note">
-          Illustrative gain-to-cost ratio
-        </div>
-      </div>
-
-      <div class="am-kpi">
-        <div class="am-kpi-label">
-          Cumulative modeled cost
-        </div>
-        <div class="am-kpi-value"
-          style="color:#28816A"
           data-kpi="cost">—</div>
-        <div class="am-kpi-note">
-          Arbitrary normalized cost units
+        <small>Compute + human + other resources</small>
+      </div>
+
+      <div class="am-kpi">
+        <div class="am-kpi-label">
+          Effective friction
         </div>
+        <div class="am-kpi-value"
+          data-kpi="friction">—</div>
+        <small>Selected architecture scenario</small>
       </div>
 
     </div>
 
-    <!-- 04 GRAPHS -->
+    <!-- 04 CHARTS -->
+    <div class="am-label">
+      04 / Comparative trajectories
+    </div>
+
     <div class="am-graphs">
 
       <div class="am-panel">
-        <h3>Developmental Trajectory · z(n)</h3>
+        <h3>Developmental State · z(n)</h3>
         <p>
-          Compare retained developmental state
-          across interaction cycles.
+          State transitions across cycles.
+          The trajectory may rise, stagnate or decline.
         </p>
 
-        <svg id="am-z-chart"
+        <svg data-chart="z"
           viewBox="0 0 520 290"
           role="img"
-          aria-label="Comparative developmental trajectories">
-          <g data-grid></g>
-          <g data-curves></g>
-          <g data-labels></g>
+          aria-label="Developmental state comparison">
         </svg>
 
         <div class="am-legend">
@@ -2309,140 +3086,68 @@
       </div>
 
       <div class="am-panel">
-        <h3>Dynamic Efficiency Profile · τ*(n)</h3>
+        <h3>Running Efficiency · τ(1…n)</h3>
         <p>
-          Illustrative developmental gain per
-          modeled transition cost.
+          Cumulative useful outcome divided by
+          cumulative resource cost up to each cycle.
         </p>
 
-        <svg id="am-tau-chart"
+        <svg data-chart="tau"
           viewBox="0 0 520 290"
           role="img"
-          aria-label="Comparative transition efficiency">
-          <g data-grid></g>
-          <g data-curves></g>
-          <g data-labels></g>
+          aria-label="Running efficiency comparison">
         </svg>
 
         <div class="am-legend">
-          τ* is a demo proxy, not an experimentally
-          established Xeo-Physics constant.
+          τ(n) = Σ<sub>i≤n</sub>U<sub>i</sub>
+          / Σ<sub>i≤n</sub>K<sub>i</sub>
         </div>
       </div>
 
-      <!-- TRIUNDRAL SCHEMATIC -->
-      <div class="am-panel am-full">
-
-        <h3>Triundral Loop-Spiral · Conceptual Geometry</h3>
+      <div class="am-panel">
+        <h3>Retention vs. Accumulation</h3>
         <p>
-          Human Flow (blue), AI Flow (orange),
-          Resonance (lilac), and Emotion (green)
-          within a developmental transition space.
+          Retained outcomes per cycle are not identical
+          to the evolving accumulated semantic state.
         </p>
 
-        <svg viewBox="0 0 900 340"
+        <svg data-chart="mass"
+          viewBox="0 0 520 290"
           role="img"
-          aria-label="Conceptual Triundral Loop-Spiral">
-
-          <defs>
-            <linearGradient id="am-flow-gradient"
-              x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0%" stop-color="#2867B2"/>
-              <stop offset="52%" stop-color="#8A65BA"/>
-              <stop offset="100%" stop-color="#FF6600"/>
-            </linearGradient>
-          </defs>
-
-          <g stroke="#E7EBF1"
-            fill="none" stroke-width="1">
-            <path d="M80 270H830"/>
-            <path d="M140 310V35"/>
-            <path d="M140 270L250 315"/>
-          </g>
-
-          <g fill="#8490A0" font-size="13">
-            <text x="834" y="275">z</text>
-            <text x="126" y="25">state</text>
-            <text x="255" y="327">interaction</text>
-          </g>
-
-          <path
-            d="M155 215
-               C205 85 275 90 325 195
-               S435 290 485 165
-               S595 75 645 150
-               S745 235 805 85"
-            fill="none"
-            stroke="#2867B2"
-            stroke-width="5"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M155 145
-               C220 270 280 275 335 150
-               S445 65 495 190
-               S605 275 655 135
-               S750 80 805 125"
-            fill="none"
-            stroke="#FF6600"
-            stroke-width="5"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M155 180
-               C225 180 280 180 335 173
-               S445 178 495 177
-               S605 170 655 142
-               S750 150 805 105"
-            fill="none"
-            stroke="#8A65BA"
-            stroke-width="3"
-            stroke-dasharray="8 7"
-          />
-
-          <g fill="#8A65BA">
-            <circle cx="325" cy="173" r="8"/>
-            <circle cx="495" cy="177" r="8"/>
-            <circle cx="655" cy="142" r="8"/>
-          </g>
-
-          <g fill="#28816A" opacity=".85">
-            <circle cx="245" cy="178" r="5"/>
-            <circle cx="415" cy="175" r="5"/>
-            <circle cx="575" cy="170" r="5"/>
-            <circle cx="735" cy="132" r="5"/>
-          </g>
-
-          <g fill="#536175" font-size="12">
-            <text x="180" y="65">H-Flow</text>
-            <text x="185" y="290">A-Flow</text>
-            <text x="510" y="205">ΩRPN</text>
-            <text x="685" y="55">
-              Developmental direction
-            </text>
-          </g>
-
+          aria-label="Retained outcomes and accumulated state">
         </svg>
 
         <div class="am-legend">
           <span><i class="am-swatch"
-            style="background:#2867B2"></i>Human</span>
+            style="background:#2563B8"></i>Qret</span>
           <span><i class="am-swatch"
-            style="background:#FF6600"></i>AI</span>
-          <span><i class="am-swatch"
-            style="background:#8A65BA"></i>Resonance</span>
-          <span><i class="am-swatch"
-            style="background:#28816A"></i>Emotion</span>
+            style="background:#27866A"></i>Macc</span>
+          <span>Selected architecture</span>
         </div>
+      </div>
 
+      <div class="am-panel">
+        <h3>Cycle-Level Development · Δz(n)</h3>
+        <p>
+          Positive, zero or negative displacement.
+          A completed cycle does not imply progress.
+        </p>
+
+        <svg data-chart="dz"
+          viewBox="0 0 520 290"
+          role="img"
+          aria-label="Developmental displacement per cycle">
+        </svg>
+
+        <div class="am-legend">
+          Δz<sub>n</sub> = z<sub>n</sub> − z<sub>n−1</sub>
+        </div>
       </div>
 
     </div>
 
-    <!-- 05 COMPARATIVE MATRIX -->
-    <div class="am-label" style="margin-top:26px">
+    <!-- 05 MATRIX -->
+    <div class="am-label">
       05 / Comparative measurement matrix
     </div>
 
@@ -2450,154 +3155,320 @@
       <table>
         <thead>
           <tr>
-            <th>Metric</th>
-            <th>Human-in-the-Loop</th>
-            <th>AI–AI Loop</th>
+            <th>Measurement</th>
+            <th>HITL</th>
+            <th>AI–AI</th>
             <th>Triundral</th>
           </tr>
         </thead>
+
         <tbody>
           <tr>
-            <td>Final state z</td>
-            <td data-cell="hitl-z">—</td>
-            <td data-cell="aiai-z">—</td>
-            <td data-cell="tri-z">—</td>
+            <td>ΣQres</td>
+            <td data-cell="hitl-qres"></td>
+            <td data-cell="aiai-qres"></td>
+            <td data-cell="tri-qres"></td>
           </tr>
+
+          <tr>
+            <td>ΣQret</td>
+            <td data-cell="hitl-qret"></td>
+            <td data-cell="aiai-qret"></td>
+            <td data-cell="tri-qret"></td>
+          </tr>
+
+          <tr>
+            <td>Final Macc</td>
+            <td data-cell="hitl-mass"></td>
+            <td data-cell="aiai-mass"></td>
+            <td data-cell="tri-mass"></td>
+          </tr>
+
           <tr>
             <td>Net Δz</td>
-            <td data-cell="hitl-dz">—</td>
-            <td data-cell="aiai-dz">—</td>
-            <td data-cell="tri-dz">—</td>
+            <td data-cell="hitl-dz"></td>
+            <td data-cell="aiai-dz"></td>
+            <td data-cell="tri-dz"></td>
           </tr>
+
           <tr>
-            <td>Mean τ*</td>
-            <td data-cell="hitl-tau">—</td>
-            <td data-cell="aiai-tau">—</td>
-            <td data-cell="tri-tau">—</td>
+            <td>Final z</td>
+            <td data-cell="hitl-z"></td>
+            <td data-cell="aiai-z"></td>
+            <td data-cell="tri-z"></td>
           </tr>
+
           <tr>
-            <td>Cumulative cost</td>
-            <td data-cell="hitl-cost">—</td>
-            <td data-cell="aiai-cost">—</td>
-            <td data-cell="tri-cost">—</td>
+            <td>ΣU</td>
+            <td data-cell="hitl-useful"></td>
+            <td data-cell="aiai-useful"></td>
+            <td data-cell="tri-useful"></td>
           </tr>
+
           <tr>
-            <td>Retained state factor</td>
-            <td data-cell="hitl-ret">—</td>
-            <td data-cell="aiai-ret">—</td>
-            <td data-cell="tri-ret">—</td>
+            <td>ΣK</td>
+            <td data-cell="hitl-cost"></td>
+            <td data-cell="aiai-cost"></td>
+            <td data-cell="tri-cost"></td>
+          </tr>
+
+          <tr>
+            <td>τ = ΣU/ΣK</td>
+            <td data-cell="hitl-tau"></td>
+            <td data-cell="aiai-tau"></td>
+            <td data-cell="tri-tau"></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- 06 MODEL DISCLOSURE -->
+    <!-- 06 MODEL DEFINITION -->
+    <div class="am-label">
+      06 / Mathematical model and transparency
+    </div>
+
     <div class="am-method">
-      <strong>Model definition.</strong>
-      For each architecture, the demonstration uses
-      an architecture-specific retention factor,
-      friction multiplier and nominal gain.
 
-      <code>z(n+1) = r·z(n) + g·(1−f)</code>
+      <strong>
+        Proposed measurement relationships
+      </strong>
 
-      <code>Δz(n) = z(n+1) − z(n)</code>
+      <code>
+        Qret,n = a_ret,n × Qres,n
+      </code>
 
-      <code>τ*(n) = max(0, Δz(n)) / c(n)</code>
+      <code>
+        Macc,n+1 = λn × Macc,n + Qret,n − Dn
+      </code>
 
-      The cumulative cost is the sum of positive
-      per-cycle modeled costs.
+      <code>
+        Δzn = zn+1 − zn
+      </code>
 
-      These coefficients are explicit illustrative
-      assumptions, not measured architecture
-      performance or validated physical laws.
+      <code>
+        τn = Un / Kn
+      </code>
+
+      <code>
+        τaggregate = ΣUn / ΣKn
+      </code>
+
+      <p>
+        The general Xeo-Physics framework does not
+        prescribe the particular numerical scenario
+        functions used below.
+
+        This demonstration therefore makes the
+        operational assumptions explicit:
+      </p>
+
+      <code>
+        Qres,n = user-defined nominal yield
+      </code>
+
+      <code>
+        F = clamp(shared friction × architecture multiplier, 0, 1)
+      </code>
+
+      <code>
+        Dn = baseline loss × (1 + F + complexity)
+      </code>
+
+      <code>
+        Macc,n+1 = λ × Macc,n + Qret,n − Dn
+      </code>
+
+      <code>
+        Δzn = Qret,n − Dn − (1 − λ) × Macc,n
+      </code>
+
+      <code>
+        zn+1 = zn + Δzn
+      </code>
+
+      <code>
+        Un = Qret,n × usefulness factor
+      </code>
+
+      <code>
+        Kcompute,n = Kbase × (1 + F + 0.5 × complexity)
+      </code>
+
+      <code>
+        Kn = Kcompute,n + Khuman,n + Kother,n
+      </code>
+
+      <p>
+        In this illustrative scenario,
+        z tracks net change in accumulated state:
+        z<sub>n</sub> = z<sub>0</sub> +
+        M<sub>acc,n</sub> − M<sub>acc,0</sub>.
+
+        This is one declared operational choice,
+        not a universal definition of developmental
+        displacement in Xeo-Physics.
+
+        Useful outcome U is modeled separately
+        from Δz. It is not calculated by taking
+        the positive part of developmental displacement.
+      </p>
+
+      <p>
+        All resource components use a common
+        illustrative cost-unit scale.
+        Without a defined conversion or accounting
+        boundary, τ must not be interpreted
+        as a percentage or a dimensionless
+        physical constant.
+      </p>
+
+      <p>
+        <strong>Important:</strong>
+        Qres is supplied as a scenario parameter.
+        This monitor does not calculate ΩRPN formation
+        from ρsem, semantic mass, ΔφLER or SOE.
+
+        The architecture comparison is a simulation
+        of possible consequences under chosen
+        assumptions, not evidence of inherent
+        superiority or experimental validation.
+      </p>
+
     </div>
 
     <!-- ACTIONS -->
     <div class="am-toolbar">
-      <span class="am-status">
-        Interactive illustrative research model ·
-        GTNEra®
+
+      <span class="am-status" data-status role="status">
+        Illustrative research model · Parameters editable
       </span>
 
       <div style="display:flex;gap:9px;flex-wrap:wrap">
+
         <button class="am-btn"
           type="button"
           data-action="reset">
-          ↺ Reset
+          ↺ Reset scenario
         </button>
 
         <button class="am-btn am-btn-primary"
           type="button"
           data-action="csv">
-          ↓ Export CSV
+          ↓ Export complete CSV
         </button>
+
       </div>
+
     </div>
 
   </div>
 </div>
 
-<!-- ================================================
- JAVASCRIPT — INTERACTIVE MODEL AND SVG CHARTS
-================================================ -->
-
 <script>
 (function () {
+  "use strict";
+
   const root = document.getElementById(
-    'gtn-architecture-monitor'
+    "gtn-architecture-monitor"
   );
+
   if (!root) return;
 
-  const $ = s => root.querySelector(s);
-  const $$ = s => Array.from(root.querySelectorAll(s));
+  const $ = selector => root.querySelector(selector);
+  const $$ = selector =>
+    Array.from(root.querySelectorAll(selector));
 
-  const NS = 'http://www.w3.org/2000/svg';
+  const NS = "http://www.w3.org/2000/svg";
 
-  const configs = {
+  /*
+   * INITIAL SCENARIO ASSUMPTIONS
+   *
+   * These are editable examples, NOT empirical
+   * performance claims.
+   *
+   * The same equations are applied to every model.
+   */
+
+  const initialConfigs = {
     hitl: {
-      name:'Human-in-the-Loop',
-      color:'#718096',
-      gain:0.115,
-      retentionAdjustment:-0.10,
-      frictionMultiplier:1.10,
-      baseCost:0.55
+      name:"Human-in-the-Loop",
+      color:"#718096",
+      yield:0.75,
+      retention:0.68,
+      lambda:0.82,
+      loss:0.12,
+      cost:0.65,
+      frictionFactor:1.10,
+      humanCost:0.40,
+      otherCost:0.12,
+      usefulness:0.85
     },
+
     aiai: {
-      name:'AI–AI Loop',
-      color:'#E99B43',
-      gain:0.155,
-      retentionAdjustment:-0.06,
-      frictionMultiplier:1.25,
-      baseCost:0.45
+      name:"Agent-to-Agent",
+      color:"#E99B43",
+      yield:0.95,
+      retention:0.62,
+      lambda:0.78,
+      loss:0.16,
+      cost:0.48,
+      frictionFactor:1.20,
+      humanCost:0.12,
+      otherCost:0.15,
+      usefulness:0.80
     },
+
     tri: {
-      name:'Triundral Loop-Spiral',
-      color:'#8A65BA',
-      gain:0.190,
-      retentionAdjustment:0.12,
-      frictionMultiplier:0.75,
-      baseCost:0.48
+      name:"Triundral Loop-Spiral",
+      color:"#8A65BA",
+      yield:0.95,
+      retention:0.80,
+      lambda:0.90,
+      loss:0.10,
+      cost:0.55,
+      frictionFactor:0.90,
+      humanCost:0.25,
+      otherCost:0.15,
+      usefulness:0.85
     }
   };
 
   const defaults = {
-    friction:0.30,
-    retention:0.72,
     cycles:12,
-    selected:'tri'
+    friction:0.30,
+    complexity:0.50,
+    selected:"tri"
   };
+
+  let configs = JSON.parse(
+    JSON.stringify(initialConfigs)
+  );
 
   let selected = defaults.selected;
   let latest = {};
 
-  const controls = {
+  const shared = {
+    cycles:$('[data-param="cycles"]'),
     friction:$('[data-param="friction"]'),
-    retention:$('[data-param="retention"]'),
-    cycles:$('[data-param="cycles"]')
+    complexity:$('[data-param="complexity"]')
+  };
+
+  const coefficientInputs = $$("[data-coeff]");
+
+  const bounds = {
+    yield:[0,5],
+    retention:[0,1],
+    lambda:[0,1],
+    loss:[0,5],
+    cost:[0.01,10],
+    frictionFactor:[0,5],
+    humanCost:[0,10],
+    otherCost:[0,10],
+    usefulness:[0,1]
   };
 
   function clamp(x,min,max) {
-    return Math.max(min,Math.min(max,x));
+    return Math.min(max,Math.max(min,x));
   }
 
   function fmt(x) {
@@ -2605,213 +3476,385 @@
   }
 
   function setText(selector,value) {
-    const el = $(selector);
-    if (el) el.textContent = value;
+    const element = $(selector);
+    if (element) element.textContent = value;
+  }
+
+  function loadCoefficients() {
+    const config = configs[selected];
+
+    coefficientInputs.forEach(input => {
+      const key = input.dataset.coeff;
+      input.value = config[key];
+    });
+  }
+
+  function readCoefficients() {
+    const config = configs[selected];
+
+    coefficientInputs.forEach(input => {
+      const key = input.dataset.coeff;
+      const raw = input.value.trim();
+
+      /*
+       * Incomplete input is not committed.
+       * This prevents an empty field from
+       * silently becoming zero.
+       */
+      if (raw === "") return;
+
+      const value = Number(raw);
+      if (!Number.isFinite(value)) return;
+
+      const [min,max] = bounds[key];
+
+      config[key] = clamp(value,min,max);
+    });
   }
 
   function simulate(key,params) {
     const cfg = configs[key];
 
-    const r = clamp(
-      params.retention + cfg.retentionAdjustment,
+    const effectiveFriction = clamp(
+      params.friction * cfg.frictionFactor,
       0,1
     );
 
-    const f = clamp(
-      params.friction * cfg.frictionMultiplier,
-      0,1
-    );
+    const z0 = 0;
+    let z = z0;
+    let mass = 0;
 
-    const z = [0.20];
-    const tau = [0];
-    const costs = [];
+    let totalQres = 0;
+    let totalQret = 0;
+    let totalU = 0;
+    let totalK = 0;
+
     const rows = [];
-
-    let totalCost = 0;
+    const series = {
+      z:[z0],
+      tau:[],
+      mass:[],
+      qret:[],
+      dz:[]
+    };
 
     for (let n=1;n<=params.cycles;n++) {
-      const prev = z[z.length-1];
 
-      const next =
-        r*prev + cfg.gain*(1-f);
+      /*
+       * 1. RESONANCE YIELD
+       *
+       * Exogenous scenario parameter.
+       * Not calculated from ΩRPN conditions.
+       */
+      const qres = cfg.yield;
 
-      const dz = next-prev;
+      /*
+       * 2. RETENTION
+       */
+      const qret = cfg.retention * qres;
+
+      /*
+       * 3. ACCUMULATION
+       */
+      const loss =
+        cfg.loss *
+        (1 + effectiveFriction + params.complexity);
+
+      const nextMass =
+        cfg.lambda * mass + qret - loss;
+
+      /*
+       * 4. DEVELOPMENT
+       *
+       * Here z tracks net accumulated-state
+       * change. This is a chosen demo mapping.
+       */
+      const dz = nextMass - mass;
+      const nextZ = z + dz;
+
+      /*
+       * 5. USEFUL OUTCOME AND COST
+       *
+       * U is independently specified from Δz.
+       */
+      const useful = qret * cfg.usefulness;
+
+      const computeCost =
+        cfg.cost *
+        (1 + effectiveFriction +
+         0.5 * params.complexity);
+
+      const humanCost = cfg.humanCost;
+      const otherCost = cfg.otherCost;
 
       const cost =
-        cfg.baseCost + f*0.35;
+        computeCost + humanCost + otherCost;
 
-      const efficiency =
-        Math.max(0,dz)/cost;
+      const tauCycle = useful / cost;
 
-      totalCost += cost;
+      totalQres += qres;
+      totalQret += qret;
+      totalU += useful;
+      totalK += cost;
 
-      z.push(next);
-      tau.push(efficiency);
-      costs.push(cost);
+      const tauRunning = totalU / totalK;
 
       rows.push({
+        architecture:key,
         cycle:n,
-        z:next,
+        qres,
+        qret,
+        retention:cfg.retention,
+        lambda:cfg.lambda,
+        loss,
+        mass:nextMass,
+        z:nextZ,
         dz,
-        tau:efficiency,
+        useful,
+        computeCost,
+        humanCost,
+        otherCost,
         cost,
-        retention:r,
-        friction:f
+        tauCycle,
+        tauRunning,
+        effectiveFriction
       });
-    }
 
-    const meanTau =
-      tau.slice(1).reduce((a,b)=>a+b,0)
-      /params.cycles;
+      series.z.push(nextZ);
+      series.tau.push(tauRunning);
+      series.mass.push(nextMass);
+      series.qret.push(qret);
+      series.dz.push(dz);
+
+      mass = nextMass;
+      z = nextZ;
+    }
 
     return {
       key,
       name:cfg.name,
       color:cfg.color,
-      z,
-      tau,
       rows,
-      retention:r,
-      friction:f,
-      finalZ:z[z.length-1],
-      netDz:z[z.length-1]-z[0],
-      meanTau,
-      totalCost
+      series,
+      totalQres,
+      totalQret,
+      finalMass:mass,
+      finalZ:z,
+      netDz:z-z0,
+      totalU,
+      totalK,
+      tau:totalU/totalK,
+      effectiveFriction
     };
   }
 
-  function svgElement(tag,attrs,text) {
-    const el=document.createElementNS(NS,tag);
+  function svgEl(tag,attributes={},content) {
+    const el = document.createElementNS(NS,tag);
 
-    Object.entries(attrs||{}).forEach(
-      ([key,value])=>el.setAttribute(key,value)
+    Object.entries(attributes).forEach(
+      ([name,value]) => el.setAttribute(name,value)
     );
 
-    if (text!==undefined) {
-      el.textContent=text;
+    if (content !== undefined) {
+      el.textContent = content;
     }
 
     return el;
   }
 
-  function drawChart(svgId,results,field) {
-    const svg=$(svgId);
-    const grid=svg.querySelector('[data-grid]');
-    const curves=svg.querySelector('[data-curves]');
-    const labels=svg.querySelector('[data-labels]');
+  function drawChart(name,lines) {
+    const svg = $(`[data-chart="${name}"]`);
+    if (!svg) return;
 
-    grid.replaceChildren();
-    curves.replaceChildren();
-    labels.replaceChildren();
+    svg.replaceChildren();
 
-    const W=520,H=290;
-    const left=48,right=18,top=20,bottom=35;
-    const pw=W-left-right;
-    const ph=H-top-bottom;
+    const W = 520;
+    const H = 290;
 
-    const all=Object.values(results);
-    const maxCycles=all[0].z.length-1;
+    const left = 52;
+    const right = 18;
+    const top = 22;
+    const bottom = 43;
 
-    const values=all.flatMap(
-      result=>result[field]
-    );
+    const plotW = W-left-right;
+    const plotH = H-top-bottom;
 
-    let minY=Math.min(0,...values);
-    let maxY=Math.max(0.1,...values);
+    const allValues = lines.flatMap(
+      line => line.values
+    ).filter(Number.isFinite);
 
-    if (maxY-minY<0.001) {
-      maxY=minY+0.1;
+    if (!allValues.length) return;
+
+    let yMin = Math.min(0,...allValues);
+    let yMax = Math.max(0,...allValues);
+
+    if (yMax-yMin < 0.001) {
+      yMax += 0.5;
+      yMin -= 0.5;
     }
 
-    const padding=(maxY-minY)*0.12;
-    maxY+=padding;
-    if (minY<0) minY-=padding;
+    const padding = (yMax-yMin)*0.08;
+    yMin -= padding;
+    yMax += padding;
 
-    const x=n=>left+(n/maxCycles)*pw;
-    const y=v=>top+ph-
-      ((v-minY)/(maxY-minY))*ph;
+    const count = Math.max(
+      ...lines.map(line=>line.values.length)
+    );
 
-    for (let i=0;i<=4;i++) {
-      const value=minY+(maxY-minY)*i;
-      const yy=y(value);
+    const x = i =>
+      left + (i/Math.max(1,count-1))*plotW;
 
-      grid.appendChild(svgElement('line',{
-        x1:left,y1:yy,
-        x2:W-right,y2:yy,
-        stroke:'#E8EDF3',
-        'stroke-width':1
+    const y = value =>
+      top + (yMax-value)/(yMax-yMin)*plotH;
+
+    for(let i=0;i<=4;i++) {
+      const value =
+        yMin + (yMax-yMin)*(4-i)/4;
+
+      const yy = y(value);
+
+      svg.appendChild(svgEl("line",{
+        x1:left,
+        y1:yy,
+        x2:W-right,
+        y2:yy,
+        stroke:"#E9EDF3",
+        "stroke-width":1
       }));
 
-      labels.appendChild(svgElement('text',{
-        x:left-8,y:yy+4,
-        'text-anchor':'end',
-        fill:'#7C899A',
-        'font-size':10
+      svg.appendChild(svgEl("text",{
+        x:left-8,
+        y:yy+4,
+        "text-anchor":"end",
+        "font-size":11,
+        fill:"#8490A0"
       },value.toFixed(2)));
     }
 
-    for (let i=0;i<=4;i++) {
-      const n=Math.round(maxCycles*i/4);
-
-      labels.appendChild(svgElement('text',{
-        x:x(n),y:H-10,
-        'text-anchor':'middle',
-        fill:'#7C899A',
-        'font-size':10
-      },String(n)));
+    /*
+     * Zero reference line for signed data.
+     */
+    if (yMin < 0 && yMax > 0) {
+      svg.appendChild(svgEl("line",{
+        x1:left,
+        y1:y(0),
+        x2:W-right,
+        y2:y(0),
+        stroke:"#9BA7B6",
+        "stroke-width":1.4,
+        "stroke-dasharray":"5 4"
+      }));
     }
 
-    all.forEach(result=>{
-      const data=result[field];
+    lines.forEach(line => {
+      const points = line.values.map(
+        (value,i) =>
+          `${x(i).toFixed(2)},${y(value).toFixed(2)}`
+      ).join(" ");
 
-      const d=data.map((v,i)=>
-        `${i===0?'M':'L'}${x(i).toFixed(2)},${y(v).toFixed(2)}`
-      ).join(' ');
-
-      curves.appendChild(svgElement('path',{
-        d,
-        fill:'none',
-        stroke:result.color,
-        'stroke-width':
-          result.key===selected?4:2.5,
-        'stroke-opacity':
-          result.key===selected?1:0.60,
-        'stroke-linecap':'round',
-        'stroke-linejoin':'round'
+      svg.appendChild(svgEl("polyline",{
+        points,
+        fill:"none",
+        stroke:line.color,
+        "stroke-width":
+          line.highlight ? 3.7 : 2.4,
+        "stroke-linejoin":"round",
+        "stroke-linecap":"round",
+        opacity:line.highlight ? 1 : 0.72
       }));
+    });
 
-      curves.appendChild(svgElement('circle',{
-        cx:x(data.length-1),
-        cy:y(data[data.length-1]),
-        r:result.key===selected?5:3,
-        fill:result.color
-      }));
+    svg.appendChild(svgEl("text",{
+      x:W/2,
+      y:H-10,
+      "text-anchor":"middle",
+      "font-size":11,
+      fill:"#778596"
+    },"Interaction cycle n"));
+
+    const tickIndices = [
+      0,
+      Math.floor((count-1)/2),
+      count-1
+    ];
+
+    [...new Set(tickIndices)].forEach(i=>{
+      svg.appendChild(svgEl("text",{
+        x:x(i),
+        y:H-bottom+18,
+        "text-anchor":"middle",
+        "font-size":10,
+        fill:"#8490A0"
+      },String(name==="z" ? i : i+1)));
     });
   }
 
-  function updateMatrix(results) {
-    Object.values(results).forEach(result=>{
-      const key=result.key;
+  function drawAllCharts() {
+    const keys = ["hitl","aiai","tri"];
 
-      const values={
-        z:fmt(result.finalZ),
-        dz:fmt(result.netDz),
-        tau:fmt(result.meanTau),
-        cost:fmt(result.totalCost),
-        ret:fmt(result.retention)
+    drawChart("z",keys.map(key=>({
+      values:latest[key].series.z,
+      color:latest[key].color,
+      highlight:key===selected
+    })));
+
+    drawChart("tau",keys.map(key=>({
+      values:latest[key].series.tau,
+      color:latest[key].color,
+      highlight:key===selected
+    })));
+
+    const s = latest[selected].series;
+
+    drawChart("mass",[
+      {
+        values:s.qret,
+        color:"#2563B8",
+        highlight:false
+      },
+      {
+        values:s.mass,
+        color:"#27866A",
+        highlight:true
+      }
+    ]);
+
+    drawChart("dz",[
+      {
+        values:s.dz,
+        color:"#D95500",
+        highlight:true
+      }
+    ]);
+  }
+
+  function renderMatrix() {
+    ["hitl","aiai","tri"].forEach(key=>{
+      const r = latest[key];
+
+      const values = {
+        qres:r.totalQres,
+        qret:r.totalQret,
+        mass:r.finalMass,
+        dz:r.netDz,
+        z:r.finalZ,
+        useful:r.totalU,
+        cost:r.totalK,
+        tau:r.tau
       };
 
       Object.entries(values).forEach(
-        ([metric,value])=>{
-          const cell=$(
+        ([metric,value]) => {
+          const cell = $(
             `[data-cell="${key}-${metric}"]`
           );
 
           if (!cell) return;
 
-          cell.textContent=value;
+          cell.textContent = fmt(value);
+
           cell.classList.toggle(
-            'am-selected',
+            "am-selected",
             key===selected
           );
         }
@@ -2820,161 +3863,270 @@
   }
 
   function update() {
-    const params={
-      friction:Number(controls.friction.value),
-      retention:Number(controls.retention.value),
-      cycles:Number(controls.cycles.value)
+    readCoefficients();
+
+    const params = {
+      cycles:Number(shared.cycles.value),
+      friction:Number(shared.friction.value),
+      complexity:Number(shared.complexity.value)
     };
 
-    setText(
-      '[data-friction-out]',
-      params.friction.toFixed(2)
-    );
-    setText(
-      '[data-retention-out]',
-      params.retention.toFixed(2)
-    );
-    setText(
-      '[data-cycles-out]',
-      String(params.cycles)
+    Object.entries(params).forEach(
+      ([key,value]) => {
+        setText(
+          `[data-out="${key}"]`,
+          key==="cycles"
+            ? String(value)
+            : value.toFixed(2)
+        );
+      }
     );
 
-    latest={
-      hitl:simulate('hitl',params),
-      aiai:simulate('aiai',params),
-      tri:simulate('tri',params)
-    };
-
-    const active=latest[selected];
-
-    setText('[data-kpi="z"]',
-      fmt(active.finalZ));
-    setText('[data-kpi="dz"]',
-      fmt(active.netDz));
-    setText('[data-kpi="tau"]',
-      fmt(active.meanTau));
-    setText('[data-kpi="cost"]',
-      fmt(active.totalCost));
-
-    drawChart('#am-z-chart',latest,'z');
-    drawChart('#am-tau-chart',latest,'tau');
-    updateMatrix(latest);
-
-    $$('[data-architecture]').forEach(btn=>{
-      btn.setAttribute(
-        'aria-pressed',
-        String(
-          btn.dataset.architecture===selected
-        )
-      );
+    ["hitl","aiai","tri"].forEach(key=>{
+      latest[key] = simulate(key,params);
     });
+
+    const r = latest[selected];
+
+    const values = {
+      qres:r.totalQres,
+      qret:r.totalQret,
+      mass:r.finalMass,
+      dz:r.netDz,
+      tau:r.tau,
+      z:r.finalZ,
+      useful:r.totalU,
+      cost:r.totalK,
+      friction:r.effectiveFriction
+    };
+
+    Object.entries(values).forEach(
+      ([key,value]) => {
+        setText(`[data-kpi="${key}"]`,fmt(value));
+      }
+    );
+
+    drawAllCharts();
+    renderMatrix();
+
+    setText(
+      "[data-status]",
+      "Selected: " + r.name +
+      " · " + params.cycles +
+      " cycles · All values simulated"
+    );
   }
 
-  $$('[data-architecture]').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      selected=btn.dataset.architecture;
+  $$("[data-architecture]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      readCoefficients();
+
+      selected = button.dataset.architecture;
+
+      $$("[data-architecture]").forEach(btn=>{
+        btn.setAttribute(
+          "aria-pressed",
+          String(btn.dataset.architecture===selected)
+        );
+      });
+
+      loadCoefficients();
       update();
     });
   });
 
-  Object.values(controls).forEach(input=>{
-    input.addEventListener('input',update);
+  Object.values(shared).forEach(input=>{
+    input.addEventListener("input",update);
+  });
+
+  coefficientInputs.forEach(input=>{
+    input.addEventListener("input",update);
+
+    input.addEventListener("change",()=>{
+      const key = input.dataset.coeff;
+      const [min,max] = bounds[key];
+
+      const parsed = Number(input.value);
+
+      if (
+        input.value.trim()==="" ||
+        !Number.isFinite(parsed)
+      ) {
+        input.value = configs[selected][key];
+      } else {
+        input.value = clamp(parsed,min,max);
+      }
+
+      update();
+    });
   });
 
   $('[data-action="reset"]').addEventListener(
-    'click',()=>{
-      controls.friction.value=defaults.friction;
-      controls.retention.value=defaults.retention;
-      controls.cycles.value=defaults.cycles;
-      selected=defaults.selected;
+    "click",()=>{
+      configs = JSON.parse(
+        JSON.stringify(initialConfigs)
+      );
+
+      selected = defaults.selected;
+
+      Object.entries(defaults).forEach(
+        ([key,value])=>{
+          if(shared[key]) shared[key].value=value;
+        }
+      );
+
+      $$("[data-architecture]").forEach(btn=>{
+        btn.setAttribute(
+          "aria-pressed",
+          String(btn.dataset.architecture===selected)
+        );
+      });
+
+      loadCoefficients();
       update();
     }
   );
 
+  /*
+   * CSV export:
+   * Includes all architectures, all cycles,
+   * model outcomes, and the current assumptions.
+   */
   $('[data-action="csv"]').addEventListener(
-    'click',()=>{
-      const header=[
-        'architecture',
-        'cycle',
-        'z',
-        'delta_z',
-        'tau_proxy',
-        'cost',
-        'retention',
-        'friction'
+    "click",()=>{
+
+      const headers = [
+        "architecture",
+        "cycle",
+        "Qres",
+        "Qret",
+        "retention_coefficient",
+        "lambda",
+        "loss",
+        "Macc",
+        "z",
+        "delta_z",
+        "U",
+        "K_compute",
+        "K_human",
+        "K_other",
+        "K_total",
+        "tau_cycle",
+        "tau_running",
+        "effective_friction",
+        "shared_friction",
+        "task_complexity",
+        "nominal_yield",
+        "base_cost",
+        "friction_multiplier",
+        "usefulness_factor"
       ];
 
-      const rows=[header.join(',')];
+      const lines = [headers.join(",")];
 
-      Object.values(latest).forEach(result=>{
-        result.rows.forEach(row=>{
-          rows.push([
-            result.key,
+      ["hitl","aiai","tri"].forEach(key=>{
+        const cfg = configs[key];
+
+        latest[key].rows.forEach(row=>{
+          const fields = [
+            key,
             row.cycle,
-            row.z.toFixed(6),
-            row.dz.toFixed(6),
-            row.tau.toFixed(6),
-            row.cost.toFixed(6),
-            row.retention.toFixed(6),
-            row.friction.toFixed(6)
-          ].join(','));
+            row.qres,
+            row.qret,
+            row.retention,
+            row.lambda,
+            row.loss,
+            row.mass,
+            row.z,
+            row.dz,
+            row.useful,
+            row.computeCost,
+            row.humanCost,
+            row.otherCost,
+            row.cost,
+            row.tauCycle,
+            row.tauRunning,
+            row.effectiveFriction,
+            Number(shared.friction.value),
+            Number(shared.complexity.value),
+            cfg.yield,
+            cfg.cost,
+            cfg.frictionFactor,
+            cfg.usefulness
+          ];
+
+          lines.push(fields.join(","));
         });
       });
 
-      const blob=new Blob(
-        [rows.join('\n')],
-        {type:'text/csv;charset=utf-8'}
+      const blob = new Blob(
+        [lines.join("\r\n")],
+        {type:"text/csv;charset=utf-8"}
       );
 
-      const url=URL.createObjectURL(blob);
-      const link=document.createElement('a');
+      const url = URL.createObjectURL(blob);
 
-      link.href=url;
-      link.download=
-        'GTNEra_Triundral_Comparison.csv';
+      const link = document.createElement("a");
+      link.href = url;
+      link.download =
+        "GTNEra_Triundral_Measurement_Simulation.csv";
 
       document.body.appendChild(link);
       link.click();
       link.remove();
 
-      setTimeout(()=>URL.revokeObjectURL(url),1000);
+      setTimeout(()=>{
+        URL.revokeObjectURL(url);
+      },1000);
     }
   );
 
+  loadCoefficients();
   update();
+
 })();
 </script>
 
 </section>
 
-<!-- END OF PART 3 -->
-<!-- The outer section from Part 1 is still open -->
+<!-- ============================================================
+ END OF PART 3
+ PART 4 — SCIENTIFIC FOUNDATION CONTINUES BELOW
+============================================================ -->
 
-  
-<!-- ================================================
+<!-- ============================================================
  GTNEra® UNIFIED RESEARCH MONITOR
  PART 4 — SCIENTIFIC FOUNDATION & REFERENCES
- Final section of the embedded research experience
-================================================ -->
+ November 2026 · Updated Measurement Framework
+
+ REPLACE THE ENTIRE ORIGINAL PART 4.
+ Includes the final closing tag for PART 1 wrapper.
+
+ Compatible with:
+ PART 1 — Research Introduction
+ PART 2 — Xeo-Physics Field Monitor
+ PART 3 — Triundral Measurement Architecture
+============================================================ -->
 
 <section id="gtn-research-foundation"
-  aria-label="XeoPhysics Scientific Foundation">
+  aria-label="GTNEra Scientific Foundation and References">
 
 <style>
 #gtn-research-foundation {
-  --ink:#1E2A38;
-  --orange:#FF6600;
-  --blue:#2867B2;
-  --green:#28816A;
-  --lilac:#8A65BA;
-  --muted:#64748B;
-  --line:#E5EAF0;
+  --rf-ink:#1E2A38;
+  --rf-orange:#FF6600;
+  --rf-blue:#2563B8;
+  --rf-green:#27866A;
+  --rf-lilac:#8A65BA;
+  --rf-muted:#687789;
+  --rf-line:#E5EAF0;
 
+  width:100%;
   max-width:1200px;
-  margin:28px auto 48px;
+  margin:28px auto 50px;
   padding:0 16px;
   font-family:Inter,system-ui,sans-serif;
-  color:var(--ink);
+  color:var(--rf-ink);
   box-sizing:border-box;
 }
 
@@ -2986,65 +4138,62 @@
 
 #gtn-research-foundation .rf-shell {
   background:#FFFFFF;
-  border:1px solid var(--line);
-  border-radius:26px;
+  border:1px solid var(--rf-line);
+  border-radius:24px;
   overflow:hidden;
-  box-shadow:0 18px 48px #1E2A380C;
+  box-shadow:0 16px 44px rgba(30,42,56,.045);
 }
 
 #gtn-research-foundation .rf-intro {
-  padding:clamp(24px,4vw,44px);
+  padding:34px 32px;
   background:linear-gradient(
-    125deg,
-    #F9FAFC 0%,
-    #FFFFFF 58%,
-    #FFF3EB 100%
+    125deg,#FFFFFF 0%,#FAF9FD 55%,#FFF3EB 100%
   );
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid var(--rf-line);
 }
 
 #gtn-research-foundation .rf-kicker {
-  color:var(--orange);
+  color:#D95500;
   font-size:11px;
   font-weight:800;
-  letter-spacing:.16em;
+  letter-spacing:.13em;
   text-transform:uppercase;
 }
 
 #gtn-research-foundation h2 {
-  color:var(--ink);
-  font-size:clamp(26px,3.5vw,38px);
-  line-height:1.15;
+  max-width:900px;
+  margin:12px 0 16px;
+  font-size:clamp(26px,3.3vw,38px);
   font-weight:800;
-  margin:12px 0 15px;
+  line-height:1.17;
+  letter-spacing:-.02em;
 }
 
-#gtn-research-foundation h3 {
-  color:var(--ink);
-  font-size:18px;
-  line-height:1.35;
-  font-weight:800;
-  margin:0 0 10px;
-}
-
-#gtn-research-foundation p {
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.8;
+#gtn-research-foundation .rf-intro p {
+  max-width:900px;
   margin:0;
+  color:#607085;
+  font-size:14px;
+  line-height:1.8;
 }
 
 #gtn-research-foundation .rf-content {
-  padding:clamp(20px,3vw,36px);
+  padding:28px 32px 32px;
 }
 
 #gtn-research-foundation .rf-section-label {
+  margin:0 0 17px;
+  color:#687789;
   font-size:11px;
   font-weight:800;
-  color:#788598;
+  letter-spacing:.11em;
   text-transform:uppercase;
-  letter-spacing:.13em;
-  margin-bottom:15px;
+}
+
+#gtn-research-foundation .rf-divider {
+  height:1px;
+  background:var(--rf-line);
+  margin:30px 0;
 }
 
 #gtn-research-foundation .rf-grid {
@@ -3054,326 +4203,417 @@
 }
 
 #gtn-research-foundation .rf-card {
-  background:#FFFFFF;
-  border:1px solid var(--line);
-  border-radius:18px;
+  min-width:0;
   padding:22px;
+  background:#FFFFFF;
+  border:1px solid var(--rf-line);
+  border-radius:17px;
+  border-top:4px solid var(--rf-accent);
 }
 
 #gtn-research-foundation .rf-symbol {
-  font-size:28px;
-  font-weight:800;
   margin-bottom:14px;
-  letter-spacing:-.04em;
+  color:var(--rf-accent);
+  font-size:23px;
+  font-weight:800;
+  letter-spacing:-.03em;
 }
 
-#gtn-research-foundation .rf-card h3 {
-  font-size:15px;
+#gtn-research-foundation h3 {
+  margin:0 0 11px;
+  font-size:16px;
+  line-height:1.4;
+  font-weight:800;
 }
 
 #gtn-research-foundation .rf-card p {
+  margin:0;
+  color:#687789;
   font-size:12px;
+  line-height:1.75;
 }
 
-#gtn-research-foundation .rf-divider {
-  height:1px;
-  background:var(--line);
-  margin:30px 0;
+#gtn-research-foundation .rf-chain {
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:9px;
+}
+
+#gtn-research-foundation .rf-chain-item {
+  min-width:0;
+  padding:16px 11px;
+  background:#FBFCFE;
+  border:1px solid var(--rf-line);
+  border-top:4px solid var(--rf-accent);
+  border-radius:13px;
+}
+
+#gtn-research-foundation .rf-chain-item strong {
+  display:block;
+  font-size:12px;
+  line-height:1.4;
+}
+
+#gtn-research-foundation .rf-chain-item .rf-symbol-small {
+  display:block;
+  margin:10px 0 7px;
+  color:var(--rf-accent);
+  font-size:18px;
+  font-weight:800;
+  overflow-wrap:anywhere;
+}
+
+#gtn-research-foundation .rf-chain-item small {
+  display:block;
+  color:#718094;
+  font-size:10px;
+  line-height:1.6;
+}
+
+#gtn-research-foundation .rf-note {
+  padding:17px 19px;
+  margin-top:17px;
+  background:#F8F5FC;
+  border-left:3px solid var(--rf-lilac);
+  border-radius:0 12px 12px 0;
+  color:#594B6B;
+  font-size:12px;
+  line-height:1.75;
+}
+
+#gtn-research-foundation .rf-note p {
+  margin:6px 0 0;
 }
 
 #gtn-research-foundation .rf-formulas {
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:13px;
 }
 
 #gtn-research-foundation .rf-formula {
-  padding:20px;
-  border-radius:16px;
-  background:#F8FAFC;
-  border:1px solid var(--line);
   min-width:0;
+  padding:20px;
+  border:1px solid var(--rf-line);
+  background:#FFFFFF;
+  border-radius:16px;
 }
 
 #gtn-research-foundation .rf-formula-name {
-  color:#718096;
-  font-size:11px;
+  margin-bottom:13px;
+  font-size:12px;
   font-weight:800;
-  margin-bottom:12px;
+  color:#526175;
 }
 
 #gtn-research-foundation .rf-equation {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(17px,2vw,23px);
-  color:var(--ink);
-  line-height:1.6;
+  padding:14px;
+  background:#F8F6FC;
+  border:1px solid #EAE4F3;
+  border-radius:10px;
+  color:#654A8C;
+  font-size:clamp(12px,1.5vw,16px);
+  font-weight:750;
+  line-height:1.8;
   overflow-wrap:anywhere;
 }
 
 #gtn-research-foundation .rf-formula p {
-  margin-top:10px;
+  margin:13px 0 0;
+  color:#6B798C;
   font-size:11px;
+  line-height:1.7;
 }
 
-#gtn-research-foundation .rf-note {
+#gtn-research-foundation .rf-protocol {
   margin-top:17px;
-  padding:18px 20px;
-  border-left:3px solid var(--orange);
-  border-radius:0 12px 12px 0;
-  background:#FFF8F3;
+  padding:20px;
+  background:#F8FAFD;
+  border:1px solid var(--rf-line);
+  border-radius:16px;
 }
 
-#gtn-research-foundation .rf-note strong {
-  font-size:12px;
-  color:var(--ink);
+#gtn-research-foundation .rf-protocol summary {
+  cursor:pointer;
+  font-size:13px;
+  font-weight:800;
+  color:#344358;
 }
 
-#gtn-research-foundation .rf-note p {
-  margin-top:5px;
+#gtn-research-foundation .rf-protocol p {
+  color:#647387;
   font-size:12px;
+  line-height:1.75;
+}
+
+#gtn-research-foundation .rf-protocol code {
+  display:block;
+  margin:8px 0;
+  padding:11px 13px;
+  background:#FFFFFF;
+  border:1px solid var(--rf-line);
+  border-radius:9px;
+  font-family:ui-monospace,monospace;
+  font-size:11px;
+  line-height:1.7;
+  white-space:normal;
+  overflow-wrap:anywhere;
 }
 
 #gtn-research-foundation .rf-publications {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
 }
 
 #gtn-research-foundation .rf-publication {
   display:flex;
   flex-direction:column;
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:25px;
-  background:#FFFFFF;
   min-width:0;
+  padding:24px;
+  border:1px solid var(--rf-line);
+  border-top:4px solid var(--rf-accent);
+  border-radius:17px;
+  background:#FFFFFF;
 }
 
 #gtn-research-foundation .rf-publication.primary {
-  border-top:4px solid var(--orange);
-}
-
-#gtn-research-foundation .rf-publication.annex {
-  border-top:4px solid var(--lilac);
+  background:linear-gradient(150deg,#FFF9F5,#FFFFFF 65%);
 }
 
 #gtn-research-foundation .rf-pub-type {
-  color:#8290A1;
+  color:var(--rf-accent);
   font-size:10px;
   font-weight:800;
-  letter-spacing:.12em;
+  letter-spacing:.07em;
   text-transform:uppercase;
-  margin-bottom:13px;
+  margin-bottom:12px;
 }
 
 #gtn-research-foundation .rf-publication h3 {
-  font-size:20px;
-  line-height:1.3;
-}
-
-#gtn-research-foundation .rf-publication p {
-  font-size:12px;
-  margin-bottom:20px;
+  font-size:17px;
+  line-height:1.4;
 }
 
 #gtn-research-foundation .rf-pub-meta {
-  color:#7B8797;
+  margin-bottom:13px;
   font-size:11px;
-  margin-bottom:16px;
+  color:#8490A0;
+  font-weight:700;
+}
+
+#gtn-research-foundation .rf-publication p {
+  color:#687789;
+  font-size:12px;
+  line-height:1.8;
+  margin:0 0 19px;
+  flex:1;
 }
 
 #gtn-research-foundation .rf-link {
   display:inline-flex;
   align-items:center;
-  justify-content:center;
-  align-self:flex-start;
-  gap:8px;
-  text-decoration:none;
+  justify-content:space-between;
+  gap:12px;
+  width:fit-content;
+  max-width:100%;
+  padding:11px 15px;
+  border:1px solid #DDE3EC;
+  border-radius:10px;
+  background:#FFFFFF;
+  color:#344358;
   font-size:12px;
   font-weight:800;
-  color:#FFFFFF;
-  background:var(--ink);
-  border-radius:11px;
-  padding:12px 17px;
-  margin-top:auto;
-  transition:background .2s,transform .2s;
+  text-decoration:none;
+  transition:border-color .2s,color .2s;
 }
 
-#gtn-research-foundation .rf-link:hover {
-  background:var(--orange);
-  transform:translateY(-2px);
+#gtn-research-foundation .rf-link:hover,
+#gtn-research-foundation .rf-link:focus-visible {
+  border-color:#FF6600;
+  color:#C65300;
+  outline:none;
 }
 
 #gtn-research-foundation .rf-principle {
-  margin-top:25px;
-  padding:30px;
-  border-radius:20px;
-  background:#1E2A38;
-  color:#FFFFFF;
-}
-
-#gtn-research-foundation .rf-principle .rf-kicker {
-  color:#FFAD77;
+  margin-top:28px;
+  padding:28px;
+  border-radius:19px;
+  background:linear-gradient(120deg,#F9F7FD,#FFF7F1);
+  border:1px solid #EAE4F1;
 }
 
 #gtn-research-foundation .rf-principle h3 {
-  color:#FFFFFF;
-  font-size:clamp(20px,2.5vw,28px);
+  max-width:800px;
   margin:12px 0;
+  font-size:clamp(19px,2.4vw,26px);
+  line-height:1.35;
 }
 
 #gtn-research-foundation .rf-principle p {
-  color:#CFD8E3;
-  max-width:850px;
+  max-width:900px;
+  margin:0;
+  color:#5F6D80;
+  font-size:13px;
+  line-height:1.8;
 }
 
 #gtn-research-foundation .rf-attribution {
-  margin-top:24px;
-  padding-top:18px;
-  border-top:1px solid var(--line);
   display:flex;
   justify-content:space-between;
+  gap:18px;
   flex-wrap:wrap;
-  gap:12px;
-  color:#7B8797;
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid var(--rf-line);
+  color:#7A8798;
   font-size:11px;
   line-height:1.7;
 }
 
 #gtn-research-foundation .rf-attribution strong {
-  color:var(--ink);
+  color:#1E2A38;
 }
 
-@media(max-width:850px) {
+@media(max-width:900px) {
   #gtn-research-foundation .rf-grid {
     grid-template-columns:1fr;
+  }
+
+  #gtn-research-foundation .rf-chain {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:650px) {
+  #gtn-research-foundation .rf-intro,
+  #gtn-research-foundation .rf-content {
+    padding:22px 18px;
   }
 
   #gtn-research-foundation .rf-formulas,
   #gtn-research-foundation .rf-publications {
     grid-template-columns:1fr;
   }
-}
 
-@media(max-width:520px) {
-  #gtn-research-foundation .rf-content {
-    padding:18px;
-  }
-
-  #gtn-research-foundation .rf-card,
-  #gtn-research-foundation .rf-publication {
-    padding:18px;
+  #gtn-research-foundation .rf-chain {
+    grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
   #gtn-research-foundation .rf-principle {
-    padding:22px;
+    padding:20px;
   }
 }
 </style>
 
 <div class="rf-shell">
 
-  <!-- SCIENTIFIC FOUNDATION INTRODUCTION -->
+  <!-- INTRODUCTION -->
 
-  <div class="rf-intro">
+  <header class="rf-intro">
 
     <div class="rf-kicker">
-      GTNEra® · XeoPhysics Research Foundation
+      GTNEra® · Xeo-Physics · Scientific Foundation
     </div>
 
     <h2>
-      Beyond the Visualization.
-      Into the Foundational Framework.
+      Beyond Interaction.
+      Toward Measurable Development.
     </h2>
 
     <p>
-      The interactive monitors above illustrate
-      selected concepts from XeoPhysics and
-      Triundra LER.
+      The GTNEra® research monitors connect the
+      proposed Xeo-Physics framework, Triundra LER
+      and Triundral Loop-Spiral architecture.
 
-      The foundational publications describe
-      the proposed theoretical architecture,
-      including semantic flow dynamics,
-      compression geometry, resonance formation,
-      and coupled Human–AI systems.
+      This section separates foundational concepts,
+      mathematical definitions, illustrative
+      simulation rules and original publications.
 
-      The simulation adds a separate,
-      explicitly illustrative layer for
-      comparing interaction architectures.
+      The objective is transparent evaluation:
+      not merely whether systems interact,
+      but what they generate, retain, accumulate,
+      develop and achieve relative to resource cost.
     </p>
 
-  </div>
+  </header>
 
   <div class="rf-content">
 
-    <!-- 01 CORE CONCEPTS -->
+    <!-- 01 CONCEPTUAL FOUNDATIONS -->
 
     <div class="rf-section-label">
-      01 / Conceptual foundations
+      01 / Foundational architecture
     </div>
 
     <div class="rf-grid">
 
-      <article class="rf-card">
+      <article class="rf-card"
+        style="--rf-accent:#2563B8">
 
-        <div class="rf-symbol"
-          style="color:#2867B2">
-          H ↔ A
-        </div>
+        <div class="rf-symbol">H ↔ A</div>
 
         <h3>Coupled Human–AI Flows</h3>
 
         <p>
-          Human and artificial intelligence
-          are represented as interacting
-          cognitive flows.
+          Xeo-Physics represents Human Flow
+          and AI Flow as interacting semantic
+          processes.
 
-          Their directional relations,
-          semantic structure and mutual
-          transformations form part of
-          the XeoPhysics framework.
+          Direction, semantic density,
+          pressure and compression are
+          considered within the proposed
+          flow-based theoretical framework.
+
+          Alignment alone is not equivalent
+          to resonance formation.
         </p>
 
       </article>
 
-      <article class="rf-card">
+      <article class="rf-card"
+        style="--rf-accent:#8A65BA">
 
-        <div class="rf-symbol"
-          style="color:#8A65BA">
-          ΩRPN
-        </div>
+        <div class="rf-symbol">ΩRPN</div>
 
         <h3>Resonant Compression</h3>
 
         <p>
-          The Resonant Pulse Node describes
-          a compression process associated
-          with meaning-flow convergence.
+          The Resonant Pulse Node is treated
+          as a dynamic convergence and
+          compression process or region,
+          not as a fixed geometric point.
 
-          Resonance is considered through
-          density, pressure, alignment
-          and compression dynamics.
+          Its proposed conditions involve
+          semantic density, flow geometry
+          and phase relationships.
+
+          Resonance is not reduced to
+          frequency matching.
         </p>
 
       </article>
 
-      <article class="rf-card">
+      <article class="rf-card"
+        style="--rf-accent:#27866A">
 
-        <div class="rf-symbol"
-          style="color:#28816A">
-          L · E · R
-        </div>
+        <div class="rf-symbol">L · E · R</div>
 
         <h3>Triundra Layer Architecture</h3>
 
         <p>
           Logic, Emotion and Resonance
-          constitute three distinct
-          interacting cognitive layers.
+          form three distinct interacting
+          layers within Triundra LER.
 
-          Their modulation provides
-          the structural basis of
-          the Triundra LER framework.
+          Blue represents Logic,
+          green represents Emotion,
+          and lilac represents Resonance.
+
+          Layer modulation describes
+          response structure; it does not
+          establish that an AI experiences
+          human emotion.
         </p>
 
       </article>
@@ -3382,102 +4622,86 @@
 
     <div class="rf-divider"></div>
 
-    <!-- 02 EQUATIONS AND MEASUREMENT -->
+    <!-- 02 FIVE DIMENSIONS -->
 
     <div class="rf-section-label">
-      02 / Simulation definitions
+      02 / Five distinct measurement dimensions
     </div>
 
-    <div class="rf-formulas">
+    <div class="rf-chain">
 
-      <div class="rf-formula">
+      <div class="rf-chain-item"
+        style="--rf-accent:#8A65BA">
 
-        <div class="rf-formula-name">
-          Local alignment proxy
-        </div>
+        <strong>01 · Resonance</strong>
 
-        <div class="rf-equation">
-          A* =
-          ρ<sub>sem</sub>
-          (1 − Δθ<sub>HA</sub>/90°)
-          /
-          (1 + Δφ<sub>LER</sub>)
-        </div>
+        <span class="rf-symbol-small">
+          Q<sub>res</sub>
+        </span>
 
-        <p>
-          A visualization proxy used in
-          the local monitor.
-          All inputs are normalized
-          according to the demo controls.
-        </p>
+        <small>
+          Proposed generated resonance yield
+        </small>
 
       </div>
 
-      <div class="rf-formula">
+      <div class="rf-chain-item"
+        style="--rf-accent:#2563B8">
 
-        <div class="rf-formula-name">
-          Developmental displacement
-        </div>
+        <strong>02 · Retention</strong>
 
-        <div class="rf-equation">
-          Δz<sub>n</sub> =
-          z<sub>n+1</sub> − z<sub>n</sub>
-        </div>
+        <span class="rf-symbol-small">
+          Q<sub>ret</sub>
+        </span>
 
-        <p>
-          The change between two
-          evaluated developmental states.
-          The z-axis represents state
-          development, not elapsed time.
-        </p>
+        <small>
+          The portion retained after interaction
+        </small>
 
       </div>
 
-      <div class="rf-formula">
+      <div class="rf-chain-item"
+        style="--rf-accent:#27866A">
 
-        <div class="rf-formula-name">
-          Illustrative state update
-        </div>
+        <strong>03 · Accumulation</strong>
 
-        <div class="rf-equation">
-          z<sub>n+1</sub> =
-          r · z<sub>n</sub> +
-          g(1 − f)
-        </div>
+        <span class="rf-symbol-small">
+          M<sub>acc</sub>
+        </span>
 
-        <p>
-          r = modeled retention,
-          g = nominal gain,
-          f = modeled friction.
-
-          Architecture-specific coefficients
-          are demonstration assumptions.
-        </p>
+        <small>
+          Integrated state across cycles
+        </small>
 
       </div>
 
-      <div class="rf-formula">
+      <div class="rf-chain-item"
+        style="--rf-accent:#D95500">
 
-        <div class="rf-formula-name">
-          Illustrative transition efficiency
-        </div>
+        <strong>04 · Development</strong>
 
-        <div class="rf-equation">
-          τ*<sub>n</sub> =
-          max(0, Δz<sub>n</sub>)
-          /
-          c<sub>n</sub>
-        </div>
+        <span class="rf-symbol-small">
+          Δz
+        </span>
 
-        <p>
-          c = positive modeled
-          transition cost.
+        <small>
+          Evaluated developmental displacement
+        </small>
 
-          τ* is a gain-to-cost proxy,
-          not a substitute for the
-          full theoretical definition
-          of Dynamic τ.
-        </p>
+      </div>
+
+      <div class="rf-chain-item"
+        style="--rf-accent:#8A65BA">
+
+        <strong>05 · Efficiency</strong>
+
+        <span class="rf-symbol-small">
+          τ = U/K
+        </span>
+
+        <small>
+          Useful outcome relative to total cost
+        </small>
 
       </div>
 
@@ -3485,42 +4709,395 @@
 
     <div class="rf-note">
 
-      <strong>
-        Scientific interpretation
-      </strong>
+      <strong>Measurement distinction</strong>
 
       <p>
-        Local alignment, resonance,
-        developmental displacement and
-        transition efficiency are not
-        interchangeable quantities.
+        These are five different evaluative
+        dimensions, not a guaranteed sequence
+        of successful stages.
 
-        The charts represent outcomes
-        of explicitly selected simulation
-        assumptions. They do not establish
-        empirical superiority of any
-        architecture or independently
-        validate the XeoPhysics framework.
+        Resonance does not imply retention.
+        Retention does not imply accumulation.
+        Accumulation does not prove development.
+        Development does not automatically
+        establish efficiency.
+
+        A thousand completed cycles can still
+        produce zero or negative developmental change.
       </p>
 
     </div>
 
     <div class="rf-divider"></div>
 
-    <!-- 03 ORIGINAL PUBLICATIONS -->
+    <!-- 03 MATHEMATICAL DEFINITIONS -->
 
     <div class="rf-section-label">
-      03 / Original foundational publications
+      03 / Mathematical relationships
+    </div>
+
+    <div class="rf-formulas">
+
+      <!-- RETENTION -->
+
+      <article class="rf-formula">
+
+        <div class="rf-formula-name">
+          Retained resonance output
+        </div>
+
+        <div class="rf-equation">
+          Q<sub>ret,n</sub> =
+          a<sub>ret,n</sub> ×
+          Q<sub>res,n</sub>
+        </div>
+
+        <p>
+          The retention coefficient
+          a<sub>ret,n</sub> lies between 0 and 1.
+
+          Retention must be distinguished
+          from the initial formation
+          of resonance.
+        </p>
+
+      </article>
+
+      <!-- ACCUMULATION -->
+
+      <article class="rf-formula">
+
+        <div class="rf-formula-name">
+          Accumulation across cycles
+        </div>
+
+        <div class="rf-equation">
+          M<sub>acc,n+1</sub> =
+          λ<sub>n</sub>M<sub>acc,n</sub>
+          + Q<sub>ret,n</sub>
+          − D<sub>n</sub>
+        </div>
+
+        <p>
+          λ represents persistence of the
+          accumulated state.
+
+          D represents loss or disruption.
+          Accumulation can stagnate or decline
+          even when interactions continue.
+        </p>
+
+      </article>
+
+      <!-- DEVELOPMENT -->
+
+      <article class="rf-formula">
+
+        <div class="rf-formula-name">
+          Developmental displacement
+        </div>
+
+        <div class="rf-equation">
+          Δz<sub>n</sub> =
+          z<sub>n+1</sub> −
+          z<sub>n</sub>
+        </div>
+
+        <p>
+          Development is evaluated as change
+          in a defined state coordinate.
+
+          Its value may be positive,
+          zero or negative.
+
+          The general framework does not
+          require development to be
+          identical to accumulated quantity.
+        </p>
+
+      </article>
+
+      <!-- EFFICIENCY -->
+
+      <article class="rf-formula">
+
+        <div class="rf-formula-name">
+          Dynamic τ-Efficiency
+        </div>
+
+        <div class="rf-equation">
+          τ<sub>n</sub> =
+          U<sub>n</sub> / K<sub>n</sub>
+        </div>
+
+        <p>
+          U is the defined useful outcome.
+          K is total resource expenditure.
+
+          Efficiency is evaluated separately
+          from developmental displacement.
+
+          A larger Δz does not necessarily
+          imply a larger τ.
+        </p>
+
+      </article>
+
+      <!-- AGGREGATE EFFICIENCY -->
+
+      <article class="rf-formula">
+
+        <div class="rf-formula-name">
+          Aggregate τ across cycles
+        </div>
+
+        <div class="rf-equation">
+          τ<sub>aggregate</sub> =
+          ΣU<sub>n</sub> /
+          ΣK<sub>n</sub>
+        </div>
+
+        <p>
+          Aggregate efficiency uses the
+          ratio of total useful outcome
+          to total resource cost.
+
+          It is not the unweighted
+          arithmetic mean of individual
+          cycle efficiencies.
+        </p>
+
+      </article>
+
+      <!-- TOTAL COST -->
+
+      <article class="rf-formula">
+
+        <div class="rf-formula-name">
+          Total resource accounting
+        </div>
+
+        <div class="rf-equation">
+          K<sub>n</sub> =
+          K<sub>compute,n</sub> +
+          K<sub>human,n</sub> +
+          K<sub>other,n</sub>
+        </div>
+
+        <p>
+          All cost components require
+          a declared common unit or
+          conversion basis.
+
+          τ is not automatically a
+          percentage or a dimensionless
+          physical quantity.
+        </p>
+
+      </article>
+
+    </div>
+
+    <!-- MODEL IMPLEMENTATION DETAILS -->
+
+    <details class="rf-protocol">
+
+      <summary>
+        Open simulation protocol ·
+        Exact rules used by the interactive monitors
+      </summary>
+
+      <p>
+        The mathematical relationships above
+        describe the proposed measurement chain.
+
+        The actual JavaScript simulations use
+        additional operational choices.
+
+        These choices are disclosed here so
+        readers can distinguish a theoretical
+        definition from a demonstration equation.
+      </p>
+
+      <strong>
+        Part 2 · Local field monitor
+      </strong>
+
+      <code>
+        A_dir = 1 − Δθ_HA / 90°
+      </code>
+
+      <code>
+        A_LER = 1 − Δφ_LER
+      </code>
+
+      <code>
+        A* = ρ_sem × A_dir × A_LER
+      </code>
+
+      <p>
+        A* is an illustrative composite
+        alignment proxy.
+
+        It is not a validated equation
+        for ΩRPN formation, Qres or SOE.
+      </p>
+
+      <strong>
+        Part 2 · Candidate-condition thresholds
+      </strong>
+
+      <code>
+        ρ_sem &gt; 0.70
+      </code>
+
+      <code>
+        |ΔW_flow| ≤ 0.10
+      </code>
+
+      <code>
+        Δθ_HA ≤ 12°
+      </code>
+
+      <code>
+        Δφ_LER ≤ 0.15
+      </code>
+
+      <p>
+        All four numerical thresholds
+        are illustrative demonstration
+        assumptions, not established
+        physical constants.
+
+        Passing the conditions does not
+        independently confirm resonance.
+      </p>
+
+      <strong>
+        Part 3 · Architecture simulation
+      </strong>
+
+      <code>
+        Qres,n = editable nominal yield
+      </code>
+
+      <code>
+        Qret,n = a_ret × Qres,n
+      </code>
+
+      <code>
+        F = clamp(shared friction ×
+        architecture multiplier, 0, 1)
+      </code>
+
+      <code>
+        Dn = baseline loss ×
+        (1 + F + complexity)
+      </code>
+
+      <code>
+        Macc,n+1 = λ × Macc,n + Qret,n − Dn
+      </code>
+
+      <code>
+        Δzn = Macc,n+1 − Macc,n
+      </code>
+
+      <code>
+        zn+1 = zn + Δzn
+      </code>
+
+      <code>
+        Un = Qret,n × usefulness factor
+      </code>
+
+      <code>
+        Kcompute,n = Kbase ×
+        (1 + F + 0.5 × complexity)
+      </code>
+
+      <code>
+        Kn = Kcompute,n + Khuman,n + Kother,n
+      </code>
+
+      <code>
+        τrunning,n =
+        (Σ from i=1 to n Ui) /
+        (Σ from i=1 to n Ki)
+      </code>
+
+      <p>
+        In Part 3, the developmental coordinate
+        is deliberately linked to accumulated
+        state change.
+
+        This is one operational scenario,
+        not a universal law of development.
+
+        Likewise, usefulness is represented
+        by a user-editable conversion factor.
+        It is not an independently observed
+        external quality assessment.
+
+        The architecture coefficients are
+        editable and may reverse comparative
+        outcomes.
+      </p>
+
+      <p>
+        For reproducibility, use the CSV
+        export in Part 3 to inspect the
+        per-cycle values, cost components
+        and current model assumptions.
+      </p>
+
+    </details>
+
+    <div class="rf-note">
+
+      <strong>
+        Scientific interpretation and limits
+      </strong>
+
+      <p>
+        The conceptual relationships belong
+        to the proposed Xeo-Physics and
+        Triundral research framework.
+
+        The numerical demonstrations are
+        illustrative models.
+
+        They do not constitute empirical
+        validation of Xeo-Physics,
+        observation of ΩRPN events or
+        experimental proof that one
+        architecture outperforms another.
+
+        Independent operational definitions,
+        benchmark data and reproducible
+        comparisons are required for
+        empirical performance claims.
+      </p>
+
+    </div>
+
+    <div class="rf-divider"></div>
+
+    <!-- 04 ORIGINAL PUBLICATIONS AND DEMO -->
+
+    <div class="rf-section-label">
+      04 / Original publications and interactive research
     </div>
 
     <div class="rf-publications">
 
-      <!-- MAIN ARTICLE -->
+      <!-- XEO-PHYSICS MAIN PUBLICATION -->
 
-      <article class="rf-publication primary">
+      <article class="rf-publication primary"
+        style="--rf-accent:#FF6600">
 
         <div class="rf-pub-type">
-          Foundational Publication · 18 December 2025
+          Foundational Publication · December 2025
         </div>
 
         <h3>
@@ -3535,30 +5112,29 @@
 
         <p>
           The principal conceptual exposition
-          of XeoPhysics.
+          of Xeo-Physics.
 
           Introduces the proposed transition
           from probability-centered descriptions
-          toward dynamic informational flows,
+          toward dynamic meaning flows,
           semantic compression, resonance
-          and Human–AI coupled systems.
+          and coupled Human–AI systems.
         </p>
 
         <a class="rf-link"
           href="https://www.linkedin.com/pulse/xeo-physics-end-quantum-beginning-resonance-tetyana-leyendecker-mhkwf"
           target="_blank"
           rel="noopener noreferrer">
-
           Read Original Publication
           <span aria-hidden="true">↗</span>
-
         </a>
 
       </article>
 
-      <!-- FORMAL ANNEX -->
+      <!-- XEO-PHYSICS FORMAL ANNEX -->
 
-      <article class="rf-publication annex">
+      <article class="rf-publication"
+        style="--rf-accent:#8A65BA">
 
         <div class="rf-pub-type">
           Formal Annex · 17 December 2025
@@ -3574,31 +5150,116 @@
         </div>
 
         <p>
-          Definitions, mathematical models,
+          Foundational definitions,
+          mathematical formulations,
           resonance topologies and
           Human–AI Coupled Systems.
 
-          Includes the Triundra LER framework,
-          formal terminology and structural
-          descriptions supporting the
-          main XeoPhysics publication.
+          Includes Triundra LER,
+          formal terminology,
+          flow geometry and
+          compression concepts.
         </p>
 
         <a class="rf-link"
           href="https://www.linkedin.com/pulse/xeo-physics-formal-annex-tetyana-leyendecker-7plee"
           target="_blank"
           rel="noopener noreferrer">
-
           Explore Formal Annex
           <span aria-hidden="true">↗</span>
+        </a>
 
+      </article>
+
+      <!-- TRIUNDRA LER INTERACTIVE DEMO -->
+
+      <article class="rf-publication"
+        style="--rf-accent:#27866A">
+
+        <div class="rf-pub-type">
+          Interactive Concept · Triundra LER
+        </div>
+
+        <h3>
+          Triundra LER.
+          Interactive Layer Simulation.
+        </h3>
+
+        <div class="rf-pub-meta">
+          GTNEra® · TeNAI®
+        </div>
+
+        <p>
+          Explore the Logic–Emotion–Resonance
+          architecture through interactive
+          response-layer modulation.
+
+          Activate and deactivate L, E and R.
+          Compare response configurations,
+          examine layer-weight indicators
+          and explore the Cucumber Collapse
+          diagnostic mode.
+
+          This demonstration concerns
+          LER response structure, not
+          empirical measurement of ΩRPN
+          or τ-Efficiency.
+        </p>
+
+        <a class="rf-link"
+          href="https://gtnera.ai/classes/resonant-dialogue.html"
+          target="_blank"
+          rel="noopener noreferrer">
+          Open Triundra LER Demo
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </article>
+
+      <!-- INTERNAL RESEARCH MONITOR -->
+
+      <article class="rf-publication"
+        style="--rf-accent:#2563B8">
+
+        <div class="rf-pub-type">
+          Interactive Research · This Page
+        </div>
+
+        <h3>
+          Triundral Loop-Spiral.
+          Measurement Architecture.
+        </h3>
+
+        <div class="rf-pub-meta">
+          GTNEra® · Xeo-Physics
+        </div>
+
+        <p>
+          Return to the comparative
+          measurement environment.
+
+          Examine three interaction
+          architectures using adjustable
+          assumptions, developmental
+          trajectories, resource accounting,
+          τ-Efficiency and CSV export.
+
+          The results are scenario-based
+          simulations, not benchmark
+          performance claims.
+        </p>
+
+        <a class="rf-link"
+          href="#gtn-architecture-monitor">
+          Return to Measurement Monitor
+          <span aria-hidden="true">↑</span>
         </a>
 
       </article>
 
     </div>
 
-    <!-- 04 CONCLUDING PRINCIPLE -->
+    <!-- 05 CONCLUSION -->
 
     <div class="rf-principle">
 
@@ -3607,63 +5268,79 @@
       </div>
 
       <h3>
-        A system can repeat an interaction
-        without advancing its developmental state.
+        A system can complete thousands of
+        interactions without demonstrating
+        meaningful development.
       </h3>
 
       <p>
-        The research question is therefore
-        not merely how often Human and AI
-        interact, but what semantic structure
-        survives each transition, what changes
-        along the developmental trajectory,
-        and at what modeled cost.
+        The research question is not simply
+        how frequently humans and artificial
+        systems interact.
 
-        XeoPhysics supplies the proposed
-        flow-based conceptual foundation.
-        The comparative monitor provides
-        an exploratory environment for
-        investigating these questions.
+        It is what semantic outcomes are
+        generated, what survives each
+        transition, what accumulates,
+        what changes in the developmental
+        state, and whether useful results
+        justify the total resources consumed.
+
+        GTNEra® connects these questions
+        through the proposed Xeo-Physics,
+        Triundra LER and Triundral
+        Loop-Spiral frameworks.
+
+        Transparency of assumptions,
+        measurement boundaries and
+        reproducible evaluation remains
+        essential.
       </p>
 
     </div>
 
     <!-- ATTRIBUTION -->
 
-    <div class="rf-attribution">
+    <footer class="rf-attribution">
 
       <span>
         <strong>
-          XeoPhysics · Triundra LER · GTNEra®
+          GTNEra® · TeNAI® · Xeo-Physics ·
+          Triundra LER · Triundral Loop-Spiral
         </strong>
 
         <span>
           — Conceptual framework and
-          publications by Tetyana Leyendecker
+          original publications:
+          Tetyana Leyendecker
         </span>
       </span>
 
       <span>
-        Interactive conceptual research
-        demonstration
+        Interactive research simulation ·
+        November 2026
       </span>
 
-    </div>
+    </footer>
 
   </div>
 </div>
 
 </section>
-
 <!-- END OF PART 4 -->
 
-<!-- CLOSE THE MAIN WRAPPER OPENED IN PART 1 -->
+<!-- CLOSE THE SHARED WRAPPER OPENED IN PART 1 -->
 </section>
 
-<!-- ================================================
+<!-- ============================================================
  END OF GTNEra® UNIFIED RESEARCH MONITOR
- All four parts are now complete.
-================================================ -->
+
+ ALL FOUR PARTS COMPLETE.
+
+ PART 1 — Research Introduction
+ PART 2 — Xeo-Physics Field Monitor
+ PART 3 — Triundral Measurement Architecture
+ PART 4 — Scientific Foundation & References
+============================================================ -->
 
     <!-- Zwei Logos direkt nach dem Header -->
 <div class="flex items-end justify-center gap-6 md:gap-16 mt-10 mb-8">
