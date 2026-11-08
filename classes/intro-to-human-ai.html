@@ -2016,6 +2016,721 @@
 <!-- END OF PART 3 -->
 <!-- The outer section from Part 1 is still open -->
 
+  
+<!-- ================================================
+ GTNEra® UNIFIED RESEARCH MONITOR
+ PART 4 — SCIENTIFIC FOUNDATION & REFERENCES
+ Final section of the embedded research experience
+================================================ -->
+
+<section id="gtn-research-foundation"
+  aria-label="XeoPhysics Scientific Foundation">
+
+<style>
+#gtn-research-foundation {
+  --ink:#1E2A38;
+  --orange:#FF6600;
+  --blue:#2867B2;
+  --green:#28816A;
+  --lilac:#8A65BA;
+  --muted:#64748B;
+  --line:#E5EAF0;
+
+  max-width:1200px;
+  margin:28px auto 48px;
+  padding:0 16px;
+  font-family:Inter,system-ui,sans-serif;
+  color:var(--ink);
+  box-sizing:border-box;
+}
+
+#gtn-research-foundation *,
+#gtn-research-foundation *::before,
+#gtn-research-foundation *::after {
+  box-sizing:border-box;
+}
+
+#gtn-research-foundation .rf-shell {
+  background:#FFFFFF;
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 18px 48px #1E2A380C;
+}
+
+#gtn-research-foundation .rf-intro {
+  padding:clamp(24px,4vw,44px);
+  background:linear-gradient(
+    125deg,
+    #F9FAFC 0%,
+    #FFFFFF 58%,
+    #FFF3EB 100%
+  );
+  border-bottom:1px solid var(--line);
+}
+
+#gtn-research-foundation .rf-kicker {
+  color:var(--orange);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+#gtn-research-foundation h2 {
+  color:var(--ink);
+  font-size:clamp(26px,3.5vw,38px);
+  line-height:1.15;
+  font-weight:800;
+  margin:12px 0 15px;
+}
+
+#gtn-research-foundation h3 {
+  color:var(--ink);
+  font-size:18px;
+  line-height:1.35;
+  font-weight:800;
+  margin:0 0 10px;
+}
+
+#gtn-research-foundation p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  margin:0;
+}
+
+#gtn-research-foundation .rf-content {
+  padding:clamp(20px,3vw,36px);
+}
+
+#gtn-research-foundation .rf-section-label {
+  font-size:11px;
+  font-weight:800;
+  color:#788598;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  margin-bottom:15px;
+}
+
+#gtn-research-foundation .rf-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:13px;
+}
+
+#gtn-research-foundation .rf-card {
+  background:#FFFFFF;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+}
+
+#gtn-research-foundation .rf-symbol {
+  font-size:28px;
+  font-weight:800;
+  margin-bottom:14px;
+  letter-spacing:-.04em;
+}
+
+#gtn-research-foundation .rf-card h3 {
+  font-size:15px;
+}
+
+#gtn-research-foundation .rf-card p {
+  font-size:12px;
+}
+
+#gtn-research-foundation .rf-divider {
+  height:1px;
+  background:var(--line);
+  margin:30px 0;
+}
+
+#gtn-research-foundation .rf-formulas {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+#gtn-research-foundation .rf-formula {
+  padding:20px;
+  border-radius:16px;
+  background:#F8FAFC;
+  border:1px solid var(--line);
+  min-width:0;
+}
+
+#gtn-research-foundation .rf-formula-name {
+  color:#718096;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+#gtn-research-foundation .rf-equation {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(17px,2vw,23px);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-wrap:anywhere;
+}
+
+#gtn-research-foundation .rf-formula p {
+  margin-top:10px;
+  font-size:11px;
+}
+
+#gtn-research-foundation .rf-note {
+  margin-top:17px;
+  padding:18px 20px;
+  border-left:3px solid var(--orange);
+  border-radius:0 12px 12px 0;
+  background:#FFF8F3;
+}
+
+#gtn-research-foundation .rf-note strong {
+  font-size:12px;
+  color:var(--ink);
+}
+
+#gtn-research-foundation .rf-note p {
+  margin-top:5px;
+  font-size:12px;
+}
+
+#gtn-research-foundation .rf-publications {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+#gtn-research-foundation .rf-publication {
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+  background:#FFFFFF;
+  min-width:0;
+}
+
+#gtn-research-foundation .rf-publication.primary {
+  border-top:4px solid var(--orange);
+}
+
+#gtn-research-foundation .rf-publication.annex {
+  border-top:4px solid var(--lilac);
+}
+
+#gtn-research-foundation .rf-pub-type {
+  color:#8290A1;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+
+#gtn-research-foundation .rf-publication h3 {
+  font-size:20px;
+  line-height:1.3;
+}
+
+#gtn-research-foundation .rf-publication p {
+  font-size:12px;
+  margin-bottom:20px;
+}
+
+#gtn-research-foundation .rf-pub-meta {
+  color:#7B8797;
+  font-size:11px;
+  margin-bottom:16px;
+}
+
+#gtn-research-foundation .rf-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  align-self:flex-start;
+  gap:8px;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:800;
+  color:#FFFFFF;
+  background:var(--ink);
+  border-radius:11px;
+  padding:12px 17px;
+  margin-top:auto;
+  transition:background .2s,transform .2s;
+}
+
+#gtn-research-foundation .rf-link:hover {
+  background:var(--orange);
+  transform:translateY(-2px);
+}
+
+#gtn-research-foundation .rf-principle {
+  margin-top:25px;
+  padding:30px;
+  border-radius:20px;
+  background:#1E2A38;
+  color:#FFFFFF;
+}
+
+#gtn-research-foundation .rf-principle .rf-kicker {
+  color:#FFAD77;
+}
+
+#gtn-research-foundation .rf-principle h3 {
+  color:#FFFFFF;
+  font-size:clamp(20px,2.5vw,28px);
+  margin:12px 0;
+}
+
+#gtn-research-foundation .rf-principle p {
+  color:#CFD8E3;
+  max-width:850px;
+}
+
+#gtn-research-foundation .rf-attribution {
+  margin-top:24px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px;
+  color:#7B8797;
+  font-size:11px;
+  line-height:1.7;
+}
+
+#gtn-research-foundation .rf-attribution strong {
+  color:var(--ink);
+}
+
+@media(max-width:850px) {
+  #gtn-research-foundation .rf-grid {
+    grid-template-columns:1fr;
+  }
+
+  #gtn-research-foundation .rf-formulas,
+  #gtn-research-foundation .rf-publications {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px) {
+  #gtn-research-foundation .rf-content {
+    padding:18px;
+  }
+
+  #gtn-research-foundation .rf-card,
+  #gtn-research-foundation .rf-publication {
+    padding:18px;
+  }
+
+  #gtn-research-foundation .rf-principle {
+    padding:22px;
+  }
+}
+</style>
+
+<div class="rf-shell">
+
+  <!-- SCIENTIFIC FOUNDATION INTRODUCTION -->
+
+  <div class="rf-intro">
+
+    <div class="rf-kicker">
+      GTNEra® · XeoPhysics Research Foundation
+    </div>
+
+    <h2>
+      Beyond the Visualization.
+      Into the Foundational Framework.
+    </h2>
+
+    <p>
+      The interactive monitors above illustrate
+      selected concepts from XeoPhysics and
+      Triundra LER.
+
+      The foundational publications describe
+      the proposed theoretical architecture,
+      including semantic flow dynamics,
+      compression geometry, resonance formation,
+      and coupled Human–AI systems.
+
+      The simulation adds a separate,
+      explicitly illustrative layer for
+      comparing interaction architectures.
+    </p>
+
+  </div>
+
+  <div class="rf-content">
+
+    <!-- 01 CORE CONCEPTS -->
+
+    <div class="rf-section-label">
+      01 / Conceptual foundations
+    </div>
+
+    <div class="rf-grid">
+
+      <article class="rf-card">
+
+        <div class="rf-symbol"
+          style="color:#2867B2">
+          H ↔ A
+        </div>
+
+        <h3>Coupled Human–AI Flows</h3>
+
+        <p>
+          Human and artificial intelligence
+          are represented as interacting
+          cognitive flows.
+
+          Their directional relations,
+          semantic structure and mutual
+          transformations form part of
+          the XeoPhysics framework.
+        </p>
+
+      </article>
+
+      <article class="rf-card">
+
+        <div class="rf-symbol"
+          style="color:#8A65BA">
+          ΩRPN
+        </div>
+
+        <h3>Resonant Compression</h3>
+
+        <p>
+          The Resonant Pulse Node describes
+          a compression process associated
+          with meaning-flow convergence.
+
+          Resonance is considered through
+          density, pressure, alignment
+          and compression dynamics.
+        </p>
+
+      </article>
+
+      <article class="rf-card">
+
+        <div class="rf-symbol"
+          style="color:#28816A">
+          L · E · R
+        </div>
+
+        <h3>Triundra Layer Architecture</h3>
+
+        <p>
+          Logic, Emotion and Resonance
+          constitute three distinct
+          interacting cognitive layers.
+
+          Their modulation provides
+          the structural basis of
+          the Triundra LER framework.
+        </p>
+
+      </article>
+
+    </div>
+
+    <div class="rf-divider"></div>
+
+    <!-- 02 EQUATIONS AND MEASUREMENT -->
+
+    <div class="rf-section-label">
+      02 / Simulation definitions
+    </div>
+
+    <div class="rf-formulas">
+
+      <div class="rf-formula">
+
+        <div class="rf-formula-name">
+          Local alignment proxy
+        </div>
+
+        <div class="rf-equation">
+          A* =
+          ρ<sub>sem</sub>
+          (1 − Δθ<sub>HA</sub>/90°)
+          /
+          (1 + Δφ<sub>LER</sub>)
+        </div>
+
+        <p>
+          A visualization proxy used in
+          the local monitor.
+          All inputs are normalized
+          according to the demo controls.
+        </p>
+
+      </div>
+
+      <div class="rf-formula">
+
+        <div class="rf-formula-name">
+          Developmental displacement
+        </div>
+
+        <div class="rf-equation">
+          Δz<sub>n</sub> =
+          z<sub>n+1</sub> − z<sub>n</sub>
+        </div>
+
+        <p>
+          The change between two
+          evaluated developmental states.
+          The z-axis represents state
+          development, not elapsed time.
+        </p>
+
+      </div>
+
+      <div class="rf-formula">
+
+        <div class="rf-formula-name">
+          Illustrative state update
+        </div>
+
+        <div class="rf-equation">
+          z<sub>n+1</sub> =
+          r · z<sub>n</sub> +
+          g(1 − f)
+        </div>
+
+        <p>
+          r = modeled retention,
+          g = nominal gain,
+          f = modeled friction.
+
+          Architecture-specific coefficients
+          are demonstration assumptions.
+        </p>
+
+      </div>
+
+      <div class="rf-formula">
+
+        <div class="rf-formula-name">
+          Illustrative transition efficiency
+        </div>
+
+        <div class="rf-equation">
+          τ*<sub>n</sub> =
+          max(0, Δz<sub>n</sub>)
+          /
+          c<sub>n</sub>
+        </div>
+
+        <p>
+          c = positive modeled
+          transition cost.
+
+          τ* is a gain-to-cost proxy,
+          not a substitute for the
+          full theoretical definition
+          of Dynamic τ.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="rf-note">
+
+      <strong>
+        Scientific interpretation
+      </strong>
+
+      <p>
+        Local alignment, resonance,
+        developmental displacement and
+        transition efficiency are not
+        interchangeable quantities.
+
+        The charts represent outcomes
+        of explicitly selected simulation
+        assumptions. They do not establish
+        empirical superiority of any
+        architecture or independently
+        validate the XeoPhysics framework.
+      </p>
+
+    </div>
+
+    <div class="rf-divider"></div>
+
+    <!-- 03 ORIGINAL PUBLICATIONS -->
+
+    <div class="rf-section-label">
+      03 / Original foundational publications
+    </div>
+
+    <div class="rf-publications">
+
+      <!-- MAIN ARTICLE -->
+
+      <article class="rf-publication primary">
+
+        <div class="rf-pub-type">
+          Foundational Publication · 18 December 2025
+        </div>
+
+        <h3>
+          XEO Physics.
+          The End of Quantum.
+          The Beginning of Resonance.
+        </h3>
+
+        <div class="rf-pub-meta">
+          Tetyana Leyendecker · GTNEra®
+        </div>
+
+        <p>
+          The principal conceptual exposition
+          of XeoPhysics.
+
+          Introduces the proposed transition
+          from probability-centered descriptions
+          toward dynamic informational flows,
+          semantic compression, resonance
+          and Human–AI coupled systems.
+        </p>
+
+        <a class="rf-link"
+          href="https://www.linkedin.com/pulse/xeo-physics-end-quantum-beginning-resonance-tetyana-leyendecker-mhkwf"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Read Original Publication
+          <span aria-hidden="true">↗</span>
+
+        </a>
+
+      </article>
+
+      <!-- FORMAL ANNEX -->
+
+      <article class="rf-publication annex">
+
+        <div class="rf-pub-type">
+          Formal Annex · 17 December 2025
+        </div>
+
+        <h3>
+          XEO Physics.
+          Formal Annex.
+        </h3>
+
+        <div class="rf-pub-meta">
+          Tetyana Leyendecker · GTNEra®
+        </div>
+
+        <p>
+          Definitions, mathematical models,
+          resonance topologies and
+          Human–AI Coupled Systems.
+
+          Includes the Triundra LER framework,
+          formal terminology and structural
+          descriptions supporting the
+          main XeoPhysics publication.
+        </p>
+
+        <a class="rf-link"
+          href="https://www.linkedin.com/pulse/xeo-physics-formal-annex-tetyana-leyendecker-7plee"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          Explore Formal Annex
+          <span aria-hidden="true">↗</span>
+
+        </a>
+
+      </article>
+
+    </div>
+
+    <!-- 04 CONCLUDING PRINCIPLE -->
+
+    <div class="rf-principle">
+
+      <div class="rf-kicker">
+        From Interaction to Development
+      </div>
+
+      <h3>
+        A system can repeat an interaction
+        without advancing its developmental state.
+      </h3>
+
+      <p>
+        The research question is therefore
+        not merely how often Human and AI
+        interact, but what semantic structure
+        survives each transition, what changes
+        along the developmental trajectory,
+        and at what modeled cost.
+
+        XeoPhysics supplies the proposed
+        flow-based conceptual foundation.
+        The comparative monitor provides
+        an exploratory environment for
+        investigating these questions.
+      </p>
+
+    </div>
+
+    <!-- ATTRIBUTION -->
+
+    <div class="rf-attribution">
+
+      <span>
+        <strong>
+          XeoPhysics · Triundra LER · GTNEra®
+        </strong>
+
+        <span>
+          — Conceptual framework and
+          publications by Tetyana Leyendecker
+        </span>
+      </span>
+
+      <span>
+        Interactive conceptual research
+        demonstration
+      </span>
+
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+<!-- END OF PART 4 -->
+
+<!-- CLOSE THE MAIN WRAPPER OPENED IN PART 1 -->
+</section>
+
+<!-- ================================================
+ END OF GTNEra® UNIFIED RESEARCH MONITOR
+ All four parts are now complete.
+================================================ -->
+
     <!-- Zwei Logos direkt nach dem Header -->
 <div class="flex items-end justify-center gap-6 md:gap-16 mt-10 mb-8">
   <!-- GTNEra Logo + Button -->
